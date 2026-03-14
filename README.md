@@ -84,7 +84,7 @@ This repo uses **Mixed-Media Documentation**. The `.agents/` folder is for **Mac
 ---
 
 ## 🏷️ Version
-1.0.0
+1.0.2
 
 > **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, but the logic and system architecture are 100% AI-engineered. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*
 ---
