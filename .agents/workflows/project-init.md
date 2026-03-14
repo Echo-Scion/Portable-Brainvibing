@@ -43,23 +43,32 @@ This workflow consolidates the initialization logic for both "Root Projects" and
 
 ---
 
-## 2. SUB-PROJECT SETUP (Hybrid Tiered Junctions)
+## 2. SUB-PROJECT SETUP (Hybrid Tiered Junctions / Bridge)
 - [ ] **Find Foundation**: Identify the absolute path to the global `.agents/` foundation.
-- [ ] **Create Local Shell**: Create physical directories: `.agents/`, `.agents/skills/`, `.agents/rules/`, `.agents/workflows/`.
-- [ ] **Link Global Skills**: Run `cmd /c "mklink /j .agents\skills\foundation "[GlobalPath]\.agents\skills""`.
-- [ ] **Link Global Rules**: Run `cmd /c "mklink /j .agents\rules\foundation "[GlobalPath]\.agents\rules""`.
-- [ ] **Link Global Workflows**: Run `cmd /c "mklink /j .agents\workflows\foundation "[GlobalPath]\.agents\workflows""`.
-- [ ] **Create Workspace**: Generate a `[project-name].code-workspace` file with Multi-Root configuration (including both `.agents` and `.`).
+- [ ] **Permission Check**: Attempt a test junction: `cmd /c "mklink /j .agents\link_test [GlobalPath]\.agents"`.
+  - **IF SUCCESS**: 
+    - Delete test link: `cmd /c "rmdir .agents\link_test"`.
+    - **Link Global Skills**: `cmd /c "mklink /j .agents\skills\foundation "[GlobalPath]\.agents\skills""`.
+    - **Link Global Rules**: `cmd /c "mklink /j .agents\rules\foundation "[GlobalPath]\.agents\rules""`.
+    - **Link Global Workflows**: `cmd /c "mklink /j .agents\workflows\foundation "[GlobalPath]\.agents\workflows""`.
+    - **Link Global Canons**: `cmd /c "mklink /j .agents\canons\foundation "[GlobalPath]\.agents\canons""`.
+    - **Link Global Scripts**: `cmd /c "mklink /j .agents\scripts\foundation "[GlobalPath]\.agents\scripts""`.
+  - **IF FAILURE (Access Denied)**:
+    - **Create Local Shell**: Create physical directory: `.agents/`.
+    - **Deploy Bridge**: Create `.agents/global_bridge.md`.
+    - **Write Pointer**: Add `Global Root: [GlobalPath]/.agents` to the bridge file.
+    - **Notify**: Inform USER: *"Admin privileges not detected. Using 'Logical Bridge' instead of Physical Junctions."*
+- [ ] **Create Workspace**: Generate a `[project-name].code-workspace` file with Multi-Root configuration (including both the absolute path of the foundation and `.`).
 - [ ] **Action**: Open the `.code-workspace` file and click "Open Workspace" in VS Code to enable `@` mentions.
 
 ---
 
 ## 3. INITIALIZE LOCAL PROJECT SOUL
-- [ ] **Create Soul Directory**: Create `.agent/` (singular), `.agent/rules/`, and `.agent/skills/`.
+- [ ] **Create Soul Directory**: Create `.agents/rules/local/`, `.agents/skills/local/`, `.agents/workflows/local/`, and `.agents/canons/local/`.
 - [ ] **Deploy Templates**: 
-  - Copy `.agents/templates/canon.md.example` to `.agent/canon.md`.
-  - Copy `.agents/templates/global-bridge.md.example` to `.agent/global_bridge.md`.
-- [ ] **Create Inheritance**: Create `.agent/rules/protocols.md` that inherits from `.agents/rules/`.
+  - Copy `.agents/templates/canon.md.example` to `.agents/rules/local/canon.md`.
+- [ ] **Create Inheritance**: Create `.agents/rules/local/protocols.md` that inherits from the Foundation Rules.
+- [ ] **Global Bridge Logic**: If `.agents/global_bridge.md` was created in Step 2, ensure it points to the absolute path of the global foundation.
 
 ---
 

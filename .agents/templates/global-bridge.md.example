@@ -1,0 +1,18 @@
+---
+name: global_bridge
+description: Pointer to the central Global Foundation for shared rules and skills.
+---
+# ⚓ Global Bridge
+
+This file connects this project's local intelligence to the **Global Foundation**.
+
+## Pointer
+- **Global Root**: `C:/Users/USER/AndroidStudioProjects/_foundation/.agents` (Replace with your absolute path to the global .agents folder)
+
+## Resolution Protocol
+1.  Load shared **Rules** from `<Global Root>/rules/common/`.
+2.  Inherit **Skills** from `<Global Root>/skills/`.
+3.  Execute **Workflows** from `<Global Root>/workflows/`.
+
+> [!NOTE]
+> If a file exists both locally and in the Global Root, the **Local** version always takes precedence.

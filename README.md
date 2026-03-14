@@ -40,10 +40,10 @@ This system employs a **Unified Hybrid Architecture** where all intelligence (Br
 
 ## 🚀 Quick Start: Zero to Hero
 
-1.  **Clone the Master Hub**: Clone this repository to a central foundation folder (e.g., `C:/Dev/Foundation/`).
-2.  **Start a Project**: Create a new project folder beside it (e.g., `C:/Dev/MyNewProject/`).
-3.  **Connect Foundation**: Open `MyNewProject` in your IDE and instruct the AI:
-    > *"Initialize this project using the foundation at C:/Dev/Foundation/.agents/"*
+1.  **Clone the Master Hub**: Clone this repository to a central foundation folder (e.g., `C:\Dev\Foundation\`).
+2.  **Start a Project**: Create a new project folder beside it (e.g., `C:\Dev\MyNewProject\`).
+3.  **Connect Foundation**: Open empty `MyNewProject` in your IDE and instruct the AI:
+    > *"Initialize this project using the foundation at C:\Dev\Foundation\.agents\"*
 4.  **Run Init**: Execute the `/project-init` command. This will automatically set up the **Hybrid Brain** structure within your project's `.agents` folder via Symlinks/Junctions.
 5.  **Activate**: Open the generated `.code-workspace` file to enable all `@` mentions and cross-tier indexing.
 
@@ -74,14 +74,19 @@ This repo uses **Mixed-Media Documentation**. The `.agents/` folder is for **Mac
 | `⚡ Flash Optimized` | Consolidated instruction hubs + mandatory reasoning protocols. | **Performance**: Maximizes Gemini Flash precision via mechanical anchors. |
 | `🛡️ Token Shield` | Intelligence orchestration that loads only specific blocks. | **Efficiency**: Drastically reduces token waste. |
 | `📐 Vibecode Limit` | Strict 500-line cap on all modular logic files. | **Logic Integrity**: Eliminates the "Lost in the Middle" problem. |
+| `🧠 Model Tiering` | Automated task-based routing (Budget, Standard, Premium). | **Cost Control**: Matches task complexity to the most efficient tier. |
+| `🌐 Living Knowledge` | Priority for dynamic, in-code documentation. | **Synchronization**: Ensures the agent and source code are in sync. |
+| `🛸 Agentic Workflows` | Standardized procedures for TDD, PR loops, and features. | **Consistency**: Guarantees high-quality output every time. |
 | `🦾 Modular Brain` | Decoupled ".agents" infrastructure. | **Portability**: Intelligence is literally part of the source code. |
 | `🔍 Harmony Sentinel` | `verify_agents.py` mechanical linter for headers, links, and integrity. | **Integrity**: Prevents drift and broken infrastructure links. |
+| `🎭 Dual-Media Docs` | Separate Machine-First (.agents) and Human-Manual (AGENTS.md) tracks. | **Clarity**: Optimizes for both AI precision and human readability. |
 
 ---
 
 ## 🏷️ Version
 1.0.0
 
+> **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, but the logic and system architecture are 100% AI-engineered. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*
 ---
 
 ## ⚖️ License

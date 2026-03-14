@@ -1,0 +1,19 @@
+---
+name: canon_identity
+domain: [e.g., flutter_mobile, node_backend, agents_infrastructure]
+---
+# 📜 Canon: [Project Name]
+
+Define the "Soul" and core technical constraints of this specific project.
+
+## 🎯 Technical Stack
+- **Framework**: [e.g., Flutter]
+- **Language**: [e.g., Dart]
+- **State Management**: [e.g., Riverpod]
+
+## 🏗️ Architectural Canon
+- **Pattern**: [e.g., Clean Architecture / Layered]
+- **Data Flow**: [e.g., Unidirectional]
+
+## 🛡️ Domain Constraints
+- List any specific domain limitations or high-level ethics for this project.

@@ -1,14 +1,15 @@
 ---
-description: MainSystem Agent Protocols for workspace management, documentation, and interaction.
+description: Echosystem Agent Protocols for workspace management, documentation, and interaction.
 activation: always_on
 ---
 
-# MainSystem Agent Protocols (Management & Behavior)
+# Echosystem Agent Protocols (Management & Behavior)
 
 Guidelines for AI Agents to manage workspaces, documentation, and interact with the USER efficiently.
 
 ## 1. Context & Token Efficiency
-- **Pre-Flight Check**: Every session MUST start by verifying the status of required MCP servers (e.g., `dart-mcp-server`, `supabase-mcp-server`) based on the project type. If a server is disabled but needed, notify the USER immediately.
+- **Pre-Flight Check**: Every session MUST start by verifying the status of required MCP servers (e.g., `dart-mcp-server`, `supabase-mcp-server`) based on the project type. 
+- **Foundation Discovery**: Proactively check for `.agents/global_bridge.md`. If it exists, immediately resolve the `Global Root` path and prioritize it for loading shared rules, skills, and workflows.
 - **Model Selection**: Every `implementation_plan.md` MUST include a model recommendation based on the Tiers defined in `performance.md`. Utilize the `@cost-optimizer` skill for precision.
 - **Research Ceiling**: If research exceeds **5 turns** without a clear implementation path, the agent MUST stop, summarize findings, and ask the USER for a "Surgical Hint" to prevent token waste.
 - **Efficiency Standards**: Always follow the **Vibecode Limit** and **Living Knowledge Protocol** as specified in `performance.md`.
