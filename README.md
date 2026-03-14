@@ -49,18 +49,6 @@ This system employs a **Unified Hybrid Architecture** where all intelligence (Br
 
 ---
 
-## 🏛️ Anatomy of a Hybrid Brain
-
-When applied to a local project, the intelligence resolves in this order (Local overrides Global):
-
-*   **`.agents/rules/common/`** (Junction) -> **The Brain**: Universal AI behavior & security standards.
-*   **`.agents/skills/`** (Junction) -> **The Brain**: Tier-S capabilities (e.g., `@project-architect`).
-*   **`.agents/canons/`** (Junction) -> **The Domain**: Pluggable architectures (Auth, DB, UI).
-*   **`.agents/rules/local/`** (Physical) -> **The Soul**: Project-specific rules that *override* the Brain.
-*   **`context/MEMORY.md`** (Physical) -> **The Soul**: The active memory and state of the specific project.
-
----
-
 ## 📖 Documentation Strategy
 This repo uses **Mixed-Media Documentation**. The `.agents/` folder is for **Machine-First** instructions (token-lean, technical), while [AGENTS.md](AGENTS.md) acts as the **Human Manual** for tutorials and context.
 
@@ -72,16 +60,32 @@ This repo uses **Mixed-Media Documentation**. The `.agents/` folder is for **Mac
 | :--- | :--- | :--- |
 | `✨ Binary Oratory` | High-precision `[DO]/[DON'T]` confirmation loops required before execution. | **Prompt Guard**: Ensures logical boundaries and prevents hallucinations. |
 | `⚡ Flash Optimized` | Consolidated instruction hubs + mandatory reasoning protocols. | **Performance**: Maximizes Gemini Flash precision via mechanical anchors. |
-| `🛡️ Token Shield` | Intelligence orchestration that loads only specific blocks. | **Efficiency**: Drastically reduces token waste. |
+| `🛡️ Token Shield` | MCI Protocol (Context Isolation) that loads only specific blocks. | **Efficiency**: Drastically reduces token waste and context bloat. |
 | `📐 Vibecode Limit` | Strict 500-line cap on all modular logic files. | **Logic Integrity**: Eliminates the "Lost in the Middle" problem. |
 | `🧠 Model Tiering` | Automated task-based routing (Budget, Standard, Premium). | **Cost Control**: Matches task complexity to the most efficient tier. |
-| `🌐 Living Knowledge` | Priority for dynamic, in-code documentation. | **Synchronization**: Ensures the agent and source code are in sync. |
+| `🌐 Living Knowledge` | Priority for dynamic, in-code documentation and `MEMORY.md` sync. | **Synchronization**: Ensures the agent and source code are always in sync. |
 | `🛸 Agentic Workflows` | Standardized procedures for TDD, PR loops, and features. | **Consistency**: Guarantees high-quality output every time. |
 | `🦾 Modular Brain` | Decoupled ".agents" infrastructure. | **Portability**: Intelligence is literally part of the source code. |
 | `🔍 Harmony Sentinel` | `verify_agents.py` mechanical linter for headers, links, and integrity. | **Integrity**: Prevents drift and broken infrastructure links. |
-| `🎭 Dual-Media Docs` | Separate Machine-First (.agents) and Human-Manual (AGENTS.md) tracks. | **Clarity**: Optimizes for both AI precision and human readability. |
+| `📈 Self-Evolving` | **Habit Promotion** protocol converting repeated corrections into rules. | **Evolution**: System adapts and improves based on your personal workflow. |
 
----
+## 🛠️ Integrated Infrastructure (MCP)
+
+This brain is powered by a high-octane **Model Context Protocol (MCP)** stack, giving it real-world "hands":
+
+*   **Dart & Flutter MCP**: Deep integration with the Dart Tooling Daemon for hot reloads and widget analysis.
+*   **Supabase MCP**: Direct database management, migrations, and Edge Function deployment.
+*   **GitHub MCP**: Seamless PR management, issue tracking, and repository operations.
+*   **Stitch MCP**: AI-powered UI generation and screen synthesis.
+*   **Context7 MCP**: Just-in-time documentation ingestion for frontier libraries.
+*   **Sequential Thinking**: Advanced reasoning plugin for solving complex multi-step problems.
+
+## 💡 Pro Tips: The "Self-Evolving Brain"
+
+*   **Automated Evolution**: The system is designed to automatically trigger a **Habit Analysis** every 5 features. However, you can manually force a **"System Stocktake"** anytime to refine its logic immediately. Just provide this instruction:
+    > *"Review our recent `MEMORY.md` and session history. Identify any repetitive logic or corrections. Is there a pattern we should promote from a transient memory to a permanent **Global Rule** or a new **Skill**?"*
+
+*   **Quota Management**: If your **Antigravity** system quota is exhausted, install the **Gemini CLI Extension** to access a separate, independent quota for uninterrupted development.
 
 ## 🏷️ Version
 1.0.2
