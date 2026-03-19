@@ -134,19 +134,25 @@ Years later, you want to move the project or clean it up.
 
 Finally, you wrap up the repo with the essentials:
 * **`VERSION`**: 1.0.0.
-*   **`CHANGELOG.md`**: A history of your hard-earned victories.
-*   **`LICENSE`**: Your MIT badge of honor.
-*   **`README.md`**: The portal to your creation.
+* **`CHANGELOG.md`**: A history of your hard-earned victories.
+* **`LICENSE`**: Your MIT badge of honor.
+* **`README.md`**: The portal to your creation.
 
 ---
-*Portable Brainvibing v1.0.0*  
+*Portable Brainvibing v1.0.0* 
 *Surgical Precision. Total Autonomy. Zero Waste.*
 
 ## 🔄 Recent Changes
 
-### [1.1.0] - 2026-03-19
+### [1.0.0] - 2026-03-19
 ### Changed
+- Clean Reset to V1.0.0
 - Update .agents foundation to portable brainvibing (Dual-Canon Patch)
 - Added Session Handoff and Atomic Tasking workflows
 - Enhanced Protocol for surgical context management
-*(Full history in CHANGELOG.md)*
+
+### [0.9.0] - 2026-03-15
+### Added
+- Initial baseline
+- Standardized .agents structure for portability
+- Initial suite of 20+ specialized agent skills

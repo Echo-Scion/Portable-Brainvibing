@@ -49,7 +49,6 @@ This infrastructure operates on high-precision mechanical anchors that ensure ef
 We employ a **Split-Brain Documentation** strategy for maximum communication efficiency:
 * **Machine-First (Folder `.agents/`)**: Technical, dense, and "token-lean" instructions optimized for triggering tools and strict logic.
 * **Human-Manual ([AGENTS.md](AGENTS.md))**: The command center for human architects, providing tutorials, philosophical context, and operational guides.
-* **State Management (`session_handoff.md`)**: The bridge between sessions, acting as the immediate short-term memory that the AI reads first upon waking up.
 
 ## 💡 6. Pro Tips: The "Self-Evolving Brain"
 
@@ -80,7 +79,7 @@ Follow these steps to activate the **Portable Brainvibing** infrastructure in an
 ---
 
 ## 🏷️ Version
-1.0.0
+1.0.1
 "Agent-Driven Deployment & Sync"
 
 > **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, logic and principles are merging here and there, then 100% AI-generated. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*
@@ -103,3 +102,9 @@ Distributed under the MIT License. See [LICENSE](LICENSE).
 - Update .agents foundation to portable brainvibing (Dual-Canon Patch)
 - Added Session Handoff and Atomic Tasking workflows
 - Enhanced Protocol for surgical context management
+
+### [0.9.0] - 2026-03-15
+### Added
+- Initial baseline
+- Standardized .agents structure for portability
+- Initial suite of 20+ specialized agent skills

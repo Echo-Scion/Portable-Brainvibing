@@ -22,12 +22,9 @@ def deploy(source_root, target_root):
     # Folders to sync physically for IDE compatibility
     FOLDERS_TO_SYNC = ["skills", "rules", "workflows", "canons", "templates"]
     
-    # Exclude list (similar to publish_agents.py but focused on internal deployment)
     BLACKLIST = {
-        "publish_agents.py",
         "deploy_foundation.py",
         "audit_repo.py",
-        "archive",
         ".git",
         "node_modules"
     }
