@@ -8,14 +8,30 @@ This rule defines how the agent resolves and prioritizes rules, skills, and memo
 
 ## 1. Resolution Layers
 
-The context is resolved in two simple layers:
+The context is resolved in two or three layers depending on project type:
 
+### Standard Project (Single Layer)
 | Level | Name | Scope | Location |
 | :--- | :--- | :--- | :--- |
 | **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/common/` |
 | **1** | **Project Local** | Project-specific rules & memory. | `.agents/rules/local/` & `context/` |
 
-## 2. Plug & Play Residency (Physical)
+### Monorepo Project (Double Lean Layer)
+| Level | Name | Scope | Location |
+| :--- | :--- | :--- | :--- |
+| **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/common/` |
+| **1** | **Monorepo Root** | Shared infrastructure, DevOps, & Design. | `/context/` (Root) |
+| **2** | **App Local** | Specific business logic & features. | `/apps/[app_name]/context/` |
+
+## 2. Monorepo Context Distribution (Double Lean)
+
+In a monorepo environment, context MUST be distributed to prevent "Context Bloat" and ensure app-specific isolation:
+
+- **Root Context**: Reserved ONLY for global platform infrastructure, monorepo DevOps (e.g., Melos, Docker), and unified design systems.
+- **App Context**: Every sub-app MUST maintain its own **Lean Context** folders (`00-overview`, `01-product`, `02-creative`, `03-tech`).
+- **Distributed SaaS Mapping**: Detailed SaaS context (Idea, Planning, Development, etc.) is stored in the specific app's context directory, NOT the root.
+
+## 3. Plug & Play Residency (Physical)
 
 To ensure 100% IDE compatibility and symbol indexing (Antigravity IDE), this system uses **Physical Residency**:
 

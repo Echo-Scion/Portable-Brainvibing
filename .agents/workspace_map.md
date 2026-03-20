@@ -85,6 +85,6 @@ A high-level topography of the workspace for AI navigation and context initializ
 - `deploy_foundation.py` — Physical residency deployment and sync tool.
 
 ## Memory & Implementation
-- **Lean**: `context/overview/MEMORY.md` — Project specific memory.
+- **Lean**: `context/00-overview/MEMORY.md` — Project specific memory.
 - **Startup**: `context/Idea/Market Research.md` — Granular project memory.
-- **Global**: `context/overview/MEMORY.md` — Foundation workspace memory.
+- **Global**: `context/00-overview/MEMORY.md` — Foundation workspace memory.

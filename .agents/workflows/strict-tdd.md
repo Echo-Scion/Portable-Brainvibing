@@ -21,4 +21,4 @@ Execute the following steps sequentially when instructed to use TDD.
 
 **THE PENALTY:** If any implementation code was written BEFORE a verified failing test existed, you MUST delete that implementation code and start over from Step 1. No excuses.
 
-**ABSOLUTE RULE:** Evidence (verified failing test) over claims of success. Jika Anda tidak melihat tes gagal, Anda tidak tahu apa yang sedang Anda tes.
+**ABSOLUTE RULE:** Evidence (verified failing test) over claims of success. If you do not see the test fail, you do not know what you are testing.

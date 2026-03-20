@@ -18,7 +18,7 @@ You have a blank screen and a dream. You start by "cloning" the intelligence.
 
 The brain is there, but it doesn't know you yet.
 
-4. **`workflows/project-init.md`**: You trigger this workflow. It’s no longer just a handshake; it's a **Smart Intake**. The AI scans your folder, detects if you're starting fresh, from a blueprint, or from a legacy codebase, and guides you conversationally.
+4. **`workflows/project-init.md`**: You trigger this workflow. It’s no longer just a handshake; it's a **Smart Intake**. The AI scans your folder, detects if you're in a **Monorepo (Double Lean)**, starting fresh, from a blueprint, or from a legacy codebase, and guides you through nested context setup.
 5. **`.agents/workspace_map.md`**: The system registers your new app here, mapping its location so it can be managed alongside your other projects.
 6. **`.agents/catalog.json`**: The AI assistant scans this index to see which "Modular Personas" (Skills) it can summon for your specific task.
 
@@ -43,7 +43,7 @@ You explain your idea. The AI doesn't start coding; it starts **thinking**.
 The AI builder is ready, but it must follow the "Golden Rules."
 
 14. **`rules/common/context_hierarchy.md`**: The AI learns the priority—if you write a `local-` rule, it **must** ignore the global standards.
-15. **`rules/common/context_naming_policy.md`**: The AI learns how to structure knowledge. It maps your chaotic ideas into the strict 82-file SaaS format.
+15. **`rules/common/context_naming_policy.md`**: The AI learns how to structure knowledge. It maps your chaotic ideas into the strict 82-file SaaS format using **Just-In-Time (JIT) Expansion** to prevent context paralysis.
 16. **`rules/common/model_tier_protocol.md`**: The system calculates costs. It will use "Flash" for routine code and "Pro" for the complex logic.
 17. **`rules/common/context7_economical_usage.md`**: It learns to be "Token-Lean," reading only the code it needs to save you money.
 18. **`rules/common/git-workflow.md`**: It learns how you like your commits—clean, descriptive, and atomic.
@@ -140,7 +140,7 @@ Finally, you seal the project by transitioning from a "codebase" to a profession
 * **`README.md`**: The portal to your creation.
 
 ---
-*Portable Brainvibing v1.0.2* 
+*Portable Brainvibing v1.1.2* 
 *Surgical Precision. Total Autonomy. Zero Waste.*
 
 ## 🔄 Recent Changes
@@ -157,8 +157,4 @@ Finally, you seal the project by transitioning from a "codebase" to a profession
 - Added Session Handoff and Atomic Tasking workflows
 - Enhanced Protocol for surgical context management
 
-### [0.9.0] - 2026-03-15
-### Added
-- Initial baseline
-- Standardized .agents structure for portability
-- Initial suite of 20+ specialized agent skills
+*(Full history in CHANGELOG.md)*

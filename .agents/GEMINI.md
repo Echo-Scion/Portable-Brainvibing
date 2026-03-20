@@ -29,4 +29,4 @@ This file is a **foundational mandate** and takes absolute precedence over all o
 - **Rule:** After any change to `skills/`, `rules/`, or `canons/`, the agent MUST run `python scripts/build_graph.py`.
 
 ---
-*Protocol Version: 1.1.0 (True Deep Audit & Tri-Pillar Patch)*
+*Protocol Version: 1.1.1 (Double Lean, JIT SaaS, & Absolute English Patch)*

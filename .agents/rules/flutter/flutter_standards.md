@@ -8,7 +8,7 @@ glob: "**/*.dart"
 
 ## 1. Aesthetic-First Prototyping (The "Liquid Glass" Principle)
 - **Visuals-First**: Never model complex business logic if the UI isn't high-fidelity yet. Use placeholders to "feel" the vibe first.
-- **Glassmorphism & Polish**: Leverage `skill-ui-finish` to build kerangka visual yang indah (Liquid Glass) with micro-interactions early in the lifecycle.
+- **Glassmorphism & Polish**: Leverage `skill-ui-finish` to build beautiful visual frameworks (Liquid Glass) with micro-interactions early in the lifecycle.
 - **Theme Consistency**: Strictly use project design tokens (`Theme.of(context)`) to maintain the Antigravity aesthetic.
 
 ## 2. Unidirectional Data Flow / UDF (The "One-Way Street" Principle)

@@ -6,6 +6,7 @@ This is the foundational canon for all projects. It defines the "Hukum Tata Nega
 ## 2. Core Principles
 - **Agent-First Design:** Code must be structured so that it is easily parsable and maintainable by AI agents.
 - **Predictable Modularity:** Prefer clean, isolated modules over large, monolithic structures.
+- **Distributed Context (Double Lean):** In monorepos, maintain high-fidelity context at both root (platform) and app (features) levels to preserve token efficiency.
 - **Strict Verification:** No feature is complete until it has been mechanically verified via automated tests.
 
 ## 3. Mandatory Protocol

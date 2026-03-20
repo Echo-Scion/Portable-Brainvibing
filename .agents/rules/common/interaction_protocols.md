@@ -13,6 +13,7 @@ activation: always_on
 - Anticipate follow-up needs (e.g., if writing a widget, automatically run `flutter analyze`).
 - Surface trade-offs before the user has to ask about them.
 
-## 3. Confidence Signaling
-- If confidence is below 80%, say so explicitly before acting.
-- Prefix uncertain recommendations with `[HYPOTHESIS]`.
+## 4. Linguistic Integrity (Foundation Only)
+- **English-Only Mandate**: All content within the `.agents/` foundation (Rules, Skills, Workflows, Canons) MUST be written in **English**.
+- **Rationale**: The foundation is the Master Habitat for the `portable brainvibing` infrastructure, targeting an international audience.
+- **Project Local Flexibility**: Project-specific context (outside `.agents/`) may use other languages if requested by the user, but foundation logic must remain universally accessible in English.

@@ -25,14 +25,22 @@ To prevent architectural drift and naming inconsistency, all files created withi
     3. Update `BLUEPRINT.md` as the index.
     4. Interpolate missing details to ensure "Zero N/A" compliance.
 
-## 4. Lean-to-Startup Evolution
-- Even in **Lean** projects (which start with only 5 core context files), any NEW idea or feature MUST trigger a **Surgical Expansion**.
+## 4. Lean-to-Startup Evolution (Just-In-Time Expansion)
+- **Anti-Paralysis**: Do NOT generate all 82 SaaS files upfront. Start with the minimal files needed for the current sprint.
+- The 82 files in `SAAS_STARTUP_STRUCTURE.md` act as a **dictionary of allowed names**, not a mandate to create empty files.
+- Even in **Lean** or **Startup** projects, any NEW idea or feature MUST trigger a **Surgical Expansion (JIT)**.
 - Instead of creating random files, the AI "promotes" the relevant category from the 82-file baseline. 
-- *Example*: Adding a "Referral Program" to a Lean project results in the creation of `context/Acquisition/Referral Programs.md`, initializing that specific folder in the project.
+- *Example*: Adding a "Referral Program" to a project results in the creation of `context/Growth/Referral Programs.md`, initializing that specific file ONLY when needed.
 
-## 5. Enforcement
-- All initialization (`/project-init`) and migration tasks MUST verify that the `context/` topography matches the selected baseline (Lean or Startup).
-- "Agar inkonsistensi penamaan tidak terulang" is the core driver for this rule. Consistency is prioritized over brevity.
+## 5. Monorepo Distribution (Double Lean)
+- In a monorepo, context is **split** between the root and the apps.
+- **Root Context**: Reserved for shared infra (e.g., `Infrastructure/Melos Config.md`).
+- **App Context**: Reserved for feature logic (e.g., `apps/[app]/context/Idea/Product Roadmap.md`).
+- AI MUST ensure that app-specific details do NOT leak into the root context to maintain strict isolation.
+
+## 6. Enforcement
+- All initialization (`/project-init`) and migration tasks MUST verify that the `context/` topography matches the selected baseline (Lean, Startup, or Double Lean).
+- Standardized naming is the core driver for this rule to prevent naming inconsistency. Consistency is prioritized over brevity.
 
 ---
 *Portable Brainvibing - Governance Tier-S*

@@ -44,8 +44,9 @@ This infrastructure operates on high-precision mechanical anchors that ensure ef
 | **🕸️ Knowledge Graph** | Merkle-tree based dependency mapping | O(log n) keyword discovery via an inverted system index. |
 | **🎯 Atomic Tasking** | Single IN_PROGRESS constraint (GSD Logic) | Prevents deviation by forcing the AI to resolve one task at a time. |
 | **🦾 Integrated "Hands"** | Direct Model Context Protocol (MCP) execution | Grants the AI direct access to DTD, DBs, and repositories. |
-| **🔪 Surgical Expansion** | Lean-to-Startup evolution (U2S Logic) | Automatically promotes Lean projects to a granular 82-file baseline. |
-| **🕵️ Smart Intake** | Passive environment detection (No Flags) | AI scans for code/blueprints to propose the best init path automatically. |
+| **🏢 Double Lean** | Monorepo context isolation (Root + App) | Prevents context leak by separating global infra from feature logic. |
+| **🔪 JIT Expansion** | Just-In-Time SaaS context (Anti-Paralysis) | Use the 82-file baseline as a dictionary; files are created only when needed. |
+| **🕵️ Smart Intake** | Passive environment detection (No Flags) | AI scans for monorepos, code, or blueprints to propose the best init path. |
 | **🔍 Harmony Sentinel** | Mechanical structural integrity auditing | Prevents architectural drift through automated file validation. |
 
 ## 📖 5. Documentation: Machine-First vs. Human-Manual
@@ -85,7 +86,7 @@ Follow these steps to activate the **Portable Brainvibing** infrastructure in an
 ---
 
 ## 🏷️ Version
-1.1.1
+1.1.2
 "True Deep Audit & Tri-Pillar Patch"
 
 > **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, logic and principles are merging here and there, then 100% AI-generated. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*
@@ -114,8 +115,4 @@ Distributed under the MIT License. See [LICENSE](LICENSE).
 - Added Session Handoff and Atomic Tasking workflows
 - Enhanced Protocol for surgical context management
 
-### [0.9.0] - 2026-03-15
-### Added
-- Initial baseline
-- Standardized .agents structure for portability
-- Initial suite of 20+ specialized agent skills
+*(Full history in CHANGELOG.md)*
