@@ -1,6 +1,6 @@
 ---
 description: Protocols for API communication, data integrity, and inter-service interaction.
-activation: always_on
+activation: on_demand
 ---
 # Connector & Interaction Protocols
 

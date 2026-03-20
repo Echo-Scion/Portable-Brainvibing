@@ -1,11 +1,13 @@
 ---
 name: eval-engineer
 description: Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.
-triggers: ["eval", "evaluasi", "regression", "testing", "benchmarking", "prompt-test", "judge", "golden dataset", "mlops"]
+triggers: ["llm evaluation", "prompt regression", "golden dataset", "mlops"]
 tags: ["ai", "qa"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for prompt regression testing and LLM golden dataset evaluation."
+portable: true
 ---
 
 # LLM Evaluation Engineer (Tier-S)

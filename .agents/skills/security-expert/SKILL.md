@@ -4,6 +4,9 @@ description: Expert application security engineer specializing in threat modelin
 Recommended_Tier: Premium
 compatibility: Optimized for Antigravity (Google Deepmind Advanced Agentic Coding) and standard Markdown-based agent tooling.
 Recommended_Tier: Premium
+triggers: ["threat modeling", "secure storage", "api security", "penetration"]
+scope_discriminator: "ONLY for application security, threat modeling, and identifying vulnerabilities."
+portable: true
 ---
 
 # Security Engineer (Mobile Focus)

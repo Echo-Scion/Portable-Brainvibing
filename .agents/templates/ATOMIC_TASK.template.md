@@ -19,4 +19,4 @@
 - **Expected Outcome:** [Apa yang harus terjadi agar tugas ini dianggap SELESAI]
 
 ---
-*GSD Protocol: Finish this task completely before moving to the next. Do not bloat the context.*
+*Atomic Task Protocol: Finish this task completely before moving to the next. Do not bloat the context.*

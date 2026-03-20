@@ -1,11 +1,13 @@
 ---
 name: context-manager
 description: Integrated protocol for zero-waste codebase navigation and deep symbolic mapping.
-triggers: ["context", "konteks", "navigation", "navigasi", "zero-waste", "symbolic", "mapping", "structure", "outline", "scan"]
+triggers: ["context window", "zero-waste", "symbolic mapping", "workspace scan"]
 tags: ["workflow", "utility"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Agentic Tooling.
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for navigating workspace maps and pruning session chat history. NOT for research or code generation."
+portable: false
 ---
 
 # Context Orchestrator (Tier-S)

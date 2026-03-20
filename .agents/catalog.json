@@ -1,7 +1,6 @@
 {
-  "version": "1.1.0",
-  "generatedAt": "2026-03-19T08:29:00.889056Z",
-  "total": 22,
+  "generatedAt": "2026-03-20T12:50:59.627759Z",
+  "total": 25,
   "skills": [
     {
       "id": "agent-architect",
@@ -10,12 +9,8 @@
       "tier": "Premium",
       "path": ".agents/skills/agent-architect/SKILL.md",
       "triggers": [
-        "agent",
-        "agen",
-        "loop",
-        "otonom",
-        "autonomous",
-        "system design",
+        "agent architecture",
+        "multi-agent",
         "state machine",
         "react loop",
         "guardrails"
@@ -32,18 +27,11 @@
       "tier": "Premium",
       "path": ".agents/skills/backend-architect/SKILL.md",
       "triggers": [
-        "backend",
-        "api",
-        "supabase",
-        "database",
-        "node",
-        "server",
-        "architecture",
+        "backend architecture",
         "mvc",
-        "repository",
+        "repository pattern",
         "service layer",
-        "dto",
-        "transaction"
+        "dto"
       ],
       "tags": [
         "backend",
@@ -57,16 +45,11 @@
       "tier": "Standard",
       "path": ".agents/skills/backend-optimizer/SKILL.md",
       "triggers": [
-        "optimasi",
-        "optimize",
-        "perf",
-        "performa",
-        "leak",
-        "bottleneck",
+        "backend performance",
+        "memory leak",
         "event loop",
         "garbage collector",
-        "v8",
-        "heap"
+        "v8 heap"
       ],
       "tags": [
         "performance",
@@ -80,13 +63,11 @@
       "tier": "Standard",
       "path": ".agents/skills/cache-optimizer/SKILL.md",
       "triggers": [
-        "cache",
-        "koding",
         "redis",
         "cdn",
         "etag",
         "content hashing",
-        "invalidation",
+        "cache invalidation",
         "hit ratio",
         "thundering herd"
       ],
@@ -102,16 +83,10 @@
       "tier": "Standard",
       "path": ".agents/skills/context-manager/SKILL.md",
       "triggers": [
-        "context",
-        "konteks",
-        "navigation",
-        "navigasi",
+        "context window",
         "zero-waste",
-        "symbolic",
-        "mapping",
-        "structure",
-        "outline",
-        "scan"
+        "symbolic mapping",
+        "workspace scan"
       ],
       "tags": [
         "workflow",
@@ -125,15 +100,10 @@
       "tier": "Standard",
       "path": ".agents/skills/cost-optimizer/SKILL.md",
       "triggers": [
-        "cost",
-        "biaya",
-        "billing",
-        "tagihan",
-        "hemat",
-        "efficiency",
-        "token-clipping",
-        "routing",
         "finops",
+        "billing",
+        "token-clipping",
+        "cost efficiency",
         "autoscaling"
       ],
       "tags": [
@@ -142,19 +112,25 @@
       ]
     },
     {
+      "description": "Orchestrator of codebase modernization. Identifies, scopes, and safely executes the removal of deprecated libraries, dead code, and massive refactors. Do NOT use for writing new feature functionalities or blank slate design.",
+      "tier": "Premium",
+      "triggers": [
+        "tech debt",
+        "deprecated",
+        "dead code",
+        "massive refactor"
+      ],
+      "tags": []
+    },
+    {
       "id": "eval-engineer",
       "name": "eval-engineer",
       "description": "Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.",
       "tier": "Standard",
       "path": ".agents/skills/eval-engineer/SKILL.md",
       "triggers": [
-        "eval",
-        "evaluasi",
-        "regression",
-        "testing",
-        "benchmarking",
-        "prompt-test",
-        "judge",
+        "llm evaluation",
+        "prompt regression",
         "golden dataset",
         "mlops"
       ],
@@ -170,17 +146,11 @@
       "tier": "Standard",
       "path": ".agents/skills/flutter-debugger/SKILL.md",
       "triggers": [
-        "debug",
-        "error",
-        "flutter",
-        "reload",
-        "restart",
-        "inspect",
+        "flutter debug",
         "widget tree",
         "dtd",
-        "runtime",
-        "overflow",
-        "crash"
+        "render overflow",
+        "dart runtime crash"
       ],
       "tags": [
         "flutter",
@@ -194,20 +164,10 @@
       "tier": "Premium",
       "path": ".agents/skills/project-architect/SKILL.md",
       "triggers": [
-        "blueprint",
-        "arsitektur",
-        "architect",
-        "logic",
-        "prd",
-        "spec",
-        "sprint",
-        "planning",
-        "backlog",
-        "prioritas",
-        "ticket",
-        "scrum",
-        "agile",
-        "velocity"
+        "prd synthesis",
+        "sprint planning",
+        "agile backlog",
+        "scrum velocity"
       ],
       "tags": [
         "architecture",
@@ -222,15 +182,9 @@
       "tier": "Standard",
       "path": ".agents/skills/release-manager/SKILL.md",
       "triggers": [
-        "release",
-        "deploy",
-        "ci",
-        "cd",
-        "pipeline",
-        "rilis",
-        "production",
-        "health check",
-        "canary",
+        "ci/cd pipeline",
+        "production readiness",
+        "canary release",
         "blue-green"
       ],
       "tags": [
@@ -244,7 +198,12 @@
       "description": "Expert application security engineer specializing in threat modeling, secure storage, and API security for Flutter applications. Use when asked to \"review security\", \"store sensitive data\", or \"threat model\". Do NOT use for general feature logic.",
       "tier": "Premium",
       "path": ".agents/skills/security-expert/SKILL.md",
-      "triggers": [],
+      "triggers": [
+        "threat modeling",
+        "secure storage",
+        "api security",
+        "penetration"
+      ],
       "tags": []
     },
     {
@@ -254,15 +213,9 @@
       "tier": "Standard",
       "path": ".agents/skills/skill-agent-evolution/SKILL.md",
       "triggers": [
-        "evolution",
-        "evolusi",
-        "self-improve",
-        "pattern",
-        "pola",
-        "belajar",
-        "harvest",
-        "entropy",
-        "intelligence"
+        "agent evolution",
+        "pattern promotion",
+        "habit harvest"
       ],
       "tags": [
         "ai",
@@ -276,16 +229,10 @@
       "tier": "Standard",
       "path": ".agents/skills/skill-api-contract/SKILL.md",
       "triggers": [
-        "api",
-        "contract",
-        "kontrak",
-        "zod",
-        "openapi",
-        "endpoint",
-        "schema",
-        "validation",
-        "middleware",
-        "hygiene"
+        "zod schema",
+        "openapi spec",
+        "api defensive parsing",
+        "endpoint contract"
       ],
       "tags": [
         "api",
@@ -299,16 +246,10 @@
       "tier": "Standard",
       "path": ".agents/skills/skill-data-logic/SKILL.md",
       "triggers": [
-        "data",
-        "logic",
         "freezed",
         "riverpod",
-        "state",
-        "notifier",
-        "logika",
-        "codegen",
-        "serialization",
-        "modeling"
+        "reactive state",
+        "immutable modeling"
       ],
       "tags": [
         "flutter",
@@ -322,17 +263,10 @@
       "tier": "Standard",
       "path": ".agents/skills/skill-db-expert/SKILL.md",
       "triggers": [
-        "database",
-        "db",
-        "sql",
-        "migration",
-        "migrasi",
-        "rls",
-        "supabase",
-        "schema",
-        "postgres",
-        "indexing",
-        "performance"
+        "sql schema",
+        "zero-downtime migration",
+        "postgres rls",
+        "db indexing"
       ],
       "tags": [
         "database",
@@ -346,16 +280,9 @@
       "tier": "Budget",
       "path": ".agents/skills/skill-knowledge/SKILL.md",
       "triggers": [
-        "knowledge",
-        "pengetahuan",
-        "research",
-        "search",
-        "pub.dev",
-        "github",
-        "library",
-        "documentation",
-        "ingestion",
-        "interrogation"
+        "pub.dev research",
+        "github ingestion",
+        "library documentation scan"
       ],
       "tags": [
         "utility",
@@ -369,15 +296,9 @@
       "tier": "Standard",
       "path": ".agents/skills/skill-project-relocator/SKILL.md",
       "triggers": [
-        "relocator",
-        "pindah",
-        "move",
-        "path",
-        "cache-clearing",
-        "rename",
-        "symlink",
-        "junction",
-        "broken link"
+        "path integrity",
+        "deep cache clear",
+        "symlink junction"
       ],
       "tags": [
         "utility",
@@ -391,20 +312,10 @@
       "tier": "Standard",
       "path": ".agents/skills/skill-qa-engineer/SKILL.md",
       "triggers": [
-        "test",
-        "qa",
-        "testing",
-        "widget-test",
-        "integration",
-        "pengujian",
-        "load test",
-        "stress test",
-        "k6",
-        "artillery",
-        "benchmarking",
-        "throughput",
-        "latency",
-        "performance"
+        "k6 load test",
+        "artillery stress test",
+        "widget test coverage",
+        "e2e journey"
       ],
       "tags": [
         "qa",
@@ -419,26 +330,10 @@
       "tier": "Budget",
       "path": ".agents/skills/skill-saas-growth/SKILL.md",
       "triggers": [
-        "marketing",
-        "pemasaran",
-        "growth",
-        "pertumbuhan",
         "aso",
-        "pitch",
-        "investor",
-        "blog",
-        "devrel",
-        "artikel",
-        "seo",
-        "hacker news",
-        "content strategy",
-        "viral",
-        "tiktok",
-        "twitter",
-        "x",
-        "thread",
-        "utas",
-        "reddit",
+        "investor pitch",
+        "devrel blog",
+        "viral marketing",
         "trojan horse"
       ],
       "tags": [
@@ -448,26 +343,42 @@
       ]
     },
     {
+      "description": "Managing the agentic soul, project memory, and system-wide skill creation protocols.",
+      "tier": "Premium",
+      "triggers": [
+        "system-wide memory",
+        "agentic soul",
+        "infrastructure admin"
+      ],
+      "tags": [
+        "admin",
+        "workflow"
+      ]
+    },
+    {
+      "description": "Sentinel for structural integrity, security (secrets), logic drift, and architectural analysis.",
+      "tier": "Standard",
+      "triggers": [
+        "vibe-code check",
+        "secrets leak scan",
+        "structural drift audit"
+      ],
+      "tags": [
+        "audit",
+        "security"
+      ]
+    },
+    {
       "id": "skill-ui-finish",
       "name": "skill-ui-finish",
       "description": "Expert skill for premium \"Liquid Glass\" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.",
       "tier": "Budget",
       "path": ".agents/skills/skill-ui-finish/SKILL.md",
       "triggers": [
-        "ui",
-        "ui-finish",
-        "liquid-glass",
-        "animation",
-        "animasi",
-        "premium",
+        "liquid glass",
         "glassmorphism",
-        "visual design",
-        "desain visual",
-        "image prompt",
-        "video prompt",
-        "inclusive design",
-        "authenticity",
-        "representation"
+        "flutter micro-interactions",
+        "inclusive design visual"
       ],
       "tags": [
         "ui",
@@ -482,15 +393,10 @@
       "tier": "Budget",
       "path": ".agents/skills/tech-writer/SKILL.md",
       "triggers": [
-        "writer",
-        "penulis",
-        "readme",
-        "documentation",
-        "dokumentasi",
-        "tutorial",
-        "instruction",
-        "manual",
-        "guide"
+        "developer documentation",
+        "readme generation",
+        "changelog writing",
+        "tutorial guide"
       ],
       "tags": [
         "utility",
@@ -504,16 +410,10 @@
       "tier": "Budget",
       "path": ".agents/skills/ux-designer/SKILL.md",
       "triggers": [
-        "ux",
-        "user experience",
-        "pengalaman pengguna",
-        "psychology",
-        "design-thinking",
-        "nudge",
-        "behavioral",
-        "friction",
-        "onboarding",
-        "retention"
+        "behavioral psychology",
+        "nudge design",
+        "user retention cadence",
+        "onboarding friction"
       ],
       "tags": [
         "ui",

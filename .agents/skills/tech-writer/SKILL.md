@@ -1,11 +1,13 @@
 ---
 name: tech-writer
 description: Expert technical writer specializing in developer documentation, READMEs, and tutorials for Flutter projects.
-triggers: ["writer", "penulis", "readme", "documentation", "dokumentasi", "tutorial", "instruction", "manual", "guide"]
+triggers: ["developer documentation", "readme generation", "changelog writing", "tutorial guide"]
 tags: ["utility", "documentation"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Agentic Tooling.
 Recommended_Tier: Budget
+scope_discriminator: "ONLY for formatting technical documentation, reading manuals, and creating changelogs."
+portable: true
 ---
 
 # Technical Writer (Tier-S)

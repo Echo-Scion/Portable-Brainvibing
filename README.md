@@ -13,8 +13,9 @@
 
 ## 🎨 1. Philosophy: Brain meets Vibe
 This system operates at the intersection of **Human Intuition (The Vibe)** and **Machine Precision (The Brain)**.
-* **Decoupled Intelligence**: All AI logic, rules, and skills reside within the `.agents` directory. This intelligence is portable—move this folder to any new project, and your AI assistant immediately understands your technical standards.
-* **Surgical Execution**: The AI doesn't just suggest; it executes precise code changes using documented protocols, minimizing "hallucination" through strong logical anchors.
+* **Decoupled Intelligence**: All AI logic, rules, and skills reside within the `.agents` directory. This intelligence is portable.
+* **Proactive Consultant**: The AI handles the "Heavy Lifting" of documentation and architecture. It doesn't just wait for prompts; it actively expands on your ideas, identifies risks, and proposes 10-15 industry-standard features during initialization (Knowledge-Bridge).
+* **Surgical Engineering**: Every expansion is precise. Even a "Lean" project evolves into a full "Startup" structure surgically, file-by-file, as new data is provided (U2S Mapping).
 
 ## 🏗️ 2. Architecture: Plug & Play Intelligence
 Utilizing a **Single-Tree / Multi-Tier** architecture optimized for token efficiency (L0-L2 Ingestion).
@@ -43,6 +44,8 @@ This infrastructure operates on high-precision mechanical anchors that ensure ef
 | **🕸️ Knowledge Graph** | Merkle-tree based dependency mapping | O(log n) keyword discovery via an inverted system index. |
 | **🎯 Atomic Tasking** | Single IN_PROGRESS constraint (GSD Logic) | Prevents deviation by forcing the AI to resolve one task at a time. |
 | **🦾 Integrated "Hands"** | Direct Model Context Protocol (MCP) execution | Grants the AI direct access to DTD, DBs, and repositories. |
+| **🔪 Surgical Expansion** | Lean-to-Startup evolution (U2S Logic) | Automatically promotes Lean projects to a granular 82-file baseline. |
+| **🕵️ Smart Intake** | Passive environment detection (No Flags) | AI scans for code/blueprints to propose the best init path automatically. |
 | **🔍 Harmony Sentinel** | Mechanical structural integrity auditing | Prevents architectural drift through automated file validation. |
 
 ## 📖 5. Documentation: Machine-First vs. Human-Manual
@@ -57,9 +60,11 @@ We employ a **Split-Brain Documentation** strategy for maximum communication eff
 
 * **Quota Management**: If your **Antigravity** system quota is exhausted, install the **Gemini CLI Extension** to access a separate, independent quota for uninterrupted development.
 
-* **Languange**: In your **Antigravity** chat, ask to change Indonesian language to your language in config.json and SKILLS for better trigger. 
- > *"Change Indonesian triggers in config.json and SKILLS to <add-your-language>"*
+* **Language Customization**: In your **Antigravity** chat, ask to change Indonesian language to your language in `catalog.json` and SKILLS for better triggering. 
+ > *"Change Indonesian triggers in catalog.json and SKILLS to [add-your-language]"*
 leave the English alone, AI understand better in English.
+
+ > *"Run /wrap-up"*
 
 ---
 
@@ -67,20 +72,21 @@ leave the English alone, AI understand better in English.
 
 Follow these steps to activate the **Portable Brainvibing** infrastructure in any new or existing project:
 
-1. **Clone the Source**: Clone this repository to a local folder (e.g., `C:\AI\Brainvibing`).
+1. **Clone the Source**: Clone this repository to a local folder (e.g., `/path/to/portable-brainvibing`).
 2. **Target Your Project**: Open your AI Agent (Gemini CLI or Antigravity) in your target project directory.
 3. **Agentic Deployment**: Give the following command to your AI:
  > *"Read `.agents/DEPLOY_ME.md` from `[PathToSource]` and deploy the foundation here."*
-4. **Initialize the Brain**: Once the `.agents` folder is present, run the automated initialization:
+4. **Initialize the Brain**: Once the `.agents` folder is present, run the smart initialization:
  > `run /project-init`
- *(This will auto-populate context and trigger **Neural Sync** to build your local Knowledge Graph).*
+ 
+ *The AI will automatically scan your project. If it's a legacy codebase, it will propose a **Deep Audit**. If there's a blueprint, it will offer **Blueprint Ingestion**. You just need to follow the conversational guide.*
 5. **Neural Verification**: Verify that the AI recognizes its new skills and the graph is active by typing `@` in the chat. You should see skills like `@skill-ui-finish` indexed and ready with full dependency mapping.
 
 ---
 
 ## 🏷️ Version
-1.0.1
-"Agent-Driven Deployment & Sync"
+1.1.0
+"True Deep Audit & Tri-Pillar Patch"
 
 > **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, logic and principles are merging here and there, then 100% AI-generated. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*
 
@@ -95,6 +101,11 @@ Distributed under the MIT License. See [LICENSE](LICENSE).
 ---
 
 ## 🔄 Recent Changes
+
+### [1.1.0] - 2026-03-20
+### Changed
+- True Deep Audit: Resolved philosophical bipolarity, extracted 82-file SaaS mapping, and established strict Habitat Demarcation.
+
 
 ### [1.0.0] - 2026-03-19
 ### Changed

@@ -1,11 +1,13 @@
 ---
 name: skill-api-contract
 description: Backend Node.js API definition and safety layer. Expert in defining strict data contracts (Zod, OpenAPI) and generating defensive parsing logic.
-triggers: ["api", "contract", "kontrak", "zod", "openapi", "endpoint", "schema", "validation", "middleware", "hygiene"]
+triggers: ["zod schema", "openapi spec", "api defensive parsing", "endpoint contract"]
 tags: ["api", "backend"]
 version: "1.0.0"
 compatibility: Node.js + Zod / JSON Schema
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for generating Zod/OpenAPI schemas and defensive parsing logic."
+portable: true
 ---
 
 # API Contract Architect (Design & Validation)

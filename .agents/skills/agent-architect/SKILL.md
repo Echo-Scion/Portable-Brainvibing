@@ -1,11 +1,13 @@
 ---
 name: agent-architect
 description: Designer of robust autonomous AI agent loops, multi-agent collaboration, and state machine transitions.
-triggers: ["agent", "agen", "loop", "otonom", "autonomous", "system design", "state machine", "react loop", "guardrails"]
+scope_discriminator: "ONLY for designing autonomous AI agent loops and state machine transitions. Do NOT use for general project architecture."
+triggers: ["agent architecture", "multi-agent", "state machine", "react loop", "guardrails"]
 tags: ["ai", "architecture"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Premium
+portable: false
 ---
 
 # Agent Loop Architect (Tier-S)

@@ -1,11 +1,13 @@
 ---
 name: cost-optimizer
 description: Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.
-triggers: ["cost", "biaya", "billing", "tagihan", "hemat", "efficiency", "token-clipping", "routing", "finops", "autoscaling"]
+scope_discriminator: "ONLY for FinOps, autoscaling efficiency, and LLM token-clipping strategies."
+triggers: ["finops", "billing", "token-clipping", "cost efficiency", "autoscaling"]
 tags: ["business", "cloud"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Standard
+portable: true
 ---
 
 # Cost Optimization Strategist (Tier-S)

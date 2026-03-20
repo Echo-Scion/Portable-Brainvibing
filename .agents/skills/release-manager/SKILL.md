@@ -1,11 +1,13 @@
 ---
 name: release-manager
 description: Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.
-triggers: ["release", "deploy", "ci", "cd", "pipeline", "rilis", "production", "health check", "canary", "blue-green"]
+triggers: ["ci/cd pipeline", "production readiness", "canary release", "blue-green"]
 tags: ["devops", "release"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Agentic Tooling.
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for CI/CD pipelines, canary releases, and production deployment checklists."
+portable: true
 ---
 
 # Release Manager (Tier-S)

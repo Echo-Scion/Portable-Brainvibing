@@ -1,11 +1,13 @@
 ---
 name: ux-designer
 description: Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation.
-triggers: ["ux", "user experience", "pengalaman pengguna", "psychology", "design-thinking", "nudge", "behavioral", "friction", "onboarding", "retention"]
+triggers: ["behavioral psychology", "nudge design", "user retention cadence", "onboarding friction"]
 tags: ["ui", "ux"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Budget
+scope_discriminator: "ONLY for behavioral psychology nudges, user journeys, and UX wireframe logic."
+portable: true
 ---
 
 # Behavioral Nudge UX Specialist (Tier-S)

@@ -1,4 +1,4 @@
-# Canon: Core Foundation & Architectural Standards (Echoscion)
+# Canon: Core Foundation & Architectural Standards (Portable Brainvibing)
 
 ## 1. Overview
 This is the foundational canon for all projects. It defines the "Hukum Tata Negara" (Core Laws) that every AI agent must follow to ensure consistency, security, and scalability.

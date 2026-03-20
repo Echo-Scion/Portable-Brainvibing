@@ -7,18 +7,9 @@ from datetime import datetime
 # Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SOURCE_BASE = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-ROOT_BASE = os.path.abspath(os.path.join(SOURCE_BASE, "..")) # project root
-GRAPH_FILE = os.path.join(SOURCE_BASE, "knowledge_graph.json")
-VERSION_FILE = os.path.join(ROOT_BASE, "VERSION")
 
 # Categories to scan
 SCAN_DIRS = ["skills", "rules", "workflows", "canons", "templates"]
-
-def get_version():
-    if os.path.exists(VERSION_FILE):
-        with open(VERSION_FILE, 'r', encoding='utf-8') as f:
-            return f.read().strip()
-    return "0.0.0"
 
 def calculate_hash(file_path):
     hasher = hashlib.sha256()
@@ -50,14 +41,10 @@ def build_graph():
     # Load existing graph to check for changes (Merkle-style)
     old_graph = {}
     if os.path.exists(GRAPH_FILE):
-        try:
-            with open(GRAPH_FILE, 'r', encoding='utf-8') as f:
-                old_graph = json.load(f).get("nodes", {})
-        except Exception:
-            old_graph = {}
+        with open(GRAPH_FILE, 'r', encoding='utf-8') as f:
+            old_graph = json.load(f).get("nodes", {})
 
     graph = {
-        "version": get_version(),
         "generatedAt": datetime.now().isoformat() + "Z",
         "nodes": {},
         "inverted_index": {}

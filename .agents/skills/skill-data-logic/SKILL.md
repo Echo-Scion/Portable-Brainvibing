@@ -1,11 +1,13 @@
 ---
 name: skill-data-logic
 description: High-density skill for handling immutable data modeling (Freezed) and reactive state management (Riverpod 2.x).
-triggers: ["data", "logic", "freezed", "riverpod", "state", "notifier", "logika", "codegen", "serialization", "modeling"]
+triggers: ["freezed", "riverpod", "reactive state", "immutable modeling"]
 tags: ["flutter", "logic"]
 version: "1.0.0"
 compatibility: Flutter 3.x + Riverpod 2.x + Freezed 2.x + Codegen
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for Freezed data models and Riverpod state management in Flutter."
+portable: true
 ---
 
 # Data & Logic Architect (Riverpod + Freezed)

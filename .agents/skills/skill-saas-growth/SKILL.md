@@ -1,11 +1,13 @@
 ---
 name: skill-saas-growth
 description: Expert SaaS growth consultant specialized in Viral Marketing (TikTok/X/Reddit), ASO, Investor Pitching, and Technical DevRel Blog writing.
-triggers: ["marketing", "pemasaran", "growth", "pertumbuhan", "aso", "pitch", "investor", "blog", "devrel", "artikel", "seo", "hacker news", "content strategy", "viral", "tiktok", "twitter", "x", "thread", "utas", "reddit", "trojan horse"]
+triggers: ["aso", "investor pitch", "devrel blog", "viral marketing", "trojan horse"]
 tags: ["business", "marketing", "content"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Budget
+scope_discriminator: "ONLY for marketing strategies, ASO, pitches, and technical DevRel content."
+portable: true
 ---
 
 # SaaS Growth Engine (Viral + DevRel + Pitch)

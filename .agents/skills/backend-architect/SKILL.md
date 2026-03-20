@@ -1,11 +1,13 @@
 ---
 name: backend-architect
 description: Extracts enterprise architecture patterns (MVC, Repository, Service Layer) for resilient Node.js/Supabase backends.
-triggers: ["backend", "api", "supabase", "database", "node", "server", "architecture", "mvc", "repository", "service layer", "dto", "transaction"]
+scope_discriminator: "ONLY for structural design and pattern scaffolding (MVC, Repository) of backends. Do NOT use for performance tuning or bug fixing."
+triggers: ["backend architecture", "mvc", "repository pattern", "service layer", "dto"]
 tags: ["backend", "architecture"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Premium
+portable: true
 ---
 
 # Universal Backend Architecture Patterns (Tier-S)

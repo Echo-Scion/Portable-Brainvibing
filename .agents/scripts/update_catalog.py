@@ -4,19 +4,12 @@ import re
 from datetime import datetime
 
 # Configuration
+# Detect the root of the .agents directory based on the script's location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SOURCE_BASE = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-ROOT_BASE = os.path.abspath(os.path.join(SOURCE_BASE, "..")) # project root
 SKILLS_DIR = os.path.join(SOURCE_BASE, "skills")
 CATALOG_FILE = os.path.join(SOURCE_BASE, "catalog.json")
 WORKSPACE_MAP = os.path.join(SOURCE_BASE, "workspace_map.md")
-VERSION_FILE = os.path.join(ROOT_BASE, "VERSION")
-
-def get_version():
-    if os.path.exists(VERSION_FILE):
-        with open(VERSION_FILE, 'r', encoding='utf-8') as f:
-            return f.read().strip()
-    return "0.0.0"
 
 def extract_metadata(skill_md_path):
     """
@@ -159,7 +152,6 @@ def main():
         skills_list.append(skill_entry)
 
     catalog_data = {
-        "version": get_version(),
         "generatedAt": datetime.now().isoformat() + "Z",
         "total": len(skills_list),
         "skills": skills_list

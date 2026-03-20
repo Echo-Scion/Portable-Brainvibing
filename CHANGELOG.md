@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-03-20
+### Changed
+- True Deep Audit: Resolved philosophical bipolarity, extracted 82-file SaaS mapping, and established strict Habitat Demarcation.
+
+
+## [1.0.2] - 2026-03-20
+### Changed
+- Fix sync paths and update V1.1.0
+
+
+
+## [1.0.2] - 2026-03-20
+### Added
+- **Smart Init (No Flags)**: Redesigned `/project-init` to use passive environment detection instead of technical flags.
+- **Surgical Context Expansion**: Protocol to "promote" Lean projects to Startup-grade granular structure file-by-file.
+- **U2S Mapping**: Unstructured-to-Surgical mapping for info-dumps and monolithic blueprints during init and app building.
+- **Legacy Ingestion**: Reverse-Engineered mapping for existing half-finished projects.
+- **Consultant Role**: Reframed AI behavior from "Scribe" to "Senior Consultant" via Canon 04 and Interaction Protocols.
+
 ## [1.0.1] - 2026-03-19
 ### Changed
 - Surgical deploy and workspace map safety update

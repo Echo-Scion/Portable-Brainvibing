@@ -1,11 +1,13 @@
 ---
 name: cache-optimizer
 description: Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.
-triggers: ["cache", "koding", "redis", "cdn", "etag", "content hashing", "invalidation", "hit ratio", "thundering herd"]
+scope_discriminator: "ONLY for cache invalidation, Redis TTL, CDNs, and eviction strategies. NOT for general DB tuning."
+triggers: ["redis", "cdn", "etag", "content hashing", "cache invalidation", "hit ratio", "thundering herd"]
 tags: ["performance", "infrastructure"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Standard
+portable: true
 ---
 
 # Content Hash & Cache Architect (Tier-S)

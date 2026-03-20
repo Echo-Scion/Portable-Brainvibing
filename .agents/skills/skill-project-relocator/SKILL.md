@@ -1,11 +1,13 @@
 ---
 name: skill-project-relocator
 description: Specialist in safely moving projects, particularly Flutter/Dart, with a focus on path integrity and deep cache clearing.
-triggers: ["relocator", "pindah", "move", "path", "cache-clearing", "rename", "symlink", "junction", "broken link"]
+triggers: ["path integrity", "deep cache clear", "symlink junction"]
 tags: ["utility", "maintenance"]
 version: "1.0.0"
 compatibility: Flutter/Dart (Windows/Unix)
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for moving/symlinking projects and deep cache clearing."
+portable: false
 ---
 
 # Project Relocator (Tier-S)

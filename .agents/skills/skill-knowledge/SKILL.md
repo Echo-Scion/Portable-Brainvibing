@@ -1,11 +1,13 @@
 ---
 name: skill-knowledge
 description: High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion.
-triggers: ["knowledge", "pengetahuan", "research", "search", "pub.dev", "github", "library", "documentation", "ingestion", "interrogation"]
+triggers: ["pub.dev research", "github ingestion", "library documentation scan"]
 tags: ["utility", "research"]
 version: "1.0.0"
 compatibility: Universal Documentation Ingestion
 Recommended_Tier: Budget
+scope_discriminator: "ONLY for rapid ingestion of external documentation, pub.dev, and GitHub research."
+portable: true
 ---
 
 # Knowledge Expert (Research & Documentation)

@@ -1,11 +1,13 @@
 ---
 name: skill-qa-engineer
 description: QA Automation specialist focusing on multi-sequence user journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).
-triggers: ["test", "qa", "testing", "widget-test", "integration", "pengujian", "load test", "stress test", "k6", "artillery", "benchmarking", "throughput", "latency", "performance"]
+triggers: ["k6 load test", "artillery stress test", "widget test coverage", "e2e journey"]
 tags: ["qa", "testing", "performance"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for load testing (K6/Artillery) and E2E widget test automation."
+portable: true
 ---
 
 # Quality & Performance Engineering (Tier-S)

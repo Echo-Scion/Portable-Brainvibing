@@ -1,5 +1,5 @@
 ---
-description: Core context hierarchy protocol defining how rules, skills, and memory resolve across the MainSystem.
+description: Core context hierarchy protocol defining how rules, skills, and memory resolve across the workspace.
 activation: always_on
 ---
 # Rule: Plug & Play Context Hierarchy
@@ -12,7 +12,7 @@ The context is resolved in two simple layers:
 
 | Level | Name | Scope | Location |
 | :--- | :--- | :--- | :--- |
-| **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/foundation/` |
+| **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/common/` |
 | **1** | **Project Local** | Project-specific rules & memory. | `.agents/rules/local/` & `context/` |
 
 ## 2. Plug & Play Residency (Physical)
@@ -32,9 +32,9 @@ Beyond rules and behaviors, this system uses **Canons** (`canons/`) to store the
 - **Lazy-Loading**: The agent MUST lazy-load relevant `.md` files from the `canons/` directory based on the task domain to minimize context usage while maintaining high fidelity to standards.
 
 ## 4. Override Logic
-- **Local Overrides Global**: If a rule exists in `.agents/rules/local/`, it automatically overrides the same rule in `.agents/rules/foundation/`.
+- **Local Overrides Global**: If a rule exists in `.agents/rules/local/`, it automatically overrides the same rule in `.agents/rules/common/`.
 - **Skill Priority**: The agent always checks for a local version of a skill in `.agents/skills/` before execution.
 
-## 4. Initialization
+## 5. Initialization
 - **Active Discovery**: At start, the agent checks for the `.agents/` folder in the project root.
 - **Sync Status**: The agent verifies if the foundation metadata (`catalog.json`) matches the local skill files.

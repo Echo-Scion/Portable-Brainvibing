@@ -1,11 +1,13 @@
 ---
 name: flutter-debugger
 description: Deep integration with dart-mcp-server for live widget inspection, runtime error analysis, and hot reloading.
-triggers: ["debug", "error", "flutter", "reload", "restart", "inspect", "widget tree", "dtd", "runtime", "overflow", "crash"]
+triggers: ["flutter debug", "widget tree", "dtd", "render overflow", "dart runtime crash"]
 tags: ["flutter", "debugger"]
 version: "1.0.0"
 compatibility: dart-mcp-server + Flutter DevTools
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for Flutter/Dart runtime errors, widget tree inspection, and dart-mcp-server interactions."
+portable: true
 ---
 
 # Flutter Debugger (Tier-S)

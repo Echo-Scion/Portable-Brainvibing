@@ -3,7 +3,8 @@
 > Generation Date: {{date}}
 
 > [!TIP]
-> **NO FLUFF POLICY**: Prioritize technical density, raw data, and architectural insights. Avoid conversational preambles or definitions of basic terms.
+> **NO FLUFF POLICY**: Prioritize technical density, raw data, and architectural insights.
+> **ZERO N/A POLICY**: If data is missing or a user skipped a question, DO NOT leave slots empty or write "N/A". Use expert domain knowledge to provide "Technical Predictions" or "Industry-Standard Defaults".
 
 ## Domain Overview
 {{domain_overview}}

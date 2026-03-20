@@ -1,6 +1,6 @@
 ---
 description: Rules for using Context7 economically and managing token consumption.
-activation: always_on
+activation: on_demand
 ---
 # Context7 Economical Usage
 

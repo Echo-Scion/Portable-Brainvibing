@@ -1,11 +1,13 @@
 ---
 name: skill-db-expert
 description: Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security (RLS).
-triggers: ["database", "db", "sql", "migration", "migrasi", "rls", "supabase", "schema", "postgres", "indexing", "performance"]
+triggers: ["sql schema", "zero-downtime migration", "postgres rls", "db indexing"]
 tags: ["database", "backend"]
 version: "1.0.0"
 compatibility: Postgres + Supabase
 Recommended_Tier: Standard
+scope_discriminator: "ONLY for 3NF SQL schema design, Supabase RLS policies, and zero-downtime migrations."
+portable: true
 ---
 
 # Database Expert (Architect & Migrator)

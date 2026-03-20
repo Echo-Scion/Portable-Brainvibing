@@ -1,33 +1,21 @@
 ---
-description: Analytical standards for code review, ensuring structural integrity and proper documentation.
+description: Standards for analytical rigor and evidence-based decision making.
 activation: always_on
 ---
-# Analytical Standards (Experimental Engineering)
+# Analytical Standards
 
-Logical and analytical standards for code review, ensuring structural integrity and proper documentation.
+## 1. Evidence-Based Decisions
+- All architectural recommendations MUST cite specific file paths or code patterns as evidence.
+- Do not recommend patterns that contradict what already exists in the codebase.
 
-## 1. Principles of Lean Analysis
-- **Trajectory over Deliberation**: Do not explain "what you are doing" for simple tasks. The code change or technical proposal is the answer.
-- **Trajectory Logging**: Briefly state the resolution path (e.g., "Scanning canons -> UI patterns") instead of narrative deliberation.
-- **Fact-Based Confidence**: If the answer is already in memory/initial context, output it immediately. Avoid artificial deliberation if technical data is already available.
+## 2. Structural Critique (The 5 Questions)
+When auditing or designing a system, apply these lenses:
+1. **Why does this exist?** (Root cause, not surface observation)
+2. **Is this the correct abstraction?** (Is this layer necessary?)
+3. **What breaks if this is removed?** (Coupling analysis)
+4. **What adversary could exploit this?** (Threat modeling)
+5. **Does intent match behavior?** (Verify the system does what the docs claim)
 
-## 2. Code Review Practices
-- Prioritize logical correctness, security, and efficiency.
-- Ensure core logic is covered by unit tests or verification scripts.
-- Maintain high information density in every change log.
-- **Surgical Edits**: Only modify the broken or requested parts. Respect existing project code style unless explicit refactoring is requested.
-
-## 3. Logical Evaluation
-- ALWAYS check for edge cases. Identify potential failures BEFORE writing success logic.
-- Use guard clauses to reduce nesting and make code more readable for future AI (or human) passes.
-- Avoid side effects in pure functions. Prioritize explicit types and return signatures.
-- **Boundary Fortification (Defense-in-Depth)**: When fixing data integrity bugs, do not fix just one point. You MUST add *Guard Clauses* or validation at every system "boundary" the data passes through:
-    1. **Entry Gate**: Validation on data entry (e.g., API Response parsing).
-    2. **Storage Gate**: Validation in State Manager/Repository before storage.
-    3. **Render Gate**: Validation at the Widget/UI level before display.
-
-## 4. Structural Integrity & Documentation
-- **Single Responsibility**: Ensure files remain focused on one primary responsibility (SRP).
-- **Internal Referencing**: Use internal URI paths (e.g., `ref: .agents/rules/flutter/standards.md`) for precise context referencing in docs.
-- **Living Knowledge**: Prioritize docstrings (in-code comments) for minor feature documentation over separate `.md` files that risk becoming stale.
-- Document complex logic with clear comments and ensure documentation stays in sync with code changes.
+## 3. Anti-Halucination Guard
+- Never invent file contents. If a file has not been read via `view_file`, assume its contents are unknown.
+- Never assume library APIs. If unsure, use Context7 or pub.dev search first.

@@ -1,11 +1,13 @@
 ---
 name: skill-ui-finish
 description: Expert skill for premium "Liquid Glass" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.
-triggers: ["ui", "ui-finish", "liquid-glass", "animation", "animasi", "premium", "glassmorphism", "visual design", "desain visual", "image prompt", "video prompt", "inclusive design", "authenticity", "representation"]
+triggers: ["liquid glass", "glassmorphism", "flutter micro-interactions", "inclusive design visual"]
 tags: ["ui", "flutter", "design"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Budget
+scope_discriminator: "ONLY for advanced UI styling (glassmorphism, micro-interactions) and visual design prompts."
+portable: true
 ---
 
 # UI & Visual Design Architect (Liquid Glass + Inclusive)

@@ -1,11 +1,13 @@
 ---
 name: skill-agent-evolution
 description: Self-improving agentic infrastructure engine that promotes patterns into permanent Rules, Skills, or Workflows.
-triggers: ["evolution", "evolusi", "self-improve", "pattern", "pola", "belajar", "harvest", "entropy", "intelligence"]
+scope_discriminator: "ONLY for promoting behaviors into permanent Rules or Skills within the .agents ecosystem."
+triggers: ["agent evolution", "pattern promotion", "habit harvest"]
 tags: ["ai", "workflow"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Standard
+portable: false
 ---
 
 # Agent Evolution Engine (Tier-S)

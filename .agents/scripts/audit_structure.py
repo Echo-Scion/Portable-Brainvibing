@@ -10,6 +10,7 @@ WORKSPACE_MAP = AGENTS_ROOT / "workspace_map.md"
 FOUNDATION_PATH_MARKER = AGENTS_ROOT / ".foundation_path"
 # Made this relative for universal use - looking at the file in the .agents folder
 AGENTS_MD = AGENTS_ROOT / "AGENTS.md" 
+EXCLUDE_DIRS = ['__pycache__']
 
 def get_foundation_link():
     """Reads the foundation path if it exists."""

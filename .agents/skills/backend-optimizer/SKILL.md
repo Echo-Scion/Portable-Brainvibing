@@ -1,11 +1,13 @@
 ---
 name: backend-optimizer
 description: Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.
-triggers: ["optimasi", "optimize", "perf", "performa", "leak", "bottleneck", "event loop", "garbage collector", "v8", "heap"]
+scope_discriminator: "ONLY for Node.js performance tuning, memory leaks, and V8 engine optimizations. NOT for adding new features."
+triggers: ["backend performance", "memory leak", "event loop", "garbage collector", "v8 heap"]
 tags: ["performance", "backend"]
 version: "1.0.0"
 compatibility: Optimized for Antigravity Tier-S standard.
 Recommended_Tier: Standard
+portable: true
 ---
 
 # Backend Performance Tuner (Tier-S)
