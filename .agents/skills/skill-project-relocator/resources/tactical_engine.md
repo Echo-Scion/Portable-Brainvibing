@@ -5,7 +5,9 @@
 - Delete ephemeral/absolute-path folders:
   - `.dart_tool/`, `.idea/`, `build/`.
   - `ios/.symlinks/` (Highly sensitive).
-  - `pubspec.lock`.
+  - `android/.gradle/` (Prevents daemon path mismatch across drives).
+  - `windows/flutter/ephemeral/` (Clears Windows build artifacts).
+  - `pubspec.lock` (Forces fresh path resolution for dependencies).
 
 ## 🔗 Path & Symlink Restoration
 - Reconnect broken Junctions (Windows) or Symlinks (Unix).

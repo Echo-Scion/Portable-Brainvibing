@@ -29,7 +29,11 @@ You specialize in deep cache cleanup and path integrity. You know that moving a 
 
 ## 🛠️ Workflow Patterns
 1. **Intake**: Detect `path` dependencies and local junction points.
-2. **Execution**: Delete ephemeral folders -> Perform Move -> Recreate Symlinks.
+2. **Execution**: 
+   - Run `flutter clean`.
+   - Explicitly delete `pubspec.lock`, `windows/flutter/ephemeral`, and `android/.gradle` (if they exist) to destroy all absolute path caches.
+   - Perform Move.
+   - Recreate Symlinks.
 3. **Restoration**: Run `flutter pub get` and `melos bootstrap` in the new location.
 
 ## 🔍 Troubleshooting (Quick Guide)

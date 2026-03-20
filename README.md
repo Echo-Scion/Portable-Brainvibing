@@ -85,7 +85,7 @@ Follow these steps to activate the **Portable Brainvibing** infrastructure in an
 ---
 
 ## 🏷️ Version
-1.1.0
+1.1.1
 "True Deep Audit & Tri-Pillar Patch"
 
 > **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, logic and principles are merging here and there, then 100% AI-generated. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*
