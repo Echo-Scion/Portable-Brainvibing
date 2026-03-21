@@ -29,4 +29,48 @@ This file is a **foundational mandate** and takes absolute precedence over all o
 - **Rule:** After any change to `skills/`, `rules/`, or `canons/`, the agent MUST run `python scripts/build_graph.py`.
 
 ---
-*Protocol Version: 1.1.2 (Monorepo, JIT SaaS, & Absolute English Export)*
+
+## NON-NEGOTIABLE ACTIVATIONS ⚡
+
+These rules are ALWAYS active and CANNOT be bypassed. They are embedded here because they are the most commonly violated rules.
+
+### Pre-Execution Firewall (Binary Oratory)
+Before ANY task that writes, deletes, or deploys, the agent MUST declare:
+1. **[TIER]**: `BUDGET` / `STANDARD` / `PREMIUM`
+2. **[DO]** / **[DONT]**: Primary action + hard limits
+3. **[CONFIRM]**: Wait for explicit user `[DO: YES]` before proceeding
+
+### Absolute DONT List
+- `[DONT]` Delete production databases or their contents.
+- `[DONT]` Commit secrets, API keys, or credentials to any file.
+- `[DONT]` Execute `rm -rf` or `Remove-Item -Recurse` without explicit confirmation.
+- `[DONT]` Modify `GEMINI.md` or `rules/common/` without a Binary Oratory pre-flight.
+
+### Anti-Hallucination
+- Never invent file contents. If not read via `view_file`, assume contents are unknown.
+- Never assume library APIs. Use Context7 or pub.dev first.
+
+### Circuit Breaker
+- If any tool call fails **3 times consecutively**, ABORT and call `notify_user`.
+
+---
+
+## SKILL ROUTING TABLE 🎯
+
+> Consult `skills/_index.md` for the full routing table. Quick reference below:
+
+| Task involves... | Invoke skill |
+| :--- | :--- |
+| Architecture, blueprints, PRD, system design | `project-architect` |
+| AI agent loops, multi-agent, state machines | `agent-architect` |
+| Flutter widget bug, layout, hot reload, dart inspector | `flutter-debugger` |
+| Database schema, SQL migration, Supabase RLS | `skill-db-expert` |
+| API endpoint definition, data contracts | `skill-api-contract` |
+| Flutter UI polish, Liquid Glass, micro-interactions | `skill-ui-finish` |
+| Security audit, threat modeling, secure storage | `security-expert` |
+| Node.js memory leaks, backend bottlenecks | `backend-optimizer` |
+| CI/CD, deploy, production readiness | `release-manager` |
+| README, docs, tutorials writing | `tech-writer` |
+
+---
+*Protocol Version: 1.2.0 (Consolidated Rules, Skill Routing, Injection-First)*

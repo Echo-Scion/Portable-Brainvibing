@@ -20,25 +20,11 @@ A high-level topography of the workspace for AI navigation and context initializ
 
 ### Rules (`rules/`)
 <!-- RULES_START -->
-  - **Common**
-    - `common/agent_protocols.md` — Core agent behavioral protocols, interaction standards, and operational constraints.
-    - `common/analytical_standards.md` — Standards for analytical rigor and evidence-based decision making.
-    - `common/connector_protocols.md` — Protocols for API communication, data integrity, and inter-service interaction.
-    - `common/context7_economical_usage.md` — Rules for using Context7 economically and managing token consumption.
-    - `common/context_hierarchy.md` — Core context hierarchy protocol defining how rules, skills, and memory resolve across the workspace.
-    - `common/context_naming_policy.md` — Mandatory naming policy for context files to ensure architectural consistency.
-    - `common/git-workflow.md` — Standardized Git workflow, commit messages, and branching strategy.
-    - `common/interaction_protocols.md` — Standards for how the agent communicates with the user.
-    - `common/model_tier_protocol.md` — Protocol for matching task complexity to the correct LLM model tier.
-    - `common/performance.md` — Guidelines for optimizing application performance and context token usage.
-    - `common/reasoning_protocols.md` — Mandated reasoning depth and sequential thinking protocol per task tier.
-    - `common/security.md` — Security guardrails, negative boundaries, and prompt injection defenses.
-  - **Flutter**
-    - `flutter/dart-style.md` — Dart and Flutter style guide, formatting, and naming conventions.
-    - `flutter/flutter_hybrid_architecture.md` — Flutter Hybrid Architecture guidelines regarding modularity and state management.
-    - `flutter/flutter_standards.md` — Flutter Development Standards for widget composition, state, and performance.
-  - **Web**
-    - `web/web_standards.md` — Web Development Standards for frontend excellence, API safety, and Node.js logic.
+- `00_always_on_core.md` — Core agent behavioral protocols, interaction standards, and operational constraints.
+- `01_always_on_context.md` — Standards for analytical rigor and evidence-based decision making.
+- `02_on_demand.md` — Standardized Git workflow, commit messages, and branching strategy.
+- `03_flutter.md` — Dart and Flutter style guide, formatting, and naming conventions.
+- `04_web.md` — Web Development Standards for frontend excellence, API safety, and Node.js logic.
 <!-- RULES_END -->
 
 ### Skills (`skills/`)
@@ -90,12 +76,9 @@ A high-level topography of the workspace for AI navigation and context initializ
     - `global/04_documentation_and_saas_standards.md` — **Node Identifier**: foundation.standards.docs
     - `global/core-architecture.md` — This is the foundational canon for all projects. It defines the "Hukum Tata Negara" (Core Laws) that...
   - **Local**
-  - **Local/Auth**
-    - `local/auth/canon.md` — Standardized approach for authentication and authorization within the project.
-  - **Local/Notifications**
-    - `local/notifications/canon.md` — Standardized protocols for handling push, in-app, and email notifications.
-  - **Local/Ui-Patterns**
-    - `local/ui-patterns/canon.md` — Standardized design systems and interaction patterns for the application.
+    - `local/auth.md` — Standardized approach for authentication and authorization within the project.
+    - `local/notifications.md` — Standardized protocols for handling push, in-app, and email notifications.
+    - `local/ui_patterns.md` — Standardized design systems and interaction patterns for the application.
 <!-- CANONS_END -->
 
 ### Workflows (`workflows/`)
