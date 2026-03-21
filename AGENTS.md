@@ -157,4 +157,8 @@ Finally, you seal the project by transitioning from a "codebase" to a profession
 - Added Session Handoff and Atomic Tasking workflows
 - Enhanced Protocol for surgical context management
 
-*(Full history in CHANGELOG.md)*
+### [0.9.0] - 2026-03-15
+### Added
+- Initial baseline
+- Standardized .agents structure for portability
+- Initial suite of 20+ specialized agent skills

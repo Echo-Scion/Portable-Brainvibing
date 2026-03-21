@@ -15,7 +15,6 @@
 ## 🏛️ Key Architectural Decisions
 
 | Decision | Rationale | Date |
-|---|---|---|
 | {{decision_1_title}} | {{decision_1_rationale}} | {{date}} |
 
 ---

@@ -1,20 +1,11 @@
 {
-  "generatedAt": "2026-03-20T12:50:59.627759Z",
-  "total": 25,
+  "generatedAt": "2026-03-21T12:40:17.875335Z",
+  "total": 22,
   "skills": [
     {
       "id": "agent-architect",
-      "name": "agent-architect",
       "description": "Designer of robust autonomous AI agent loops, multi-agent collaboration, and state machine transitions.",
       "tier": "Premium",
-      "path": ".agents/skills/agent-architect/SKILL.md",
-      "triggers": [
-        "agent architecture",
-        "multi-agent",
-        "state machine",
-        "react loop",
-        "guardrails"
-      ],
       "tags": [
         "ai",
         "architecture"
@@ -22,17 +13,8 @@
     },
     {
       "id": "backend-architect",
-      "name": "backend-architect",
       "description": "Extracts enterprise architecture patterns (MVC, Repository, Service Layer) for resilient Node.js/Supabase backends.",
       "tier": "Premium",
-      "path": ".agents/skills/backend-architect/SKILL.md",
-      "triggers": [
-        "backend architecture",
-        "mvc",
-        "repository pattern",
-        "service layer",
-        "dto"
-      ],
       "tags": [
         "backend",
         "architecture"
@@ -40,17 +22,8 @@
     },
     {
       "id": "backend-optimizer",
-      "name": "backend-optimizer",
       "description": "Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.",
       "tier": "Standard",
-      "path": ".agents/skills/backend-optimizer/SKILL.md",
-      "triggers": [
-        "backend performance",
-        "memory leak",
-        "event loop",
-        "garbage collector",
-        "v8 heap"
-      ],
       "tags": [
         "performance",
         "backend"
@@ -58,19 +31,8 @@
     },
     {
       "id": "cache-optimizer",
-      "name": "cache-optimizer",
       "description": "Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.",
       "tier": "Standard",
-      "path": ".agents/skills/cache-optimizer/SKILL.md",
-      "triggers": [
-        "redis",
-        "cdn",
-        "etag",
-        "content hashing",
-        "cache invalidation",
-        "hit ratio",
-        "thundering herd"
-      ],
       "tags": [
         "performance",
         "infrastructure"
@@ -78,16 +40,8 @@
     },
     {
       "id": "context-manager",
-      "name": "context-manager",
       "description": "Integrated protocol for zero-waste codebase navigation and deep symbolic mapping.",
       "tier": "Standard",
-      "path": ".agents/skills/context-manager/SKILL.md",
-      "triggers": [
-        "context window",
-        "zero-waste",
-        "symbolic mapping",
-        "workspace scan"
-      ],
       "tags": [
         "workflow",
         "utility"
@@ -95,45 +49,17 @@
     },
     {
       "id": "cost-optimizer",
-      "name": "cost-optimizer",
       "description": "Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.",
       "tier": "Standard",
-      "path": ".agents/skills/cost-optimizer/SKILL.md",
-      "triggers": [
-        "finops",
-        "billing",
-        "token-clipping",
-        "cost efficiency",
-        "autoscaling"
-      ],
       "tags": [
         "business",
         "cloud"
       ]
     },
     {
-      "description": "Orchestrator of codebase modernization. Identifies, scopes, and safely executes the removal of deprecated libraries, dead code, and massive refactors. Do NOT use for writing new feature functionalities or blank slate design.",
-      "tier": "Premium",
-      "triggers": [
-        "tech debt",
-        "deprecated",
-        "dead code",
-        "massive refactor"
-      ],
-      "tags": []
-    },
-    {
       "id": "eval-engineer",
-      "name": "eval-engineer",
       "description": "Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.",
       "tier": "Standard",
-      "path": ".agents/skills/eval-engineer/SKILL.md",
-      "triggers": [
-        "llm evaluation",
-        "prompt regression",
-        "golden dataset",
-        "mlops"
-      ],
       "tags": [
         "ai",
         "qa"
@@ -141,17 +67,8 @@
     },
     {
       "id": "flutter-debugger",
-      "name": "flutter-debugger",
       "description": "Deep integration with dart-mcp-server for live widget inspection, runtime error analysis, and hot reloading.",
       "tier": "Standard",
-      "path": ".agents/skills/flutter-debugger/SKILL.md",
-      "triggers": [
-        "flutter debug",
-        "widget tree",
-        "dtd",
-        "render overflow",
-        "dart runtime crash"
-      ],
       "tags": [
         "flutter",
         "debugger"
@@ -159,16 +76,8 @@
     },
     {
       "id": "project-architect",
-      "name": "project-architect",
       "description": "\"The Architect\" — Product Requirements Synthesis, Structural Logic, and Sprint Prioritization (Agile/Scrum). Use for blueprinting and managing developer velocity.",
       "tier": "Premium",
-      "path": ".agents/skills/project-architect/SKILL.md",
-      "triggers": [
-        "prd synthesis",
-        "sprint planning",
-        "agile backlog",
-        "scrum velocity"
-      ],
       "tags": [
         "architecture",
         "planning",
@@ -177,16 +86,8 @@
     },
     {
       "id": "release-manager",
-      "name": "release-manager",
       "description": "Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.",
       "tier": "Standard",
-      "path": ".agents/skills/release-manager/SKILL.md",
-      "triggers": [
-        "ci/cd pipeline",
-        "production readiness",
-        "canary release",
-        "blue-green"
-      ],
       "tags": [
         "devops",
         "release"
@@ -194,29 +95,14 @@
     },
     {
       "id": "security-expert",
-      "name": "security-expert",
       "description": "Expert application security engineer specializing in threat modeling, secure storage, and API security for Flutter applications. Use when asked to \"review security\", \"store sensitive data\", or \"threat model\". Do NOT use for general feature logic.",
       "tier": "Premium",
-      "path": ".agents/skills/security-expert/SKILL.md",
-      "triggers": [
-        "threat modeling",
-        "secure storage",
-        "api security",
-        "penetration"
-      ],
       "tags": []
     },
     {
       "id": "skill-agent-evolution",
-      "name": "skill-agent-evolution",
       "description": "Self-improving agentic infrastructure engine that promotes patterns into permanent Rules, Skills, or Workflows.",
       "tier": "Standard",
-      "path": ".agents/skills/skill-agent-evolution/SKILL.md",
-      "triggers": [
-        "agent evolution",
-        "pattern promotion",
-        "habit harvest"
-      ],
       "tags": [
         "ai",
         "workflow"
@@ -224,16 +110,8 @@
     },
     {
       "id": "skill-api-contract",
-      "name": "skill-api-contract",
       "description": "Backend Node.js API definition and safety layer. Expert in defining strict data contracts (Zod, OpenAPI) and generating defensive parsing logic.",
       "tier": "Standard",
-      "path": ".agents/skills/skill-api-contract/SKILL.md",
-      "triggers": [
-        "zod schema",
-        "openapi spec",
-        "api defensive parsing",
-        "endpoint contract"
-      ],
       "tags": [
         "api",
         "backend"
@@ -241,16 +119,8 @@
     },
     {
       "id": "skill-data-logic",
-      "name": "skill-data-logic",
       "description": "High-density skill for handling immutable data modeling (Freezed) and reactive state management (Riverpod 2.x).",
       "tier": "Standard",
-      "path": ".agents/skills/skill-data-logic/SKILL.md",
-      "triggers": [
-        "freezed",
-        "riverpod",
-        "reactive state",
-        "immutable modeling"
-      ],
       "tags": [
         "flutter",
         "logic"
@@ -258,16 +128,8 @@
     },
     {
       "id": "skill-db-expert",
-      "name": "skill-db-expert",
       "description": "Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security (RLS).",
       "tier": "Standard",
-      "path": ".agents/skills/skill-db-expert/SKILL.md",
-      "triggers": [
-        "sql schema",
-        "zero-downtime migration",
-        "postgres rls",
-        "db indexing"
-      ],
       "tags": [
         "database",
         "backend"
@@ -275,15 +137,8 @@
     },
     {
       "id": "skill-knowledge",
-      "name": "skill-knowledge",
       "description": "High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion.",
       "tier": "Budget",
-      "path": ".agents/skills/skill-knowledge/SKILL.md",
-      "triggers": [
-        "pub.dev research",
-        "github ingestion",
-        "library documentation scan"
-      ],
       "tags": [
         "utility",
         "research"
@@ -291,15 +146,8 @@
     },
     {
       "id": "skill-project-relocator",
-      "name": "skill-project-relocator",
       "description": "Specialist in safely moving projects, particularly Flutter/Dart, with a focus on path integrity and deep cache clearing.",
       "tier": "Standard",
-      "path": ".agents/skills/skill-project-relocator/SKILL.md",
-      "triggers": [
-        "path integrity",
-        "deep cache clear",
-        "symlink junction"
-      ],
       "tags": [
         "utility",
         "maintenance"
@@ -307,16 +155,8 @@
     },
     {
       "id": "skill-qa-engineer",
-      "name": "skill-qa-engineer",
       "description": "QA Automation specialist focusing on multi-sequence user journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).",
       "tier": "Standard",
-      "path": ".agents/skills/skill-qa-engineer/SKILL.md",
-      "triggers": [
-        "k6 load test",
-        "artillery stress test",
-        "widget test coverage",
-        "e2e journey"
-      ],
       "tags": [
         "qa",
         "testing",
@@ -325,17 +165,8 @@
     },
     {
       "id": "skill-saas-growth",
-      "name": "skill-saas-growth",
       "description": "Expert SaaS growth consultant specialized in Viral Marketing (TikTok/X/Reddit), ASO, Investor Pitching, and Technical DevRel Blog writing.",
       "tier": "Budget",
-      "path": ".agents/skills/skill-saas-growth/SKILL.md",
-      "triggers": [
-        "aso",
-        "investor pitch",
-        "devrel blog",
-        "viral marketing",
-        "trojan horse"
-      ],
       "tags": [
         "business",
         "marketing",
@@ -343,43 +174,9 @@
       ]
     },
     {
-      "description": "Managing the agentic soul, project memory, and system-wide skill creation protocols.",
-      "tier": "Premium",
-      "triggers": [
-        "system-wide memory",
-        "agentic soul",
-        "infrastructure admin"
-      ],
-      "tags": [
-        "admin",
-        "workflow"
-      ]
-    },
-    {
-      "description": "Sentinel for structural integrity, security (secrets), logic drift, and architectural analysis.",
-      "tier": "Standard",
-      "triggers": [
-        "vibe-code check",
-        "secrets leak scan",
-        "structural drift audit"
-      ],
-      "tags": [
-        "audit",
-        "security"
-      ]
-    },
-    {
       "id": "skill-ui-finish",
-      "name": "skill-ui-finish",
       "description": "Expert skill for premium \"Liquid Glass\" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.",
       "tier": "Budget",
-      "path": ".agents/skills/skill-ui-finish/SKILL.md",
-      "triggers": [
-        "liquid glass",
-        "glassmorphism",
-        "flutter micro-interactions",
-        "inclusive design visual"
-      ],
       "tags": [
         "ui",
         "flutter",
@@ -388,16 +185,8 @@
     },
     {
       "id": "tech-writer",
-      "name": "tech-writer",
       "description": "Expert technical writer specializing in developer documentation, READMEs, and tutorials for Flutter projects.",
       "tier": "Budget",
-      "path": ".agents/skills/tech-writer/SKILL.md",
-      "triggers": [
-        "developer documentation",
-        "readme generation",
-        "changelog writing",
-        "tutorial guide"
-      ],
       "tags": [
         "utility",
         "documentation"
@@ -405,16 +194,8 @@
     },
     {
       "id": "ux-designer",
-      "name": "ux-designer",
       "description": "Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation.",
       "tier": "Budget",
-      "path": ".agents/skills/ux-designer/SKILL.md",
-      "triggers": [
-        "behavioral psychology",
-        "nudge design",
-        "user retention cadence",
-        "onboarding friction"
-      ],
       "tags": [
         "ui",
         "ux"

@@ -8,7 +8,6 @@
 
 ## ⚠️ Detailed Troubleshooting
 | Symptom | Root Cause | Fix / Recovery |
-|---|---|---|
 | Version mismatch | Stale LLM training data | Use `read_url_content` on official changelogs. |
 | Research generic | Domain not extracted | Re-read `BLUEPRINT.md` / `MEMORY.md` before searching. |
 | API "Unknown Symbol" | Pre-2.0 or experimental | Check "Stability" section of official docs. |

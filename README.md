@@ -86,7 +86,7 @@ Follow these steps to activate the **Portable Brainvibing** infrastructure in an
 ---
 
 ## 🏷️ Version
-1.1.2
+1.1.7
 "True Deep Audit & Tri-Pillar Patch"
 
 > **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, logic and principles are merging here and there, then 100% AI-generated. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*
@@ -115,4 +115,8 @@ Distributed under the MIT License. See [LICENSE](LICENSE).
 - Added Session Handoff and Atomic Tasking workflows
 - Enhanced Protocol for surgical context management
 
-*(Full history in CHANGELOG.md)*
+### [0.9.0] - 2026-03-15
+### Added
+- Initial baseline
+- Standardized .agents structure for portability
+- Initial suite of 20+ specialized agent skills

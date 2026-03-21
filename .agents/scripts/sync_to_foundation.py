@@ -159,7 +159,6 @@ def sync_upstream(project_root):
                 print(f"⚠️ Warning: Failed to update Knowledge Graph: {e}")
 
         # Trigger Catalog Update in Foundation
-        catalog_script = os.path.join(FOUNDATION_AGENTS, "scripts", "update_catalog.py")
         if os.path.exists(catalog_script):
             print("🔄 Updating Foundation Catalog...")
             try:

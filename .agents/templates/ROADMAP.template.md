@@ -15,7 +15,6 @@
 **Target**: {{phase_1_timeline}}
 
 | Feature | Priority | Status |
-|---|---|---|
 | {{feature_1}} | P0 | 🔴 Not Started |
 | {{feature_2}} | P0 | 🔴 Not Started |
 | {{feature_3}} | P1 | 🔴 Not Started |
@@ -27,7 +26,6 @@
 **Target**: {{phase_2_timeline}}
 
 | Feature | Priority | Status |
-|---|---|---|
 | {{feature_4}} | P1 | 🔴 Not Started |
 | {{feature_5}} | P2 | 🔴 Not Started |
 
@@ -37,7 +35,6 @@
 **Goal**: {{phase_3_goal}}
 
 | Feature | Priority | Status |
-|---|---|---|
 | {{feature_6}} | P2 | 🔴 Not Started |
 
 ---

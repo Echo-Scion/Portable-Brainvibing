@@ -8,7 +8,6 @@
 
 ## ⚠️ Detailed Troubleshooting
 | Error Symptom | Root Cause | Recovery / Solution |
-|---------------|------------|---------------------|
 | API bill spikes 1000% | Infinite agent loop retry | Implement global user rate limiters and max_iteration breakers. |
 | Cheap model failing | Routing logic too aggressive | Implement fallback logic to high-tier model on low confidence. |
 | High idle costs | Over-provisioned VMs | Migrate to auto-scaling containers (Cloud Run/Fargate). |

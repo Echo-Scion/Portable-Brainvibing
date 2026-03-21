@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.7] - 2026-03-21
+### Changed
+- Feat: 100% Automated Workspace Mapping (Rules, Workflows, Scripts, Canons)
+
+
+## [1.1.6] - 2026-03-21
+### Changed
+- Fix: Corrected BLACKLIST and hardened script mirroring
+
+
+## [1.1.5] - 2026-03-21
+### Changed
+- Audit: Manual cleanup of blacklisted scripts
+
+
+## [1.1.4] - 2026-03-21
+### Changed
+- Fix: Hardened script mirroring and explicit blacklist removal
+
+
+## [1.1.3] - 2026-03-21
+### Changed
+- Update Foundation: Harmonized workspace map and pruned portable exports
+
+
 ## [1.1.2] - 2026-03-20
 ### Changed
 - Implements Monorepo (Double Lean) hierarchy, JIT SaaS context expansion, and Absolute English linguistic integrity for international export.

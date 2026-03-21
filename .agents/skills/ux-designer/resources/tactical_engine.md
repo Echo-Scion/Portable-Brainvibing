@@ -13,7 +13,6 @@
 
 ## ⚠️ Detailed Troubleshooting
 | Error Symptom | Root Cause | Fix / Recovery |
-|---------------|------------|---------------------|
 | High opt-out rate | Overwhelming frequency | Personalize roundups; ask for weekly frequency. |
 | Form abandonment | Cognitive overload | Break into micro-steps; add celebration triggers. |
 | Low adoption | High friction starting points | Inject default-biases; provide off-ramps. |

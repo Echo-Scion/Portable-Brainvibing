@@ -13,7 +13,6 @@
 
 ## ⚠️ Debug Patterns
 | Symptom | Tool to Use | What to Look For |
-|---|---|---|
 | Widget missing | `get_widget_tree` | Parent issue, Opacity(0), wrong visibility. |
 | Layout overflow | `get_selected_widget` | RenderFlex overflow, missing Expanded. |
 | App crashes | `get_runtime_errors` | Null check or type cast stack traces. |
