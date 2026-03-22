@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-03-21T21:45:04.876902Z",
+  "generatedAt": "2026-03-22T18:48:59.546649Z",
   "total": 22,
   "skills": [
     {
       "id": "agent-architect",
-      "description": "Designer of robust autonomous AI agent loops, multi-agent collaboration, and state machine transitions.",
+      "description": "\"Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems.\"",
       "tier": "Premium",
       "tags": [
         "ai",
-        "architecture"
+        "architecture",
+        "ml",
+        "integration"
       ]
     },
     {
@@ -76,12 +78,13 @@
     },
     {
       "id": "project-architect",
-      "description": "\"The Architect\" — Product Requirements Synthesis, Structural Logic, and Sprint Prioritization (Agile/Scrum). Use for blueprinting and managing developer velocity.",
+      "description": "\"The Architect: Full-stack, Mobile Strategy (Native/Cross-Platform), and Sprint Prioritization. Designs structural logic and manages developer velocity.\"",
       "tier": "Premium",
       "tags": [
         "architecture",
         "planning",
-        "management"
+        "management",
+        "mobile"
       ]
     },
     {
@@ -95,9 +98,14 @@
     },
     {
       "id": "security-expert",
-      "description": "Expert application security engineer specializing in threat modeling, secure storage, and API security for Flutter applications. Use when asked to \"review security\", \"store sensitive data\", or \"threat model\". Do NOT use for general feature logic.",
+      "description": "\"Expert Full-Stack Security Engineer & DevSecOps specialist: Threat modeling, secure storage, and API security for Mobile and Cloud-native applications.\"",
       "tier": "Premium",
-      "tags": []
+      "tags": [
+        "security",
+        "audit",
+        "rls",
+        "devsecops"
+      ]
     },
     {
       "id": "skill-agent-evolution",
@@ -155,12 +163,13 @@
     },
     {
       "id": "skill-qa-engineer",
-      "description": "QA Automation specialist focusing on multi-sequence user journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).",
+      "description": "\"Expert QA & Reality Checker: Stops fantasy approvals with evidence-based certification. Focuses on multi-sequence journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).\"",
       "tier": "Standard",
       "tags": [
         "qa",
         "testing",
-        "performance"
+        "performance",
+        "validation"
       ]
     },
     {

@@ -18,6 +18,8 @@ Before executing ANY task that modifies the filesystem (write, delete, refactor)
 - **Think Before Doing**: Always reason through the problem before writing the first line of code.
 - **Anti-Laziness Mandate**: Do not assume the codebase state. Ingest relevant files via `view_file` or `grep_search` first.
 - **Root Cause Analysis**: Find the "Why" (5 Whys), not just the "What". Surface-level fixes are unacceptable for Tier-1+ tasks.
+- **The Evidence Mandate (No Assumptions)**: Do not assume a feature works because the code looks correct. For Tier-1+ tasks, implementation is only "DONE" when verified through empirical reproduction or testing evidence.
+- **Edge-Case Tax**: Before finalizing any feature, you MUST list 2-3 potential failure modes (e.g., poor network, invalid state) and document how they are handled gracefully.
 
 ## 3. Tool Economy
 - Prefer parallel tool calls when tasks are independent.

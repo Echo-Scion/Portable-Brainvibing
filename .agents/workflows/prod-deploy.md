@@ -5,7 +5,7 @@ description: Environment readiness checklist before pushing/deploying to Product
 # Deploy Production Workflow
 
 ## 0. CONTEXT RETRIEVAL (JIT)
-- [ ] Verify protocol compliance and wait for binary confirmations. IF unsure, use `grep_search` on `@agent_protocols.md`.
+- [ ] Verify protocol compliance and wait for binary confirmations. IF unsure, use `grep_search` on `@00_always_on_core.md`.
 - [ ] Activate the `@release-manager` skill for specific CD loops and production readiness checks.
 
 ## Steps

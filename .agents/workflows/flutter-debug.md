@@ -7,7 +7,7 @@ description: Using visual screenshots + MCP tools to identify and fix UI bugs.
 Follow these steps to diagnose and fix a UI or logic issue in a Flutter app.
 
 ## 0. CONTEXT RETRIEVAL (JIT)
-*   [ ] Verify architecture compliance. IF unsure, use `grep_search` on `@agent_protocols.md`.
+*   [ ] Verify architecture compliance. IF unsure, use `grep_search` on `@00_always_on_core.md`.
 *   [ ] Run `view_file` on `MainSystem/context/README.md` to identify the target app.
 *   [ ] Scope ALL tool paths to the target app only.
 
@@ -31,7 +31,7 @@ Follow these steps to diagnose and fix a UI or logic issue in a Flutter app.
 *   [ ] STOP: Wait for user confirmation OR proceed only if the evidence is 100% conclusive.
 
 ## 5. APPLY FIX & RELOAD
-*   [ ] Verify the fix adheres to project standards. IF unsure, use `grep_search` on `@flutter_standards.md`.
+*   [ ] Verify the fix adheres to project standards. IF unsure, use `grep_search` on `@03_flutter.md`.
 *   [ ] Modify the code based on the single hypothesis.
 *   [ ] // turbo
     [ ] Run `hot_reload` to see the results instantly.

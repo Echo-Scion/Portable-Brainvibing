@@ -12,15 +12,16 @@ glob: "**/*.{ts,tsx,js,jsx,html,css}"
 - **API Documentation**: Provide comprehensive documentation for all endpoints (OpenAPI/Swagger).
 
 ## 2. Frontend (The "Component Harmony" Principle)
+- **Premium Craftsmanship**: Every layout and architecture choice must be intentional. Avoid basic boilerplate; use professional patterns (e.g., compound components, render props).
+- **Visual State Mapping**: Every component MUST account for and implement all states: Loading, Empty, Success, and Error.
+- **Accessibility (A11y)**: All code MUST be compliant with WCAG 2.1 AA standards. Use semantic HTML, ARIA attributes, and ensure full keyboard navigation support.
 - **Type Safety**: Mandatory TypeScript for all React/Angular components.
-- **State Management**: Use professional patterns (Redux Toolkit, Zustand, or TanStack Query) based on project complexity.
 - **Atomic UI Components**: Keep components small (<150 lines) and focused on a single responsibility.
-- **Responsiveness**: Build responsive and accessible user interfaces using modern CSS features.
 
 ## 3. Performance & Security
+- **Optimization**: Target initial load times under 1.5 seconds. Implement lazy loading for routes and heavy visual assets.
 - **Static Analysis**: Enforce strict ESLint/Prettier rules before every commit.
 - **Token Hygiene**: Use HttpOnly/Secure cookies for JWT storage. Never store secrets in `localStorage`.
-- **Optimization**: Implement lazy loading for routes and heavy visual assets.
 - **Vulnerability Protection**: Protect against common web vulnerabilities (XSS, CSRF, SQL Injection).
 
 ## 4. Dependency Management

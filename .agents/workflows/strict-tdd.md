@@ -7,7 +7,7 @@ description: Strict test-driven development cycle (RED-GREEN-REFACTOR).
 Execute the following steps sequentially when instructed to use TDD.
 
 ## 0. CONTEXT RETRIEVAL (JIT)
-- [ ] Verify Binary Oratory compliance. IF unsure, use `grep_search` on `@agent_protocols.md`.
+- [ ] Verify Binary Oratory compliance. IF unsure, use `grep_search` on `@00_always_on_core.md`.
 
 - [ ] **1. Scaffold Interfaces**: Define types/interfaces or class/function skeletons without the actual implementation.
 - [ ] **2. Write Failing Test (RED)**: Write a test that is *guaranteed to fail* because the code has not been implemented yet.

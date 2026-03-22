@@ -30,9 +30,9 @@ A high-level topography of the workspace for AI navigation and context initializ
 ### Skills (`skills/`)
 <!-- SKILLS_START -->
 #### 🏛️ Strategy, Architecture & Admin
-- `agent-architect` [Premium] — Designer of robust autonomous AI agent loops, multi-agent collaboration, and state machine transitions.
+- `agent-architect` [Premium] — "Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems."
 - `backend-architect` [Premium] — Extracts enterprise architecture patterns
-- `project-architect` [Premium] — "The Architect" — Product Requirements Synthesis, Structural Logic, and Sprint Prioritization
+- `project-architect` [Premium] — "The Architect: Full-stack, Mobile Strategy
 - `skill-project-relocator` [Standard] — Specialist in safely moving projects, particularly Flutter/Dart, with a focus on path integrity and deep cache clearing.
 
 #### 🏗️ Backend, API & Database
@@ -48,7 +48,8 @@ A high-level topography of the workspace for AI navigation and context initializ
 
 #### 🛡️ Quality, Security & Audit
 - `eval-engineer` [Standard] — Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.
-- `skill-qa-engineer` [Standard] — QA Automation specialist focusing on multi-sequence user journeys, TDD, Widget testing, and Systems Load Testing
+- `security-expert` [Premium] — "Expert Full-Stack Security Engineer & DevSecOps specialist: Threat modeling, secure storage, and API security for Mobile and Cloud-native applications."
+- `skill-qa-engineer` [Standard] — "Expert QA & Reality Checker: Stops fantasy approvals with evidence-based certification. Focuses on multi-sequence journeys, TDD, Widget testing, and Systems Load Testing
 
 #### 📈 Marketing & Business (SaaS Growth)
 - `cost-optimizer` [Standard] — Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.
@@ -63,7 +64,6 @@ A high-level topography of the workspace for AI navigation and context initializ
 
 #### Other
 - `release-manager` [Standard] — Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.
-- `security-expert` [Premium] — Expert application security engineer specializing in threat modeling, secure storage, and API security for Flutter applications. Use when asked to "review security", "store sensitive data", or "threat model". Do NOT use for general feature logic.
 
 <!-- SKILLS_END -->
 

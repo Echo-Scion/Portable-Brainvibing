@@ -9,8 +9,8 @@ Follow these steps to build a new feature/module in any project app.
 ## 0. CONTEXT RETRIEVAL (JIT)
 *   [ ] **Verify Residency**: Ensure the project has a physical `.agents/skills/` directory. 
     - **IF MISSING**: Run `python [GlobalRoot]\.agents\scripts\deploy_foundation.py --target .`.
-*   [ ] **Verify Binary Oratory compliance**. IF unsure, use `@common/agent_protocols.md`.
-*   [ ] **Verify architecture compliance**. IF unsure, use `@flutter/flutter_hybrid_architecture.md`.
+*   [ ] **Verify Binary Oratory compliance**. IF unsure, use `@00_always_on_core.md`.
+*   [ ] **Verify architecture compliance**. IF unsure, use `@03_flutter.md`.
 *   [ ] If working in a **monorepo**, activate the `context-manager` skill from the local `.agents/skills/`.
 *   [ ] Run `view_file` on the project's `context/README.md` or `BLUEPRINT.md` to identify the target app.
 *   [ ] Scope ALL tool paths to the target app only (e.g., `MainSystem/apps/[sub_app]/lib/...`).

@@ -7,7 +7,7 @@ description: Safe and downtime-free guide for modifying active database table st
 If requested to modify a database table with high live traffic (such as changing column types, renaming columns, or splitting tables), always use the **Expand → Migrate → Contract** pattern. Execute the following steps sequentially:
 
 ## 0. CONTEXT RETRIEVAL (JIT)
-- [ ] Verify Binary Oratory compliance. IF unsure, use `grep_search` on `@agent_protocols.md`.
+- [ ] Verify Binary Oratory compliance. IF unsure, use `grep_search` on `@00_always_on_core.md`.
 - [ ] Activate `@skill-db-expert` if dealing with deep Postgres/Supabase optimization.
 - [ ] Ensure all local changes in `.agents` are finalized.
 

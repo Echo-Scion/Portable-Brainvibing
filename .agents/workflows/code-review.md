@@ -7,12 +7,12 @@ description: Checklist for reviewing source code quality and security before com
 Before accepting or approving code changes (`git diff --name-only HEAD`), perform a check on each modified file based on the following criteria:
 
 ## 0. CONTEXT RETRIEVAL (JIT)
-- [ ] Verify Binary Oratory compliance. IF unsure, use `grep_search` on `@agent_protocols.md`.
+- [ ] Verify Binary Oratory compliance. IF unsure, use `grep_search` on `@00_always_on_core.md`.
 - [ ] Invoke `@context-manager` to properly map code relations.
 
 ## Steps
 
-- [ ] **Step 1:** Load `@analytical_standards.md` for logical checking baseline.
+- [ ] **Step 1:** Load `@01_always_on_context.md` for logical checking baseline.
 - [ ] **Step 2:** Check for **CRITICAL Security** violations (Block commit immediately):
   - Hardcoded credentials, API keys, JWT secrets, or tokens.
   - SQL injection vulnerabilities (use of string concatenation in queries).
