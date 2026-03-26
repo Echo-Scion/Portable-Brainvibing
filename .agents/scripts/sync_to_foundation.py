@@ -19,6 +19,7 @@ BLACKLIST = {
     "local",         # Project-specific experiments
     "personal",
     "debug_scripts",
+    "pull_planning_context.py", # Local drive specific sync script
     ".git",
     "node_modules",
     "vitals",

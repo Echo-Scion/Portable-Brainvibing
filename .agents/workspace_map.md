@@ -33,7 +33,6 @@ A high-level topography of the workspace for AI navigation and context initializ
 - `agent-architect` [Premium] — "Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems."
 - `backend-architect` [Premium] — Extracts enterprise architecture patterns
 - `project-architect` [Premium] — "The Architect: Full-stack, Mobile Strategy
-- `skill-project-relocator` [Standard] — Specialist in safely moving projects, particularly Flutter/Dart, with a focus on path integrity and deep cache clearing.
 
 #### 🏗️ Backend, API & Database
 - `backend-optimizer` [Standard] — Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.
@@ -90,20 +89,24 @@ A high-level topography of the workspace for AI navigation and context initializ
 - `prod-deploy.md` — Environment readiness checklist before pushing/deploying to Production.
 - `project-blueprint.md` — Primary workflow for synthesizing ideas into a mature system architecture blueprint.
 - `project-init.md` — Unified initialization for both Root and Sub-projects (Canon). Includes Auto-Population Intake Gate.
-- `project-relocation.md` — Safe guide for moving projects (especially Flutter) to a new directory without path or cache errors.
-- `repo-squash.md` — Squash repository history into a single initial commit while preserving the current file state.
-- `safe-migration.md` — Safe and downtime-free guide for modifying active database table structures.
 - `strict-tdd.md` — Strict test-driven development cycle (RED-GREEN-REFACTOR).
   - **Tasks**
     - `tasks/improve-session-handoff.md` — Atomic Task: Improve Session Handoff Logic
+    - `tasks/task-01-LoggerApp-planning.md` — TaskID: task-01-LoggerApp-planning
+    - `tasks/task-02-stellaread-planning.md` — TaskID: task-02-stellaread-planning
+    - `tasks/task-03-nextra-planning.md` — TaskID: task-03-nextra-planning
+    - `tasks/task-04-ready2paste-planning.md` — TaskID: task-04-ready2paste-planning
+    - `tasks/task-05-resonary-planning.md` — TaskID: task-05-resonary-planning
+    - `tasks/task-06-bioscion-planning.md` — TaskID: task-06-vitals-planning
 <!-- WORKFLOWS_END -->
 
 ### Maintenance Scripts (`scripts/`)
 <!-- SCRIPTS_START -->
 - `audit_structure.py` — Configuration - Relative to project root
 - `build_graph.py` — Configuration
-- `deploy_foundation.py` — def deploy(source_root, target_root):
+- `deploy_foundation.py` — def create_ai_bridges(target_root, selected_bridges):
 - `migrate_tier_s.py` — Path relative to the script location
+- `pull_planning_context.py` — def sync_context(source_base, target_root, project_name):
 - `reset_system.py` — """
 - `sync_to_foundation.py` — Configuration
 - `verify_agents.py` — Use relative paths from script location

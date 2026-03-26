@@ -21,7 +21,6 @@ This system operates at the intersection of **Human Intuition (The Vibe)** and *
 Utilizing a **Single-Tree / Multi-Tier** architecture optimized for token efficiency (L0-L2 Ingestion).
 * **Foundation (L0)**: Core algorithms and universal standards applicable across all projects.
 * **Domain Canons (L1)**: Feature-specific blueprints (Auth, UI Patterns, Notifications).
-* **Local Evolution (L2)**: Project-specific overrides using the `local-` prefix. Changes at this level are automatically isolated from Upstream Sync, keeping the foundation clean.
 
 ## 🛠️ 3. Integrated Infrastructure (MCP)
 Powered by the **Model Context Protocol (MCP)**, giving AI agents the "hands" to interact directly with the development environment:
@@ -65,6 +64,13 @@ We employ a **Split-Brain Documentation** strategy for maximum communication eff
  > *"Change Indonesian triggers in catalog.json and SKILLS to [add-your-language]"*
 leave the English alone, AI understand better in English.
 
+* **Deployment CLI Flags**: When running `deploy_foundation.py` manually, use these flags to customize the setup:
+  - `--cursor`: Generates `.cursorrules` for **Cursor IDE**.
+  - `--windsurf`: Generates `.windsurfrules` for **Windsurf**.
+  - `--copilot`: Generates `.github/copilot-instructions.md` for **GitHub Copilot**.
+  - `--all-bridges`: Generates all of the above for a multi-IDE setup.
+ > *Example: `python .agents/scripts/deploy_foundation.py --target "./my-project" --cursor --build-graph`*
+
  > *"Run /wrap-up"*
 
 ---
@@ -73,7 +79,6 @@ leave the English alone, AI understand better in English.
 
 Follow these steps to activate the **Portable Brainvibing** infrastructure in any new or existing project:
 
-1. **Clone the Source**: Clone this repository to a local folder (e.g., `/path/to/portable-brainvibing`).
 2. **Target Your Project**: Open your AI Agent (Gemini CLI or Antigravity) in your target project directory.
 3. **Agentic Deployment**: Give the following command to your AI:
  > *"Read `.agents/DEPLOY_ME.md` from `[PathToSource]` and deploy the foundation here."*
@@ -86,7 +91,7 @@ Follow these steps to activate the **Portable Brainvibing** infrastructure in an
 ---
 
 ## 🏷️ Version
-1.1.11
+1.1.15
 "True Deep Audit & Tri-Pillar Patch"
 
 > **Disclaimer**: *This is my personal portable brain architecture, maybe you will find the file's structure unfamiliar. The vision and direction are all me, logic and principles are merging here and there, then 100% AI-generated. Expected systemical gap from AI for this V1.x.x, tested only in linear skenario (guide)*

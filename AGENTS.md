@@ -42,7 +42,6 @@ You explain your idea. The AI doesn't start coding; it starts **thinking**.
 
 The AI builder is ready, but it must follow the "Golden Rules."
 
-14. **`rules/common/context_hierarchy.md`**: The AI learns the priority—if you write a `local-` rule, it **must** ignore the global standards.
 15. **`rules/common/context_naming_policy.md`**: The AI learns how to structure knowledge. It maps your chaotic ideas into the strict 82-file SaaS format using **Just-In-Time (JIT) Expansion** to prevent context paralysis.
 16. **`rules/common/model_tier_protocol.md`**: The system calculates costs. It will use "Flash" for routine code and "Pro" for the complex logic.
 17. **`rules/common/context7_economical_usage.md`**: It learns to be "Token-Lean," reading only the code it needs to save you money.
@@ -102,7 +101,6 @@ Ready for the world, but is it fast and secure?
 The big day.
 
 45. **`workflows/code-review.md`**: One final sweep of the code for "Surgical Integrity."
-46. **`workflows/repo-squash.md`**: You clean up your git history, making it look professional for investors or collaborators.
 47. **`workflows/prod-deploy.md` & `skills/release-manager/`**: The AI handles the CI/CD pipeline, pushing the app to the App Store and Cloud.
 48. **`skills/tech-writer/`**: The agent generates your documentation, READMEs, and "How-to" guides for users.
 49. **`templates/MEMORY.template.md` & `templates/SAAS_MEMORY.template.md`**: You record the session. What worked? What failed? The "Outer Brain" remembers.
@@ -125,8 +123,6 @@ The app is live. Now you make it a business.
 
 Years later, you want to move the project or clean it up.
 
-55. **`skills/skill-project-relocator/` & `workflows/project-relocation.md`**: You move the entire project to a new directory. The "Outer Brain" doesn't break a single link.
-56. **`workflows/safe-migration.md`**: You move your live production database to a new region without a second of downtime.
 57. **`scripts/audit_structure.py`**: You run a final health check to ensure your system's documentation and files are perfectly synced.
 
 ---

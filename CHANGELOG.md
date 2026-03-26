@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.15] - 2026-03-26
+### Changed
+- Restore empty local and tasks structures with .gitkeep
+
+
+## [1.1.14] - 2026-03-26
+### Changed
+- Prune safe-migration workflow, tasks, and local canons from portable version
+
+
+## [1.1.13] - 2026-03-26
+### Changed
+- Prune internal global canons, only export core-architecture.md
+
+
+## [1.1.12] - 2026-03-26
+### Changed
+- Deploy enhanced deployment script with selective AI bridges and logging
+
+
 ## [1.1.11] - 2026-03-22
 ### Changed
 - Fix broken rule links in workflows after rule consolidation

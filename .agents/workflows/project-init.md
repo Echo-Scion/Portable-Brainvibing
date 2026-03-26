@@ -159,7 +159,17 @@ This workflow consolidates the initialization logic for both "Root Projects" and
 
 ---
 
-## 8. REGISTRATION & VERIFICATION
+## 8. TASK INJECTION (Lifecycle Tracking)
+- [ ] **Atomic Task Injection (MANDATORY)**: 
+  - Read `.agents/templates/ATOMIC_TASK.template.md`.
+  - Create a new file in `.agents/workflows/tasks/task-[project_name]-planning.md`.
+  - Set `Status: TODO` (or `IN_PROGRESS` if explicitly requested).
+  - Fill the `Objective` with: "Blueprint & PRD Completion for [Project Name]".
+  - *Rationale*: Ensures every project starts with a formal, trackable planning phase.
+
+---
+
+## 9. REGISTRATION & VERIFICATION
 - [ ] **Workspace Map**: Update `.agents/workspace_map.md` with new project entry.
 - [ ] **Test Mention**: Try to `@` mention a local skill to verify indexing.
 

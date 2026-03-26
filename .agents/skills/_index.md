@@ -16,7 +16,6 @@ description: Single entry point for skill discovery. Contains the SKILL ROUTING 
 | Architecture, blueprints, PRD, system design, MVP planning | `project-architect` |
 | AI agent design, multi-agent loops, state machines, LLM pipelines | `agent-architect` |
 | Enterprise patterns, backend architecture, service decomposition | `backend-architect` |
-| Moving/relocating a project, Flutter path issues, cache clearing | `skill-project-relocator` |
 | Node.js memory leaks, event loop performance, backend bottlenecks | `backend-optimizer` |
 | API endpoint definition, request/response contracts, data schemas | `skill-api-contract` |
 | Database schema design, SQL migrations, Supabase RLS, 3NF | `skill-db-expert` |
@@ -47,7 +46,6 @@ description: Single entry point for skill discovery. Contains the SKILL ROUTING 
 | `project-architect` | Premium | Product Requirements Synthesis, Structural Logic, and Sprint Prioritization. The go-to skill for turning ideas into engineered system blueprints. |
 | `agent-architect` | Premium | Designer of robust autonomous AI agent loops, multi-agent collaboration, and state machine transitions. Use for AI pipeline and orchestration design. |
 | `backend-architect` | Premium | Extracts enterprise architecture patterns for large-scale backend systems. Use for service decomposition and system-level design decisions. |
-| `skill-project-relocator` | Standard | Specialist in safely moving projects (especially Flutter/Dart) with a focus on path integrity and deep cache clearing. |
 
 ### 🏗️ Backend, API & Database
 

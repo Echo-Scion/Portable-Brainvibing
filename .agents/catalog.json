@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-22T18:48:59.546649Z",
-  "total": 22,
+  "generatedAt": "2026-03-26T11:15:53.537114Z",
+  "total": 21,
   "skills": [
     {
       "id": "agent-architect",
@@ -150,15 +150,6 @@
       "tags": [
         "utility",
         "research"
-      ]
-    },
-    {
-      "id": "skill-project-relocator",
-      "description": "Specialist in safely moving projects, particularly Flutter/Dart, with a focus on path integrity and deep cache clearing.",
-      "tier": "Standard",
-      "tags": [
-        "utility",
-        "maintenance"
       ]
     },
     {
