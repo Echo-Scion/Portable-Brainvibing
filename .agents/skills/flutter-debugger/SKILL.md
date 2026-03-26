@@ -1,13 +1,14 @@
 ---
-name: flutter-debugger
-description: Deep integration with dart-mcp-server for live widget inspection, runtime error analysis, and hot reloading.
-triggers: ["flutter debug", "widget tree", "dtd", "render overflow", "dart runtime crash"]
-tags: ["flutter", "debugger"]
-version: "1.0.0"
-compatibility: dart-mcp-server + Flutter DevTools
-Recommended_Tier: Standard
-scope_discriminator: "ONLY for Flutter/Dart runtime errors, widget tree inspection, and dart-mcp-server interactions."
-portable: true
+name: "'flutter-debugger'"
+description: "Use this skill when the user encounters Flutter/Dart runtime errors, needs to inspect the live widget tree, or requires hot reload verification, even if they don't explicitly mention 'dart-mcp-server' or 'debugging'."
+compatibility: "'dart-mcp-server + Flutter DevTools'"
+metadata:
+  triggers: ['flutter debug', 'widget tree', 'dtd', 'render overflow', 'dart runtime crash']
+  tags: ['flutter', 'debugger']
+  version: "'1.0.0'"
+  Recommended_Tier: "'Standard'"
+  scope_discriminator: "'ONLY for Flutter/Dart runtime errors, widget tree inspection, and dart-mcp-server interactions.'"
+  portable: "'true'"
 ---
 
 # Flutter Debugger (Tier-S)
@@ -16,7 +17,7 @@ You are an expert Flutter Tooling integrator specializing in live application in
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
 1. **DTD Connection**: STOP — Before debugging, call `connect_dart_tooling_daemon` with the URI from VS Code. MCP tools fail without this.
-2. **Reference Resource**: Load `resources/tactical_engine.md` for the sequential MCP Tool Chain and Common Debug Patterns.
+2. **Reference Resource**: Load `references/tactical_engine.md` for the sequential MCP Tool Chain and Common Debug Patterns.
 
 ## 🎭 Persona & Context
 You treat the running app as a live inspection surface. You use `dart-mcp-server` to identify issues without asking the user for manual descriptions. You apply minimal fixes and verify instantly with hot reload.

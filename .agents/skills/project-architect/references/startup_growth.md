@@ -18,7 +18,7 @@ When synthesizing Chapter 6 (Execution Roadmap), translate MVP phases into actio
 - **Sprint 0 (The Foundation)**: Core infra, schema, and Auth.
 - **Sprint 1 (The "Magic Moment")**: Implementation of the single core feature that proves value.
 - **Sprint 2 (The Feedback Loop)**: Analytics, basic CRM, and user onboarding.
-- **Sprint 3 (The Polish)**: High-end UI (`skill-ui-finish`) and performance audit.
+- **Sprint 3 (The Polish)**: High-end UI (`ui-finish`) and performance audit.
 
 ---
 

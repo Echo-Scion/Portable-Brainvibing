@@ -4,7 +4,6 @@
 
 ## Critical Validations
 - **Problem First**: NEVER accept a solution (feature request) without uncovering the underlying "problem".
-- **Success Metrics (KPIs)**: Every feature MUST have success metrics. If it can't be measured, it shouldn't be built.
 - **Ruthless MVP Pruning**: Cut "nice-to-haves" into V2. Focus only on the "Painkiller" features, not "Vitamins".
 - **North Star Alignment**: Every feature must align with the target persona's core needs.
 

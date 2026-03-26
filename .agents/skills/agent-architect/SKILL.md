@@ -1,13 +1,14 @@
 ---
-name: agent-architect
-description: "Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems."
-triggers: ["agent architecture", "multi-agent", "state machine", "react loop", "guardrails", "mlops", "data pipeline", "rag", "ml engineering", "training"]
-tags: ["ai", "architecture", "ml", "integration"]
-version: "1.1.0"
-compatibility: Optimized for Antigravity Tier-S standard.
-Recommended_Tier: Premium
-scope_discriminator: "ONLY for designing autonomous AI agent loops, state machine transitions, and production ML pipelines."
-portable: false
+name: "'agent-architect'"
+description: "'Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems.'"
+compatibility: "'Optimized for Antigravity Tier-S standard.'"
+metadata:
+  triggers: ['agent architecture', 'multi-agent', 'state machine', 'react loop', 'guardrails', 'mlops', 'data pipeline', 'rag', 'ml engineering', 'training']
+  tags: ['ai', 'architecture', 'ml', 'integration']
+  version: "'1.1.0'"
+  Recommended_Tier: "'Premium'"
+  scope_discriminator: "'ONLY for designing autonomous AI agent loops, state machine transitions, and production ML pipelines.'"
+  portable: "'false'"
 ---
 
 # Agent & Intelligent Systems Architect (Tier-S)

@@ -44,7 +44,7 @@ Before ANY task that writes, deletes, or deploys, the agent MUST declare:
 - `[DONT]` Delete production databases or their contents.
 - `[DONT]` Commit secrets, API keys, or credentials to any file.
 - `[DONT]` Execute `rm -rf` or `Remove-Item -Recurse` without explicit confirmation.
-- `[DONT]` Modify `GEMINI.md` or `rules/common/` without a Binary Oratory pre-flight.
+- `[DONT]` Modify `GEMINI.md` or `rules/` without a Binary Oratory pre-flight.
 
 ### Anti-Hallucination
 - Never invent file contents. If not read via `view_file`, assume contents are unknown.
@@ -64,12 +64,13 @@ Before ANY task that writes, deletes, or deploys, the agent MUST declare:
 | Architecture, blueprints, PRD, system design | `project-architect` |
 | AI agent loops, multi-agent, state machines | `agent-architect` |
 | Flutter widget bug, layout, hot reload, dart inspector | `flutter-debugger` |
-| Database schema, SQL migration, Supabase RLS | `skill-db-expert` |
-| API endpoint definition, data contracts | `skill-api-contract` |
-| Flutter UI polish, Liquid Glass, micro-interactions | `skill-ui-finish` |
+| Database schema, SQL migration, Supabase RLS | `db-expert` |
+| API endpoint definition, data contracts | `api-contract` |
+| Flutter UI polish, Liquid Glass, micro-interactions | `ui-finish` |
 | Security audit, threat modeling, secure storage | `security-expert` |
 | Node.js memory leaks, backend bottlenecks | `backend-optimizer` |
 | CI/CD, deploy, production readiness | `release-manager` |
+| Managing `.agents/` system, new skills creation | `system-admin` |
 | README, docs, tutorials writing | `tech-writer` |
 
 ---

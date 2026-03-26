@@ -1,7 +1,6 @@
 # LLM Evaluation Tactical Engine
 
 ## 📊 Evaluation Workflow
-1. **Metric Definition**: Define metrics for Hallucination, Formatting (JSON/Zod), Tone, and Relevance.
 2. **Golden Dataset**: Compile input -> ground truth pairs, including adversarial edge cases.
 3. **Evaluation Harness**: Use a stronger "Judge Model" (e.g., GPT-4o) with a strict `<reasoning>` block rubric.
 4. **CI/CD Integration**: Block merges if prompt evaluation scores drop below threshold.

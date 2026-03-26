@@ -1,117 +1,46 @@
-# SaaS Startup Context Structure (16 Categories)
+# SaaS Startup Context Registry (82 Files, 4 Pillars)
 
-This document defines the 16-category sub-folder structure created when the `--startup` flag is used in the `/project-init` workflow. **Critically: These categories must reside inside the `context/` directory.**
+This document defines the naming convention and location for the 82 granular SaaS files. **Critically: These files reside directly inside the 4 Lean Pillar folders using category prefixes.**
 
-📂 Idea
-┣  Problem Discovery.md
-┣  Market Research.md
-┣  Niche Selection.md
-┣  Competitor Analysis.md
-┗  Opportunity Mapping.md
+## 1. Pillar: `00_Strategy/` (Master: `BLUEPRINT.md`)
+Contains files related to Idea, Validation, and Scaling.
 
-📂 Validation
-┣  Customer Interviews.md
-┣  Landing Page Test.md
-┣  Waitlist.md
-┣  Pre Sales.md
-┗  Demand Testing.md
+| Category | Prefix | Files |
+| :--- | :--- | :--- |
+| **Idea** | `Idea_` | `Problem_Discovery.md`, `Market_Research.md`, `Niche_Selection.md`, `Competitor_Analysis.md`, `Opportunity_Mapping.md` |
+| **Validation** | `Valid_` | `Customer_Interviews.md`, `Landing_Page_Test.md`, `Waitlist.md`, `Pre_Sales.md`, `Demand_Testing.md` |
+| **Scaling** | `Scale_` | `Automation.md`, `Hiring.md`, `Systems.md`, `Global_Expansion.md`, `Exit_Strategy.md` |
 
-📂 Planning
-┣  Product Roadmap.md
-┣  Feature Prioritization.md
-┣  MVP Scope.md
-┣  Tech Stack.md
-┗  Development Plan.md
+## 2. Pillar: `01_Product/` (Master: `ROADMAP.md`)
+Contains files related to Planning, Launch, Growth, and Monetization.
 
-📂 Design
-┣  Wireframes.md
-┣  UI Design.md
-┣  UX Flows.md
-┣  Prototype.md
-┗  Design System.md
+| Category | Prefix | Files |
+| :--- | :--- | :--- |
+| **Planning** | `Plan_` | `Product_Roadmap.md`, `Feature_Prioritization.md`, `MVP_Scope.md`, `Tech_Stack.md`, `Development_Plan.md` |
+| **Launch** | `Launch_` | `Landing_Page.md`, `Product_Hunt.md`, `Beta_Users.md`, `Early_Adopters.md`, `Public_Release.md` |
+| **Acquisition** | `Acq_` | `SEO_Wins.md`, `Content_Marketing.md`, `Social_Media.md`, `Cold_Email.md`, `Influencer_Outreach.md`, `Affiliate_Marketing.md` |
+| **Distribution** | `Dist_` | `Directories.md`, `SaaS_Marketplaces.md`, `Communities.md`, `Partnerships.md`, `Integrations.md` |
+| **Conversion** | `Conv_` | `Sales_Funnel.md`, `Free_Trial.md`, `Freemium_Model.md`, `Pricing_Strategy.md`, `Checkout_Optimization.md` |
+| **Revenue** | `Rev_` | `Subscriptions.md`, `Upsells.md`, `Add_ons.md`, `Annual_Plans.md`, `Enterprise_Deals.md` |
+| **Analytics** | `Data_` | `User_Tracking.md`, `Funnel_Analysis.md`, `Cohort_Analysis.md`, `KPI_Dashboard.md`, `AB_Testing.md` |
+| **Retention** | `Ret_` | `User_Onboarding.md`, `Email_Automation.md`, `Customer_Support.md`, `Feature_Adoption.md`, `Churn_Reduction.md` |
+| **Growth** | `Growth_` | `Referral_Programs.md`, `Community_Building.md`, `Product_Led_Growth.md`, `Viral_Loops.md`, `Expansion_Strategy.md` |
 
-📂 Development
-┣  Frontend.md
-┣  Backend.md
-┣  APIs.md
-┣  Database.md
-┣  Authentication.md
-┗  Integrations.md
+## 3. Pillar: `02_Creative/` (Master: `STYLE_GUIDE.md`)
+Contains files related to Design.
 
-📂 Infrastructure
-┣  Cloud Hosting.md
-┣  DevOps.md
-┣  CI CD.md
-┣  Monitoring.md
-┗  Security.md
+| Category | Prefix | Files |
+| :--- | :--- | :--- |
+| **Design** | `Design_` | `Wireframes.md`, `UI_Design.md`, `UX_Flows.md`, `Prototype.md`, `Design_System.md` |
 
-📂 Testing
-┣  Unit Testing.md
-┣  Integration Testing.md
-┣  Bug Fixing.md
-┣  Performance Testing.md
-┗  Beta Testing.md
+## 4. Pillar: `03_Tech/` (Master: `ARCHITECTURE.md`)
+Contains files related to Development, Infrastructure, and Testing.
 
-📂 Launch
-┣  Landing Page.md
-┣  Product Hunt.md
-┣  Beta Users.md
-┣  Early Adopters.md
-┗  Public Release.md
+| Category | Prefix | Files |
+| :--- | :--- | :--- |
+| **Development** | `Dev_` | `Frontend.md`, `Backend.md`, `APIs.md`, `Database.md`, `Authentication.md`, `Integrations.md` |
+| **Infrastructure** | `Infra_` | `Cloud_Hosting.md`, `DevOps.md`, `CI_CD.md`, `Monitoring.md`, `Security.md` |
+| **Testing** | `Test_` | `Unit_Testing.md`, `Integration_Testing.md`, `Bug_Fixing.md`, `Performance_Testing.md`, `Beta_Testing.md` |
 
-📂 Acquisition
-┣  SEO Wins.md
-┣  Content Marketing.md
-┣  Social Media.md
-┣  Cold Email.md
-┣  Influencer Outreach.md
-┗  Affiliate Marketing.md
-
-📂 Distribution
-┣  Directories.md
-┣  SaaS Marketplaces.md
-┣  Communities.md
-┣  Partnerships.md
-┗  Integrations.md
-
-📂 Conversion
-┣  Sales Funnel.md
-┣  Free Trial.md
-┣  Freemium Model.md
-┣  Pricing Strategy.md
-┗  Checkout Optimization.md
-
-📂 Revenue
-┣  Subscriptions.md
-┣  Upsells.md
-┣  Add-ons.md
-┣  Annual Plans.md
-┗  Enterprise Deals.md
-
-📂 Analytics
-┣  User Tracking.md
-┣  Funnel Analysis.md
-┣  Cohort Analysis.md
-┣  KPI Dashboard.md
-┗  A/B Testing.md
-
-📂 Retention
-┣  User Onboarding.md
-┣  Email Automation.md
-┣  Customer Support.md
-┣  Feature Adoption.md
-┗  Churn Reduction.md
-
-📂 Growth
-┣  Referral Programs.md
-┣  Community Building.md
-┣  Product Led Growth.md
-┣  Viral Loops.md
-┗  Expansion Strategy.md
-
-📂 Scaling
-┣  Automation.md
-┣  Hiring.md
-┣  Systems.md
-┣  Global Expansion.md
-┗  Exit Strategy.md
+---
+*Portable Brainvibing Infrastructure - Unified Context Registry*

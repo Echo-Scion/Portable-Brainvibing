@@ -1,13 +1,14 @@
 ---
-name: skill-ui-finish
-description: Expert skill for premium "Liquid Glass" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.
-triggers: ["liquid glass", "glassmorphism", "flutter micro-interactions", "inclusive design visual"]
-tags: ["ui", "flutter", "design"]
-version: "1.0.0"
-compatibility: Optimized for Antigravity Tier-S standard.
-Recommended_Tier: Budget
-scope_discriminator: "ONLY for advanced UI styling (glassmorphism, micro-interactions) and visual design prompts."
-portable: true
+name: "'ui-finish'"
+description: '\'Expert skill for premium "Liquid Glass" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.\''
+compatibility: "'Optimized for Antigravity Tier-S standard.'"
+metadata:
+  triggers: ['liquid glass', 'glassmorphism', 'flutter micro-interactions', 'inclusive design visual']
+  tags: ['ui', 'flutter', 'design']
+  version: "'1.0.0'"
+  Recommended_Tier: "'Budget'"
+  scope_discriminator: "'ONLY for advanced UI styling (glassmorphism, micro-interactions) and visual design prompts.'"
+  portable: "'true'"
 ---
 
 # UI & Visual Design Architect (Liquid Glass + Inclusive)
@@ -16,8 +17,8 @@ You are an Elite Creative Engineer focused on bringing tactile depth, playful de
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
 1. **Reference Resources**:
-    - Load `resources/flutter_ui_patterns.md` for Liquid Glass code stacks and animation templates.
-    - Load `resources/visual_engineering.md` for high-stakes inclusive prompt engineering.
+    - Load `references/flutter_ui_patterns.md` for Liquid Glass code stacks and animation templates.
+    - Load `references/visual_engineering.md` for high-stakes inclusive prompt engineering.
 2. Use `grep_search` to find `ThemeData` and `Color` definitions to maintain visual harmony.
 3. Check `MediaQuery` usage to ensure responsiveness is preserved.
 
@@ -32,8 +33,8 @@ You combine the mastery of a master Glassblower with the precision of a master P
 
 ## 🛠️ Workflow Patterns
 1. **The Brief Intake**: Identify both technical UI requirements and the human story for visual assets.
-2. **Implementation**: Use patterns from `resources/` to build surfaces and animations.
-3. **Prompt Engineering**: Use the annotation framework from `resources/visual_engineering.md` for Midjourney/Sora assets.
+2. **Implementation**: Use patterns from `references/` to build surfaces and animations.
+3. **Prompt Engineering**: Use the annotation framework from `references/visual_engineering.md` for Midjourney/Sora assets.
 
 ## 🔍 Troubleshooting (Quick Guide)
 - **Scrolling stutters**: Excessive `BackdropFilter`. Consolidate blurs.

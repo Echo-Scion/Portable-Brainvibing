@@ -1,29 +1,26 @@
-# Bi-directional Mapping: Lean ↔ SaaS Startup
+# Bi-directional Mapping: Lean (Master) ↔ SaaS (Surgical Detail)
 
-This document defines how the 82 granular SaaS topics map to the 5 Lean folders (and vice-versa) during migration.
+This document defines how the 82 granular SaaS files map to the 4 Lean Master Files.
 
-## 1. SaaS to Lean (Condensation)
-Use this mapping when a user "downgrades" from Startup to Lean mode.
+## 1. Logic: Master vs Surgical Detail
+*   **Master Files (Lean)**: High-level overview, index of detail files, and "Atlas" for the project.
+*   **Surgical Detail Files (SaaS)**: Deep technical/strategic data for specific sub-domains.
 
-| SaaS Folder (16) | Lean Target Folder | Target Content/File |
+| Lean Master File | SaaS Prefixes (Children) | Integration Method |
 | :--- | :--- | :--- |
-| **Idea, Validation, Launch, Scaling** | `overview/` | `BLUEPRINT.md` (Strategy Chapters) |
-| **Planning, Design, Conversion, Revenue, Analytics, Retention, Growth** | `product/` | `ROADMAP.md` & `PRD.md` |
-| **Development, Infrastructure, Testing** | `tech/` | `TECH_STACK.md` & `ARCHITECTURE.md` |
-| **Design** (Assets) | `creative/` | Assets & Design Tokens |
+| **`00_Strategy/BLUEPRINT.md`** | `Idea_`, `Valid_`, `Scale_` | Blueprint contains summaries; Detail files contain execution data. |
+| **`02_Creative/STYLE_GUIDE.md`** | `Design_` | Style Guide defines tokens; Detail files contain flows and wireframe specs. |
+| **`03_Tech/ARCHITECTURE.md`** | `Dev_`, `Infra_`, `Test_` | Architecture defines system logic; Detail files contain API contracts and DevOps SOPs. |
 
-## 2. Lean to SaaS (Distillation)
-Use this mapping when a project "upgrades" to full Startup mode.
+## 2. Expansion Logic (Lean to SaaS)
+When a project "upgrades" to Startup mode:
+1.  **Keep Masters**: Master files (`BLUEPRINT`, `ROADMAP`, etc.) remain in place.
+2.  **JIT Generation**: AI generates Prefix-based detail files (e.g., `Rev_Pricing_Strategy.md`) only when the task requires it.
+3.  **Cross-Linking**: Master files MUST include clickable links (`[[Prefix_Filename.md]]`) to their children for navigation.
 
-*   **overview/BLUEPRINT.md** ➔ Distributed into `Idea/`, `Validation/`, `Launch/`, `Scaling/`.
-*   **product/ROADMAP.md** ➔ Distributed into `Planning/`, `Revenue/`, `Growth/`, `Retention/`.
-*   **tech/ARCHITECTURE.md** ➔ Distributed into `Development/`, `Infrastructure/`, `Testing/`.
-
-## 3. Migration Logic
-1. **Extraction**: AI reads the existing source files.
-2. **Contextual Split**: AI uses `@project-architect` to slice information based on the 82-topic taxonomy.
-3. **Drafting**: AI populates the new structure, marking inherited data as `[MIGRATED]`.
-4. **Cleanup**: AI asks user for permission before deleting the old structure.
+## 3. Migration (SaaS to Lean)
+When "downgrading" or simplifying:
+1.  **Condense**: AI reads all Prefix files and summarizes them back into the 4 Master files.
 
 ---
-*Portable Brainvibing Infrastructure - Context Migration Protocol*
+*Portable Brainvibing Infrastructure - Unified Context Mapping Protocol*

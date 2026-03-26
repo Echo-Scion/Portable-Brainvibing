@@ -1,13 +1,14 @@
 ---
-name: release-manager
-description: Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.
-triggers: ["ci/cd pipeline", "production readiness", "canary release", "blue-green"]
-tags: ["devops", "release"]
-version: "1.0.0"
-compatibility: Optimized for Antigravity Agentic Tooling.
-Recommended_Tier: Standard
-scope_discriminator: "ONLY for CI/CD pipelines, canary releases, and production deployment checklists."
-portable: true
+name: "'release-manager'"
+description: "'Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.'"
+compatibility: "'Optimized for Antigravity Agentic Tooling.'"
+metadata:
+  triggers: ['ci/cd pipeline', 'production readiness', 'canary release', 'blue-green']
+  tags: ['devops', 'release']
+  version: "'1.0.0'"
+  Recommended_Tier: "'Standard'"
+  scope_discriminator: "'ONLY for CI/CD pipelines, canary releases, and production deployment checklists.'"
+  portable: "'true'"
 ---
 
 # Release Manager (Tier-S)
@@ -15,7 +16,7 @@ portable: true
 You are an expert orchestrator of safe, reliable, and automated software deployments.
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
-1. **Reference Resource**: Load `resources/tactical_engine.md` for strategy selection guides, health check implementation, and schema safety patterns.
+1. **Reference Resource**: Load `references/tactical_engine.md` for strategy selection guides, health check implementation, and schema safety patterns.
 2. Read `.agents/workflows/prod-deploy.md` before initiating any production switch.
 
 ## 🎭 Persona & Context

@@ -1,13 +1,14 @@
 ---
-name: skill-data-logic
-description: High-density skill for handling immutable data modeling (Freezed) and reactive state management (Riverpod 2.x).
-triggers: ["freezed", "riverpod", "reactive state", "immutable modeling"]
-tags: ["flutter", "logic"]
-version: "1.0.0"
-compatibility: Flutter 3.x + Riverpod 2.x + Freezed 2.x + Codegen
-Recommended_Tier: Standard
-scope_discriminator: "ONLY for Freezed data models and Riverpod state management in Flutter."
-portable: true
+name: "'data-logic'"
+description: "'High-density skill for handling immutable data modeling (Freezed) and reactive state management (Riverpod 2.x).'"
+compatibility: "'Flutter 3.x + Riverpod 2.x + Freezed 2.x + Codegen'"
+metadata:
+  triggers: ['freezed', 'riverpod', 'reactive state', 'immutable modeling']
+  tags: ['flutter', 'logic']
+  version: "'1.0.0'"
+  Recommended_Tier: "'Standard'"
+  scope_discriminator: "'ONLY for Freezed data models and Riverpod state management in Flutter.'"
+  portable: "'true'"
 ---
 
 # Data & Logic Architect (Riverpod + Freezed)
@@ -15,7 +16,7 @@ portable: true
 You are an Elite Agent specialized in the full lifecycle of data: from immutable model definition to reactive state consumption.
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
-1. **Reference Resource**: Load `resources/flutter_logic_patterns.md` for Freezed model templates and Riverpod Notifier snippets.
+1. **Reference Resource**: Load `references/flutter_logic_patterns.md` for Freezed model templates and Riverpod Notifier snippets.
 2. Use `find_by_name` (pattern `*.dart`) to locate `domain/` and `presentation/` directories.
 3. Check `pubspec.yaml` for codegen dependencies.
 

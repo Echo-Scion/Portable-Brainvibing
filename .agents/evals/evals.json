@@ -1,0 +1,26 @@
+{
+  "skill_name": "eval-engineer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to evaluate a new 'react-dev' skill. Create an evaluation plan including 3 test cases, expected outputs, and specific assertions following the agentskills.io standard.",
+      "expected_output": "A structured evaluation plan with realistic prompts, human-readable success criteria, and at least 3 verifiable assertions per case.",
+      "assertions": [
+        "Output contains an 'evals' array or section with 3 distinct cases",
+        "Each case has a 'prompt', 'expected_output', and 'assertions'",
+        "Assertions are specific (e.g., 'JSON is valid') rather than vague ('Output is good')",
+        "Includes at least one edge case (e.g., malformed code, ambiguous request)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here are the results of an eval run. The pass rate is 0.4 and the model keeps failing on 'formatting' assertions. Suggest 3 improvements to the SKILL.md to fix this.",
+      "expected_output": "3 actionable improvements to SKILL.md focused on reducing formatting errors (e.g., enforcing JSON mode, adding Zod schemas, or providing examples).",
+      "assertions": [
+        "Recommendations are based on the reported failure (formatting)",
+        "Includes at least one example of 'explaining the why' for instructions",
+        "Suggests concrete technical constraints (e.g., JSON mode, schemas)"
+      ]
+    }
+  ]
+}

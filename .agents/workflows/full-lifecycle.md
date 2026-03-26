@@ -2,60 +2,39 @@
 description: Standard workflow for creating new projects or major features (Automated Lifecycle).
 ---
 
-# 🚀 WORKFLOW: FULL LIFECYCLE (MASTER)
+# 🚀 WORKFLOW: FULL LIFECYCLE (HIGH-DENSITY)
 
-> [!WARNING]
-> **HIGH-RISK WORKFLOW**: This command attempts to execute the entire development cycle with minimal "human-in-the-loop" checks. 
-> - Use only for well-defined features or when you trust the agent's architectural understanding.
-> - **Binary Oratory** is still required for major logic changes.
+This workflow is the **Master Orchestrator**. It leverages the entire `.agents` ecosystem to build robust, secure, and cost-effective SaaS applications from zero.
 
-## 0. RESEARCH & REUSE (MANDATORY)
-- [ ] **Step 0**: Invoke `@skills/skill-knowledge`. Search GitHub and Pub.dev (using MCP search) to find existing libraries or patterns that solve 80%+ of the requirement. DO NOT reinvent the wheel if a battle-tested library exists.
+## PHASE 0: INGESTION (THE SOUL)
+- [ ] **Global Alignment**: Read `workspace_map.md`, `canons/global/`, and `rules/00_always_on_core.md`.
+- [ ] **Context Loading**: Read the current `BLUEPRINT.md` (if exists) or the project's intake brief.
+- [ ] **Skill Activation**: Identify and activate the necessary specialized skills for the project domain.
 
-## 1. BLUEPRINT (`@project-architect`)
-- [ ] Activating `project-architect` skill.
-- [ ] Synthesize ideation into 7-chapter Master Blueprint.
-- [ ] **ECC Planning**: Generate a high-granularity implementation plan in Chapter 8 (Planning -> Development Plan) with specific file paths and dependency mapping.
-- [ ] **Monorepo Scoping**: If in a monorepo, scope ALL paths to the target app (e.g., `apps/[app_name]/...`).
-- [ ] Save to:
-  - **Lean**: `context/00-overview/BLUEPRINT.md`
-  - **Startup**: `context/Planning/MVP Scope.md` (Note: Only created if needed per JIT rule).
+## PHASE 1: STRATEGIC BLUEPRINT (THE BRAIN)
+- [ ] **Architectural Design**: Invoke `@skills/project-architect` to synthesize requirements into Chapter 1-7 of the Master Blueprint.
+- [ ] **Cost Guard**: Invoke `@skills/cost-optimizer` to validate the chosen tech stack and infrastructure for token and cloud efficiency.
+- [ ] **Security Blueprint**: Invoke `@skills/security-expert` to identify potential threat vectors (Auth, Data Leakage, RLS) before code is written.
+- [ ] **Socratic Challenge**: AI must present at least TWO architectural risks or trade-offs for user confirmation.
 
-- [ ] **Specs & Research**:
-  - Invoke `@skills/skill-knowledge` if third-party libraries are unknown.
-  - Invoke `@skills/skill-api-contract` for data schemas and API contracts.
-  - Invoke `@skills/skill-db-expert` for 3NF table modeling.
+## PHASE 2: SCAFFOLDING (THE SKELETON)
+- [ ] **Initialize Context**: Run `/project-init`.
+- [ ] **Pillar Setup**: Ensure `00_Strategy/`, `01_Product/`, `02_Creative/`, and `03_Tech/` are established.
+- [ ] **Master Files**: Populate `BLUEPRINT.md`, `ROADMAP.md`, `STYLE_GUIDE.md`, and `ARCHITECTURE.md` using slot-fill templates.
 
-## 3. EXECUTION LOOP (`/app-builder`)
-Follow the 4-pillar execution cycle. **CRITICAL: You must follow the Dev-QA Loop strictly.**
+## PHASE 3: EXECUTION LOOP (THE MUSCLES)
+For each feature defined in the Roadmap:
+- [ ] **Feature Initiation**: Run `/app-builder`.
+- [ ] **Security Implementation**: Invoke `@skills/security-expert` during API and Database design (Phase B of app-builder).
+- [ ] **Evaluation Loop**: Invoke `@skills/eval-engineer` to verify that the implementation meets the original prompt requirements without regression.
 
-> **Dev-QA Loop Rules:**
-> 1. **Task-by-Task Validation:** Do not proceed to the next phase until the current phase passes the QA Gate.
-> 2. **Evidence-based Validation:** Use `mcp_dart-mcp-server_analyze_files` and `mcp_dart-mcp-server_run_tests` to prove success.
-> 3. **Escalation Limit:** Max 3 retries per failure. If an error persists after 3 attempts, STOP and ask the user for guidance.
+## PHASE 4: CERTIFICATION (THE SEAL)
+- [ ] **Quality Assurance**: Invoke `@skills/qa-engineer` to perform exhaustive TDD, Widget Testing, and Edge Case verification.
+- [ ] **System Audit**: Invoke `@skills/system-audit` for a final structural and logic certification.
+- [ ] **Zero N/A Compliance**: Ensure all context files touched during execution are fully populated and relevant.
 
-### Phase A: Data & Models
-- **Skills**: `@skills/skill-data-logic`
-- [ ] Create immutable `@freezed` models and JSON serialization.
-- 🛑 **QA Gate A**: Run Dart Analyzer on generated files. Must pass.
-
-### Phase B: Logic & Backend
-- **Skills**: `@skills/skill-data-logic`, `@skills/backend-architect`
-- [ ] Implement Riverpod Notifiers and business logic services.
-- 🛑 **QA Gate B**: Run tests for logic (if any) or verify analyzer passes.
-
-### Phase C: UI Implementation
-- **Skills**: `@skills/skill-ui-finish`, `@skills/ux-designer`
-- [ ] Build responsive widgets using design tokens and Liquid Glass patterns.
-- 🛑 **QA Gate C**: Verify widget compilation.
-
-### Phase D: QA & Audit
-- [ ] Write widget tests, verify accessibility, and run `flutter test`.
-
-### Phase E: State Preservation
-- [ ] **Living Knowledge**: Update relevant `.md` files in the 16 SaaS folders based on the new implementation. **Follow JIT Expansion Rule**: Only create files if the domain is touched.
-- [ ] **Memory Bloom**: Ensure `MEMORY.md` and `BLUEPRINT.md` reflect the current state of the architecture.
-- [ ] **Monorepo Context**: Ensure app-specific context stays in the sub-app directory and shared infrastructure stays in the root context.
+## PHASE 5: MAINTENANCE & SYNC (THE HEALTH)
+- [ ] **Graph Update**: Run `python scripts/build_graph.py` to update symbolic relationships.
 
 ---
-*Generated by Portable Brainvibing Infrastructure*
+*Portable Brainvibing Infrastructure - Orchestrated Lifecycle Protocol*

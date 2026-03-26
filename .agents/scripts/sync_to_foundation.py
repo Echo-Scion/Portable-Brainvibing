@@ -1,3 +1,7 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = []
+# ///
 import os
 import shutil
 import argparse
@@ -12,11 +16,12 @@ FOUNDATION_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 FOUNDATION_AGENTS = os.path.join(FOUNDATION_ROOT, ".agents")
 
 # Folders that represent "The Brain" and should evolve
-EVOLVABLE_FOLDERS = ["skills", "rules", "workflows", "canons", "templates"]
+EVOLVABLE_FOLDERS = ["skills", "rules", "workflows", "canons", "templates", "scripts"]
 
 # Files/Folders to NEVER sync back to foundation (project-specific)
 BLACKLIST = {
     "local",         # Project-specific experiments
+    "tasks",         # Project-specific atomic tasks (inside workflows/)
     "personal",
     "debug_scripts",
     "pull_planning_context.py", # Local drive specific sync script
@@ -43,11 +48,14 @@ def increment_patch_version(content):
     new_content, count = re.subn(version_pattern, replace_version, content, flags=re.MULTILINE)
     return new_content, count > 0
 
-def sync_upstream(project_root):
+def sync_upstream(project_root, dry_run=False):
     """
     Syncs changes from the local project's .agents back to the Foundation.
     Automatically increments version if SKILL.md or metadata files are changed.
     """
+    if dry_run:
+        print("🧪 [DRY RUN] Mode enabled. No files will be physically modified.")
+
     project_agents = os.path.join(project_root, ".agents")
     foundation_path_marker = os.path.join(project_agents, ".foundation_path")
     
@@ -72,8 +80,12 @@ def sync_upstream(project_root):
     print(f"🚀 Starting Upstream Sync: [Project] -> [_foundation]")
     print(f"Target: {target_foundation_agents}\n")
 
-    changes_count = 0
-    version_bumps = 0
+    class SyncStatus:
+        def __init__(self):
+            self.changes_count: int = 0
+            self.version_bumps: int = 0
+
+    status = SyncStatus()
 
     for folder in EVOLVABLE_FOLDERS:
         src_path = os.path.join(project_agents, folder)
@@ -86,7 +98,9 @@ def sync_upstream(project_root):
 
         for root, dirs, files in os.walk(src_path):
             # Skip blacklisted directories
-            dirs[:] = [d for d in dirs if d not in BLACKLIST]
+            filtered_dirs = [d for d in dirs if d not in BLACKLIST]
+            dirs.clear()
+            dirs.extend(filtered_dirs)
             
             for file in files:
                 # Skip blacklisted items or local-specific evolution (prefixed with 'local-')
@@ -120,66 +134,76 @@ def sync_upstream(project_root):
                         should_copy = True
 
                 if should_copy:
-                    # Ensure directory exists in foundation
-                    os.makedirs(os.path.dirname(foundation_file), exist_ok=True)
-                    
-                    # Logic: If it's a versioned file (like SKILL.md), increment version during copy
-                    if file.endswith((".md", ".json", ".yaml")):
-                        try:
-                            with open(local_file, 'r', encoding='utf-8') as f:
-                                content = f.read()
-                            
-                            new_content, bumped = increment_patch_version(content)
-                            
-                            with open(foundation_file, 'w', encoding='utf-8') as f:
-                                f.write(new_content)
-                            
-                            if bumped:
-                                print(f"    ↳ ✨ Auto-bumped version for {file}")
-                                version_bumps += 1
-                        except Exception as e:
-                            print(f"    ⚠️ Warning: Could not auto-bump {file}: {e}")
+                    if not dry_run:
+                        # Ensure directory exists in foundation
+                        os.makedirs(os.path.dirname(foundation_file), exist_ok=True)
+                        
+                        # Logic: If it's a versioned file (like SKILL.md), increment version during copy
+                        if file.endswith((".md", ".json", ".yaml")):
+                            try:
+                                with open(local_file, 'r', encoding='utf-8') as f:
+                                    content = f.read()
+                                
+                                new_content, bumped = increment_patch_version(content)
+                                
+                                with open(foundation_file, 'w', encoding='utf-8') as f:
+                                    f.write(new_content)
+                                
+                                if bumped:
+                                    print(f"    ↳ ✨ Auto-bumped version for {file}")
+                                    status.version_bumps += 1
+                            except Exception as e:
+                                print(f"    ⚠️ Warning: Could not auto-bump {file}: {e}")
+                                shutil.copy2(local_file, foundation_file)
+                        else:
                             shutil.copy2(local_file, foundation_file)
                     else:
-                        shutil.copy2(local_file, foundation_file)
+                        print(f"  [SIMULATED] Copy {file} -> {os.path.dirname(foundation_file)}")
                     
-                    changes_count += 1
+                    status.changes_count += 1
 
-    if changes_count > 0:
-        print(f"\n✅ Successfully synced {changes_count} files to Foundation.")
-        if version_bumps > 0:
-            print(f"✨ Total versions bumped: {version_bumps}")
+    if int(status.changes_count) > 0:
+        print(f"\n✅ Successfully synced {status.changes_count} files to Foundation.")
+        if int(status.version_bumps) > 0:
+            print(f"✨ Total versions bumped: {status.version_bumps}")
         
-        # Trigger Neural Graph Update
-        graph_script = os.path.join(FOUNDATION_AGENTS, "scripts", "build_graph.py")
-        if os.path.exists(graph_script):
-            print("🧠 Regenerating Knowledge Graph...")
-            try:
-                subprocess.run([sys.executable, graph_script], cwd=FOUNDATION_ROOT, check=True)
-            except Exception as e:
-                print(f"⚠️ Warning: Failed to update Knowledge Graph: {e}")
+        if not dry_run:
+            # Trigger Neural Graph Update
+            graph_script = os.path.join(target_foundation_agents, "scripts", "build_graph.py")
+            if os.path.exists(graph_script):
+                print("🧠 Regenerating Knowledge Graph...")
+                try:
+                    subprocess.run([sys.executable, graph_script], cwd=os.path.dirname(target_foundation_agents), check=True)
+                except Exception as e:
+                    print(f"⚠️ Warning: Failed to update Knowledge Graph: {e}")
 
-        # Trigger Catalog Update in Foundation
-        if os.path.exists(catalog_script):
-            print("🔄 Updating Foundation Catalog...")
-            try:
-                # We run it using the foundation's own script to ensure context
-                subprocess.run([sys.executable, catalog_script], cwd=FOUNDATION_ROOT, check=True)
-                print("✅ Foundation Catalog & Workspace Map updated.")
-            except Exception as e:
-                print(f"⚠️ Warning: Failed to auto-update catalog: {e}")
+            # Trigger Catalog Update in Foundation
+            if os.path.exists(catalog_script):
+                print("🔄 Updating Foundation Catalog...")
+                try:
+                    # We run it using the foundation's own script to ensure context
+                    subprocess.run([sys.executable, catalog_script], cwd=os.path.dirname(target_foundation_agents), check=True)
+                    print("✅ Foundation Catalog & Workspace Map updated.")
+                except Exception as e:
+                    print(f"⚠️ Warning: Failed to auto-update catalog: {e}")
+        else:
+            print("\n🧪 [DRY RUN] Would trigger graph and catalog updates in foundation.")
     else:
         print("\n✨ No changes detected. Foundation is already up-to-date.")
 
     return True
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description="Sync local agent evolution back to the Global Foundation.")
     parser.add_argument("--project", help="Path to the local project root", default=".")
+    parser.add_argument("--dry-run", action="store_true", help="Simulate sync without modifying files.")
     
     args = parser.parse_args()
     
     # Resolve absolute path for project root
     project_root = os.path.abspath(args.project)
     
-    sync_upstream(project_root)
+    sync_upstream(project_root, dry_run=args.dry_run)
+
+if __name__ == "__main__":
+    main()

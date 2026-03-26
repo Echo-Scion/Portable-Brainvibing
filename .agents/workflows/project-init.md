@@ -36,23 +36,19 @@ This workflow consolidates the initialization logic for both "Root Projects" and
 - [ ] AI **WAITS** for user response.
 - [ ] **Socratic Challenge**: AI MUST identify and present at least ONE technical or product risk based on the user's answers. AI only proceeds after the user acknowledges or refines the choice.
 - [ ] AI compiles `$PROJECT_BRIEF` internally following the schema defined in `templates/PROJECT_BRIEF.template.md`.
-- [ ] **⚡ STEP 0.1: MONOREPO CONFIG (Double Lean)**:
-  - **IF monorepo detected**: AI asks the user which sub-apps to initialize.
-  - *"I've detected a monorepo structure. Should I initialize context for [App A, App B, Root]? (Default is Double Lean for all)."*
-  - AI **WAITS** for user response.
-- [ ] **⚡ STEP 0.2: THE KNOWLEDGE-BRIDGE (Deepening)**:
-  - AI uses `@project-architect` and `startup_knowledge_base.md` to analyze `$PROJECT_BRIEF`.
-  - AI proposes **10-15 "Industry-Standard" SaaS features** (e.g., Auth, Role-based access, Audit logs, Invoicing, etc.) specific to the project's domain.
-  - AI presents this list to the user: *"Based on your brief, I recommend these 12 industry-standard features to ensure a deep SaaS context. Which ones should I include in the blueprint? (You can also type 'Include All' or 'Skip' to use my expert defaults)."*
-  - AI **WAITS** for user confirmation/refinement.
-- [ ] AI activates `@project-architect` skill with the expanded brief to generate structured PRD data and synthesize Blueprint chapters 1–7.
-- [ ] **⚡ STEP 0.2: BLUEPRINT INGESTION (Alternative Path)**:
-  - **IF a Blueprint/Spec file was detected in Step 0 (Intent Detection)**:
-    - AI reads the specified file.
-    - AI applies the **U2S (Unstructured-to-Surgical)** mapping protocol from `rules/common/context_naming_policy.md`.
-    - AI skips the manual questions and Step 0.1, using the blueprint as the finalized `$PROJECT_BRIEF`.
-    - AI identifies gaps in the blueprint and warns: *"Blueprint ingested. I've detected missing info for [Domain X, Y] and will use Best-Practice Defaults to ensure Zero N/A compliance."*
-- [ ] AI holds generated content in memory, ready for slot-fill in Step 5.
+
+---
+
+## ⚡ STEP 0.3: THE DEEPENING (Logical Inference)
+> [!IMPORTANT]
+> To ensure 100% success in Step 5 (Scaffolding), the AI MUST now expand the 5 user answers into the full 30+ data points required by the Blueprint.
+
+- [ ] **Infer Identity**: Derive `etymology`, `node_identifier`, and `trinity_keywords` based on the project name and tagline.
+- [ ] **Experience Design**: Define the `first_30_seconds` (Wow moment) and `dual_lens_concept` based on the target persona.
+- [ ] **Risk Assessment**: Analyze the chosen tech stack against the features to identify `fragmentation_risk` and `scale_limitations`.
+- [ ] **Protocol Check**: Ensure all inferences align with `canons/global/core-architecture.md`.
+- [ ] **Presentation**: AI presents a "Conceptual Summary" to the user: *"I've expanded your brief into a full architectural concept. I've identified [Risk X] and designed the [Wow Moment Y]. Proceed to scaffolding?"*
+- [ ] AI **WAITS** for user confirmation.
 
 ---
 
@@ -79,101 +75,84 @@ This workflow consolidates the initialization logic for both "Root Projects" and
 
 ## 4. GENERATE CONTEXT HIERARCHY
 - [ ] **Infrastructure**: Create the `context/` parent directory first.
-- [ ] **Monorepo Detection**: If Melos, Nx, or nested `apps/` folders are present, initialize the **Double Lean** hierarchy:
-    - **Root Context**: Create Lean folders in the root `context/` (reserved for Global Platform/DevOps).
-    - **App Context**: For each specified sub-app in `apps/[app]/`, create independent Lean folders (`00-overview/`, `01-product/`, `02-creative/`, `03-tech/`).
-- [ ] **Standard Project (Lean)**: If NOT a monorepo and user confirms Lean density, create `00-overview/`, `01-product/`, `02-creative/`, and `03-tech/` inside root `context/`.
-- [ ] **Standard Project (Startup)**: If NOT a monorepo and user confirms Startup density, create the 16-category sub-folder structure defined in `templates/SAAS_STARTUP_STRUCTURE.md` inside root `context/`.
-- [ ] **Verification**: Run `list_dir` on `context/` (and `apps/*/context/` if applicable) to confirm all directories exist before proceeding.
+- [ ] **Standard Pillar Hierarchy (ALWAYS ACTIVE)**: Create the 4 Master Pillars:
+    - `00_Strategy/`
+    - `01_Product/`
+    - `02_Creative/`
+    - `03_Tech/`
+- [ ] **Monorepo Detection**: If Melos, Nx, or nested `apps/` folders are present:
+    - **Root Context**: Create the 4 pillars in the root `context/`.
+    - **App Context**: For each sub-app in `apps/[app]/`, create independent 4 pillars.
+- [ ] **Verification**: Run `list_dir` on `context/` to confirm all 4 pillars exist.
 
 ---
 
 ## 5. SCAFFOLDING (Auto-Populated via Slot-Fill)
 > [!IMPORTANT]
 > Do NOT create blank files. For each template:
-> 1. Load and enforce `project-architect/resources/` (Pillars & Rigor).
+> 1. Load and enforce `project-architect/references/` (Pillars & Rigor).
 > 2. Fill all `{{slots}}` using `$PROJECT_BRIEF` and the generated Blueprint data.
 > 3. Write the fully populated content to the target file.
-> 4. **SAFETY GUARD**: Do not run more than 5 `write_file` tools in a single parallel turn. Batch your writes to prevent timeout.
 
-- [ ] **BLUEPRINT.md**: 
+- [ ] **BLUEPRINT.md (Master Strategy)**: 
   - Read `.agents/templates/BLUEPRINT.template.md`
-  - Fill all `{{slots}}` with synthesized blueprint content.
-  - **Granular SaaS Synthesis (Startup Mode)**: If Startup density is chosen, read `.agents/templates/BLUEPRINT_SAAS_CHAPTER.template.md`. Instead of 82 granular points, generate a 1-sentence high-level summary for each of the 16 Categories to save token generation limits. Inject the result into `{{saas_startup_mapping}}`. If Lean density, replace `{{saas_startup_mapping}}` with "*Lean Mode Active - Detailed SaaS mapping omitted.*"
-  - **Verification**: Ensure the total line count of `BLUEPRINT.md` remains manageable.
-  - Write to `context/00-overview/BLUEPRINT.md` (Lean) or `context/Planning/MVP Scope.md` (Startup)
+  - Write to `context/00_Strategy/BLUEPRINT.md`
 
-- [ ] **MEMORY.md**: 
+- [ ] **MEMORY.md (Project Soul)**: 
   - Read `.agents/templates/MEMORY.template.md`
-  - Fill `{{project_name}}`, `{{date}}`, `{{next_steps}}` from intake data
-  - Write to `context/00-overview/MEMORY.md`
+  - Write to `context/00_Strategy/MEMORY.md`
 
-- [ ] **ROADMAP.md**: 
+- [ ] **ROADMAP.md (Master Product)**: 
   - Read `.agents/templates/ROADMAP.template.md`
-  - Fill with MVP phases derived from Blueprint Chapter 6
-  - Write to `context/01-product/ROADMAP.md`
+  - Write to `context/01_Product/ROADMAP.md`
 
-- [ ] **STYLE_GUIDE.md (Lean only)**:
+- [ ] **STYLE_GUIDE.md (Master Design)**:
   - Read `.agents/templates/STYLE_GUIDE.template.md`
-  - Fill `{{visual_aesthetic_keywords}}`, `{{primary_persona}}`, etc.
-  - Write to `context/02-creative/STYLE_GUIDE.md`
+  - Write to `context/02_Creative/STYLE_GUIDE.md`
 
-- [ ] **ARCHITECTURE.md (Lean only)**:
+- [ ] **ARCHITECTURE.md (Master Tech)**:
   - Read `.agents/templates/ARCHITECTURE.template.md`
-  - Fill `{{primary_languages}}`, `{{frontend_framework}}`, `{{state_management_choice}}`, etc.
-  - Write to `context/03-tech/ARCHITECTURE.md`
+  - Write to `context/03_Tech/ARCHITECTURE.md`
 
-
-- [ ] **SaaS Category Population (Startup only)**: 
+- [ ] **SaaS Surgical Population (Startup Mode)**: 
   - **Anti-Paralysis Protocol (JIT Expansion)**: Do NOT create all 82 files upfront.
-  - Create ONLY the most critical initialization files based on the `$PROJECT_BRIEF` (e.g., `Idea/Problem Discovery.md`, `Planning/MVP Scope.md`, `Development/Tech Stack.md`).
-  - Read `.agents/templates/SAAS_MEMORY.template.md` for these critical files and fill `{{slots}}`.
-  - The remaining files from the `SAAS_STARTUP_STRUCTURE.md` baseline are left uncreated and will be generated **Just-In-Time (JIT)** when that specific feature/domain is actively worked on.
+  - Create ONLY the most critical initialization files using the **Prefix-Based Registry** from `templates/SAAS_STARTUP_STRUCTURE.md`.
+  - *Example*: `context/00_Strategy/Idea_Problem_Discovery.md`, `context/03_Tech/Dev_Tech_Stack.md`.
+  - The remaining files are generated **Just-In-Time (JIT)** when actively worked on.
 
 - [ ] **Proactive Prompt**: AI confirms: *"All context has been auto-populated. Review BLUEPRINT.md and MEMORY.md before we proceed to the first feature?"*
 
 ---
 
 ## 6. MIGRATION (Density Upgrade)
-- [ ] **Scenario**: If user confirms upgrading an existing "Lean" project or sub-app to Startup density:
-  - **Monorepo Check**: If in a monorepo, ask which sub-app to upgrade. Target `apps/[app]/context/`.
-  - Agent must scan existing folders (`00-overview`, `01-product`, etc.).
-  - **Optional Proactive Intake**: AI proposes 3-5 deepening questions specific to the new SaaS structure.
-  - **Interpolation**: AI informs user: *"Using industry-standard defaults for skipped domains. I've mapped your existing context and will apply JIT Expansion for the 16 SaaS categories."*
-  - Propose move/categorization of each file into the new 16-category structure (following the names in `SAAS_STARTUP_STRUCTURE.md`).
+- [ ] **Scenario**: Upgrading an existing "Lean" project to Startup density:
+  - Agent scans existing folders (`00_Strategy`, `01_Product`, etc.).
+  - AI informs user: *"Using Prefix-Based Expansion for the 82 SaaS categories. I'll maintain the 4-pillar hierarchy for better AI context retention."*
+  - AI generates required Prefix-based files without moving existing Master files.
 - [ ] **Merge Back**: Continue to Step 8 (Registration & Verification).
 
 ---
 
 ## 7. LEGACY INGESTION (Half-Finished Projects)
-- [ ] **Scenario**: If AI detects an existing codebase in Step 0 (Intent Detection) OR user indicates an "Existing Codebase" during intake:
-  - **⚡ STEP 7.1: DEEP AUDIT**:
-    - AI runs `list_dir` and `grep_search` on core directories (`lib/`, `src/`, `api/`, `docs/`).
-    - AI identifies existing features (e.g., "Auth detected via Firebase", "Stripe detected in payments/").
-  - **⚡ STEP 7.2: REVERSE-ENGINEERED MAPPING**:
-    - AI applies the **U2S (Unstructured-to-Surgical)** mapping logic from `rules/common/context_naming_policy.md` to the *discovered code architecture*.
-    - AI creates context files in the 82-file baseline for **everything already built**, initializing the specs from the actual implementation.
-  - **⚡ STEP 7.3: MIGRATION MEMORY**:
-    - AI populates `MEMORY.md` with an integration log: *"Integrated into legacy project. Discovered [X] modules. Mapped to [Y] surgical context files."*
+- [ ] **Scenario**: Existing codebase detected:
+  - **⚡ STEP 7.1: DEEP AUDIT**: AI reverse-engineers specs from code.
+  - **⚡ STEP 7.2: REVERSE-ENGINEERED MAPPING**: AI creates Prefix-based context files for everything already built.
 - [ ] **Merge Back**: Continue to Step 8 (Registration & Verification).
 
 ---
 
 ## 8. TASK INJECTION (Lifecycle Tracking)
 - [ ] **Atomic Task Injection (MANDATORY)**: 
-  - Read `.agents/templates/ATOMIC_TASK.template.md`.
   - Create a new file in `.agents/workflows/tasks/task-[project_name]-planning.md`.
-  - Set `Status: TODO` (or `IN_PROGRESS` if explicitly requested).
+  - Set `Status: TODO`.
   - Fill the `Objective` with: "Blueprint & PRD Completion for [Project Name]".
-  - *Rationale*: Ensures every project starts with a formal, trackable planning phase.
 
 ---
 
 ## 9. REGISTRATION & VERIFICATION
-- [ ] **Workspace Map**: Update `.agents/workspace_map.md` with new project entry.
-- [ ] **Test Mention**: Try to `@` mention a local skill to verify indexing.
+- [ ] **Workspace Map**: Update `.agents/workspace_map.md`.
 
 ---
 
 > [!TIP]
-> This unified `/project-init` replaces the legacy `/root-init` and `/canon-init`. The Intake Gate (Step 0) ensures zero manual file editing — all context is AI-generated from a 5-question brief.
+> This structure ensures AI can scan the entire project context in just 4 `list_dir` calls, regardless of project scale.

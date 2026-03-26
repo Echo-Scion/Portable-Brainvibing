@@ -53,13 +53,13 @@ The context is resolved in two or three layers depending on project type:
 ### Standard Project (Single Layer)
 | Level | Name | Scope | Location |
 | :--- | :--- | :--- | :--- |
-| **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/common/` |
+| **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/` |
 | **1** | **Project Local** | Project-specific rules & memory. | `.agents/rules/local/` & `context/` |
 
 ### Monorepo Project (Double Lean Layer)
 | Level | Name | Scope | Location |
 | :--- | :--- | :--- | :--- |
-| **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/common/` |
+| **0** | **Global Foundation** | General AI behavior & standards. | `.agents/rules/` |
 | **1** | **Monorepo Root** | Shared infrastructure, DevOps, & Design. | `/context/` (Root) |
 | **2** | **App Local** | Specific business logic & features. | `/apps/[app_name]/context/` |
 
@@ -68,8 +68,8 @@ The context is resolved in two or three layers depending on project type:
 In a monorepo environment, context MUST be distributed to prevent "Context Bloat" and ensure app-specific isolation:
 
 - **Root Context**: Reserved ONLY for global platform infrastructure, monorepo DevOps (e.g., Melos, Docker), and unified design systems.
-- **App Context**: Every sub-app MUST maintain its own **Lean Context** folders (`00-overview`, `01-product`, `02-creative`, `03-tech`).
-- **Distributed SaaS Mapping**: Detailed SaaS context (Idea, Planning, Development, etc.) is stored in the specific app's context directory, NOT the root.
+- **App Context**: Every sub-app MUST maintain its own **4-Pillar Context** folders (`00_Strategy`, `01_Product`, `02_Creative`, `03_Tech`).
+- **Distributed SaaS Mapping**: Detailed SaaS context (Idea, Planning, Development, etc.) is stored in the specific app's context directory using the Prefix-Based Registry.
 
 ## 3. Plug & Play Residency (Physical)
 
@@ -88,7 +88,7 @@ Beyond rules and behaviors, this system uses **Canons** (`canons/`) to store the
 - **Lazy-Loading**: The agent MUST lazy-load relevant `.md` files from the `canons/` directory based on the task domain to minimize context usage while maintaining high fidelity to standards.
 
 ## 4. Override Logic
-- **Local Overrides Global**: If a rule exists in `.agents/rules/local/`, it automatically overrides the same rule in `.agents/rules/common/`.
+- **Local Overrides Global**: If a rule exists in `.agents/rules/local/`, it automatically overrides the same rule in `.agents/rules/`.
 - **Skill Priority**: The agent always checks for a local version of a skill in `.agents/skills/` before execution.
 
 ## 5. Initialization
@@ -108,7 +108,7 @@ To prevent architectural drift and naming inconsistency, all files created withi
 - **Naming Source**: Use only the identifiers listed in `SAAS_STARTUP_STRUCTURE.md`.
 
 ## 2. Selection Logic
-1. **Direct Match**: If the knowledge fits a specific category (e.g., SEO strategy), use the designated file (e.g., `Acquisition/SEO Wins.md`).
+1. **Direct Match**: If the knowledge fits a specific category (e.g., SEO strategy), use the designated file (e.g., `01_Product/Acq_SEO_Wins.md`).
 2. **Expansion Match**: If the knowledge is an expansion of an idea, append it to the relevant existing file rather than creating a "shadow" file.
 3. **New Creation**: If the knowledge is truly unique but falls within a category, propose a name that follows the existing pattern and seek confirmation.
 
@@ -117,8 +117,8 @@ To prevent architectural drift and naming inconsistency, all files created withi
 - AI MUST taxonomize the input and distribute it across the **82 SaaS Startup Files** baseline.
 - **Protocol**: 
     1. Parse the dump.
-    2. Map snippets to specific domain files (e.g., "we will charge $10" -> `Revenue/Subscriptions.md`).
-    3. Update `BLUEPRINT.md` as the index.
+    2. Map snippets to specific domain files (e.g., "we will charge $10" -> `01_Product/Rev_Subscriptions.md`).
+    3. Update `00_Strategy/BLUEPRINT.md` as the index.
     4. Interpolate missing details to ensure "Zero N/A" compliance.
 
 ## 4. Lean-to-Startup Evolution (Just-In-Time Expansion)
@@ -126,12 +126,12 @@ To prevent architectural drift and naming inconsistency, all files created withi
 - The 82 files in `SAAS_STARTUP_STRUCTURE.md` act as a **dictionary of allowed names**, not a mandate to create empty files.
 - Even in **Lean** or **Startup** projects, any NEW idea or feature MUST trigger a **Surgical Expansion (JIT)**.
 - Instead of creating random files, the AI "promotes" the relevant category from the 82-file baseline. 
-- *Example*: Adding a "Referral Program" to a project results in the creation of `context/Growth/Referral Programs.md`, initializing that specific file ONLY when needed.
+- *Example*: Adding a "Referral Program" to a project results in the creation of `context/01_Product/Growth_Referral_Programs.md`, initializing that specific file ONLY when needed.
 
 ## 5. Monorepo Distribution (Double Lean)
 - In a monorepo, context is **split** between the root and the apps.
-- **Root Context**: Reserved for shared infra (e.g., `Infrastructure/Melos Config.md`).
-- **App Context**: Reserved for feature logic (e.g., `apps/[app]/context/Idea/Product Roadmap.md`).
+- **Root Context**: Reserved for shared infra (e.g., `03_Tech/Infra_Melos_Config.md`).
+- **App Context**: Reserved for feature logic (e.g., `apps/[app]/context/01_Product/Plan_Product_Roadmap.md`).
 - AI MUST ensure that app-specific details do NOT leak into the root context to maintain strict isolation.
 
 ## 6. Enforcement

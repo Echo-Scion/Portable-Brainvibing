@@ -59,10 +59,9 @@ Optimizing cost and speed without sacrificing quality:
 - **Tree Shaking**: Ensure unused dependencies are removed from production builds.
 
 ## 4. Modularization & Context Integrity (Vibecode)
-- **Modularity over Line Counts**: Prioritize Single Responsibility Principle (SRP). A file should be as long as necessary for logical integrity, but as short as possible to stay efficient within the AI context window.
-- **Target Range**: Aim for **200–600 lines** per file for optimal context management.
-- **Logical Cohesion**: Do not split files arbitrarily just to meet line count targets. If a feature or class requires more lines to stay cohesive, keep it together.
-- **Refactoring Signals**: If a file exceeds **800-1000 lines**, consider it an experimental signal that the module might need decoupling for future AI context health.
+- **Modularity over Line Counts**: Prioritize Single Responsibility Principle (SRP), but respect the AI token window.
+- **Vibecode Hard Cap (500 Lines)**: No single file should exceed 500 lines. This is a STRICT architectural boundary to prevent token overflow and context loss.
+- **Mandatory Splitting**: If a feature naturally pushes a file past 500 lines, you MUST pause feature development and refactor immediately (extract widgets, helper classes, or state logic to separate files).
 - **Optimization**: Extract private widgets, helper classes, or providers into separate files when they represent distinct sub-responsibilities. Use barrel exports (`export 'file.dart';`) to maintain a clean public API.
 
 ## 5. Tooling & MCP Awareness
@@ -89,7 +88,6 @@ activation: on_demand
 - Implement idempotency for critical transactions.
 
 ## 4. Monitoring & Observability
-- Export key metrics for system health monitoring.
 - Implement distributed tracing for complex request flows.
 - Ensure logs are structured and searchable.
 ---

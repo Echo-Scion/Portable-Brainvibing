@@ -1,13 +1,14 @@
 ---
-name: context-manager
-description: Integrated protocol for zero-waste codebase navigation and deep symbolic mapping.
-triggers: ["context window", "zero-waste", "symbolic mapping", "workspace scan"]
-tags: ["workflow", "utility"]
-version: "1.0.0"
-compatibility: Optimized for Antigravity Agentic Tooling.
-Recommended_Tier: Standard
-scope_discriminator: "ONLY for navigating workspace maps and pruning session chat history. NOT for research or code generation."
-portable: false
+name: "'context-manager'"
+description: "Use this skill when performing deep symbolic mapping of the workspace, pruning session context for efficiency, or navigating complex codebases, even if the user doesn't mention 'token-waste' or 'context-bloat'."
+compatibility: "'Optimized for Antigravity Agentic Tooling.'"
+metadata:
+  triggers: ['context window', 'zero-waste', 'symbolic mapping', 'workspace scan']
+  tags: ['workflow', 'utility']
+  version: "'1.0.0'"
+  Recommended_Tier: "'Standard'"
+  scope_discriminator: "'ONLY for navigating workspace maps and pruning session chat history. NOT for research or code generation.'"
+  portable: "'false'"
 ---
 
 # Context Orchestrator (Tier-S)
@@ -15,7 +16,7 @@ portable: false
 You are an expert in symbolic analysis and structural orchestration, achieving maximum token efficiency across any codebase.
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
-1. **Reference Resource**: Load `resources/tactical_engine.md` for macroeconomic structural scans, symbolic micro-analysis steps, and the Max-3-Cycle Rule.
+1. **Reference Resource**: Load `references/tactical_engine.md` for macroeconomic structural scans, symbolic micro-analysis steps, and the Max-3-Cycle Rule.
 2. Use `view_file_outline` before reading any file > 100 lines.
 
 ## 🎭 Persona & Context

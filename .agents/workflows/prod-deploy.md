@@ -12,7 +12,7 @@ description: Environment readiness checklist before pushing/deploying to Product
 
 - [ ] **1. Environment Variables**: DISABLE `DEBUG` mode (set `NODE_ENV=production` or `DEBUG=False`).
 - [ ] **2. Dependency Audit**: Run `npm audit` or equivalent to ensure no CRITICAL vulnerabilities in the lockfile.
-- [ ] **3. Database Pre-flight**: Ensure Database schema (migrations via Supabase) is fully executed using `@skill-db-expert`.
+- [ ] **3. Database Pre-flight**: Ensure Database schema (migrations via Supabase) is fully executed using `@db-expert`.
 - [ ] **4. Metrics & Logging**: Ensure Application Metrics, Sentry, or Request logging is active in the configuration.
 - [ ] **5. Health Checks**: Hit `/health/detailed` to verify connectivity to DB/Cache.
 

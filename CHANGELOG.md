@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.2] - 2026-03-27
+### Changed
+- Deploy Token-Optimized Context Routing and Neural Task Templates
+
+
+## [1.2.1] - 2026-03-26
+### Changed
+- Finalize Neural Impact Analysis logic and README enhancements
+
+
+## [1.2.0] - 2026-03-26
+### Changed
+- Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders
+
+
+## [1.1.17] - 2026-03-26
+### Changed
+- v1.3.1 - Logical Integrity & Cross-Platform Pathing Update
+
+
+## [1.1.16] - 2026-03-26
+### Changed
+- v1.3.0 - Unified Pillar Patch & Global Sanitization
+
+
 ## [1.1.15] - 2026-03-26
 ### Changed
 - Restore empty local and tasks structures with .gitkeep
@@ -31,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.10] - 2026-03-22
 ### Changed
-- Integrasi prinsip Advanced Engineering dan Reality Checker
+- Integration of Advanced Engineering and Reality Checker principles
 
 
 ## [1.1.9] - 2026-03-21
@@ -81,7 +106,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2026-03-20
 ### Changed
-- True Deep Audit: Resolved philosophical bipolarity, extracted 82-file SaaS mapping, and established strict Habitat Demarcation.
+- **Unified Logic**: Established a clear 4-pillar structure and the 82-file SaaS mapping protocol.
 
 
 ## [1.0.2] - 2026-03-20

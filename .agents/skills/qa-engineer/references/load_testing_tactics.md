@@ -1,7 +1,6 @@
 # Systems Load Testing Tactics (K6 / Artillery)
 
 ## 📊 Load Profile Definition
-- **Baseline**: Normal traffic metrics (e.g., 100 VU constant).
 - **Stress Test**: Gradual ramp up to breaking point (e.g., 0 to 5000 VU over 30 mins).
 - **Spike Test**: Immediate jump to 10x traffic (e.g., 50 to 2000 VU in 1 min).
 

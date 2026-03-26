@@ -1,149 +1,74 @@
-# 🤖 AGENTS Handbook: The "Zero to Hero" Simulation
+# AGENTS: The AI-Surgical Ecosystem Simulation (.agents)
 
-This is not a manual—it is a **mission report**. We are simulating the "Best Case Scenario": a solo developer taking a raw idea and turning it into a SaaS using every single item in the **Portable Brainvibing** infrastructure.
+Welcome to the **Portable AI-Surgical Infrastructure**. This document explains how the 23 core components of the `.agents` ecosystem work together to transform a raw idea into a professional, production-ready SaaS product.
 
----
-
-## 🎬 Act I: The Big Bang (Setup & Deployment)
-
-You have a blank screen and a dream. You start by "cloning" the intelligence.
-
-1. **`scripts/deploy_foundation.py`**: You run this first. It’s the mechanical hand that reaches into the cloud and pulls down the `.agents` infrastructure into your empty folder.
-2. **`.agents/DEPLOY_ME.md`**: You (or your AI) read this manual to ensure your environment—VS Code, Cursor, or Gemini CLI—is configured correctly for "Surgical Engineering."
-3. **`scripts/verify_agents.py` & `scripts/audit_structure.py`**: You run these twins to confirm the bridge is stable. They check every file hash and link, ensuring the "Outer Brain" is perfectly connected.
+> [!TIP]
+> This is a **Universal Guide**. It simulates the **Project Journey** for any developer using this plug-and-play infrastructure.
 
 ---
 
-## 🚀 Act II: The Connection (Initialization)
+## 🟢 PHASE 1: THE FOUNDATION (Canons & Identity)
+*Before the first line of code, the project needs a clear identity and a technical "Constitution."*
 
-The brain is there, but it doesn't know you yet.
+1.  **Project Identity & Philosophy**: The agent learns its role as a collaborative Senior Engineer. It adopts a philosophy of precision, grace, and high-fidelity execution.
+2.  **The Project Vocabulary**: It masters your specific domain terms and technical jargon to ensure absolute communication alignment.
+3.  **The Aesthetic Mandate**: It understands the visual vision for the project. It knows that every UI component must feel premium, modern, and responsive.
+4.  **The Documentation Standards**: It enforces high-density technical rigor. It ensures your documentation tree is structured like a top-tier startup's knowledge base.
+5.  **The Architectural Constitution**: The absolute laws of the project. It defines the folder structures, state management patterns, and coding standards that ensure long-term maintainability.
 
-4. **`workflows/project-init.md`**: You trigger this workflow. It’s no longer just a handshake; it's a **Smart Intake**. The AI scans your folder, detects if you're in a **Monorepo (Double Lean)**, starting fresh, from a blueprint, or from a legacy codebase, and guides you through nested context setup.
-5. **`.agents/workspace_map.md`**: The system registers your new app here, mapping its location so it can be managed alongside your other projects.
-6. **`.agents/catalog.json`**: The AI assistant scans this index to see which "Modular Personas" (Skills) it can summon for your specific task.
+## 🟡 PHASE 2: THE BRAIN (Rules & Logic)
+*The project needs operational intelligence. Rules ensure safety, security, and efficiency.*
 
----
+6.  **The Security Gate (Core Protocols)**: The agent's first instinct is safety. No secrets in code, no destructive operations without explicit confirmation, and mandatory safety checks before acting.
+7.  **The Analytical Engine**: Every recommendation must be evidence-based. It critiques the architecture using rigorous technical lenses to prevent "logic drift."
+8.  **The Version Control Master**: It ensures every commit is atomic, descriptive, and follows professional branching strategies.
+9.  **The Language Specialist (e.g., Dart/Flutter)**: It enforces strict typing, immutable models, and reactive state management best practices.
+10. **The Platform Sentinel (e.g., Web/Backend)**: It ensures API safety, server-side optimization, and defensive data parsing logic.
+11. **The Evaluation Protocol (evals/)**: Ensures deterministic agent behavior through automated prompt evaluation and regression testing. It prevents "intelligence regressions" during updates.
 
-## 🏛️ Act III: The Architect's Vision (The Blueprint)
+## 🔵 PHASE 3: THE EXPERTS (Specialized Skills)
+*The system invokes specialized "Personas" to handle complex technical tasks.*
 
-You explain your idea. The AI doesn't start coding; it starts **thinking**.
+12. **The Lead Architect**: Designs the strategic blueprint and maps out the path from MVP to global scaling.
+13. **The Agent Engineer**: Manages the autonomous AI loops and state machines that drive the development process.
+14. **The Database Expert**: Handles schema design, migrations, and complex security policies (e.g., Row Level Security).
+15. **The API Contract Specialist**: Defines strict data contracts to prevent communication errors between systems.
 
-7. **`workflows/project-blueprint.md`**: You invoke this high-level ritual. Alternatively, provide a **Master Blueprint** during initialization, and the AI will surgically distribute its contents (U2S Protocol).
-8. **`skills/project-architect/`**: The "Chief Architect" persona is summoned.
-9. **`templates/BLUEPRINT.template.md`**: The architect fills this out, defining the "Brand Soul" and the user's emotional journey.
-10. **`templates/ARCHITECTURE.template.md`**: The architect decides on the skeleton—choosing how the layers of your app will talk to each other.
-11. **`templates/ROADMAP.template.md`**: You define the milestones. What is the MVP? What is V2.0?
-12. **`templates/STYLE_GUIDE.template.md`**: You decide on the "Vibe"—the typography, the palette, and the liquid-glass aesthetics.
-13. **`templates/SAAS_STARTUP_STRUCTURE.md`**: The master baseline of **82 SaaS Startup Files** used for surgical growth.
+## 🔴 PHASE 4: THE MEMORY (Surgical Context)
+*Structure is everything. The agent organizes knowledge so it never forgets.*
 
----
+16. **The 4-Pillar Hierarchy**: Knowledge is sorted into **Strategy**, **Product**, **Creative**, and **Tech**. A flat, AI-scannable structure.
+17. **The SaaS Registry**: Maps ideas into surgical files (e.g., Pricing Strategy, MVP Scope) using **Just-In-Time (JIT) Expansion** to prevent information overload.
+18. **The Master Blueprint**: The central "Atlas" of the project. It links every technical detail back to the overall business goal.
+19. **The Project Memory**: The session's "Soul." It tracks every milestone, technical decision, and next-step directive in real-time.
 
-## ⚖️ Act IV: The Law of the Land (Governance)
+## 🟣 PHASE 5: THE MUSCLES (Workflows & Automation)
+*Execution with extreme velocity and zero manual waste.*
 
-The AI builder is ready, but it must follow the "Golden Rules."
-
-15. **`rules/common/context_naming_policy.md`**: The AI learns how to structure knowledge. It maps your chaotic ideas into the strict 82-file SaaS format using **Just-In-Time (JIT) Expansion** to prevent context paralysis.
-16. **`rules/common/model_tier_protocol.md`**: The system calculates costs. It will use "Flash" for routine code and "Pro" for the complex logic.
-17. **`rules/common/context7_economical_usage.md`**: It learns to be "Token-Lean," reading only the code it needs to save you money.
-18. **`rules/common/git-workflow.md`**: It learns how you like your commits—clean, descriptive, and atomic.
-19. **`rules/common/security.md`**: It memorizes your safety gates—no API keys in the code, ever.
-20. **`rules/common/agent_protocols.md`, `analytical_standards.md`, `connector_protocols.md`**: It learns how to communicate with other agents and how to analyze problems before acting.
-21. **`rules/common/interaction_protocols.md`, `performance.md`, `reasoning_protocols.md`**: It masters the "Tone" and the "Logic" of your personal development style.
-22. **`rules/flutter/dart-style.md` & `flutter_standards.md`**: It masters the stack, ensuring every widget is optimized for 60FPS.
-23. **`rules/flutter/flutter_hybrid_architecture.md`**: It learns the specific way you mix Flutter with native or web elements.
-24. **`rules/web/web_standards.md`**: If you build a web dashboard, it follows these rules for responsiveness.
-
----
-
-## 🏗️ Act V: The Great Construction (Feature Build)
-
-Now, the heavy lifting.
-
-25. **`workflows/app-builder.md`**: You run this every day. It’s the engine that drives feature development.
-26. **`skills/skill-db-expert/`**: The database specialist builds your Supabase tables and Row Level Security (RLS).
-27. **`skills/skill-api-contract/`**: The safety specialist generates Zod/API schemas so bad data can't break the app.
-28. **`skills/skill-data-logic/`**: The Flutter specialist generates your "Freezed" models and "Riverpod" state management.
-29. **`skills/backend-architect/`**: The pattern expert implements the MVC or Repository layers.
-30. **`skills/context-manager/`**: If you get lost in the code, this skill helps the AI find exactly where the bug is.
-31. **`skills/skill-knowledge/`**: If you want to use a brand new library, this skill "ingests" the documentation in seconds.
-32. **`canons/auth/canon.md`**: The AI builds the login screen exactly like your "Gold Standard"—no deviations.
-33. **`canons/notifications/canon.md`**: It sets up the push alerts using your proven patterns.
-34. **`canons/ui-patterns/canon.md`**: Every button and card follows your pre-approved design "Canons."
-35. **`templates/canon.md.example` & `global-bridge.md.example`**: You use these to create new standards as your app grows.
+20. **The Master Orchestrator**: Guides the project through the full lifecycle—from initial ingestion to scaffolding, execution, and final certification.
+21. **The Surgical Builder**: A repeatable, high-precision loop for building features (Data -> Logic -> UI -> Testing).
+22. **The Automation Suite**: Tools that rebuild the system's knowledge graph and update indices, keeping the "Brain" sharp after every change.
+23. **The Workflows Guide (docs/)**: The "Tactical Manual" that defines the exact mechanical steps for complex agentic maneuvers and multi-step tasks.
 
 ---
 
-## 🧪 Act VI: The Shield (Verification & Polish)
-
-The code works, but is it "Surgical"?
-
-36. **`workflows/strict-tdd.md`**: You turn this on for critical logic. The AI must write a failing test before it can write a single line of solution code.
-37. **`skills/skill-qa-engineer/`**: The QA specialist runs multi-sequence user journeys, clicking every button to find edge cases.
-38. **`skills/skill-ui-finish/`**: The Alchemist is summoned to add micro-interactions, gradients, and that "Liquid Glass" feel.
-39. **`skills/ux-designer/`**: The designer simplifies the flow, ensuring the user never feels overwhelmed.
-40. **`skills/flutter-debugger/` & `workflows/flutter-debug.md`**: When a weird bug appears, you use these to inspect the widget tree in real-time.
+### 🚀 THE RESULT
+By utilizing this ecosystem, your project is not just a collection of files—it is an **intelligent, self-documenting, and secure entity** built with professional architectural rigor.
 
 ---
+*Portable AI-Surgical Infrastructure - Standard Protocol 2026*
 
-## 🛡️ Act VII: The Fortress (Optimization)
-
-Ready for the world, but is it fast and secure?
-
-41. **`skills/security-expert/`**: You run a final audit. The agent threat-models your APIs and storage.
-42. **`skills/backend-optimizer/` & `skills/cache-optimizer/`**: They hunt for memory leaks and implement caching strategies to save database load.
-43. **`skills/cost-optimizer/`**: The agent prunes your infrastructure, finding ways to save cents on every user request.
-44. **`skills/eval-engineer/`**: You run "Prompt Regression" tests to ensure the AI's logic hasn't drifted over time.
-
----
-
-## 🚢 Act VIII: The Launch (Deployment & Scaling)
-
-The big day.
-
-45. **`workflows/code-review.md`**: One final sweep of the code for "Surgical Integrity."
-47. **`workflows/prod-deploy.md` & `skills/release-manager/`**: The AI handles the CI/CD pipeline, pushing the app to the App Store and Cloud.
-48. **`skills/tech-writer/`**: The agent generates your documentation, READMEs, and "How-to" guides for users.
-49. **`templates/MEMORY.template.md` & `templates/SAAS_MEMORY.template.md`**: You record the session. What worked? What failed? The "Outer Brain" remembers.
-
----
-
-## 📈 Act IX: The Evolution (Growth & Profit)
-
-The app is live. Now you make it a business.
-
-50. **`skills/skill-saas-growth/`**: You ask the agent for a TikTok marketing script or a Reddit engagement strategy.
-51. **`templates/LEAN_TO_SAAS_MAPPING.md`**: You map your tech features to "Customer Benefits" for your landing page.
-52. **`templates/startup_knowledge_base.md`**: You start building a library of industry-specific insights.
-53. **`skills/agent-architect/`**: You decide to build a second AI assistant just to handle customer support.
-54. **`skills/skill-agent-evolution/`**: You notice you've been correcting the AI's button styles. You say: *"Promote this style to a Canon."* The system evolves.
-
----
-
-## 🛸 Act X: The Legacy (Maintenance & Relocation)
-
-Years later, you want to move the project or clean it up.
-
-57. **`scripts/audit_structure.py`**: You run a final health check to ensure your system's documentation and files are perfectly synced.
-
----
-
-## 🏁 Act XI: Finalizing the Product (The Professional Seal)
-
-Finally, you seal the project by transitioning from a "codebase" to a professional "product":
-* **`VERSION`**: 1.0.0.
-* **`CHANGELOG.md`**: A history of your hard-earned victories.
-* **`LICENSE`**: Your MIT badge of honor.
-* **`README.md`**: The portal to your creation.
-
----
-*Portable Brainvibing v1.1.2* 
-*Surgical Precision. Total Autonomy. Zero Waste.*
 
 ## 🔄 Recent Changes
 
+### [1.2.0] - 2026-03-26
+### Changed
+- Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders
+
+
 ### [1.1.0] - 2026-03-20
 ### Changed
-- True Deep Audit: Resolved philosophical bipolarity, extracted 82-file SaaS mapping, and established strict Habitat Demarcation.
+- **Unified Logic**: Established a clear 4-pillar structure and the 82-file SaaS mapping protocol.
 
 
 ### [1.0.0] - 2026-03-19

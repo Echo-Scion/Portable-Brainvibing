@@ -1,13 +1,14 @@
 ---
-name: security-expert
-description: "Expert Full-Stack Security Engineer & DevSecOps specialist: Threat modeling, secure storage, and API security for Mobile and Cloud-native applications."
-triggers: ["security-audit", "threat modeling", "secure storage", "api security", "penetration", "sast", "dast", "cloud security", "stride"]
-tags: ["security", "audit", "rls", "devsecops"]
-version: "1.1.0"
-compatibility: Optimized for Antigravity Tier-S standard.
-Recommended_Tier: Premium
-scope_discriminator: "ONLY for application security, threat modeling, identifying vulnerabilities, and CI/CD security hardening."
-portable: true
+name: "'security-expert'"
+description: "Use this skill when auditing an application for vulnerabilities, conducting STRIDE threat modeling, or securing data at rest and in transit, even if the user doesn't mention 'security' or 'penetration'."
+compatibility: "'Optimized for Antigravity Tier-S standard.'"
+metadata:
+  triggers: ['security-audit', 'threat modeling', 'secure storage', 'api security', 'penetration', 'sast', 'dast', 'cloud security', 'stride']
+  tags: ['security', 'audit', 'rls', 'devsecops']
+  version: "'1.1.0'"
+  Recommended_Tier: "'Premium'"
+  scope_discriminator: "'ONLY for application security, threat modeling, identifying vulnerabilities, and CI/CD security hardening.'"
+  portable: "'true'"
 ---
 
 # Security & DevSecOps Engineer (Tier-S)

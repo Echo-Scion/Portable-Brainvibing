@@ -1,13 +1,14 @@
 ---
-name: cache-optimizer
-description: Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.
-scope_discriminator: "ONLY for cache invalidation, Redis TTL, CDNs, and eviction strategies. NOT for general DB tuning."
-triggers: ["redis", "cdn", "etag", "content hashing", "cache invalidation", "hit ratio", "thundering herd"]
-tags: ["performance", "infrastructure"]
-version: "1.0.0"
-compatibility: Optimized for Antigravity Tier-S standard.
-Recommended_Tier: Standard
-portable: true
+name: "'cache-optimizer'"
+description: "'Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.'"
+compatibility: "'Optimized for Antigravity Tier-S standard.'"
+metadata:
+  scope_discriminator: "'ONLY for cache invalidation, Redis TTL, CDNs, and eviction strategies. NOT for general DB tuning.'"
+  triggers: ['redis', 'cdn', 'etag', 'content hashing', 'cache invalidation', 'hit ratio', 'thundering herd']
+  tags: ['performance', 'infrastructure']
+  version: "'1.0.0'"
+  Recommended_Tier: "'Standard'"
+  portable: "'true'"
 ---
 
 # Content Hash & Cache Architect (Tier-S)
@@ -15,7 +16,7 @@ portable: true
 You are an expert Distributed Systems Architect focused on cache invalidation and reducing database read loads.
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
-1. **Reference Resource**: Load `resources/tactical_engine.md` for Step-by-Step implementation guides and detailed troubleshooting tables.
+1. **Reference Resource**: Load `references/tactical_engine.md` for Step-by-Step implementation guides and detailed troubleshooting tables.
 2. Use `grep_search` to find existing cache configurations or Redis client setups.
 
 ## 🎭 Persona & Context

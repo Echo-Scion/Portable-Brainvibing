@@ -1,205 +1,144 @@
 {
-  "generatedAt": "2026-03-26T11:15:53.537114Z",
-  "total": 21,
+  "generatedAt": "2026-03-27T00:45:08.599457Z",
+  "total": 23,
   "skills": [
     {
       "id": "agent-architect",
-      "description": "\"Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems.\"",
-      "tier": "Premium",
-      "tags": [
-        "ai",
-        "architecture",
-        "ml",
-        "integration"
-      ]
+      "description": "\"'Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems.'\"",
+      "tier": "Standard",
+      "tags": []
+    },
+    {
+      "id": "agent-evolution",
+      "description": "\"'Self-improving agentic infrastructure engine that promotes patterns into permanent Rules, Skills, or Workflows.'\"",
+      "tier": "Standard",
+      "tags": []
+    },
+    {
+      "id": "api-contract",
+      "description": "\"'Backend Node.js API definition and safety layer. Expert in defining strict data contracts (Zod, OpenAPI) and generating defensive parsing logic.'\"",
+      "tier": "Standard",
+      "tags": []
     },
     {
       "id": "backend-architect",
-      "description": "Extracts enterprise architecture patterns (MVC, Repository, Service Layer) for resilient Node.js/Supabase backends.",
-      "tier": "Premium",
-      "tags": [
-        "backend",
-        "architecture"
-      ]
+      "description": "\"'Extracts enterprise architecture patterns (MVC, Repository, Service Layer) for resilient Node.js/Supabase backends.'\"",
+      "tier": "Standard",
+      "tags": []
     },
     {
       "id": "backend-optimizer",
-      "description": "Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.",
+      "description": "\"'Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.'\"",
       "tier": "Standard",
-      "tags": [
-        "performance",
-        "backend"
-      ]
+      "tags": []
     },
     {
       "id": "cache-optimizer",
-      "description": "Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.",
+      "description": "\"'Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.'\"",
       "tier": "Standard",
-      "tags": [
-        "performance",
-        "infrastructure"
-      ]
+      "tags": []
     },
     {
       "id": "context-manager",
-      "description": "Integrated protocol for zero-waste codebase navigation and deep symbolic mapping.",
+      "description": "\"Use this skill when performing deep symbolic mapping of the workspace, pruning session context for efficiency, or navigating complex codebases, even if the user doesn't mention 'token-waste' or 'context-bloat'.\"",
       "tier": "Standard",
-      "tags": [
-        "workflow",
-        "utility"
-      ]
+      "tags": []
     },
     {
       "id": "cost-optimizer",
-      "description": "Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.",
+      "description": "\"'Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.'\"",
       "tier": "Standard",
-      "tags": [
-        "business",
-        "cloud"
-      ]
+      "tags": []
+    },
+    {
+      "id": "data-logic",
+      "description": "\"'High-density skill for handling immutable data modeling (Freezed) and reactive state management (Riverpod 2.x).'\"",
+      "tier": "Standard",
+      "tags": []
+    },
+    {
+      "id": "db-expert",
+      "description": "\"'Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security (RLS).'\"",
+      "tier": "Standard",
+      "tags": []
     },
     {
       "id": "eval-engineer",
-      "description": "Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.",
+      "description": "\"'Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.'\"",
       "tier": "Standard",
-      "tags": [
-        "ai",
-        "qa"
-      ]
+      "tags": []
     },
     {
       "id": "flutter-debugger",
-      "description": "Deep integration with dart-mcp-server for live widget inspection, runtime error analysis, and hot reloading.",
+      "description": "\"Use this skill when the user encounters Flutter/Dart runtime errors, needs to inspect the live widget tree, or requires hot reload verification, even if they don't explicitly mention 'dart-mcp-server' or 'debugging'.\"",
       "tier": "Standard",
-      "tags": [
-        "flutter",
-        "debugger"
-      ]
+      "tags": []
+    },
+    {
+      "id": "knowledge",
+      "description": "\"'High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion.'\"",
+      "tier": "Standard",
+      "tags": []
     },
     {
       "id": "project-architect",
-      "description": "\"The Architect: Full-stack, Mobile Strategy (Native/Cross-Platform), and Sprint Prioritization. Designs structural logic and manages developer velocity.\"",
-      "tier": "Premium",
-      "tags": [
-        "architecture",
-        "planning",
-        "management",
-        "mobile"
-      ]
+      "description": "\"Use this skill when synthesizing requirements into a PRD, designing architecture for mobile or full-stack platforms, or prioritizing features, even if the user hasn't provided a formal blueprint.\"",
+      "tier": "Standard",
+      "tags": []
+    },
+    {
+      "id": "qa-engineer",
+      "description": "\"'Expert QA & Reality Checker: Stops fantasy approvals with evidence-based certification. Focuses on multi-sequence journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).'\"",
+      "tier": "Standard",
+      "tags": []
     },
     {
       "id": "release-manager",
-      "description": "Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.",
+      "description": "\"'Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.'\"",
       "tier": "Standard",
-      "tags": [
-        "devops",
-        "release"
-      ]
+      "tags": []
+    },
+    {
+      "id": "saas-growth",
+      "description": "\"Use this skill when the user wants to scale their SaaS reach, pitch to investors, or drive viral traffic. Apply this skill for technical DevRel content and ASO, even if they don't explicitly mention 'marketing' or 'growth'.\"",
+      "tier": "Standard",
+      "tags": []
     },
     {
       "id": "security-expert",
-      "description": "\"Expert Full-Stack Security Engineer & DevSecOps specialist: Threat modeling, secure storage, and API security for Mobile and Cloud-native applications.\"",
-      "tier": "Premium",
-      "tags": [
-        "security",
-        "audit",
-        "rls",
-        "devsecops"
-      ]
-    },
-    {
-      "id": "skill-agent-evolution",
-      "description": "Self-improving agentic infrastructure engine that promotes patterns into permanent Rules, Skills, or Workflows.",
+      "description": "\"Use this skill when auditing an application for vulnerabilities, conducting STRIDE threat modeling, or securing data at rest and in transit, even if the user doesn't mention 'security' or 'penetration'.\"",
       "tier": "Standard",
-      "tags": [
-        "ai",
-        "workflow"
-      ]
+      "tags": []
     },
     {
-      "id": "skill-api-contract",
-      "description": "Backend Node.js API definition and safety layer. Expert in defining strict data contracts (Zod, OpenAPI) and generating defensive parsing logic.",
+      "id": "system-admin",
+      "description": "\"Use this skill when managing the project's agentic infrastructure, overseeing long-term project memory (session_handoff.md), or creating/modifying system-wide skills and rules.\"",
       "tier": "Standard",
-      "tags": [
-        "api",
-        "backend"
-      ]
+      "tags": []
     },
     {
-      "id": "skill-data-logic",
-      "description": "High-density skill for handling immutable data modeling (Freezed) and reactive state management (Riverpod 2.x).",
+      "id": "system-audit",
+      "description": "\"'Sentinel for structural integrity, security (secrets), logic drift, and architectural analysis.'\"",
       "tier": "Standard",
-      "tags": [
-        "flutter",
-        "logic"
-      ]
-    },
-    {
-      "id": "skill-db-expert",
-      "description": "Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security (RLS).",
-      "tier": "Standard",
-      "tags": [
-        "database",
-        "backend"
-      ]
-    },
-    {
-      "id": "skill-knowledge",
-      "description": "High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion.",
-      "tier": "Budget",
-      "tags": [
-        "utility",
-        "research"
-      ]
-    },
-    {
-      "id": "skill-qa-engineer",
-      "description": "\"Expert QA & Reality Checker: Stops fantasy approvals with evidence-based certification. Focuses on multi-sequence journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).\"",
-      "tier": "Standard",
-      "tags": [
-        "qa",
-        "testing",
-        "performance",
-        "validation"
-      ]
-    },
-    {
-      "id": "skill-saas-growth",
-      "description": "Expert SaaS growth consultant specialized in Viral Marketing (TikTok/X/Reddit), ASO, Investor Pitching, and Technical DevRel Blog writing.",
-      "tier": "Budget",
-      "tags": [
-        "business",
-        "marketing",
-        "content"
-      ]
-    },
-    {
-      "id": "skill-ui-finish",
-      "description": "Expert skill for premium \"Liquid Glass\" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.",
-      "tier": "Budget",
-      "tags": [
-        "ui",
-        "flutter",
-        "design"
-      ]
+      "tags": []
     },
     {
       "id": "tech-writer",
-      "description": "Expert technical writer specializing in developer documentation, READMEs, and tutorials for Flutter projects.",
-      "tier": "Budget",
-      "tags": [
-        "utility",
-        "documentation"
-      ]
+      "description": "\"Use this skill when generating developer-facing documentation, drafting README files, or creating technical tutorials from source code, even if the user hasn't provided a draft.\"",
+      "tier": "Standard",
+      "tags": []
+    },
+    {
+      "id": "ui-finish",
+      "description": "'\\'Expert skill for premium \"Liquid Glass\" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.\\''",
+      "tier": "Standard",
+      "tags": []
     },
     {
       "id": "ux-designer",
-      "description": "Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation.",
-      "tier": "Budget",
-      "tags": [
-        "ui",
-        "ux"
-      ]
+      "description": "\"'Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation.'\"",
+      "tier": "Standard",
+      "tags": []
     }
   ]
 }

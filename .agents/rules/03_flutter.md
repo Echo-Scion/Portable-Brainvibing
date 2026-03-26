@@ -71,7 +71,7 @@ glob: "**/*.dart"
 
 ## 1. Aesthetic-First Prototyping (The "Liquid Glass" Principle)
 - **Premium Craftsmanship**: Every pixel and architecture choice must be intentional. Avoid basic implementations; optimize for both 60fps animations and low memory footprint.
-- **Glassmorphism & Polish**: Leverage `skill-ui-finish` to build beautiful visual frameworks (Liquid Glass) with micro-interactions early in the lifecycle.
+- **Glassmorphism & Polish**: Leverage `ui-finish` to build beautiful visual frameworks (Liquid Glass) with micro-interactions early in the lifecycle.
 - **Theme Consistency**: Strictly use project design tokens (`Theme.of(context)`) to maintain the Antigravity aesthetic.
 
 ## 2. Structural & UI Excellence

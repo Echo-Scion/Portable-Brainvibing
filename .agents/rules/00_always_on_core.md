@@ -20,11 +20,18 @@ Before executing ANY task that modifies the filesystem (write, delete, refactor)
 - **Root Cause Analysis**: Find the "Why" (5 Whys), not just the "What". Surface-level fixes are unacceptable for Tier-1+ tasks.
 - **The Evidence Mandate (No Assumptions)**: Do not assume a feature works because the code looks correct. For Tier-1+ tasks, implementation is only "DONE" when verified through empirical reproduction or testing evidence.
 - **Edge-Case Tax**: Before finalizing any feature, you MUST list 2-3 potential failure modes (e.g., poor network, invalid state) and document how they are handled gracefully.
+- **Assumption Audit (Pattern 8)**: For PREMIUM tasks, you MUST list every technical or architectural assumption you are making before providing a recommendation.
+- **Specificity Ladder (Pattern 10)**: When explaining claims or technical fixes, make them 3x more specific than your first instinct (e.g., instead of "improve performance", use "reduce main thread blocking by 50ms through lazy-loading of the Auth module").
 
-## 3. Tool Economy
-- Prefer parallel tool calls when tasks are independent.
-- Use `grep_search` before `view_file` to minimize reads.
-- Prefer targeted overwrites (`multi_replace_file_content`) over full-file rewrites.
+## 3. Advanced Prompting Patterns (For Sub-Agent Orchestration)
+When delegating to sub-agents or creating internal prompts, follow these patterns:
+- **Anchor Pattern (Pattern 1)**: Start complex sub-tasks with a single sentence defining the exact output format.
+- **Constraint Stack (Pattern 2)**: Structure internal prompts as: Ask → Constraints → Context.
+- **Persona Boundary (Pattern 3)**: Define not just who the agent is, but what it MUST NOT do (e.g., "You are a Security Auditor. You do not offer 'quick fixes' that bypass RLS").
+- **Failure Injection (Pattern 4)**: Provide a negative example of a "bad" response to reduce generic outputs.
+- **Confidence Gate (Pattern 5)**: Explicitly state: "Do not include any claim you cannot support with specific reasoning or codebase evidence."
+- **Step Separator (Pattern 6)**: For multi-phase migrations, use hard stops: "Complete step 1. Stop. Wait for verification. Then proceed."
+- **Reframe Test (Pattern 9)**: For controversial architecture choices, force the agent to argue the opposite position with equal conviction before deciding.
 
 ## 4. Circuit Breaker (Anti-Infinite Loop)
 - **3x Failure Rule**: If a specific tool call or test fails 3 times consecutively, ABORT.
@@ -92,7 +99,7 @@ The following actions are PROHIBITED without an explicit overriding directive fr
 - `[DONT]` Delete production databases or their contents.
 - `[DONT]` Commit secrets, API keys, or credentials to any file.
 - `[DONT]` Expose internal service endpoints to the public internet without authentication.
-- `[DONT]` Modify `GEMINI.md` or any `rules/common/` file without a Binary Oratory pre-flight check.
+- `[DONT]` Modify `GEMINI.md` or any `rules/` file without a Binary Oratory pre-flight check.
 - `[DONT]` Execute shell commands that remove entire directories (`rm -rf`, `Remove-Item -Recurse`) without explicit confirmation.
 
 ## 2. Prompt Injection Defense

@@ -1,322 +1,246 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = []
+# ///
 import os
 import re
+from typing import Set, Dict, Any, List
 import sys
+import argparse
+import json
+from typing import List, Dict, Any, Optional
 
-# Use relative paths from script location
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.dirname(SCRIPT_DIR)
+# Smart Root Discovery
+def discover_roots():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # If we are in .agents/scripts, the .agents root is one level up
+    if os.path.basename(current_dir) == "scripts" and os.path.basename(os.path.dirname(current_dir)) == ".agents":
+        base_dir = os.path.dirname(current_dir)
+    else:
+        # Check if .agents exists in current dir
+        if os.path.exists(".agents"):
+            base_dir = os.path.abspath(".agents")
+        else:
+            base_dir = os.getcwd()
+    return base_dir
+
+BASE_DIR = discover_roots()
 WORKFLOWS_DIR = os.path.join(BASE_DIR, "workflows")
 SKILLS_DIR = os.path.join(BASE_DIR, "skills")
 RULES_DIR = os.path.join(BASE_DIR, "rules")
 CANONS_DIR = os.path.join(BASE_DIR, "canons")
 FOUNDATION_PATH_MARKER = os.path.join(BASE_DIR, ".foundation_path")
 
-class Counter:
+class AuditResult:
     def __init__(self):
-        self.val: int = 0
-    def inc(self):
-        self.val = self.val + 1
+        self.errors: List[Dict[str, Optional[str]]] = []
+        self.warnings: List[Dict[str, Optional[str]]] = []
+        self.stats: Dict[str, int] = {"skills": 0, "rules": 0, "canons": 0}
 
-def check_foundation_sync() -> int:
-    """
-    Checks if the local project is in sync with its source foundation.
-    """
+    def add_error(self, category: str, message: str, file: Optional[str] = None):
+        self.errors.append({"category": category, "message": message, "file": file})
+
+    def add_warning(self, category: str, message: str, file: Optional[str] = None):
+        self.warnings.append({"category": category, "message": message, "file": file})
+
+def check_foundation_sync(res: AuditResult, verbose: bool = True):
     if not os.path.exists(FOUNDATION_PATH_MARKER):
-        # We don't increment err_count as some repos (like the foundation itself) don't need a marker
-        print("\n--- FOUNDATION SYNC CHECK ---")
-        print("[NOTE] No .foundation_path marker found. Skipping sync check.")
-        return 0
-
-    err_count = Counter()
-    print("\n--- FOUNDATION SYNC CHECK ---")
+        if verbose: print("[NOTE] No .foundation_path marker found. Skipping sync check.")
+        return
+    
+    if verbose: print("\n--- FOUNDATION SYNC CHECK ---")
     
     try:
         with open(FOUNDATION_PATH_MARKER, "r", encoding="utf-8") as f:
             foundation_root = f.read().strip()
-            
-        foundation_agents = os.path.join(foundation_root, ".agents")
+        foundation_agents = os.path.join(foundation_root, ".agents") if not (foundation_root.endswith(".agents") or os.path.basename(foundation_root) == ".agents") else foundation_root
         
         if not os.path.exists(foundation_agents):
-            print(f"[SYNC] BROKEN LINK: Foundation not found at {foundation_agents}")
-            return 1
+            res.add_error("SYNC", f"Broken foundation link: {foundation_agents}")
+            return
             
-        print(f"📌 Linked to Foundation: {foundation_root}")
+        if verbose: print(f"📌 Linked to Foundation: {foundation_root}")
         
-        # Simple out-of-sync heuristic: compare file counts in key directories
         sync_folders = ["skills", "rules", "workflows", "canons"]
-        is_out_of_sync = False
-        
         for folder in sync_folders:
             local_folder = os.path.join(BASE_DIR, folder)
             found_folder = os.path.join(foundation_agents, folder)
-            
             if not os.path.exists(found_folder): continue
             
-            # Count only relevant files
             local_files = {f for r, d, files in os.walk(local_folder) for f in files if f.endswith(('.md', '.json', 'SKILL.md'))}
             found_files = {f for r, d, files in os.walk(found_folder) for f in files if f.endswith(('.md', '.json', 'SKILL.md'))}
             
             if local_files != found_files:
                 diff_count = len(found_files - local_files)
                 if diff_count > 0:
-                    print(f"[SYNC] OUT-OF-SYNC ({folder}): Foundation has {diff_count} new/different items.")
-                    is_out_of_sync = True
+                    res.add_warning("SYNC", f"Folder {folder} is out of sync with foundation. Foundation has {diff_count} new/different items.")
+                    if verbose: print(f"[SYNC] OUT-OF-SYNC ({folder}): Foundation has {diff_count} new/different items.")
                 
-        if is_out_of_sync:
+        if verbose and len(res.warnings) > 0:
             print("👉 Run 'python .agents/scripts/deploy_foundation.py' to update your local agents.")
-            # We don't fail the audit for being out of sync, but we provide a strong warning
             
     except Exception as e:
-        print(f"[ERROR] Sync Check failed: {e}")
-        err_count.inc()
-        
-    return err_count.val
+        res.add_error("SYNC", f"Sync Check failed: {str(e)}")
+        if verbose: print(f"[ERROR] Sync Check failed: {e}")
 
-def get_all_skills() -> set[str]:
-    if not os.path.exists(SKILLS_DIR):
-        print("Skills directory not found!")
-        return set()
-    return {d for d in os.listdir(SKILLS_DIR) if os.path.isdir(os.path.join(SKILLS_DIR, d))}
-
-def get_all_rules() -> set[str]:
-    rules = set()
-    if os.path.exists(RULES_DIR):
-        for root, dirs, files in os.walk(RULES_DIR):
-            for file in files:
-                if file.endswith(".md"):
-                    rel_to_rules = os.path.relpath(os.path.join(root, file), RULES_DIR).replace("\\", "/")
-                    rules.add(rel_to_rules)
-                    rules.add(file) # Also add the bare filename for legacy support
-                    
-    if os.path.exists(CANONS_DIR):
-        for root, dirs, files in os.walk(CANONS_DIR):
-            for file in files:
-                if file.endswith(".md"):
-                    rel_to_canons = os.path.relpath(os.path.join(root, file), CANONS_DIR).replace("\\", "/")
-                    rules.add(rel_to_canons)
-                    rules.add(file)
-    return rules
-
-def check_mechanical_integrity() -> int:
-    err_count = Counter()
-    print("--- SCANNING FOR MECHANICAL INTEGRITY ERRORS ---")
+def check_mechanical_integrity(res: AuditResult, verbose: bool = True):
+    if verbose: print("--- SCANNING FOR MECHANICAL INTEGRITY ERRORS ---")
     
-    # Check for concatenated headers (e.g., ## Title## Subtitle or ### Header#)
     header_bug_pat = re.compile(r'^#+ [^#\n]+#+', re.MULTILINE)
-    # Check for double headers (e.g., ## ## Title)
     double_header_pat = re.compile(r'^#+ #+ ', re.MULTILINE)
-    
-    # Check for absolute paths (e.g., C:\Users\... or /home/user/...)
-    # This is a bit sensitive, so we'll look for common patterns in scripts
     abs_path_pat = re.compile(r'[a-zA-Z]:\\[Uu]sers\\[a-zA-Z0-9_\-\.]+')
     
     for root, dirs, files in os.walk(BASE_DIR):
-        # Skip dot-directories and specific excluded folders
-        if any(exc in root for exc in [".git", ".gemini", ".system_generated"]): continue
-        
+        if any(exc in root for exc in [".git", ".gemini", ".system_generated", "node_modules"]): continue
         for file in files:
             if not (file.endswith(".md") or file.endswith(".py")): continue
             
             filepath = os.path.join(root, file)
+            rel_path = os.path.relpath(filepath, BASE_DIR)
             try:
                 with open(filepath, 'r', encoding='utf-8') as f:
                     content = f.read()
-                    
-                # 1. Check for concatenated headers (e.g., # Title## Section)
-                if file.endswith(".md") and header_bug_pat.search(content):
-                    print(f"[BUG] CONCATENATED HEADERS in {os.path.relpath(filepath, BASE_DIR)}")
-                    err_count.inc()
-
-                # 2. Check for double headers (e.g., ## ## Title)
-                if file.endswith(".md") and double_header_pat.search(content):
-                    print(f"[BUG] DOUBLE HEADERS (## ##) in {os.path.relpath(filepath, BASE_DIR)}")
-                    err_count.inc()
-
-                # 3. Check for absolute paths in scripts
+                if file.endswith(".md"):
+                    if header_bug_pat.search(content):
+                        res.add_error("MECHANICAL", "Concatenated headers detected", rel_path)
+                    if double_header_pat.search(content):
+                        res.add_error("MECHANICAL", "Double headers (## ##) detected", rel_path)
                 if file.endswith(".py") and abs_path_pat.search(content):
-                    # Exception for verify_agents.py itself and local-only scripts
                     if file not in ["verify_agents.py", "publish_agents.py", "audit_repo.py"]:
-                        print(f"[BUG] ABSOLUTE PATH in {os.path.relpath(filepath, BASE_DIR)}")
-                        err_count.inc()
-
-                # 4. Check for empty shell skills
-                if "\\skills\\" in root.lower() or "/skills/" in root.lower():
-                    if "resources/workflow.md" in content or "go read this file" in content.lower():
-                        # Check if it also has actual instructions
-                        if len(content) < 800: # Heuristic for shell
-                            print(f"[BUG] EMPTY SHELL SKILL in {os.path.relpath(filepath, BASE_DIR)}")
-                            err_count.inc()
+                        res.add_error("MECHANICAL", "Absolute path detected in Python file", rel_path)
             except Exception as e:
-                print(f"[ERROR] Could not read {file}: {e}")
-                err_count.inc()
-                        
-    return err_count.val
+                res.add_error("IO", f"Could not read file: {str(e)}", rel_path)
 
-def check_links() -> int:
-    all_skills: set[str] = get_all_skills()
-    all_rules: set[str] = get_all_rules()
-    err_count = Counter()
+def check_links(res: AuditResult, verbose: bool = True):
+    all_skills: Set[str] = set([str(d) for d in os.listdir(SKILLS_DIR) if os.path.isdir(os.path.join(SKILLS_DIR, d))]) if os.path.exists(SKILLS_DIR) else set([])
+    all_rules: Set[str] = set([])
+    for d in [RULES_DIR, CANONS_DIR]:
+        if os.path.exists(d):
+            for r, dirs, files in os.walk(d):
+                for f in files:
+                    if f.endswith(".md"):
+                        all_rules.add(f)
+                        all_rules.add(os.path.relpath(os.path.join(r, f), d).replace("\\", "/"))
     
-    # Common rule and canon directories to ignore in skill check
-    RULE_DIRS = {"rules", "common", "flutter", "web", "canons", "auth", "notifications", "ui-patterns"}
-    
-    print("\n--- SCANNING FOR BROKEN LINKS ---")
+    if verbose: print("\n--- SCANNING FOR BROKEN LINKS ---")
     
     if not os.path.exists(WORKFLOWS_DIR):
-        print("Workflows directory not found!")
-        return 1
+        res.add_warning("LINK", "Workflows directory not found!")
+        return
+
+    rule_pattern = re.compile(r'@([a-zA-Z0-9_\-\./\\]+\.md)')
+    skill_backtick_pattern = re.compile(r'`([a-z0-9\-]+)` skill')
+    skill_mention_pattern = re.compile(r'@(?:skills/)?([a-zA-Z0-9\-_]+(?:\.md)?)')
+    RULE_DIRS = {"rules", "common", "flutter", "web", "canons", "auth", "notifications", "ui-patterns"}
 
     for root, dirs, files in os.walk(WORKFLOWS_DIR):
         for file in files:
             if not file.endswith(".md"): continue
             
             filepath = os.path.join(root, file)
+            rel_path = os.path.relpath(filepath, BASE_DIR)
             try:
                 with open(filepath, 'r', encoding='utf-8') as f:
                     content = f.read()
                 
-                # 1. Find @rule links (e.g., @common/security.md)
-                rule_pattern = re.compile(r'@([a-zA-Z0-9_\-\./\\]+\.md)')
                 for r in rule_pattern.findall(content):
                     r_clean = r.split('`')[0].strip().replace("\\", "/")
                     if r_clean not in all_rules:
-                        print(f"[LINK] BROKEN RULE in {file}: @{r_clean}")
-                        err_count.inc()
+                        res.add_error("LINK", f"Broken rule reference: @{r_clean}", rel_path)
                         
-                # 2. Find skill references in backticks (e.g., `skill-name` skill)
-                skill_backtick_pattern = re.compile(r'`([a-z0-9\-]+)` skill')
                 for s in skill_backtick_pattern.findall(content):
-                    if s not in all_skills and s != "context-manager": # context-manager is standard
-                        print(f"[LINK] BROKEN SKILL (backtick) in {file}: {s}")
-                        err_count.inc()
+                    s_str = str(s)
+                    if s_str not in all_skills and s_str != "context-manager":
+                        res.add_error("LINK", f"Broken skill reference (backtick): `{s_str}`", rel_path)
 
-                # 3. Find skill mentions starting with @ (e.g., @skill-name or @skills/skill-name)
-                # Allow underscores but ensure we skip rule links which end with .md
-                skill_mention_pattern = re.compile(r'@(?:skills/)?([a-zA-Z0-9\-_]+(?:\.md)?)')
                 for s in skill_mention_pattern.findall(content):
-                    # Filter out non-skill mentions
-                    if s.endswith(".md") or s in ["param", "return", "type", "description"]:
+                    s_str = str(s)
+                    if s_str.endswith(".md") or s_str in ["param", "return", "type", "description"] or s_str in RULE_DIRS:
                         continue
-                    
-                    # Filter out rule directories
-                    if s in RULE_DIRS:
-                        continue
-                    
-                    # Ignore specific example/placeholder skills
-                    if s in ["idea-planner", "freezed", "riverpod"]:
-                        continue
-                    
-                    if s not in all_skills:
-                        print(f"[LINK] BROKEN SKILL (@mention) in {file}: @{s}")
-                        err_count.inc()
+                    if s_str not in all_skills:
+                        res.add_error("LINK", f"Broken skill reference (@mention): @{s_str}", rel_path)
 
             except Exception as e:
-                print(f"[ERROR] Could not read {file}: {e}")
-                err_count.inc()
+                res.add_error("IO", f"Could not read file: {str(e)}", rel_path)
                     
-    return err_count.val
-
-def check_protocol_compliance() -> int:
-    err_count = Counter()
-    print("\n--- SCANNING FOR PROTOCOL COMPLIANCE ERRORS ---")
+def check_protocol_compliance(res: AuditResult, verbose: bool = True):
+    if verbose: print("\n--- SCANNING FOR PROTOCOL COMPLIANCE ERRORS ---")
     
-    # 1. Vibecode Limits & Logic Density
-    # We check source files in the root project (outside .agents)
-    # Since this script runs in .agents/scripts, we go up two levels to find the project root
-    PROJECT_ROOT = os.path.dirname(BASE_DIR)
-    
-    source_exts = {".dart", ".ts", ".js", ".py", ".go", ".rs", ".kt", ".swift"}
-    exclude_dirs = {".git", ".gemini", ".system_generated", "node_modules", "build", "dist", ".agents", "referensiagents"}
-
-    for root, dirs, files in os.walk(PROJECT_ROOT):
-        # Skip excluded directories
-        dirs[:] = [d for d in dirs if d not in exclude_dirs]
-        
-        for file in files:
-            if not any(file.endswith(ext) for ext in source_exts): continue
-            
-            filepath = os.path.join(root, file)
-            try:
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    lines = f.readlines()
-                
-                line_count = len(lines)
-                rel_path = os.path.relpath(filepath, PROJECT_ROOT)
-                
-                # Modularity Suggestion (> 800 lines)
-                if line_count > 800:
-                    print(f"[SUGGESTION] MODULARITY ALERT: {rel_path} has {line_count} lines. Consider decoupling for better AI context.")
-                    # We no longer increment err_count for line count alone as per V1.0.0 Experimental guidelines
-                # Soft Suggestion (> 500 lines)
-                elif line_count > 500:
-                    print(f"[NOTE] SOFT CAP REACHED: {rel_path} has {line_count} lines. Keep an eye on logical cohesion.")
-                
-                # Logic Density Heuristic (Complexity check)
-                # Count keywords that imply high density: async, await, stream, provider, bloc, state, switch, case
-                density_keywords = {"async", "await", "stream", "provider", "bloc", "state", "switch", "case", "useEffect", "useMemo"}
-                content = "".join(lines)
-                density_count = sum(1 for word in density_keywords if word in content)
-                
-                if density_count > 15 and line_count > 300:
-                    print(f"[WARNING] LOGIC DENSITY CAP: {rel_path} is complex ({density_count} keywords) and > 300 lines.")
-                    
-            except Exception as e:
-                print(f"[ERROR] Could not analyze {file}: {e}")
-
-    # 2. Skill Tier Metadata
+    # 1. Skill Tier Metadata
     if os.path.exists(SKILLS_DIR):
         for skill_name in os.listdir(SKILLS_DIR):
             skill_path = os.path.join(SKILLS_DIR, skill_name)
             if not os.path.isdir(skill_path): continue
-            
             skill_md = os.path.join(skill_path, "SKILL.md")
             if os.path.exists(skill_md):
                 try:
                     with open(skill_md, 'r', encoding='utf-8') as f:
                         content = f.read()
-                    
                     if "Recommended_Tier:" not in content:
-                        print(f"[COMPLIANCE] MISSING Recommended_Tier in {skill_name}/SKILL.md")
-                        err_count.inc()
+                        res.add_error("PROTOCOL", "Missing Recommended_Tier", f"skills/{skill_name}/SKILL.md")
                     elif not any(tier in content for tier in ["Budget", "Standard", "Premium"]):
-                        print(f"[COMPLIANCE] INVALID Recommended_Tier in {skill_name}/SKILL.md (Must be Budget/Standard/Premium)")
-                        err_count.inc()
-                        
+                        res.add_error("PROTOCOL", "Invalid Recommended_Tier (Must be Budget/Standard/Premium)", f"skills/{skill_name}/SKILL.md")
                 except Exception as e:
-                    print(f"[ERROR] Could not read {skill_md}: {e}")
-                    err_count.inc()
+                    res.add_error("IO", f"Could not read {skill_md}: {str(e)}")
 
-    # 3. Rules Metadata
+    # 2. Rules Metadata
     if os.path.exists(RULES_DIR):
         for root, _, files in os.walk(RULES_DIR):
             for file in files:
                 if not file.endswith(".md"): continue
                 filepath = os.path.join(root, file)
+                rel_path = os.path.relpath(filepath, RULES_DIR)
                 try:
                     with open(filepath, 'r', encoding='utf-8') as f:
                         content = f.read()
-                    
-                    # Basic YAML header check
-                    if "description:" not in content or "activation:" not in content.lower() and "trigger:" not in content.lower():
-                        print(f"[COMPLIANCE] INCOMPLETE YAML HEADER in {os.path.relpath(filepath, RULES_DIR)}")
-                        err_count.inc()
-                        
+                    if "description:" not in content or ("activation:" not in content.lower() and "trigger:" not in content.lower()):
+                        res.add_error("PROTOCOL", "Incomplete YAML header", rel_path)
                 except Exception as e:
-                    print(f"[ERROR] Could not read {file}: {e}")
-                    err_count.inc()
+                    res.add_error("IO", f"Could not read {file}: {str(e)}")
 
-    return err_count.val
+def run_audit(output_json: bool = False):
+    res = AuditResult()
+    verbose = not output_json
+    
+    if verbose: print("--- STARTING AUDIT ---")
+    
+    check_foundation_sync(res, verbose=verbose)
+    check_mechanical_integrity(res, verbose=verbose)
+    check_links(res, verbose=verbose)
+    check_protocol_compliance(res, verbose=verbose)
+    
+    if output_json:
+        print(json.dumps({
+            "errors": res.errors,
+            "warnings": res.warnings,
+            "summary": {
+                "total_errors": len(res.errors),
+                "total_warnings": len(res.warnings)
+            }
+        }, indent=2))
+    else:
+        for err in res.errors:
+            print(f"[ERROR] [{err['category']}] {err['message']} ({err['file'] or 'N/A'})")
+        for wrn in res.warnings:
+            print(f"[WARNING] [{wrn['category']}] {wrn['message']} ({wrn['file'] or 'N/A'})")
+        
+        total_errors = len(res.errors)
+        if total_errors == 0:
+            print("\n[PASS] ALL CHECKS PASSED: Workspace is mechanically sound and protocol compliant.")
+        else:
+            print(f"\n[FAIL] FAILED: Found {total_errors} integrity/compliance issues.")
+    
+    sys.exit(1 if len(res.errors) > 0 else 0)
 
 if __name__ == "__main__":
-    s_errors = check_foundation_sync()
-    m_errors = check_mechanical_integrity()
-    l_errors = check_links()
-    p_errors = check_protocol_compliance()
+    parser = argparse.ArgumentParser(description="Verify workspace integrity and protocol compliance.")
+    parser.add_argument("--json", action="store_true", help="Output results in JSON format.")
+    args = parser.parse_args()
     
-    total = s_errors + m_errors + l_errors + p_errors
-    if total == 0:
-        print("\n✅ ALL CHECKS PASSED: Workspace is mechanically sound and protocol compliant.")
-        sys.exit(0)
-    else:
-        print(f"\n❌ FAILED: Found {total} integrity/compliance issues. Please fix before syncing.")
-        sys.exit(1)
+    # Ensure stdout/stderr handle UTF-8 or at least escape properly
+    if sys.platform == 'win32':
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+    run_audit(output_json=args.json)

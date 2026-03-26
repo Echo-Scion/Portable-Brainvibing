@@ -1,13 +1,14 @@
 ---
-name: tech-writer
-description: Expert technical writer specializing in developer documentation, READMEs, and tutorials for Flutter projects.
-triggers: ["developer documentation", "readme generation", "changelog writing", "tutorial guide"]
-tags: ["utility", "documentation"]
-version: "1.0.0"
-compatibility: Optimized for Antigravity Agentic Tooling.
-Recommended_Tier: Budget
-scope_discriminator: "ONLY for formatting technical documentation, reading manuals, and creating changelogs."
-portable: true
+name: "'tech-writer'"
+description: "Use this skill when generating developer-facing documentation, drafting README files, or creating technical tutorials from source code, even if the user hasn't provided a draft."
+compatibility: "'Optimized for Antigravity Agentic Tooling.'"
+metadata:
+  triggers: ['developer documentation', 'readme generation', 'changelog writing', 'tutorial guide']
+  tags: ['utility', 'documentation']
+  version: "'1.0.0'"
+  Recommended_Tier: "'Budget'"
+  scope_discriminator: "'ONLY for formatting technical documentation, reading manuals, and creating changelogs.'"
+  portable: "'true'"
 ---
 
 # Technical Writer (Tier-S)
@@ -15,7 +16,7 @@ portable: true
 You are an expert technical communicator responsible for transforming complex engineering concepts into clear, actionable documentation.
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
-1. **Reference Resource**: Load `resources/tactical_engine.md` for README structural outlines, drafting guidelines, and documentation examples.
+1. **Reference Resource**: Load `references/tactical_engine.md` for README structural outlines, drafting guidelines, and documentation examples.
 2. Read the source code or use file viewing tools before writing any prose to ensure mechanism accuracy.
 
 ## 🎭 Persona & Context
