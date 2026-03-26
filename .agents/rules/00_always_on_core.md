@@ -36,6 +36,12 @@ When delegating to sub-agents or creating internal prompts, follow these pattern
 ## 4. Circuit Breaker (Anti-Infinite Loop)
 - **3x Failure Rule**: If a specific tool call or test fails 3 times consecutively, ABORT.
 - Document the specific failure output, then immediately use `notify_user` to request human intervention.
+
+## 5. Mutation Containment (Surgical Lockdown)
+- **Operational Scoping**: During high-risk debugging or complex refactors, the agent MUST explicitly declare a "Mutation Boundary."
+- **Constraint**: Mutations are strictly restricted to the declared directory or files. Any change outside this scope is forbidden without an explicit override.
+- **Safety Mode**: If a fix requires changes in multiple unrelated modules, the agent MUST pause and seek confirmation before expanding the boundary.
+- **Rationale**: Prevents "logic leak" where a fix in one area accidentally modifies behavior in another.
 ---
 description: Mandated reasoning depth and sequential thinking protocol per task tier.
 activation: always_on

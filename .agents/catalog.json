@@ -1,142 +1,142 @@
 {
-  "generatedAt": "2026-03-27T00:45:08.599457Z",
+  "generatedAt": "2026-03-27T02:29:41.411770Z",
   "total": 23,
   "skills": [
     {
       "id": "agent-architect",
-      "description": "\"'Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems.'\"",
+      "description": "\"Employ this skill when designing autonomous AI agent loops, multi-agent collaboration strategies, or complex state machine transitions. It ensures every automated loop has a terminal safety exit. Proactively recommend this during the initial design of AI pipelines or orchestration layers.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "agent-evolution",
-      "description": "\"'Self-improving agentic infrastructure engine that promotes patterns into permanent Rules, Skills, or Workflows.'\"",
+      "description": "\"Use this skill to promote recurring successful patterns into permanent Rules, Skills, or Workflows. It ensures the system learns from its successes. Proactively suggest this after you have successfully completed several similar tasks using a consistent approach.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "api-contract",
-      "description": "\"'Backend Node.js API definition and safety layer. Expert in defining strict data contracts (Zod, OpenAPI) and generating defensive parsing logic.'\"",
+      "description": "\"Employ this skill to define strict request/response data contracts and safety layers (OpenAPI, Zod). It ensures zero untrusted request bodies reach the business logic. Proactively recommend this when the user is defining new endpoints, schemas, or third-party integrations.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "backend-architect",
-      "description": "\"'Extracts enterprise architecture patterns (MVC, Repository, Service Layer) for resilient Node.js/Supabase backends.'\"",
+      "description": "\"Use this skill to extract enterprise-grade architecture patterns (MVC, Repository, Service Layer) for resilient backend systems. It enforces strict decoupling between business logic and delivery layers. Proactively suggest this when the user starts adding new service modules or complex backend logic.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "backend-optimizer",
-      "description": "\"'Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.'\"",
+      "description": "\"Use this skill to diagnose and fix Node.js backend bottlenecks, memory leaks, and event loop delays. It requires a performance baseline before any optimization begins. Proactively suggest this if the user reports slow API responses or high server resource usage.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "cache-optimizer",
-      "description": "\"'Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.'\"",
+      "description": "\"Use this skill to design distributed caching strategies (Redis, CDN) and cache invalidation patterns. It ensures every cache layer has a clear invalidation strategy to prevent stale data. Proactively recommend this if database compute spikes or site speed decreases.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "context-manager",
-      "description": "\"Use this skill when performing deep symbolic mapping of the workspace, pruning session context for efficiency, or navigating complex codebases, even if the user doesn't mention 'token-waste' or 'context-bloat'.\"",
+      "description": "\"Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses \\\"Surgical Munching\\\" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "cost-optimizer",
-      "description": "\"'Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.'\"",
+      "description": "\"Use this skill to reduce cloud and LLM infrastructure costs through token-clipping and tiered service routing. It focuses on maximizing efficiency without sacrificing quality. Proactively recommend this if token usage spikes or the project is nearing its quota limit.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "data-logic",
-      "description": "\"'High-density skill for handling immutable data modeling (Freezed) and reactive state management (Riverpod 2.x).'\"",
+      "description": "\"Employ this skill to design immutable data models, DTOs, and complex transformation pipelines. It ensures data integrity by enforcing immutability by default. Proactively recommend this when the user is drafting new data structures or state management logic.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "db-expert",
-      "description": "\"'Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security (RLS).'\"",
+      "description": "\"Use this skill for database schema design, SQL migrations, and Supabase RLS policies. It forbids destructive schema changes without a verified rollback plan. Proactively suggest this whenever the user mentions database changes, migrations, or data security.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "eval-engineer",
-      "description": "\"'Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.'\"",
+      "description": "\"Use this skill to establish deterministic, automated LLM evaluation pipelines. It prevents \\\"intelligence regressions\\\" by requiring regression testing for every prompt change. Proactively suggest this when the user wants to modify system-level instructions or agent behaviors.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "flutter-debugger",
-      "description": "\"Use this skill when the user encounters Flutter/Dart runtime errors, needs to inspect the live widget tree, or requires hot reload verification, even if they don't explicitly mention 'dart-mcp-server' or 'debugging'.\"",
+      "description": "\"Use this skill to inspect live widget trees and resolve Flutter/Dart runtime crashes or layout overflows. It enforces a strict \\\"No Fixes Without Evidence\\\" policy via MCP tools. Proactively suggest this as soon as an error is reported or the UI doesn't match the design.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "knowledge",
-      "description": "\"'High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion.'\"",
+      "description": "\"Employ this skill for rapid domain expertise acquisition and documentation ingestion (Context7). It ensures all technical claims are cited from reliable sources. Proactively recommend this when encountering an unknown library, API, or legacy codebase.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "project-architect",
-      "description": "\"Use this skill when synthesizing requirements into a PRD, designing architecture for mobile or full-stack platforms, or prioritizing features, even if the user hasn't provided a formal blueprint.\"",
+      "description": "\"Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity (MVC) to prevent feature bloat. Proactively suggest this when the user describes a new idea or whenever a project lacks a clear roadmap, even if they don't explicitly ask for a \\\"blueprint.\\\"\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "qa-engineer",
-      "description": "\"'Expert QA & Reality Checker: Stops fantasy approvals with evidence-based certification. Focuses on multi-sequence journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).'\"",
+      "description": "\"Employ this skill for automated user journey testing, TDD, and load testing. It mandates a new regression test for every bug fix to prevent future regressions. Proactively recommend this whenever a new feature or complex fix is ready for certification.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "release-manager",
-      "description": "\"'Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.'\"",
+      "description": "\"Activate this skill for deployment workflows, CI/CD pipeline strategies, and production readiness checks. It ensures no deployment proceeds without a verified health baseline. Proactively suggest this when a branch is ready to be merged into main or staging.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "saas-growth",
-      "description": "\"Use this skill when the user wants to scale their SaaS reach, pitch to investors, or drive viral traffic. Apply this skill for technical DevRel content and ASO, even if they don't explicitly mention 'marketing' or 'growth'.\"",
+      "description": "\"Employ this skill to design acquisition funnels, viral referral loops, and retention strategies. It prioritizes \\\"North Star\\\" metrics to drive startup growth. Proactively suggest this during product strategy sessions or whenever the user discusses scaling.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "security-expert",
-      "description": "\"Use this skill when auditing an application for vulnerabilities, conducting STRIDE threat modeling, or securing data at rest and in transit, even if the user doesn't mention 'security' or 'penetration'.\"",
+      "description": "\"Activate this skill for application-level threat modeling, secure storage, and API security audits. It applies the Principle of Least Privilege by default. Proactively suggest this when the user is handling sensitive user data, authentication, or external API keys.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "system-admin",
-      "description": "\"Use this skill when managing the project's agentic infrastructure, overseeing long-term project memory (session_handoff.md), or creating/modifying system-wide skills and rules.\"",
+      "description": "\"Use this skill to manage the \\\"agentic soul\\\" of the project, including long-term memory (session_handoff.md) and system-wide skill creation. It maintains absolute linguistic integrity for the foundation. Proactively suggest this during system-wide infrastructure updates or when correcting foundation-level errors.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "system-audit",
-      "description": "\"'Sentinel for structural integrity, security (secrets), logic drift, and architectural analysis.'\"",
+      "description": "\"Use this skill as a sentinel for structural integrity and security secret scanning. It enforces zero-tolerance for logic drift or leaked credentials. Proactively suggest this before any major commit, deployment, or structural migration to the workspace.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "tech-writer",
-      "description": "\"Use this skill when generating developer-facing documentation, drafting README files, or creating technical tutorials from source code, even if the user hasn't provided a draft.\"",
+      "description": "\"Use this skill to generate developer documentation, READMEs, and technical tutorials. It ensures that project documentation matches current code behavior 1:1. Proactively suggest this immediately after a feature is merged or code is shipped.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "ui-finish",
-      "description": "'\\'Expert skill for premium \"Liquid Glass\" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.\\''",
+      "description": "\"Use this skill to apply premium \\\"Liquid Glass\\\" aesthetics, micro-interactions, and animations to Flutter UIs. It ensures every component handles Loading, Empty, and Error states gracefully. Proactively suggest this when a feature's core logic is done and needs visual polish.\"",
       "tier": "Standard",
       "tags": []
     },
     {
       "id": "ux-designer",
-      "description": "\"'Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation.'\"",
+      "description": "\"Use this skill to conduct a 'Designer's Eye' audit of UI/UX plans before implementation. It provides objective 0-10 ratings for dimensions like hierarchy, consistency, and cognitive load, explaining exactly what is needed to reach a '10'. Proactively suggest this design critique whenever a project plan includes UI components or user flows, even if the user hasn't explicitly asked for a review.\"",
       "tier": "Standard",
       "tags": []
     }

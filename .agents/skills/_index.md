@@ -1,5 +1,5 @@
 ---
-description: Single entry point for skill discovery. Contains the SKILL ROUTING TABLE and a 2-line summary for all 25 available skills.
+description: Single entry point for skill discovery. Contains the SKILL ROUTING TABLE and descriptive summaries for all 25 available skills.
 ---
 
 # Skills Index & Routing Table
@@ -44,59 +44,57 @@ description: Single entry point for skill discovery. Contains the SKILL ROUTING 
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `project-architect` | Premium | Product Requirements Synthesis, Structural Logic, and Sprint Prioritization. The go-to skill for turning ideas into engineered system blueprints. |
-| `agent-architect` | Premium | Designer of robust autonomous AI agent loops, multi-agent collaboration, and state machine transitions. Use for AI pipeline and orchestration design. |
-| `backend-architect` | Premium | Extracts enterprise architecture patterns for large-scale backend systems. Use for service decomposition and system-level design decisions. |
-| `system-admin` | Premium | Managing the agentic soul, project memory, and system-wide skill creation protocols. Use to evolve the `.agents/` system itself. |
+| `project-architect` | Premium | Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity (MVC) to prevent feature bloat. Proactively suggest this when the user describes a new idea or whenever a project lacks a clear roadmap, even if they don't explicitly ask for a "blueprint." |
+| `agent-architect` | Premium | Employ this skill when designing autonomous AI agent loops, multi-agent collaboration strategies, or complex state machine transitions. It ensures every automated loop has a terminal safety exit. Proactively recommend this during the initial design of AI pipelines or orchestration layers. |
+| `backend-architect` | Premium | Use this skill to extract enterprise-grade architecture patterns (MVC, Repository, Service Layer) for resilient backend systems. It enforces strict decoupling between business logic and delivery layers. Proactively suggest this when the user starts adding new service modules or complex backend logic. |
 
 ### 🏗️ Backend, API & Database
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `backend-optimizer` | Standard | Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction. |
-| `api-contract` | Standard | Backend Node.js API definition and safety layer. Expert in defining strict data contracts between services and clients. |
-| `db-expert` | Standard | Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security (RLS). |
+| `backend-optimizer` | Standard | Use this skill to diagnose and fix Node.js backend bottlenecks, memory leaks, and event loop delays. It requires a performance baseline before any optimization begins. Proactively suggest this if the user reports slow API responses or high server resource usage. |
+| `api-contract` | Standard | Employ this skill to define strict request/response data contracts and safety layers (OpenAPI, Zod). It ensures zero untrusted request bodies reach the business logic. Proactively recommend this when the user is defining new endpoints, schemas, or third-party integrations. |
+| `db-expert` | Standard | Use this skill for database schema design, SQL migrations, and Supabase RLS policies. It forbids destructive schema changes without a verified rollback plan. Proactively suggest this whenever the user mentions database changes, migrations, or data security. |
 
 ### 🎨 Data, UI & UX
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `flutter-debugger` | Standard | Deep integration with dart-mcp-server for live widget inspection, runtime error analysis, and hot reloading. Use for any Flutter visual or runtime bug. |
-| `data-logic` | Standard | High-density skill for handling immutable data modeling, DTOs, and complex data transformation pipelines. |
-| `ui-finish` | Budget | Expert skill for premium "Liquid Glass" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter. |
-| `ux-designer` | Budget | Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation. |
+| `flutter-debugger` | Standard | Use this skill to inspect live widget trees and resolve Flutter/Dart runtime crashes or layout overflows. It enforces a strict "No Fixes Without Evidence" policy via MCP tools. Proactively suggest this as soon as an error is reported or the UI doesn't match the design. |
+| `data-logic` | Standard | Employ this skill to design immutable data models, DTOs, and complex transformation pipelines. It ensures data integrity by enforcing immutability by default. Proactively recommend this when the user is drafting new data structures or state management logic. |
+| `ui-finish` | Budget | Use this skill to apply premium "Liquid Glass" aesthetics, micro-interactions, and animations to Flutter UIs. It ensures every component handles Loading, Empty, and Error states gracefully. Proactively suggest this when a feature's core logic is done and needs visual polish. |
+| `ux-designer` | Budget | Use this skill to conduct a 'Designer's Eye' audit of UI/UX plans before implementation. It provides objective 0-10 ratings for dimensions like hierarchy and consistency, explaining exactly what is needed to reach a '10'. Proactively suggest this design critique whenever a project plan includes UI components, even if not explicitly requested. |
 
 ### 🛡️ Quality, Security & Audit
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `eval-engineer` | Standard | Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing. |
-| `qa-engineer` | Standard | QA Automation specialist focusing on multi-sequence user journeys, TDD, Widget testing, and Systems Load Testing. |
-| `system-audit` | Standard | Sentinel for structural integrity and security. Use to audit `.agents/` system health, rule coverage, and architectural drift. |
-| `security-expert` | Premium | Expert application security engineer specializing in threat modeling, secure storage, and API security for Flutter applications. Use when asked to "review security", "store sensitive data", or "threat model". Do NOT use for general feature logic. |
+| `eval-engineer` | Standard | Use this skill to establish deterministic, automated LLM evaluation pipelines. It prevents "intelligence regressions" by requiring regression testing for every prompt change. Proactively suggest this when the user wants to modify system-level instructions or agent behaviors. |
+| `qa-engineer` | Standard | Employ this skill for automated user journey testing, TDD, and load testing. It mandates a new regression test for every bug fix to prevent future regressions. Proactively recommend this whenever a new feature or complex fix is ready for certification. |
+| `system-audit` | Standard | Use this skill as a sentinel for structural integrity and security secret scanning. It enforces zero-tolerance for logic drift or leaked credentials. Proactively suggest this before any major commit, deployment, or structural migration to the workspace. |
+| `security-expert` | Premium | Activate this skill for application-level threat modeling, secure storage, and API security audits. It applies the Principle of Least Privilege by default. Proactively suggest this when the user is handling sensitive user data, authentication, or external API keys. |
 
 ### 📈 Marketing & Business (SaaS Growth)
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `cost-optimizer` | Standard | Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing. |
-| `saas-growth` | Budget | Expert SaaS growth consultant specialized in Viral Marketing, acquisition funnels, and retention loop design. |
+| `cost-optimizer` | Standard | Use this skill to reduce cloud and LLM infrastructure costs through token-clipping and tiered service routing. It focuses on maximizing efficiency without sacrificing quality. Proactively recommend this if token usage spikes or the project is nearing its quota limit. |
 
 ### 📚 Knowledge & Optimization
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `cache-optimizer` | Standard | Expert in designing advanced distributed caching strategies (Redis, in-memory, CDN layers) and cache invalidation patterns. |
-| `context-manager` | Standard | Integrated protocol for zero-waste codebase navigation and deep symbolic mapping. Use to plan surgical reading strategies for large codebases. |
-| `agent-evolution` | Standard | Self-improving agentic infrastructure engine that promotes recurring patterns into permanent Rules, Skills, or Workflows. |
-| `knowledge` | Budget | High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion via Context7. |
-| `tech-writer` | Budget | Expert technical writer specializing in developer documentation, READMEs, and tutorials for Flutter projects. |
+| `cache-optimizer` | Standard | Use this skill to design distributed caching strategies (Redis, CDN) and cache invalidation patterns. It ensures every cache layer has a clear invalidation strategy to prevent stale data. Proactively recommend this if database compute spikes or site speed decreases. |
+| `context-manager` | Standard | Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses "Surgical Munching" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task. |
+| `agent-evolution` | Standard | Use this skill to promote recurring successful patterns into permanent Rules, Skills, or Workflows. It ensures the system learns from its successes. Proactively suggest this after you have successfully completed several similar tasks using a consistent approach. |
+| `knowledge` | Budget | Employ this skill for rapid domain expertise acquisition and documentation ingestion (Context7). It ensures all technical claims are cited from reliable sources. Proactively recommend this when encountering an unknown library, API, or legacy codebase. |
+| `tech-writer` | Budget | Use this skill to generate developer documentation, READMEs, and technical tutorials. It ensures that project documentation matches current code behavior 1:1. Proactively suggest this immediately after a feature is merged or code is shipped. |
 
 ### 🔧 Other
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `release-manager` | Standard | Deployment workflows, CI/CD pipeline strategies, and production readiness checklists. |
+| `release-manager` | Standard | Activate this skill for deployment workflows, CI/CD pipeline strategies, and production readiness checks. It ensures no deployment proceeds without a verified health baseline. Proactively suggest this when a branch is ready to be merged into main or staging. |
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: "'release-manager'"
-description: "'Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.'"
+description: "Activate this skill for deployment workflows, CI/CD pipeline strategies, and production readiness checks. It ensures no deployment proceeds without a verified health baseline. Proactively suggest this when a branch is ready to be merged into main or staging."
 compatibility: "'Optimized for Antigravity Agentic Tooling.'"
 metadata:
   triggers: ['ci/cd pipeline', 'production readiness', 'canary release', 'blue-green']

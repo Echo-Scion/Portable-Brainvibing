@@ -1,6 +1,6 @@
 ---
 name: "'system-audit'"
-description: "'Sentinel for structural integrity, security (secrets), logic drift, and architectural analysis.'"
+description: "Use this skill as a sentinel for structural integrity and security secret scanning. It enforces zero-tolerance for logic drift or leaked credentials. Proactively suggest this before any major commit, deployment, or structural migration to the workspace."
 compatibility: "'Optimized for Antigravity Global Foundation.'"
 metadata:
   scope_discriminator: "'ONLY for passive structural audits, checking logic drift, and scanning vibecode integrity.'"

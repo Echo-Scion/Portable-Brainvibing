@@ -27,6 +27,7 @@ This workflow defines the precision implementation cycle for individual features
 - [ ] **API Contract**: Invoke `@skills/api-contract` if backend interaction is required.
 
 ## 4. VERIFICATION & AUDIT (CERTIFICATION)
+- [ ] **Completeness Integrity (Zero-Shortcut Mandate)**: Ensure the implementation is 100% complete. If a full solution (including all error paths and edge cases) only adds minimal AI overhead, dilarang menggunakan "jalan pintas" atau menunda tes.
 - [ ] **TDD Loop**: Invoke `@skills/qa-engineer`. Write and run tests (`flutter test`).
 - [ ] **Logical Audit**: Invoke `@skills/system-audit` to certify the feature's mechanical integrity.
 - [ ] **Regressive Evaluation**: Invoke `@skills/eval-engineer` to confirm no core logic was broken during the build.

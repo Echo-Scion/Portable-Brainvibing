@@ -1,6 +1,6 @@
 ---
 name: "'db-expert'"
-description: "'Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security (RLS).'"
+description: "Use this skill for database schema design, SQL migrations, and Supabase RLS policies. It forbids destructive schema changes without a verified rollback plan. Proactively suggest this whenever the user mentions database changes, migrations, or data security."
 compatibility: "'Postgres + Supabase'"
 metadata:
   triggers: ['sql schema', 'zero-downtime migration', 'postgres rls', 'db indexing']

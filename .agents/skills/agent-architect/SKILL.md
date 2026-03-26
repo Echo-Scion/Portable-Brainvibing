@@ -1,6 +1,6 @@
 ---
 name: "'agent-architect'"
-description: "'Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems.'"
+description: "Employ this skill when designing autonomous AI agent loops, multi-agent collaboration strategies, or complex state machine transitions. It ensures every automated loop has a terminal safety exit. Proactively recommend this during the initial design of AI pipelines or orchestration layers."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   triggers: ['agent architecture', 'multi-agent', 'state machine', 'react loop', 'guardrails', 'mlops', 'data pipeline', 'rag', 'ml engineering', 'training']

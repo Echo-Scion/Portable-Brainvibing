@@ -1,6 +1,6 @@
 ---
 name: "'security-expert'"
-description: "Use this skill when auditing an application for vulnerabilities, conducting STRIDE threat modeling, or securing data at rest and in transit, even if the user doesn't mention 'security' or 'penetration'."
+description: "Activate this skill for application-level threat modeling, secure storage, and API security audits. It applies the Principle of Least Privilege by default. Proactively suggest this when the user is handling sensitive user data, authentication, or external API keys."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   triggers: ['security-audit', 'threat modeling', 'secure storage', 'api security', 'penetration', 'sast', 'dast', 'cloud security', 'stride']

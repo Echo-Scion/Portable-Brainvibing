@@ -1,6 +1,6 @@
 ---
 name: "'cache-optimizer'"
-description: "'Expert in designing advanced distributed caching strategies (Redis, CDNs, ETags, Content Hashing) to drastically reduce database load.'"
+description: "Use this skill to design distributed caching strategies (Redis, CDN) and cache invalidation patterns. It ensures every cache layer has a clear invalidation strategy to prevent stale data. Proactively recommend this if database compute spikes or site speed decreases."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   scope_discriminator: "'ONLY for cache invalidation, Redis TTL, CDNs, and eviction strategies. NOT for general DB tuning.'"

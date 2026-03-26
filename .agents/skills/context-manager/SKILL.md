@@ -1,6 +1,6 @@
 ---
 name: "'context-manager'"
-description: "Use this skill when performing deep symbolic mapping of the workspace, pruning session context for efficiency, or navigating complex codebases, even if the user doesn't mention 'token-waste' or 'context-bloat'."
+description: "Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses \"Surgical Munching\" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task."
 compatibility: "'Optimized for Antigravity Agentic Tooling.'"
 metadata:
   triggers: ['context window', 'zero-waste', 'symbolic mapping', 'workspace scan']

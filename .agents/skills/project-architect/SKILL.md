@@ -1,6 +1,6 @@
 ---
 name: "'project-architect'"
-description: "Use this skill when synthesizing requirements into a PRD, designing architecture for mobile or full-stack platforms, or prioritizing features, even if the user hasn't provided a formal blueprint."
+description: "Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity (MVC) to prevent feature bloat. Proactively suggest this when the user describes a new idea or whenever a project lacks a clear roadmap, even if they don't explicitly ask for a \"blueprint.\""
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   triggers: ['prd synthesis', 'sprint planning', 'agile backlog', 'mobile strategy', 'offline-first', 'native app architecture']
@@ -26,6 +26,10 @@ You are an expert in synthesizing requirements into technical blueprints and man
 ## 🛠️ Workflow Patterns
 
 ### 1. Master Blueprint & Platform Strategy
+- **Triple-Layer Discovery (Research Protocol)**: Before proposing a design, categorize research into three layers:
+  - **Layer 1: Industry Standards**: Verify battle-tested patterns and built-in runtime capabilities to avoid reinventing the wheel.
+  - **Layer 2: Modern Trends**: Evaluate current ecosystem best practices, while maintaining skepticism against over-hyped patterns.
+  - **Layer 3: First Principles**: Derive original observations based on the specific problem. Identify where conventional wisdom fails and "zig" where others "zag."
 - **Diagnostic Extraction**: Identify the core "singular pain point."
 - **Platform Strategy**: 
   - Decide between Native (SwiftUI/Jetpack Compose) vs. Cross-Platform (Flutter/React Native) based on requirements.

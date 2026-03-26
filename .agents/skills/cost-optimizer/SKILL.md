@@ -1,6 +1,6 @@
 ---
 name: "'cost-optimizer'"
-description: "'Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.'"
+description: "Use this skill to reduce cloud and LLM infrastructure costs through token-clipping and tiered service routing. It focuses on maximizing efficiency without sacrificing quality. Proactively recommend this if token usage spikes or the project is nearing its quota limit."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   scope_discriminator: "'ONLY for FinOps, autoscaling efficiency, and LLM token-clipping strategies.'"

@@ -3,7 +3,7 @@
 This file defines the absolute operational constraints for all agents in this workspace.
 
 ## 1. MANDATORY ANCHORING (Pattern 1)
-- **Protocol:** Anchor this task to the rules in `.agents/rules/00_always_on_core.md`.
+- **Protocol:** Jangkarkan (Anchor) tugas ini pada aturan yang ada di `.agents/rules/00_always_on_core.md`.
 - **Requirement:** Every task, regardless of complexity, MUST begin by acknowledging and applying the core protocols defined in the anchoring file.
 
 ## 2. REASONING TIER & RULE INGESTION

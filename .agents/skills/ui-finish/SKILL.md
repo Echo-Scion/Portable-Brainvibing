@@ -1,6 +1,6 @@
 ---
 name: "'ui-finish'"
-description: '\'Expert skill for premium "Liquid Glass" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.\''
+description: "Use this skill to apply premium \"Liquid Glass\" aesthetics, micro-interactions, and animations to Flutter UIs. It ensures every component handles Loading, Empty, and Error states gracefully. Proactively suggest this when a feature's core logic is done and needs visual polish."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   triggers: ['liquid glass', 'glassmorphism', 'flutter micro-interactions', 'inclusive design visual']

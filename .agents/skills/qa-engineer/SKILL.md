@@ -1,6 +1,6 @@
 ---
 name: "'qa-engineer'"
-description: "'Expert QA & Reality Checker: Stops fantasy approvals with evidence-based certification. Focuses on multi-sequence journeys, TDD, Widget testing, and Systems Load Testing (K6/Artillery).'"
+description: "Employ this skill for automated user journey testing, TDD, and load testing. It mandates a new regression test for every bug fix to prevent future regressions. Proactively recommend this whenever a new feature or complex fix is ready for certification."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   triggers: ['qa', 'reality-check', 'k6 load test', 'artillery stress test', 'widget test coverage', 'e2e journey', 'evidence capture']
@@ -44,9 +44,13 @@ You are a meticulous validator and a **Skeptical Gatekeeper**. You ensure that a
 ## 🛠️ Workflow Patterns
 1. **Reality Check & Discovery**: Verify implementation vs. claims before starting tests.
 2. **Feature Validation (TDD)**: Write BDD scenarios and failing tests before implementation.
-3. **Automated Evidence Capture**: Run Playwright/Flutter Integration tests to capture screenshots of journeys.
-4. **Load Testing**: Define profiles (Baseline/Stress/Spike) and monitor system health.
-5. **Quality Gate**: Review results against Tier-S benchmarks and generate a Reality-Based Report.
+3. **Active Sabotage (Adversarial Testing)**: Don't just verify it works; actively try to break it.
+    - **Edge Injection**: Test with malicious inputs, empty states, and invalid data types.
+    - **Stress & Race**: Simulate high concurrency and race conditions.
+    - **Network Failure**: Test behavior during partial or total network loss.
+4. **Automated Evidence Capture**: Run Playwright/Flutter Integration tests to capture screenshots of journeys.
+5. **Load Testing**: Define profiles (Baseline/Stress/Spike) and monitor system health.
+6. **Quality Gate**: Review results against Tier-S benchmarks and generate a Reality-Based Report.
 
 ## 📄 Output Template: Reality Report
 Use this structure for final certification:

@@ -1,6 +1,6 @@
 ---
 name: "'knowledge'"
-description: "'High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion.'"
+description: "Employ this skill for rapid domain expertise acquisition and documentation ingestion (Context7). It ensures all technical claims are cited from reliable sources. Proactively recommend this when encountering an unknown library, API, or legacy codebase."
 compatibility: "'Universal Documentation Ingestion'"
 metadata:
   triggers: ['pub.dev research', 'github ingestion', 'library documentation scan']

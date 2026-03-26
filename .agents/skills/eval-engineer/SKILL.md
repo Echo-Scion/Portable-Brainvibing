@@ -1,6 +1,6 @@
 ---
 name: "'eval-engineer'"
-description: "'Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.'"
+description: "Use this skill to establish deterministic, automated LLM evaluation pipelines. It prevents \"intelligence regressions\" by requiring regression testing for every prompt change. Proactively suggest this when the user wants to modify system-level instructions or agent behaviors."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   triggers: ['llm evaluation', 'prompt regression', 'golden dataset', 'mlops']

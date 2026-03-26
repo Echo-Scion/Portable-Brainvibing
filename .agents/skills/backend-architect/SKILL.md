@@ -1,6 +1,6 @@
 ---
 name: "'backend-architect'"
-description: "'Extracts enterprise architecture patterns (MVC, Repository, Service Layer) for resilient Node.js/Supabase backends.'"
+description: "Use this skill to extract enterprise-grade architecture patterns (MVC, Repository, Service Layer) for resilient backend systems. It enforces strict decoupling between business logic and delivery layers. Proactively suggest this when the user starts adding new service modules or complex backend logic."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   scope_discriminator: "'ONLY for structural design and pattern scaffolding (MVC, Repository) of backends. Do NOT use for performance tuning or bug fixing.'"

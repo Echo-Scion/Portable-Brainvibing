@@ -1,6 +1,6 @@
 ---
 name: "'tech-writer'"
-description: "Use this skill when generating developer-facing documentation, drafting README files, or creating technical tutorials from source code, even if the user hasn't provided a draft."
+description: "Use this skill to generate developer documentation, READMEs, and technical tutorials. It ensures that project documentation matches current code behavior 1:1. Proactively suggest this immediately after a feature is merged or code is shipped."
 compatibility: "'Optimized for Antigravity Agentic Tooling.'"
 metadata:
   triggers: ['developer documentation', 'readme generation', 'changelog writing', 'tutorial guide']

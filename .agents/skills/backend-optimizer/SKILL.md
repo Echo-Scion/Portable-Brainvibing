@@ -1,6 +1,6 @@
 ---
 name: "'backend-optimizer'"
-description: "'Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.'"
+description: "Use this skill to diagnose and fix Node.js backend bottlenecks, memory leaks, and event loop delays. It requires a performance baseline before any optimization begins. Proactively suggest this if the user reports slow API responses or high server resource usage."
 compatibility: "'Optimized for Antigravity Tier-S standard.'"
 metadata:
   scope_discriminator: "'ONLY for Node.js performance tuning, memory leaks, and V8 engine optimizations. NOT for adding new features.'"

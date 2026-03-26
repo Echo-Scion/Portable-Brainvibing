@@ -1,6 +1,5 @@
 ---
 name: "'saas-growth'"
-description: "Use this skill when the user wants to scale their SaaS reach, pitch to investors, or drive viral traffic. Apply this skill for technical DevRel content and ASO, even if they don't explicitly mention 'marketing' or 'growth'."
 compatibility: "'Optimized for Antigravity Tier-S standard (4-Pillar Hierarchy).'"
 metadata:
   triggers: ['aso', 'investor pitch', 'devrel blog', 'viral marketing', 'trojan horse']

@@ -1,6 +1,6 @@
 ---
 name: "'api-contract'"
-description: "'Backend Node.js API definition and safety layer. Expert in defining strict data contracts (Zod, OpenAPI) and generating defensive parsing logic.'"
+description: "Employ this skill to define strict request/response data contracts and safety layers (OpenAPI, Zod). It ensures zero untrusted request bodies reach the business logic. Proactively recommend this when the user is defining new endpoints, schemas, or third-party integrations."
 compatibility: "'Node.js + Zod / JSON Schema'"
 metadata:
   triggers: ['zod schema', 'openapi spec', 'api defensive parsing', 'endpoint contract']

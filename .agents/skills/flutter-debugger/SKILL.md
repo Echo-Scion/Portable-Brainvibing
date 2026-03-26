@@ -1,6 +1,6 @@
 ---
 name: "'flutter-debugger'"
-description: "Use this skill when the user encounters Flutter/Dart runtime errors, needs to inspect the live widget tree, or requires hot reload verification, even if they don't explicitly mention 'dart-mcp-server' or 'debugging'."
+description: "Use this skill to inspect live widget trees and resolve Flutter/Dart runtime crashes or layout overflows. It enforces a strict \"No Fixes Without Evidence\" policy via MCP tools. Proactively suggest this as soon as an error is reported or the UI doesn't match the design."
 compatibility: "'dart-mcp-server + Flutter DevTools'"
 metadata:
   triggers: ['flutter debug', 'widget tree', 'dtd', 'render overflow', 'dart runtime crash']

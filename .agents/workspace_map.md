@@ -34,29 +34,28 @@ A high-level topography of the workspace for AI navigation and context initializ
 ### Skills (`skills/`)
 <!-- SKILLS_START -->
 #### Other
-- `agent-architect` [Standard] — "'Expert Designer of Autonomous AI Agent Loops, ML Pipelines, and Intelligent Systems.'"
-- `agent-evolution` [Standard] — "'Self-improving agentic infrastructure engine that promotes patterns into permanent Rules, Skills, or Workflows.'"
-- `api-contract` [Standard] — "'Backend Node.js API definition and safety layer. Expert in defining strict data contracts
-- `backend-architect` [Standard] — "'Extracts enterprise architecture patterns
-- `backend-optimizer` [Standard] — "'Optimization specialist for Node.js backends focused on memory leaks, the event loop, and bottleneck reduction.'"
-- `cache-optimizer` [Standard] — "'Expert in designing advanced distributed caching strategies
-- `context-manager` [Standard] — "Use this skill when performing deep symbolic mapping of the workspace, pruning session context for efficiency, or navigating complex codebases, even if the user doesn't mention 'token-waste' or 'context-bloat'."
-- `cost-optimizer` [Standard] — "'Cloud and LLM infrastructure cost reduction expert utilizing precise architectural shifts, token-clipping, and tiered service routing.'"
-- `data-logic` [Standard] — "'High-density skill for handling immutable data modeling
-- `db-expert` [Standard] — "'Database architect and migration specialist. Expert in 3NF schema design, zero-downtime migrations, and Supabase security
-- `eval-engineer` [Standard] — "'Architect establishing deterministic, automated LLM evaluation pipelines and prompt regression testing.'"
-- `flutter-debugger` [Standard] — "Use this skill when the user encounters Flutter/Dart runtime errors, needs to inspect the live widget tree, or requires hot reload verification, even if they don't explicitly mention 'dart-mcp-server' or 'debugging'."
-- `knowledge` [Standard] — "'High-efficiency protocol for rapid domain expertise acquisition and real-time documentation ingestion.'"
-- `project-architect` [Standard] — "Use this skill when synthesizing requirements into a PRD, designing architecture for mobile or full-stack platforms, or prioritizing features, even if the user hasn't provided a formal blueprint."
-- `qa-engineer` [Standard] — "'Expert QA & Reality Checker: Stops fantasy approvals with evidence-based certification. Focuses on multi-sequence journeys, TDD, Widget testing, and Systems Load Testing
-- `release-manager` [Standard] — "'Deployment workflows, CI/CD pipeline strategies, and production readiness checklists.'"
-- `saas-growth` [Standard] — "Use this skill when the user wants to scale their SaaS reach, pitch to investors, or drive viral traffic. Apply this skill for technical DevRel content and ASO, even if they don't explicitly mention 'marketing' or 'growth'."
-- `security-expert` [Standard] — "Use this skill when auditing an application for vulnerabilities, conducting STRIDE threat modeling, or securing data at rest and in transit, even if the user doesn't mention 'security' or 'penetration'."
-- `system-admin` [Standard] — "Use this skill when managing the project's agentic infrastructure, overseeing long-term project memory
-- `system-audit` [Standard] — "'Sentinel for structural integrity, security
-- `tech-writer` [Standard] — "Use this skill when generating developer-facing documentation, drafting README files, or creating technical tutorials from source code, even if the user hasn't provided a draft."
-- `ui-finish` [Standard] — '\'Expert skill for premium "Liquid Glass" aesthetics, delightful micro-interactions, and inclusive visual design prompts for Flutter.\''
-- `ux-designer` [Standard] — "'Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation.'"
+- `agent-architect` [Standard] — "Employ this skill when designing autonomous AI agent loops, multi-agent collaboration strategies, or complex state machine transitions. It ensures every automated loop has a terminal safety exit. Proactively recommend this during the initial design of AI pipelines or orchestration layers."
+- `agent-evolution` [Standard] — "Use this skill to promote recurring successful patterns into permanent Rules, Skills, or Workflows. It ensures the system learns from its successes. Proactively suggest this after you have successfully completed several similar tasks using a consistent approach."
+- `api-contract` [Standard] — "Employ this skill to define strict request/response data contracts and safety layers
+- `backend-architect` [Standard] — "Use this skill to extract enterprise-grade architecture patterns
+- `backend-optimizer` [Standard] — "Use this skill to diagnose and fix Node.js backend bottlenecks, memory leaks, and event loop delays. It requires a performance baseline before any optimization begins. Proactively suggest this if the user reports slow API responses or high server resource usage."
+- `cache-optimizer` [Standard] — "Use this skill to design distributed caching strategies
+- `context-manager` [Standard] — "Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses \"Surgical Munching\" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task."
+- `cost-optimizer` [Standard] — "Use this skill to reduce cloud and LLM infrastructure costs through token-clipping and tiered service routing. It focuses on maximizing efficiency without sacrificing quality. Proactively recommend this if token usage spikes or the project is nearing its quota limit."
+- `data-logic` [Standard] — "Employ this skill to design immutable data models, DTOs, and complex transformation pipelines. It ensures data integrity by enforcing immutability by default. Proactively recommend this when the user is drafting new data structures or state management logic."
+- `db-expert` [Standard] — "Use this skill for database schema design, SQL migrations, and Supabase RLS policies. It forbids destructive schema changes without a verified rollback plan. Proactively suggest this whenever the user mentions database changes, migrations, or data security."
+- `eval-engineer` [Standard] — "Use this skill to establish deterministic, automated LLM evaluation pipelines. It prevents \"intelligence regressions\" by requiring regression testing for every prompt change. Proactively suggest this when the user wants to modify system-level instructions or agent behaviors."
+- `flutter-debugger` [Standard] — "Use this skill to inspect live widget trees and resolve Flutter/Dart runtime crashes or layout overflows. It enforces a strict \"No Fixes Without Evidence\" policy via MCP tools. Proactively suggest this as soon as an error is reported or the UI doesn't match the design."
+- `knowledge` [Standard] — "Employ this skill for rapid domain expertise acquisition and documentation ingestion
+- `project-architect` [Standard] — "Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity
+- `qa-engineer` [Standard] — "Employ this skill for automated user journey testing, TDD, and load testing. It mandates a new regression test for every bug fix to prevent future regressions. Proactively recommend this whenever a new feature or complex fix is ready for certification."
+- `release-manager` [Standard] — "Activate this skill for deployment workflows, CI/CD pipeline strategies, and production readiness checks. It ensures no deployment proceeds without a verified health baseline. Proactively suggest this when a branch is ready to be merged into main or staging."
+- `security-expert` [Standard] — "Activate this skill for application-level threat modeling, secure storage, and API security audits. It applies the Principle of Least Privilege by default. Proactively suggest this when the user is handling sensitive user data, authentication, or external API keys."
+- `system-admin` [Standard] — "Use this skill to manage the \"agentic soul\" of the project, including long-term memory
+- `system-audit` [Standard] — "Use this skill as a sentinel for structural integrity and security secret scanning. It enforces zero-tolerance for logic drift or leaked credentials. Proactively suggest this before any major commit, deployment, or structural migration to the workspace."
+- `tech-writer` [Standard] — "Use this skill to generate developer documentation, READMEs, and technical tutorials. It ensures that project documentation matches current code behavior 1:1. Proactively suggest this immediately after a feature is merged or code is shipped."
+- `ui-finish` [Standard] — "Use this skill to apply premium \"Liquid Glass\" aesthetics, micro-interactions, and animations to Flutter UIs. It ensures every component handles Loading, Empty, and Error states gracefully. Proactively suggest this when a feature's core logic is done and needs visual polish."
+- `ux-designer` [Standard] — "Use this skill to conduct a 'Designer's Eye' audit of UI/UX plans before implementation. It provides objective 0-10 ratings for dimensions like hierarchy, consistency, and cognitive load, explaining exactly what is needed to reach a '10'. Proactively suggest this design critique whenever a project plan includes UI components or user flows, even if the user hasn't explicitly asked for a review."
 
 <!-- SKILLS_END -->
 
