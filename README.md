@@ -92,6 +92,14 @@ Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ## 🔄 Recent Changes
 
+### [1.2.5] - 2026-03-27
+### Changed
+- Automated agent synchronization and sanitization.
+
+### [1.2.4] - 2026-03-27
+### Changed
+- Consolidate Security, QA, and Audit into integrity-sentinel.
+
 ### [1.2.0] - 2026-03-26
 ### Changed
 - Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders
