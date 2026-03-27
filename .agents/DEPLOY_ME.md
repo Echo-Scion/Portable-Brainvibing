@@ -25,6 +25,7 @@ Read the following files from this source and write them to the same relative pa
 
 ### 4. Selective Sync (Agentic)
 Iterate through the directories in this source and copy all `.md`, `.json`, `.py`, and `SKILL.md` files to the target. 
+- **Priority**: Workflows, Rules, and Scripts (like `build_graph.py` and `update_catalog.py`) are mandatory for operational integrity.
 
 ### 5. Create Path Marker
 Write the absolute path of THIS source foundation directory into a file named `.agents/.foundation_path` in the target project. This is critical for enabling the `sync_to_foundation.py` tool.

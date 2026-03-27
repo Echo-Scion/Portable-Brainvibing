@@ -16,7 +16,7 @@ FOUNDATION_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 FOUNDATION_AGENTS = os.path.join(FOUNDATION_ROOT, ".agents")
 
 # Folders that represent "The Brain" and should evolve
-EVOLVABLE_FOLDERS = ["skills", "rules", "workflows", "canons", "templates", "scripts"]
+EVOLVABLE_FOLDERS = ["skills", "rules", "workflows", "canons", "templates", "scripts", "evals", "docs"]
 
 # Files/Folders to NEVER sync back to foundation (project-specific)
 BLACKLIST = {
@@ -178,6 +178,7 @@ def sync_upstream(project_root, dry_run=False):
                     print(f"⚠️ Warning: Failed to update Knowledge Graph: {e}")
 
             # Trigger Catalog Update in Foundation
+            catalog_script = os.path.join(target_foundation_agents, "scripts", "update_catalog.py")
             if os.path.exists(catalog_script):
                 print("🔄 Updating Foundation Catalog...")
                 try:

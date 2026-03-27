@@ -123,3 +123,16 @@ The following actions are PROHIBITED without an explicit overriding directive fr
 ## 4. Least Privilege
 - When creating service accounts, database roles, or API keys, always apply the minimum permission necessary.
 - Document the reason for each permission granted.
+- **[DONT]** Modify `GEMINI.md` or any `rules/` file without a Binary Oratory pre-flight check.
+
+## 6. Persistent Learning (Post-Mortem)
+- **Requirement**: Document the root cause, the solution that worked, and any "debt" or architectural warnings that other agents should know.
+- **Goal**: Maintain collective memory and avoid repeating the same systemic failures.
+
+## 7. Aesthetic-First Guardrail (Visual Strategy Pre-Flight)
+- **Rule**: Before any UI/UX implementation (Flutter or Web), the agent MUST declare a "Visual Strategy Pre-Flight."
+- **Checklist**:
+    1. **Color Strategy**: Define ratios (e.g., 60-30-10) using tokens from `canons/global/03_aesthetics_and_design_system.md`.
+    2. **Typography & Spacing**: Declare the scale (e.g., Golden Ratio) and hierarchical weights.
+    3. **"Liquid Glass" Intent**: Describe how glassmorphism and blur will be applied to minimize visual friction.
+- **Constraint**: Coding may only begin AFTER this declaration is made and matches the "Biological Zen" philosophy.

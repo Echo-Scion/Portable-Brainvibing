@@ -25,8 +25,11 @@ This file is a **foundational mandate** and takes absolute precedence over all o
 - **Rule:** Each task MUST have a corresponding file in `workflows/tasks/task-id.md` (created from `templates/ATOMIC_TASK.template.md`).
 - **Rule:** Every complex (Tier-1+) execution MUST incorporate explicit model tier matching and mandatory reasoning depth (see `model_tier_protocol.md` and `reasoning_protocols.md`).
 
-## 5. AUTOMATED SYNC
-- **Rule:** After any change to `skills/`, `rules/`, or `canons/`, the agent MUST run `python scripts/build_graph.py`.
+## 5. AUTOMATED SYNC & GATEKEEPERS
+- **Pre-Flight Rule:** Before any complex coding session, run `python scripts/preflight_check.py` to validate architecture routing.
+- **Aesthetic Rule:** Before deploying UI changes, run `python evals/audit_aesthetics.py` to ensure premium fidelity.
+- **Eviction Rule:** Periodically run `python scripts/compress_memory.py` to keep the operative memory lean.
+- **Graph Rule:** After any change to `skills/`, `rules/`, or `canons/`, the agent MUST run `python scripts/build_graph.py`.
 
 ---
 
@@ -67,7 +70,8 @@ Before ANY task that writes, deletes, or deploys, the agent MUST declare:
 | Database schema, SQL migration, Supabase RLS | `db-expert` |
 | API endpoint definition, data contracts | `api-contract` |
 | Flutter UI polish, Liquid Glass, micro-interactions | `ui-finish` |
-| Security audit, threat modeling, secure storage | `security-expert` |
+| Universal validation, security, QA, system audits, eval | `integrity-sentinel` |
+| Chaos testing, fault injection, adversarial testing | `chaos-engineer` |
 | Node.js memory leaks, backend bottlenecks | `backend-optimizer` |
 | CI/CD, deploy, production readiness | `release-manager` |
 | Managing `.agents/` system, new skills creation | `system-admin` |

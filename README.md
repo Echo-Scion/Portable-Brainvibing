@@ -43,7 +43,6 @@ High-precision anchors that ensure efficiency and prevent "Logic Drift":
 | :--- | :--- | :--- |
 | **🛡️ Token Shield** | Block-Level Ingestion | Minimizes token overhead by avoiding full-file reads. |
 | **📐 Vibecode Limit** | 500-Line Atomic Cap | Prevents context loss by enforcing modular file structures. |
-| **🗺️ Topographical Mapping** | Catalog & Workspace Indexing | Forces AI to lazy-load context via `workspace_map.md` rather than blind searching. |
 | **🕸️ Neural Linkage** | Knowledge Graph (`.json`) | Maps symbolic relationships between files, enabling AI to predict impact before refactoring. |
 | **✨ Binary Oratory** | Execution Firewall | Mandatory [DO]/[DONT] declarations before any filesystem mutation. |
 | **📈 Agentic Evolution** | Habit Promotion | Automatically converts repetitive corrections into permanent rules. |
@@ -79,12 +78,11 @@ Verify that your skills are indexed. Type `@` in your chat; you should see activ
 
 *   **Automated System Stocktake**: Every 5 features, run: *"Review our session history and MEMORY.md. Identify repetitive patterns to promote into a permanent Skill."*
 *   **Language & Context**: Leave the core instructions in English (AI understands logic better in English), but feel free to add local language triggers in `catalog.json`.
-*   **IDE Bridges**: Use the `--cursor` or `--windsurf` flags during `deploy_foundation.py` to generate IDE-specific rule files.
 
 ---
 
 ## 🏷️ Version
-**1.2.0** — *"Unified Logic & Universal Export"*
+**1.2.5** — *"Unified Logic & Universal Export"*
 
 ## ⚖️ License
 Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.

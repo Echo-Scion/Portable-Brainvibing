@@ -24,9 +24,8 @@ description: Single entry point for skill discovery. Contains the SKILL ROUTING 
 | Data modeling, immutable state, DTO design, data transformations | `data-logic` |
 | Flutter UI polish, Liquid Glass aesthetic, micro-interactions, animations | `ui-finish` |
 | UX flows, user motivation, interaction cadence, behavioral design | `ux-designer` |
-| QA automation, TDD, widget tests, load testing, user journey tests | `qa-engineer` |
-| Security audit, threat modeling, secure storage, API security review | `system-audit` |
-| Application security, JWT, sensitive data, injection vulnerabilities | `security-expert` |
+| Security, QA, System Audit, Load Testing, and LLM Eval Orchestration | `integrity-sentinel` |
+| Adversarial staging tests, injecting network latency, garbled data, chaos testing | `chaos-engineer` |
 | Cloud cost reduction, LLM token optimization, tiered service routing | `cost-optimizer` |
 | SaaS growth, viral marketing, acquisition strategy, retention loops | `saas-growth` |
 | Distributed caching strategy, Redis, cache invalidation design | `cache-optimizer` |
@@ -38,7 +37,7 @@ description: Single entry point for skill discovery. Contains the SKILL ROUTING 
 
 ---
 
-## Skill Directory (25 skills)
+## Skill Directory (23 skills)
 
 ### 🏛️ Strategy, Architecture & Admin
 
@@ -69,16 +68,15 @@ description: Single entry point for skill discovery. Contains the SKILL ROUTING 
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
-| `eval-engineer` | Standard | Use this skill to establish deterministic, automated LLM evaluation pipelines. It prevents "intelligence regressions" by requiring regression testing for every prompt change. Proactively suggest this when the user wants to modify system-level instructions or agent behaviors. |
-| `qa-engineer` | Standard | Employ this skill for automated user journey testing, TDD, and load testing. It mandates a new regression test for every bug fix to prevent future regressions. Proactively recommend this whenever a new feature or complex fix is ready for certification. |
-| `system-audit` | Standard | Use this skill as a sentinel for structural integrity and security secret scanning. It enforces zero-tolerance for logic drift or leaked credentials. Proactively suggest this before any major commit, deployment, or structural migration to the workspace. |
-| `security-expert` | Premium | Activate this skill for application-level threat modeling, secure storage, and API security audits. It applies the Principle of Least Privilege by default. Proactively suggest this when the user is handling sensitive user data, authentication, or external API keys. |
+| `integrity-sentinel` | Premium | The overarching Gatekeeper for security, quality assurance, system audits, and LLM evaluation. It orchestrates zero-trust, reality-based certification routes before any code is approved. Proactively suggest this before deployment or when enforcing zero-trust principles. |
+| `chaos-engineer` | Premium | Use this skill for adversarial staging tests. It actively injects failures (network latency, garbage data, auth drops) to verify true graceful degradation. Proactively suggest this before production releases to ensure resilience. |
 
 ### 📈 Marketing & Business (SaaS Growth)
 
 | Skill | Tier | Description |
 | :--- | :--- | :--- |
 | `cost-optimizer` | Standard | Use this skill to reduce cloud and LLM infrastructure costs through token-clipping and tiered service routing. It focuses on maximizing efficiency without sacrificing quality. Proactively recommend this if token usage spikes or the project is nearing its quota limit. |
+| `saas-growth` | Budget | Employ this skill to design acquisition funnels, viral referral loops, and retention strategies. It prioritizes "North Star" metrics to drive startup growth. Proactively suggest this during product strategy sessions or whenever the user discusses scaling. |
 
 ### 📚 Knowledge & Optimization
 

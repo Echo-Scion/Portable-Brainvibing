@@ -150,6 +150,14 @@ To prevent architectural drift and naming inconsistency, all files created withi
 ## 6. Enforcement
 - All initialization (`/project-init`) and migration tasks MUST verify that the `context/` topography matches the selected baseline (Lean, Startup, or Double Lean).
 - Standardized naming is the core driver for this rule to prevent naming inconsistency. Consistency is prioritized over brevity.
+- **[DONT]** Modify `GEMINI.md` or any `rules/` file without a Binary Oratory pre-flight check.
+
+## 7. Surgical Context Eviction (Token Efficiency)
+- **Rule**: Upon completion of an atomic task (Tier-1+) or a major architectural phase, the agent MUST perform "Context Offloading."
+- **Protocol**:
+    2. **Evict**: Explicitly declare in the handoff: "Phase [X] is FINAL. Sub-sequent sessions MUST NOT read raw files from [directory/path] unless a bug is explicitly found."
+    3. **Cleanup**: Close all tabs related to the finished phase before ending the session.
+- **Goal**: Maintain 100% focus and prevent the "Context Bloat" that leads to AI hallucinations.
 
 ---
 *Portable Brainvibing - Governance Tier-S*

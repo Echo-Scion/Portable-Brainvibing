@@ -88,6 +88,7 @@ activation: on_demand
 - Implement idempotency for critical transactions.
 
 ## 4. Monitoring & Observability
+- Export key metrics for system health monitoring.
 - Implement distributed tracing for complex request flows.
 - Ensure logs are structured and searchable.
 ---

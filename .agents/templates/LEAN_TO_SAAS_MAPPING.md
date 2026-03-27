@@ -9,6 +9,7 @@ This document defines how the 82 granular SaaS files map to the 4 Lean Master Fi
 | Lean Master File | SaaS Prefixes (Children) | Integration Method |
 | :--- | :--- | :--- |
 | **`00_Strategy/BLUEPRINT.md`** | `Idea_`, `Valid_`, `Scale_` | Blueprint contains summaries; Detail files contain execution data. |
+| **`01_Product/ROADMAP.md`** | `Plan_`, `Launch_`, `Acq_`, `Dist_`, `Conv_`, `Rev_`, `Data_`, `Ret_`, `Growth_` | Roadmap tracks milestones; Detail files track funnels, metrics, and models. |
 | **`02_Creative/STYLE_GUIDE.md`** | `Design_` | Style Guide defines tokens; Detail files contain flows and wireframe specs. |
 | **`03_Tech/ARCHITECTURE.md`** | `Dev_`, `Infra_`, `Test_` | Architecture defines system logic; Detail files contain API contracts and DevOps SOPs. |
 

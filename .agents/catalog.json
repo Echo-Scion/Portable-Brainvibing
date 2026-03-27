@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-27T02:29:41.411770Z",
-  "total": 23,
+  "generatedAt": "2026-03-27T12:37:06.665012Z",
+  "total": 21,
   "skills": [
     {
       "id": "agent-architect",
@@ -39,6 +39,12 @@
       "tags": []
     },
     {
+      "id": "chaos-engineer",
+      "description": "\"Activate this skill for adversarial staging tests. It actively injects failures (network latency, garbage data, auth drops) to test graceful degradation. Proactively suggest this before production releases to verify resilience.\"",
+      "tier": "Standard",
+      "tags": []
+    },
+    {
       "id": "context-manager",
       "description": "\"Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses \\\"Surgical Munching\\\" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task.\"",
       "tier": "Standard",
@@ -63,14 +69,14 @@
       "tags": []
     },
     {
-      "id": "eval-engineer",
-      "description": "\"Use this skill to establish deterministic, automated LLM evaluation pipelines. It prevents \\\"intelligence regressions\\\" by requiring regression testing for every prompt change. Proactively suggest this when the user wants to modify system-level instructions or agent behaviors.\"",
+      "id": "flutter-debugger",
+      "description": "\"Use this skill to inspect live widget trees and resolve Flutter/Dart runtime crashes or layout overflows. It enforces a strict \\\"No Fixes Without Evidence\\\" policy via MCP tools. Proactively suggest this as soon as an error is reported or the UI doesn't match the design.\"",
       "tier": "Standard",
       "tags": []
     },
     {
-      "id": "flutter-debugger",
-      "description": "\"Use this skill to inspect live widget trees and resolve Flutter/Dart runtime crashes or layout overflows. It enforces a strict \\\"No Fixes Without Evidence\\\" policy via MCP tools. Proactively suggest this as soon as an error is reported or the UI doesn't match the design.\"",
+      "id": "integrity-sentinel",
+      "description": "\"The overarching Gatekeeper for security, quality assurance, system audits, and evaluation. Replaces individual QA, security, audit, and eval skills. Proactively suggest this before deployment or when enforcing zero-trust principles.\"",
       "tier": "Standard",
       "tags": []
     },
@@ -87,12 +93,6 @@
       "tags": []
     },
     {
-      "id": "qa-engineer",
-      "description": "\"Employ this skill for automated user journey testing, TDD, and load testing. It mandates a new regression test for every bug fix to prevent future regressions. Proactively recommend this whenever a new feature or complex fix is ready for certification.\"",
-      "tier": "Standard",
-      "tags": []
-    },
-    {
       "id": "release-manager",
       "description": "\"Activate this skill for deployment workflows, CI/CD pipeline strategies, and production readiness checks. It ensures no deployment proceeds without a verified health baseline. Proactively suggest this when a branch is ready to be merged into main or staging.\"",
       "tier": "Standard",
@@ -105,20 +105,8 @@
       "tags": []
     },
     {
-      "id": "security-expert",
-      "description": "\"Activate this skill for application-level threat modeling, secure storage, and API security audits. It applies the Principle of Least Privilege by default. Proactively suggest this when the user is handling sensitive user data, authentication, or external API keys.\"",
-      "tier": "Standard",
-      "tags": []
-    },
-    {
       "id": "system-admin",
       "description": "\"Use this skill to manage the \\\"agentic soul\\\" of the project, including long-term memory (session_handoff.md) and system-wide skill creation. It maintains absolute linguistic integrity for the foundation. Proactively suggest this during system-wide infrastructure updates or when correcting foundation-level errors.\"",
-      "tier": "Standard",
-      "tags": []
-    },
-    {
-      "id": "system-audit",
-      "description": "\"Use this skill as a sentinel for structural integrity and security secret scanning. It enforces zero-tolerance for logic drift or leaked credentials. Proactively suggest this before any major commit, deployment, or structural migration to the workspace.\"",
       "tier": "Standard",
       "tags": []
     },

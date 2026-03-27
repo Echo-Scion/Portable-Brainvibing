@@ -22,15 +22,15 @@ This workflow defines the precision implementation cycle for individual features
 
 ## 3. DOMAIN & LOGIC (TECHNICAL DEPTH)
 - [ ] **Data Modeling**: Invoke `@skills/data-logic` to create immutable Freezed models.
-- [ ] **Security Check**: Invoke `@skills/security-expert` to audit data parsing and storage logic.
+- [ ] **Security Check**: Invoke `@skills/integrity-sentinel` to audit data parsing and storage logic.
 - [ ] **State Management**: Implement Riverpod Notifiers and business logic services.
 - [ ] **API Contract**: Invoke `@skills/api-contract` if backend interaction is required.
 
 ## 4. VERIFICATION & AUDIT (CERTIFICATION)
 - [ ] **Completeness Integrity (Zero-Shortcut Mandate)**: Ensure the implementation is 100% complete. If a full solution (including all error paths and edge cases) only adds minimal AI overhead, dilarang menggunakan "jalan pintas" atau menunda tes.
-- [ ] **TDD Loop**: Invoke `@skills/qa-engineer`. Write and run tests (`flutter test`).
-- [ ] **Logical Audit**: Invoke `@skills/system-audit` to certify the feature's mechanical integrity.
-- [ ] **Regressive Evaluation**: Invoke `@skills/eval-engineer` to confirm no core logic was broken during the build.
+- [ ] **TDD Loop**: Invoke `@skills/integrity-sentinel`. Write and run tests (`flutter test`).
+- [ ] **Logical Audit**: Invoke `@skills/integrity-sentinel` to certify the feature's mechanical integrity.
+- [ ] **Regressive Evaluation**: Invoke `@skills/integrity-sentinel` to confirm no core logic was broken during the build.
 
 ## 5. WRAP-UP
 - [ ] **Memory Persistence**: Update `00_Strategy/MEMORY.md` with the implementation log.

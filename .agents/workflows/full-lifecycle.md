@@ -14,7 +14,7 @@ This workflow is the **Master Orchestrator**. It leverages the entire `.agents` 
 ## PHASE 1: STRATEGIC BLUEPRINT (THE BRAIN)
 - [ ] **Architectural Design**: Invoke `@skills/project-architect` to synthesize requirements into Chapter 1-7 of the Master Blueprint.
 - [ ] **Cost Guard**: Invoke `@skills/cost-optimizer` to validate the chosen tech stack and infrastructure for token and cloud efficiency.
-- [ ] **Security Blueprint**: Invoke `@skills/security-expert` to identify potential threat vectors (Auth, Data Leakage, RLS) before code is written.
+- [ ] **Security Blueprint**: Invoke `@skills/integrity-sentinel` to identify potential threat vectors (Auth, Data Leakage, RLS) before code is written.
 - [ ] **Socratic Challenge**: AI must present at least TWO architectural risks or trade-offs for user confirmation.
 
 ## PHASE 2: SCAFFOLDING (THE SKELETON)
@@ -25,16 +25,17 @@ This workflow is the **Master Orchestrator**. It leverages the entire `.agents` 
 ## PHASE 3: EXECUTION LOOP (THE MUSCLES)
 For each feature defined in the Roadmap:
 - [ ] **Feature Initiation**: Run `/app-builder`.
-- [ ] **Security Implementation**: Invoke `@skills/security-expert` during API and Database design (Phase B of app-builder).
-- [ ] **Evaluation Loop**: Invoke `@skills/eval-engineer` to verify that the implementation meets the original prompt requirements without regression.
+- [ ] **Security Implementation**: Invoke `@skills/integrity-sentinel` during API and Database design (Phase B of app-builder).
+- [ ] **Evaluation Loop**: Invoke `@skills/integrity-sentinel` to verify that the implementation meets the original prompt requirements without regression.
 
 ## PHASE 4: CERTIFICATION (THE SEAL)
-- [ ] **Quality Assurance**: Invoke `@skills/qa-engineer` to perform exhaustive TDD, Widget Testing, and Edge Case verification.
-- [ ] **System Audit**: Invoke `@skills/system-audit` for a final structural and logic certification.
+- [ ] **Quality Assurance**: Invoke `@skills/integrity-sentinel` to perform exhaustive TDD, Widget Testing, and Edge Case verification.
+- [ ] **System Audit**: Invoke `@skills/integrity-sentinel` for a final structural and logic certification.
 - [ ] **Zero N/A Compliance**: Ensure all context files touched during execution are fully populated and relevant.
 
 ## PHASE 5: MAINTENANCE & SYNC (THE HEALTH)
 - [ ] **Graph Update**: Run `python scripts/build_graph.py` to update symbolic relationships.
+- [ ] **Catalog Sync**: Run `python scripts/update_catalog.py` to reflect new files in `catalog.json`.
 
 ---
 *Portable Brainvibing Infrastructure - Orchestrated Lifecycle Protocol*

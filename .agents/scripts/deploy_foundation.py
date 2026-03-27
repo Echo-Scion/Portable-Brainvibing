@@ -12,6 +12,7 @@ import argparse
 def deploy(source_root: str, target_root: str, dry_run: bool = False):
     """
     Copies foundation skills and rules to the target project.
+    After deploy, runs build_graph.py and update_catalog.py automatically.
     """
     if dry_run:
         print("🧪 [DRY RUN] Mode enabled. No files will be physically modified.")
@@ -29,7 +30,7 @@ def deploy(source_root: str, target_root: str, dry_run: bool = False):
         print(f"Created local .agents/ at {target_agents}")
 
     # Folders to sync physically for IDE compatibility
-    FOLDERS_TO_SYNC = ["skills", "rules", "canons", "templates"]
+    FOLDERS_TO_SYNC = ["skills", "rules", "canons", "templates", "evals", "docs", "scripts"]
 
     # Exclude list: items that must never be overwritten on target
     BLACKLIST = {
@@ -218,12 +219,14 @@ def deploy(source_root: str, target_root: str, dry_run: bool = False):
     if not dry_run:
         scripts_dir = os.path.join(target_agents, "scripts")
         build_graph_script = os.path.join(scripts_dir, "build_graph.py")
+        update_catalog_script = os.path.join(scripts_dir, "update_catalog.py")
 
         if os.path.exists(build_graph_script):
             print("\n🧠 Running build_graph.py to rebuild knowledge graph...")
             subprocess.run([sys.executable, build_graph_script], cwd=target_root)
         
         if os.path.exists(update_catalog_script):
+            print("\n📋 Running update_catalog.py to refresh catalog...")
             subprocess.run([sys.executable, update_catalog_script], cwd=target_root)
 
     print(f"\n✅ Deployment finished{' (SIMULATED)' if dry_run else ''}.")

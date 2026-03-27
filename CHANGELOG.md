@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.5] - 2026-03-27
+### Changed
+- Automated agent synchronization and sanitization.
+
+
+## [1.2.4] - 2026-03-27
+### Changed
+- Refactor: Consolidate Security, QA, and Audit into `integrity-sentinel`
+- Fix: Harmonized broken skill references across all global workflows
+- Sync: Clean foundation update with Neural Impact Analysis
+
+
 ## [1.2.3] - 2026-03-27
 ### Changed
 - Integrated advanced analytical protocols, adversarial testing, and completeness mandate

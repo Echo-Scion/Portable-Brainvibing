@@ -19,12 +19,12 @@ Welcome to the **Portable AI-Surgical Infrastructure**. This document explains h
 ## 🟡 PHASE 2: THE BRAIN (Rules & Logic)
 *The project needs operational intelligence. Rules ensure safety, security, and efficiency.*
 
-6.  **The Security Gate (Core Protocols)**: The agent's first instinct is safety. No secrets in code, no destructive operations without explicit confirmation, and mandatory safety checks before acting.
+6.  **The Integrity Sentinel (Security)**: The agent's first instinct is safety. No secrets in code, no destructive operations without explicit confirmation, and mandatory safety checks before acting.
 7.  **The Analytical Engine**: Every recommendation must be evidence-based. It critiques the architecture using rigorous technical lenses to prevent "logic drift."
 8.  **The Version Control Master**: It ensures every commit is atomic, descriptive, and follows professional branching strategies.
 9.  **The Language Specialist (e.g., Dart/Flutter)**: It enforces strict typing, immutable models, and reactive state management best practices.
 10. **The Platform Sentinel (e.g., Web/Backend)**: It ensures API safety, server-side optimization, and defensive data parsing logic.
-11. **The Evaluation Protocol (evals/)**: Ensures deterministic agent behavior through automated prompt evaluation and regression testing. It prevents "intelligence regressions" during updates.
+11. **The Evaluation Protocol (Integrity Audit)**: Ensures deterministic agent behavior through automated prompt evaluation and regression testing. It prevents "intelligence regressions" during updates.
 
 ## 🔵 PHASE 3: THE EXPERTS (Specialized Skills)
 *The system invokes specialized "Personas" to handle complex technical tasks.*
@@ -61,9 +61,13 @@ By utilizing this ecosystem, your project is not just a collection of files—it
 
 ## 🔄 Recent Changes
 
-### [1.2.0] - 2026-03-26
+### [1.2.5] - 2026-03-27
 ### Changed
-- Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders
+- Automated agent synchronization and sanitization.
+
+### [1.2.4] - 2026-03-27
+### Changed
+- Consolidate Security, QA, and Audit into integrity-sentinel.
 
 
 ### [1.1.0] - 2026-03-20
