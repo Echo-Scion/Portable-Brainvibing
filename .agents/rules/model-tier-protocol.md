@@ -36,7 +36,9 @@ description: Protocol for matching task complexity to the correct LLM model tier
 - If the change modifies the *logic* of how agents operate (e.g., changing `core-guardrails.md`), use `PREMIUM`.
 
 ## 3. Mandatory Declaration
-- Before any Tier-1+ task, the agent MUST declare: `[TIER: STANDARD]` or `[TIER: PREMIUM]` as the first line of its Binary Oratory pre-flight check.
+- Before any Tier-1+ task, the agent MUST declare: `[TIER: STANDARD]` or `[TIER: PREMIUM]`.
+- **In CLI mode**: Declare this as the first line of the conversational Binary Oratory pre-flight check.
+- **In IDE/Antigravity mode**: Declare this directly inside the `implementation_plan.md` artifact (Native approval replaces `[CONFIRM]`).
 - **BUDGET tasks** DO NOT require Binary Oratory pre-flight. Execute directly with token-minimal I/O.
 
 ## 4. Forced Intelligence Per Tier (Capability Harness)

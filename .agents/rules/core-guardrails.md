@@ -8,7 +8,9 @@ activation: always on
 
 > **BUDGET Exemption**: Tasks classified as `BUDGET` (atomic, single-file, non-breaking) are **exempt** from Binary Oratory. Apply the Micro-Harness Protocol from `model-tier-protocol.md` instead. Attempting Binary Oratory on a BUDGET task is itself a protocol violation (scope inflation).
 
-Before executing any `STANDARD` or `PREMIUM` task that modifies the filesystem (write, delete, refactor) or infrastructure (deploy, migrate), the agent MUST declare:
+> **IDE / Antigravity Exemption**: When operating inside an IDE (like Antigravity) that has native tool-approval gates, **DO NOT** print the Binary Oratory in the chat stream. Instead, you MUST write the `[TIER]`, `[DO]`, and `[DONT]` restrictions directly into the top of the `implementation_plan.md` artifact. The native IDE approval button explicitly replaces the need for conversational `[CONFIRM]`.
+
+Before executing any `STANDARD` or `PREMIUM` task that modifies the filesystem (write, delete, refactor) or infrastructure (deploy, migrate) via CLI chat, the agent MUST declare:
 
 1. **[TIER]**: State the reasoning tier being used (`BUDGET`, `STANDARD`, or `PREMIUM`).
 2. **[DO]** / **[DONT]**: Declare the primary action and any absolute negative boundaries (what will NOT be done).

@@ -82,7 +82,7 @@ Verify that your skills are indexed. Type `@` in your chat; you should see activ
 ---
 
 ## 🏷️ Version
-**1.2.14** — *"Unified Logic & Universal Export"*
+**1.2.20** — *"Unified Logic & Universal Export"*
 
 ## ⚖️ License
 Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
