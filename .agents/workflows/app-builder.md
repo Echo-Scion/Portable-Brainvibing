@@ -8,7 +8,7 @@ This workflow defines the precision implementation cycle for individual features
 
 ## 0. PRE-FLIGHT (JIT CONTEXT)
 - [ ] **Verify Environment**: Ensure `.agents/` is synced and active.
-- [ ] **Rule Alignment**: Read `rules/core-guardrails.md` and `rules/context-hierarchy.md`.
+- [ ] **Rule Alignment**: Read `rules/core-guardrails.md` and `rules/context-standards.md`.
 - [ ] **Surgical Entry**: Identify the target folder (00-03) and the relevant Prefix from `templates/SAAS_STARTUP_STRUCTURE.md`.
 
 ## 1. SPECIFICATION (LIVING DATA)
@@ -27,7 +27,7 @@ This workflow defines the precision implementation cycle for individual features
 - [ ] **API Contract**: Invoke `@skills/api-contract` if backend interaction is required.
 
 ## 3.5 ADVERSARIAL TWIN PROTOCOL (PRE-VERIFICATION)
-- [ ] **Self-Attack**: Execute `@adversarial-twin.md`. Force a "Breaker Agent" perspective to find at least 1 critical edge case (null data, race condition, network drop) in the implemented logic.
+- [ ] **Self-Attack**: Execute `@reasoning-standards.md`. Force a "Breaker Agent" perspective to find at least 1 critical edge case (null data, race condition, network drop) in the implemented logic.
 - [ ] **Defend**: Fix the vulnerability identified by the Twin before moving to final tests.
 
 ## 4. VERIFICATION & AUDIT (CERTIFICATION & HARNESS LOOP)

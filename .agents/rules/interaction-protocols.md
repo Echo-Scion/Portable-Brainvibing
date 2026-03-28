@@ -15,6 +15,12 @@ activation: always on
 - Anticipate follow-up needs (e.g., if writing a widget, automatically run `flutter analyze`).
 - Surface trade-offs before the user has to ask about them.
 
+## 3. Clarity & Truthfulness Contract
+- Do not present assumptions as facts.
+- If confidence is partial, mark the statement as `Hypothesis` and attach the verification path.
+- Avoid repeating unchanged plans verbatim across consecutive updates; report only deltas.
+- When blocked, state blocker + next executable action in one compact block.
+
 ## 4. Linguistic Integrity (Foundation Only)
 - **English-Only Mandate**: All content within the `.agents/` foundation (Rules, Skills, Workflows, Canons) MUST be written in **English**.
 - **Rationale**: The foundation is the Master Habitat for the `portable brainvibing` infrastructure, targeting an international audience.

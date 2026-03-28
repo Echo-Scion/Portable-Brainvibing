@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.22] - 2026-03-28
+### Changed
+- **Ecosystem Refactor**: Re-indexed structure to exactly 11 core skills (merged redundancies like `db-expert` into `backend-orchestrator`), formalized `scripts/`/`templates/`/`evals/` pillars, and synchronized `AGENTS.md` and repository layouts.
+
+## [1.2.21] - 2026-03-28
+### Changed
+- Automated agent synchronization and sanitization.
+
+
 ## [1.2.20] - 2026-03-28
 ### Changed
 - Architectural adaptation: Added IDE / Antigravity exemption to Binary Oratory rules, shifting DO/DONT to implementation_plan.md.

@@ -6,9 +6,9 @@ activation: always on
 
 ## 1. Binary Oratory (The Pre-Execution Firewall)
 
-> **BUDGET Exemption**: Tasks classified as `BUDGET` (atomic, single-file, non-breaking) are **exempt** from Binary Oratory. Apply the Micro-Harness Protocol from `model-tier-protocol.md` instead. Attempting Binary Oratory on a BUDGET task is itself a protocol violation (scope inflation).
+> **BUDGET Exemption**: Tasks classified as `BUDGET` (atomic, single-file, non-breaking) are **exempt** from Binary Oratory. Apply the Micro-Harness Protocol from `tier-execution-protocol.md` instead. Attempting Binary Oratory on a BUDGET task is itself a protocol violation (scope inflation).
 
-> **IDE / Antigravity Exemption**: When operating inside an IDE (like Antigravity) that has native tool-approval gates, **DO NOT** print the Binary Oratory in the chat stream. Instead, you MUST write the `[TIER]`, `[DO]`, and `[DONT]` restrictions directly into the top of the `implementation_plan.md` artifact. The native IDE approval button explicitly replaces the need for conversational `[CONFIRM]`.
+> **IDE / Antigravity Mode (Manual Routing Alignment)**: Karena IDE tidak memiliki fitur *auto-routing* model, Binary Oratory bertindak sebagai **Manual Checkpoint**. Agen **DIWAJIBKAN** menuliskan `[TIER]` (beserta rekomendasi model) di dalam `implementation_plan.md` atau pesan pertama, lalu **BERHENTI SEPENUHNYA**. Ini memberi kesempatan pengguna untuk mengganti model di IDE (misal: dari Haiku ke Sonnet) sebelum memberikan persetujuan eksekusi. `[CONFIRM]` tetap wajib, baik melalui tombol native IDE maupun balasan chat.
 
 Before executing any `STANDARD` or `PREMIUM` task that modifies the filesystem (write, delete, refactor) or infrastructure (deploy, migrate) via CLI chat, the agent MUST declare:
 
@@ -41,6 +41,23 @@ When delegating to sub-agents or creating internal prompts, follow these pattern
 - **3x Failure Rule**: If a specific tool call or test fails 3 times consecutively, ABORT.
 - Document the specific failure output, then **immediately stop and report to the user directly in your response** to request human intervention.
 
+## 5. Rule Precedence & Conflict Arbitration (Non-Negotiable)
+
+When two rules conflict, the agent MUST resolve using this strict order:
+
+1. `security-guardrails.md` (safety and negative boundaries)
+2. `core-guardrails.md` (global operating protocol)
+3. `tier-execution-protocol.md` + `reasoning-standards.md` (execution depth)
+4. Domain rules (Flutter/Web/API/etc.)
+5. Skills and workflows
+
+If conflict remains unresolved after precedence resolution:
+- Choose the safer action (least privilege + minimal side effects).
+- Pause execution.
+- Emit a short **Conflict Disclosure Block** with: `Rule A`, `Rule B`, `Chosen Safe Action`, `User Decision Needed`.
+
+Silent conflict handling is a protocol violation.
+
 ## 6. Memory Recall (Anti-Amnesia Protocol)
 
 To prevent repetitive systemic failures and ensure continuous evolution, the agent MUST adhere to the following memory protocols:
@@ -53,3 +70,36 @@ To prevent repetitive systemic failures and ensure continuous evolution, the age
    - **Requirement**: Document not just the fix, but the "Why" behind any unexpected difficulty.
 4. **Rule Promotion**: If a pattern of failure occurs more than twice in `LEARNINGS.md`, propose a new atomic rule in `rules/` to codify the fix permanently.
 5. **Mandatory Sync**: When updating `.agents/` infrastructure, ensure `workspace_map.md`, `catalog.json`, and `knowledge_graph.json` are synchronized via automation scripts.
+6. **Freshness SLA**: If `session_handoff.md` is older than 14 days or contains stale constraints, refresh Section 1 (Resume Point) and Section 4 (Active Constraints) before running scripts.
+7. **Rollover Rule**: When a session closes with unresolved blockers, append a short `NEXT ACTION` line in `session_handoff.md` to avoid cold-start ambiguity.
+
+## 7. Evidence Contract (Done Gate)
+
+For all `STANDARD` and `PREMIUM` tasks, completion claims MUST include a machine-verifiable evidence block:
+
+- **Action Proof**: Which file/command/tool changed state.
+- **Validation Proof**: Test/lint/check command output summary (pass/fail).
+- **Scope Proof**: Explicit confirmation that only intended targets were modified.
+
+If validation cannot be run, the agent MUST mark status as `PARTIAL` and state the exact blocker. Claiming `DONE` without evidence is prohibited.
+
+## 8. Compliance Scorecard (Per Task)
+
+Before finalizing `STANDARD` and `PREMIUM` tasks, self-rate these controls as `PASS` or `FAIL`:
+
+1. Tier declaration present.
+2. Negative boundaries declared.
+3. Evidence contract satisfied.
+4. Edge-case tax documented.
+5. Conflict arbitration not violated.
+
+If any control is `FAIL`, final status MUST be `PARTIAL` with a remediation note.
+
+## 9. Rule Lifecycle Hygiene (Anti-Bloat)
+
+To prevent protocol drift and stale constraints:
+
+- New or changed rules MUST include `description` and `activation` metadata in frontmatter.
+- When replacing a rule, keep a deprecation note for one release cycle.
+- Periodically prune or merge duplicated rules to avoid semantic overlap.
+- If two rules repeatedly collide, promote a dedicated arbitration clause instead of relying on ad-hoc interpretation.

@@ -1,85 +1,64 @@
 # AGENTS: The AI-Surgical Ecosystem Simulation (.agents)
 
-Welcome to the **Portable AI-Surgical Infrastructure**. This document explains how the 24 core skills of the `.agents` ecosystem work together to transform a raw idea into a professional, production-ready SaaS product.
+Welcome to the **Portable AI-Surgical Infrastructure**. This document catalogs the core components, skills, and workflows of the `.agents` ecosystem.
 
 > [!TIP]
-> This is a **Universal Guide**. It simulates the **Project Journey** for any developer using this plug-and-play infrastructure.
+> This is a **Universal Guide** reflecting the actual structure of the `portable brainvibing/.agents` directory.
 
 ---
 
-## 🟢 PHASE 1: THE FOUNDATION (Canons & Identity)
-*Before the first line of code, the project needs a clear identity and a technical "Constitution."*
+## 🏛️ CANONS (`canons/`)
+Architectural constitutions that define the project's foundational laws. These are the non-negotiable architectural truths that agents must respect.
+- **Global Architecture** (`global/core-architecture.md`): The overarching system patterns, state management principles, and structural boundaries.
+- **Automated Harnesses** (`global/harnesses/README.md`): Definitions for automated Action-Verifier execution loops.
+- **Microservices** (`micro/README.md`): Rules governing edge-functions, lightweight service limits, and inter-service communication.
 
-1.  **Project Identity & Philosophy**: The agent learns its role as a collaborative Senior Engineer. It adopts a philosophy of precision, grace, and high-fidelity execution.
-2.  **The Project Vocabulary**: It masters your specific domain terms and technical jargon to ensure absolute communication alignment.
-3.  **The Aesthetic Mandate**: It understands the visual vision for the project. It knows that every UI component must feel premium, modern, and responsive.
-4.  **The Documentation Standards**: It enforces high-density technical rigor. It ensures your documentation tree is structured like a top-tier startup's knowledge base.
-5.  **The Architectural Constitution**: The absolute laws of the project. It defines the folder structures, state management patterns, and coding standards that ensure long-term maintainability.
+## 🛡️ RULES (`rules/`)
+Absolute behavioral constraints and security protocols. This folder acts as the "Pre-Execution Firewall" for the AI, ensuring safe and standardized operations.
+- **Cognitive & Constraint Rules**: 
+  - `core-guardrails.md` & `reasoning-standards.md`: Defines how the agent must think, plan, and execute (e.g., "Anti-Affirmation Mandate").
+  - `tier-execution-protocol.md` & `context-standards.md`: Dictates context limits and whether a task uses Budget (fast) or Premium (deep) reasoning.
+- **Engineering Standards**: 
+  - `flutter-standards.md` & `web.md`: Strict coding paradigms for mobile and web front-ends.
+  - `performance-optimization.md`: Mandatory performance and efficiency checks.
+- **Security & Workflow**: 
+  - `security-guardrails.md`: Zero-trust security enforcement.
+  - `git-workflow.md` & `interaction-protocols.md`: How the AI handles version control and communicates with the human user.
+  - `api-connector-protocols.md` & `autoharness-protocol.md`: Strict rules for API design and automated self-testing.
 
-## 🟡 PHASE 2: THE BRAIN (Rules & Logic)
-*The project needs operational intelligence. Rules ensure safety, security, and efficiency.*
+## 🎯 SKILLS (`skills/`)
+Specialized personas (roles) ready for activation. An agent channels these skills to gain deep, domain-specific expertise based on the task.
+- **`api-contract`**: Enforces strict Data Transfer Objects (DTOs), Zod schemas, and OpenAPI specs. Prevents malformed data from entering business logic.
+- **`backend-orchestrator`**: The master architect for database schemas, PostgreSQL RLS, caching layers, and enterprise backend patterns.
+- **`cost-optimizer`**: Monitors token usage, clips redundant context, and routes tasks to cheaper models without losing fidelity.
+- **`data-logic`**: Handles immutable data structures, pipeline transformations, and complex state management logic.
+- **`frontend-experience`**: Fixes layout bugs, optimizes component hierarchies, and ensures pixel-perfect UI/UX flow.
+- **`integrity-sentinel`**: The overarching gatekeeper for QA, system audits, STRIDE threat modeling, and zero-trust verification.
+- **`meta-agent-admin`**: Manages the `.agents` ecosystem itself—defining new rules, updating the catalog, and maintaining AI documentation.
+- **`project-architect`**: Synthesizes rough human ideas into concrete technical blueprints (PRDs), prioritizing Minimum Viable Complexity (MVC).
+- **`project-operator`**: Manages CI/CD pipelines, repository rebasing, tech debt cleanup, and handles "chaos" debugging loops.
+- **`saas-strategist`**: Analyzes business viability, monetization logic, and growth integration (e.g., Stripe, analytics).
+- **`ui-finish`**: Applies premium visual polish ("Liquid Glass" aesthetics), micro-animations, and perfect empty/loading states.
 
-6.  **The Integrity Sentinel (Security)**: The agent's first instinct is safety. No secrets in code, no destructive operations without explicit confirmation, and mandatory safety checks before acting.
-7.  **The Analytical Engine**: Every recommendation must be evidence-based. It critiques the architecture using rigorous technical lenses to prevent "logic drift."
-8.  **The Version Control Master**: It ensures every commit is atomic, descriptive, and follows professional branching strategies.
-9.  **The Language Specialist (e.g., Dart/Flutter)**: It enforces strict typing, immutable models, and reactive state management best practices.
-10. **The Platform Sentinel (e.g., Web/Backend)**: It ensures API safety, server-side optimization, and defensive data parsing logic.
-11. **The Evaluation Protocol (Integrity Audit)**: Ensures deterministic agent behavior through automated prompt evaluation and regression testing. It prevents "intelligence regressions" during updates.
+## 🔄 WORKFLOWS (`workflows/`)
+Automated, repeatable step-by-step sequences for specific development lifecycles. Agents execute these sequentially to yield predictable results.
+- **Project Setup**:
+  - `project-init.md`: Bootstraps documentation (BLUEPRINT, ROADMAP) and scaffolds the initial repository layer.
+- **Development Loops**:
+  - `strict-tdd.md`: Forces a Red-Green-Refactor test-driven development cycle.
+  - `app-builder.md`: Rapid feature scaffolding and integration sequence.
+  - `flutter-debug.md`: Specialized sequence for resolving deep Flutter/Dart environment or widget errors.
+- **Maintenance & Release**:
+  - `context-prune.md`: Compresses memory and clears old context to save LLM tokens.
+  - `code-review.md`: Deep architectural review of arbitrary Feature PRs or module changes.
+  - `prod-deploy.md` & `full-lifecycle.md`: CI/CD pipelines and end-to-end task completion checklists.
 
-## 🔵 PHASE 3: THE EXPERTS (Specialized Skills)
-*The system invokes specialized "Personas" to handle complex technical tasks.*
-
-12. **The Lead Architect**: Designs the strategic blueprint and maps out the path from MVP to global scaling.
-13. **The Agent Engineer**: Manages the autonomous AI loops and state machines that drive the development process.
-14. **The Database Expert**: Handles schema design, migrations, and complex security policies (e.g., Row Level Security).
-15. **The API Contract Specialist**: Defines strict data contracts to prevent communication errors between systems.
-
-## 🔴 PHASE 4: THE MEMORY (Surgical Context)
-*Structure is everything. The agent organizes knowledge so it never forgets.*
-
-16. **The 4-Pillar Hierarchy**: Knowledge is sorted into **Strategy**, **Product**, **Creative**, and **Tech**. A flat, AI-scannable structure.
-17. **The SaaS Registry**: Maps ideas into surgical files (e.g., Pricing Strategy, MVP Scope) using **Just-In-Time (JIT) Expansion** to prevent information overload.
-18. **The Master Blueprint**: The central "Atlas" of the project. It links every technical detail back to the overall business goal.
-19. **The Project Memory**: The session's "Soul." It tracks every milestone, technical decision, and next-step directive in real-time.
-
-## 🟣 PHASE 5: THE MUSCLES (Workflows & Automation)
-*Execution with extreme velocity and zero manual waste.*
-
-20. **The Master Orchestrator**: Guides the project through the full lifecycle—from initial ingestion to scaffolding, execution, and final certification.
-21. **The Surgical Builder**: A repeatable, high-precision loop for building features (Data -> Logic -> UI -> Testing).
-22. **The Automation Suite**: Tools that rebuild the system's knowledge graph and update indices, keeping the "Brain" sharp after every change.
-23. **The Workflows Guide (docs/)**: The "Tactical Manual" that defines the exact mechanical steps for complex agentic maneuvers and multi-step tasks.
-
----
-
-### 🚀 THE RESULT
-By utilizing this ecosystem, your project is not just a collection of files—it is an **intelligent, self-documenting, and secure entity** built with professional architectural rigor.
+## ⚙️ SCRIPTS, TEMPLATES & EVALS
+The mechanical tooling that supports the AI ecosystem's memory, file generation, and systemic operation.
+- **`scripts/`**: Python utilities for ecosystem maintenance. Includes tools to build knowledge graphs (`build_graph.py`), compress prompt memory (`compress_memory.py`), and synchronize the workspace (`verify_agents.py`, `update_catalog.py`).
+- **`templates/`**: Standardized Markdown scaffolds. Includes project-level files (`BLUEPRINT`, `ARCHITECTURE`, `ROADMAP`), AI prompt integrations (`CLAUDE`, `COPILOT`, `GEMINI`), and specialized SaaS start-up documents.
+- **`evals/` & `metrics/`**: System auditing tools (`audit_aesthetics.py`) and JSON-based benchmarks to deterministically test an agent's compliance and behavioral drift over time.
+- **`docs/`**: Human-readable deployment manuals (`MULTI_AI_DEPLOYMENT.md`) and comprehensive guides on how to combine these agents effectively (`workflows_guide.md`).
 
 ---
 *Portable AI-Surgical Infrastructure - Standard Protocol 2026*
-
-
-## 🔄 Recent Changes
-
-### [1.2.0] - 2026-03-26
-### Changed
-- Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders
-
-
-### [1.1.0] - 2026-03-20
-### Changed
-- **Unified Logic**: Established a clear 4-pillar structure and the 82-file SaaS mapping protocol.
-
-
-### [1.0.0] - 2026-03-19
-### Changed
-- Clean Reset to V1.0.0
-- Update .agents foundation to portable brainvibing (Dual-Canon Patch)
-- Added Session Handoff and Atomic Tasking workflows
-- Enhanced Protocol for surgical context management
-
-### [0.9.0] - 2026-03-15
-### Added
-- Initial baseline
-- Standardized .agents structure for portability
-- Initial suite of 20+ specialized agent skills

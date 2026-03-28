@@ -105,3 +105,13 @@ description: Single entry point for skill discovery. Contains the SKILL ROUTING 
 2. Read the full instructions: `skills/[skill-name]/SKILL.md`
 3. Adopt the persona and follow the protocol defined in that file.
 4. Declare the skill in your pre-flight Binary Oratory: `[SKILL: flutter-debugger]`
+
+## Routing Arbitration (When Multiple Skills Match)
+If more than one skill appears valid:
+
+1. Prefer the skill with the narrowest domain fit to the user task.
+2. If still tied, pick the one with stricter safety guarantees first.
+3. Declare `PRIMARY_SKILL` and optional `SUPPORT_SKILL` explicitly.
+4. Do not execute with an implicit or undeclared skill path.
+
+If confidence in routing is below 0.7, escalate to `context-manager` for targeted context isolation before proceeding.

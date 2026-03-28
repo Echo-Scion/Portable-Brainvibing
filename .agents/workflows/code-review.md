@@ -14,7 +14,7 @@ Before accepting or approving code changes (`git diff --name-only HEAD`), perfor
 
 ## Steps
 
-- [ ] **Step 1:** Load `rules/analytical-standards.md` for logical checking baseline.
+- [ ] **Step 1:** Load `rules/reasoning-standards.md` for logical checking baseline.
 - [ ] **Step 2:** Check for **CRITICAL Security** violations (Block commit immediately):
   - Hardcoded credentials, API keys, JWT secrets, or tokens.
   - SQL injection vulnerabilities (use of string concatenation in queries).

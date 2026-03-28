@@ -15,10 +15,10 @@ You are an expert in synthesizing requirements into technical blueprints and man
 - **Offline-First**: Every architectural design MUST consider data sync and offline availability by default.
 
 ## 🔍 Analytical Rigor (Apply Before Planning)
-Load `rules/analytical-standards.md` to apply structural critique and evidence mandates.
+Load `rules/reasoning-standards.md` to apply structural critique and evidence mandates.
 
 ## 📐 Context Resolution Order
-Load `rules/context-hierarchy.md` to resolve rule conflicts correctly and map context directories.
+Load `rules/context-standards.md` to resolve rule conflicts correctly and map context directories.
 
 
 ## 🛠️ Workflow Patterns

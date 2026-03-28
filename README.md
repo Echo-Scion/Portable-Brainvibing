@@ -22,12 +22,13 @@ We believe that AI agents shouldn't just "write code"—they should act as **Pro
 *   **Surgical Evolution**: Every project expansion is precise. A "Lean" prototype evolves into a full "Enterprise" structure surgically, file-by-file, maintaining perfect architectural integrity.
 
 ## 📦 2. The Ecosystem at a Glance
-The `.agents` folder is organized into four foundational pillars:
+The `.agents` folder is organized into foundational pillars:
 
-*   **🏛️ Canons (L1)**: The "Constitution" — defines identity, vocabulary, and aesthetic mandates.
+*   **🏛️ Canons (L1)**: The "Constitution" — defines architecture and harnesses.
 *   **🛡️ Rules (L0)**: The "How" — absolute behavioral constraints and security protocols.
-*   **🎯 Skills (L2)**: The "Who" — specialized personas (e.g., `db-expert`, `ui-finish`) ready for activation.
+*   **🎯 Skills (L2)**: The "Who" — 11 specialized personas (e.g., `backend-orchestrator`, `ui-finish`) ready for activation.
 *   **🔄 Workflows**: The "Muscles" — automated, repeatable sequences for development and deployment.
+*   **⚙️ Scripts & Templates**: The "Tools" — deterministic memory scaffolding, system auditing (`evals`), and sync automations.
 
 ## 🛠️ 3. Integrated Infrastructure (MCP)
 Powered by the **Model Context Protocol (MCP)**, giving your AI agents direct "hands" to manipulate the environment:
@@ -70,7 +71,7 @@ run /project-init
 
 ### Step 3: Neural Verification
 Verify that your skills are indexed. Type `@` in your chat; you should see active skills like:
-`@ui-finish`, `@db-expert`, `@api-contract`
+`@ui-finish`, `@backend-orchestrator`, `@api-contract`
 
 ---
 
@@ -82,7 +83,7 @@ Verify that your skills are indexed. Type `@` in your chat; you should see activ
 ---
 
 ## 🏷️ Version
-**1.2.20** — *"Unified Logic & Universal Export"*
+**1.2.22** — *"Modular Synchronization & Ecosystem Polish"*
 
 ## ⚖️ License
 Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
@@ -92,9 +93,11 @@ Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ## 🔄 Recent Changes
 
-### [1.2.0] - 2026-03-26
+### [1.2.22] - 2026-03-28
 ### Changed
-- Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders
+- **Ecosystem Refactor**: Re-indexed structure to exactly 11 core skills (merged redundancies like `db-expert` into `backend-orchestrator`).
+- Added full `scripts/`, `templates/`, and `evals/` support as formal pillars.
+- Synchronized `AGENTS.md` and repository layouts.
 
 
 ### [1.1.0] - 2026-03-20

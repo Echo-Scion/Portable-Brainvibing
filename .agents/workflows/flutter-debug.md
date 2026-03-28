@@ -31,7 +31,7 @@ Follow these steps to diagnose and fix a UI or logic issue in a Flutter app.
 *   [ ] STOP: Wait for user confirmation OR proceed only if the evidence is 100% conclusive.
 
 ## 5. APPLY FIX & ITERATIVE REFINEMENT
-*   [ ] Verify the fix adheres to project standards. IF unsure, use `grep_search` on `@flutter-style-guide.md`.
+*   [ ] Verify the fix adheres to project standards. IF unsure, use `grep_search` on `@flutter-standards.md`.
 *   [ ] Modify the code based on the single hypothesis.
 *   [ ] **Iterative Code Refinement (Harness Loop)**:
     *   Run tests or `dart analyze` as the "Harness" to evaluate the fix.

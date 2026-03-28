@@ -11,6 +11,7 @@ This workflow is the **Master Orchestrator**. It leverages the entire `.agents` 
 - [ ] **Global Alignment**: Read `workspace_map.md`, `canons/global/`, and `rules/core-guardrails.md`.
 - [ ] **Context Loading**: Read the current `BLUEPRINT.md` (if exists) or the project's intake brief.
 - [ ] **Skill Activation**: Identify and activate the necessary specialized skills for the project domain.
+- [ ] **Gate 0**: Confirm task tier and active constraints before any file write.
 
 ## PHASE 1: STRATEGIC BLUEPRINT (THE BRAIN)
 > **Tier**: PREMIUM — architecture and cross-system reasoning. Sequential Thinking mandatory.
@@ -18,12 +19,14 @@ This workflow is the **Master Orchestrator**. It leverages the entire `.agents` 
 - [ ] **Cost Guard**: Invoke `@skills/cost-optimizer` to validate the chosen tech stack and infrastructure for token and cloud efficiency.
 - [ ] **Security Blueprint**: Invoke `@skills/integrity-sentinel` to identify potential threat vectors (Auth, Data Leakage, RLS) before code is written.
 - [ ] **Socratic Challenge**: AI must present at least TWO architectural risks or trade-offs for user confirmation.
+- [ ] **Gate 1**: Do not proceed to scaffolding until risks and trade-offs are acknowledged.
 
 ## PHASE 2: SCAFFOLDING (THE SKELETON)
 > **Tier**: STANDARD — multi-file creation, template population.
 - [ ] **Initialize Context**: Run `/project-init`.
 - [ ] **Pillar Setup**: Ensure `00_Strategy/`, `01_Product/`, `02_Creative/`, and `03_Tech/` are established.
 - [ ] **Master Files**: Populate `BLUEPRINT.md`, `ROADMAP.md`, `STYLE_GUIDE.md`, and `ARCHITECTURE.md` using slot-fill templates.
+- [ ] **Gate 2**: Run `python .agents/scripts/verify_agents.py` if `.agents/` was modified during scaffolding.
 
 ## PHASE 3: EXECUTION LOOP (THE MUSCLES)
 > **Tier**: STANDARD per feature. Escalate to PREMIUM if the feature touches auth, RLS, or global state.
@@ -31,17 +34,20 @@ For each feature defined in the Roadmap:
 - [ ] **Feature Initiation**: Run `/app-builder`.
 - [ ] **Security Implementation**: Invoke `@skills/integrity-sentinel` during API and Database design (Phase B of app-builder).
 - [ ] **Evaluation Loop**: Invoke `@skills/integrity-sentinel` to verify that the implementation meets the original prompt requirements without regression.
+- [ ] **Gate 3**: Per feature, include one Breaker evidence block (see `reasoning-standards.md`).
 
 ## PHASE 4: CERTIFICATION (THE SEAL)
 > **Tier**: PREMIUM — exhaustive certification, adversarial testing, final audit.
 - [ ] **Quality Assurance**: Invoke `@skills/integrity-sentinel` to perform exhaustive TDD, Widget Testing, and Edge Case verification.
 - [ ] **System Audit**: Invoke `@skills/integrity-sentinel` for a final structural and logic certification.
 - [ ] **Zero N/A Compliance**: Ensure all context files touched during execution are fully populated and relevant.
+- [ ] **Gate 4**: If any certification check fails, status must be `PARTIAL` and release is blocked.
 
 ## PHASE 5: MAINTENANCE & SYNC (THE HEALTH)
 > **Tier**: BUDGET — deterministic script execution, no reasoning required.
 - [ ] **Graph Update**: Run `python .agents/scripts/build_graph.py` to update symbolic relationships.
 - [ ] **Catalog Sync**: Run `python .agents/scripts/update_catalog.py` to reflect new files in `catalog.json`.
+- [ ] **Gate 5**: Re-run `python .agents/scripts/verify_agents.py` and require PASS before closing lifecycle.
 
 ---
 *Portable Brainvibing Infrastructure - Orchestrated Lifecycle Protocol*
