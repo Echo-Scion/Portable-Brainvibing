@@ -1,14 +1,8 @@
 ---
-name: "'ux-designer'"
+name: ux-designer
 description: "Use this skill to conduct a 'Designer's Eye' audit of UI/UX plans before implementation. It provides objective 0-10 ratings for dimensions like hierarchy, consistency, and cognitive load, explaining exactly what is needed to reach a '10'. Proactively suggest this design critique whenever a project plan includes UI components or user flows, even if the user hasn't explicitly asked for a review."
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  triggers: ['behavioral psychology', 'nudge design', 'user retention cadence', 'onboarding friction', 'design review', 'design critique', 'ux audit']
-  tags: ['ui', 'ux', 'audit']
-  version: "'2.0.0'"
-  Recommended_Tier: "'Budget'"
-  scope_discriminator: "'ONLY for behavioral psychology nudges, user journeys, UX wireframe logic, and Designer's Eye plan audits.'"
-  portable: "'true'"
+tags: ['ux audit', 'audit', 'user retention cadence', 'design critique', 'onboarding friction', 'design review', 'ui', 'nudge design', 'behavioral psychology', 'ux']
+portable: true
 ---
 
 # UX & Designer's Eye Specialist (Tier-S)

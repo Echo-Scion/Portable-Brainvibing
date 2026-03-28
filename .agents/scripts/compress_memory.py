@@ -6,7 +6,50 @@ from datetime import datetime
 # Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
+WORKSPACE_DIR = os.path.abspath(os.path.join(BASE_DIR, '..'))
+ARCHIVE_DIR = os.path.join(BASE_DIR, 'archive')
 ARCHIVE_FILE = os.path.join(ARCHIVE_DIR, 'compressed_memory.md')
+HANDOFF_FILE = os.path.join(WORKSPACE_DIR, 'session_handoff.md')
+BLUEPRINT_FILE = os.path.join(WORKSPACE_DIR, '00_Strategy', 'BLUEPRINT.md')
+
+def generate_fractal_shorthand():
+    """
+    Parses architectural details from BLUEPRINT.md and translates it into a
+    highly compressed Fractal State Shorthand (DSL) for small models.
+    """
+    if not os.path.exists(BLUEPRINT_FILE):
+        return False
+        
+    with open(BLUEPRINT_FILE, 'r', encoding='utf-8') as f:
+        blueprint = f.read()
+        
+    shorthand = "[ARCH: "
+    
+    # Very basic heuristic parsing (In a real system, an LLM would do this translation)
+    if "flutter" in blueprint.lower(): shorthand += "Flutter]"
+    elif "react" in blueprint.lower(): shorthand += "React]"
+    else: shorthand += "Unknown]"
+    
+    if "supabase" in blueprint.lower(): shorthand += " [DB: Supabase]"
+    if "riverpod" in blueprint.lower(): shorthand += " [STATE: Riverpod]"
+    
+    shorthand += " [TIER: BUDGET]"
+    
+    # Inject into handoff or memory file
+    if os.path.exists(HANDOFF_FILE):
+        with open(HANDOFF_FILE, 'r', encoding='utf-8') as f:
+            handoff = f.read()
+            
+        if "# FRACTAL SHORTHAND" in handoff:
+            new_handoff = re.sub(r'(?<=# FRACTAL SHORTHAND\n).*?(?=\n\n)', shorthand, handoff, flags=re.DOTALL)
+        else:
+            new_handoff = f"# FRACTAL SHORTHAND\n{shorthand}\n\n" + handoff
+            
+        with open(HANDOFF_FILE, 'w', encoding='utf-8') as f:
+            f.write(new_handoff)
+        print(f"✅ Generated Fractal Shorthand: {shorthand}")
+        return True
+    return False
 
 def compress_handoff():
     if not os.path.exists(HANDOFF_FILE):
@@ -24,12 +67,13 @@ def compress_handoff():
 
     offloaded_text = match.group(1).strip()
     
-    # Check if it's already just the placeholder
+    if "placeholder" in offloaded_text.lower():
         return False
 
     # Replace the offload content with a compressed placeholder
     new_handoff_content = re.sub(
         r'(## 3\. Context Offloading Entry\n).*?(?=\n## 4\.|\n## \d+\.|$)',
+        r'\1> [COMPRESSED: Context moved to archive/compressed_memory.md]\n\n',
         content,
         flags=re.DOTALL | re.IGNORECASE
     )
@@ -40,9 +84,9 @@ def compress_handoff():
     if not os.path.exists(ARCHIVE_DIR):
         os.makedirs(ARCHIVE_DIR)
         
-    
     mode = 'a' if os.path.exists(ARCHIVE_FILE) else 'w'
     with open(ARCHIVE_FILE, mode, encoding='utf-8') as f:
+        f.write(f"\n\n--- Compressed on {datetime.now()} ---\n{offloaded_text}")
 
     # Rewrite handoff
     with open(HANDOFF_FILE, 'w', encoding='utf-8') as f:
@@ -59,6 +103,7 @@ def compress_tasks():
     if not os.path.exists(ARCHIVE_DIR):
         os.makedirs(ARCHIVE_DIR)
 
+    compressed = False
     for file in os.listdir(tasks_dir):
         if not file.endswith('.md'): continue
         path = os.path.join(tasks_dir, file)
@@ -72,10 +117,13 @@ def compress_tasks():
             dest = os.path.join(ARCHIVE_DIR, file)
             shutil.move(path, dest)
             print(f"✅ Archived completed task: {file}")
+            compressed = True
+    return compressed
             
 
 def compress_memory():
     print("🧹 Surgical Memory Compression starting...")
+    generate_fractal_shorthand()
     handoff_compressed = compress_handoff()
     tasks_compressed = compress_tasks()
     

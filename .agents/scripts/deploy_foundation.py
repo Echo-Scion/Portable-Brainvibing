@@ -94,117 +94,55 @@ def deploy(source_root: str, target_root: str, dry_run: bool = False):
                 os.makedirs(tasks_dir, exist_ok=True)
             print("  Created workflows/tasks/ for project-specific tasks.")
 
-    # 3. Handle workspace_map.md
-    src_map = os.path.join(source_agents, "workspace_map.md")
-    dest_map = os.path.join(target_agents, "workspace_map.md")
+    # 3. Handle workspace_map.md and catalog.json (DEPRECATED PHYSICAL SYNC)
+    # These are now generated fresh locally via update_catalog.py post-deploy.
+    # Logic removed to prevent syncing outdated foundation maps.
+    project_name = os.path.basename(os.path.abspath(target_root))
 
-    if os.path.exists(src_map):
-        project_name = os.path.basename(os.path.abspath(target_root))
+    # 4.5 Generate GEMINI.md from Template to Target Root (Smart Merge)
+    src_gemini_template = os.path.join(source_agents, "templates", "GEMINI.template.md")
+    dest_gemini = os.path.join(target_root, "GEMINI.md")
+    if os.path.exists(src_gemini_template):
+        print(f"\nProcessing GEMINI.md for '{project_name}'...")
+        try:
+            with open(src_gemini_template, 'r', encoding='utf-8') as f:
+                raw_template = f.read()
+            
+            # Extract just the foundation block from template
+            import re
+            template_block_match = re.search(r"(<!-- START FOUNDATION MANDATES -->.*?<!-- END FOUNDATION MANDATES -->)", raw_template, re.DOTALL)
+            foundation_block = template_block_match.group(1) if template_block_match else raw_template
+            foundation_block = foundation_block.replace("{project_name}", project_name)
 
-        if os.path.exists(dest_map):
-            print(f"Updating workspace_map.md (surgical sections only)...")
-            try:
-                with open(src_map, 'r', encoding='utf-8') as f:
-                    src_content = f.read()
-                with open(dest_map, 'r', encoding='utf-8') as f:
-                    dest_content = f.read()
+            final_content = ""
+            status = ""
+            
+            if os.path.exists(dest_gemini):
+                with open(dest_gemini, 'r', encoding='utf-8') as f:
+                    local_content = f.read()
+                
+                # Check if it has the block
+                if "<!-- START FOUNDATION MANDATES -->" in local_content and "<!-- END FOUNDATION MANDATES -->" in local_content:
+                    final_content = re.sub(r"<!-- START FOUNDATION MANDATES -->.*?<!-- END FOUNDATION MANDATES -->", foundation_block, local_content, flags=re.DOTALL)
+                    status = "UPDATED (Merged Block)"
+                else:
+                    # No marker, no obvious legacy traits: prepend foundation safely.
+                    # We wrap the prepend in the marker so future updates work.
+                    final_content = "# Workspace Rules & Mandates: " + project_name + "\n\n" + foundation_block + "\n\n## CUSTOM LOCAL RULES\n" + local_content
+                    # Remove the original title from local_content if it existed to avoid double titles
+                    final_content = re.sub(r"# Workspace Rules & Mandates:.*?\n", "", final_content, count=1)
+                    status = "MERGED (Prepended to User Content)"
+            else:
+                final_content = raw_template.replace("{project_name}", project_name)
+                status = "CREATED"
 
-                sections_to_update = [
-                    r"<!-- SKILLS_START -->.*?<!-- SKILLS_END -->",
-                    r"<!-- RULES_START -->.*?<!-- RULES_END -->",
-                    r"<!-- WORKFLOWS_START -->.*?<!-- WORKFLOWS_END -->",
-                    r"<!-- CANONS_START -->.*?<!-- CANONS_END -->",
-                    r"<!-- SCRIPTS_START -->.*?<!-- SCRIPTS_END -->",
-                    r"<!-- TEMPLATES_START -->.*?<!-- TEMPLATES_END -->",
-                ]
-
-                updated = dest_content
-                for pattern in sections_to_update:
-                    src_match = re.search(pattern, src_content, flags=re.DOTALL)
-                    if src_match and re.search(pattern, updated, flags=re.DOTALL):
-                        updated = re.sub(pattern, src_match.group(0), updated, flags=re.DOTALL)
-
-                if not dry_run:
-                    with open(dest_map, 'w', encoding='utf-8') as f:
-                        f.write(updated)
-                print(f"  [UPDATE] workspace_map.md sections{' (SIMULATED)' if dry_run else ''}")
-
-            except Exception as e:
-                print(f"⚠️  Warning: Could not surgical-update workspace_map.md: {e}")
-
-        else:
-            print(f"Creating fresh workspace_map.md for '{project_name}'...")
-            try:
-                with open(src_map, 'r', encoding='utf-8') as f:
-                    src_content = f.read()
-
-                header = (
-                    f"# WORKSPACE MAP: {project_name} (.agents)\n\n"
-                    "A high-level topography of the workspace for AI navigation and context initialization.\n\n"
-                    "> [!IMPORTANT]\n"
-                    "> This document is the **ORCHESTRATION ENTRY POINT**. \n"
-                    "> - **Lazy-Loading**: Read this index FIRST, then read ONLY the relevant rule/skill files.\n"
-                    "> - **Relative Paths**: Always use paths relative to the workspace root.\n\n"
-                )
-                active_projects = (
-                    f"## Active Projects\n\n"
-                    f"| Project | Type | Status | Path |\n"
-                    f"|---|---|---|---|\n"
-                    f"| `{project_name}` | Flutter Web | 🟢 Active | `./` |\n\n"
-                )
-
-                def extract_section(pattern, content, fallback=""):
-                    m = re.search(pattern, content, flags=re.DOTALL)
-                    return m.group(0) if m else fallback
-
-                foundation_section = "## Global Foundation (`.agents/`)\n> High-density technical standards.\n> **Note**: Use `deploy_foundation.py` to sync to local apps.\n\n"
-                rules_label = "### Rules (`rules/`)\n"
-                rules_block = extract_section(r"<!-- RULES_START -->.*?<!-- RULES_END -->", src_content, "<!-- RULES_START -->\n<!-- RULES_END -->")
-                skills_label = "\n### Skills (`skills/`)\n"
-                skills_block = extract_section(r"<!-- SKILLS_START -->.*?<!-- SKILLS_END -->", src_content, "<!-- SKILLS_START -->\n<!-- SKILLS_END -->")
-                canons_label = "\n### Domain Canon (`canons/`)\n"
-                canons_block = extract_section(r"<!-- CANONS_START -->.*?<!-- CANONS_END -->", src_content, "<!-- CANONS_START -->\n<!-- CANONS_END -->")
-                workflows_label = "\n### Workflows (`workflows/`)\n"
-                workflows_block = extract_section(r"<!-- WORKFLOWS_START -->.*?<!-- WORKFLOWS_END -->", src_content, "<!-- WORKFLOWS_START -->\n<!-- WORKFLOWS_END -->")
-                scripts_label = "\n### Maintenance Scripts (`scripts/`)\n"
-                scripts_block = extract_section(r"<!-- SCRIPTS_START -->.*?<!-- SCRIPTS_END -->", src_content, "<!-- SCRIPTS_START -->\n<!-- SCRIPTS_END -->")
-                templates_label = "\n### Templates (`templates/`)\n"
-                templates_block = extract_section(r"<!-- TEMPLATES_START -->.*?<!-- TEMPLATES_END -->", src_content, "<!-- TEMPLATES_START -->\n<!-- TEMPLATES_END -->")
-
-                memory_footer = (
-                    "\n## Memory & Implementation\n"
-                    f"- **Project Blueprint**: `context/00_Strategy/BLUEPRINT.md` — Master architecture & feature scope.\n"
-                    "- **Workspaces**: `.agents/workspace_map.md` — (This file) Orchestration entry point.\n"
-                    "- **Foundation Link**: `.agents/.foundation_path` → `_foundation` root for sync support.\n"
-                )
-
-                new_content = (
-                    header + active_projects
-                    + foundation_section
-                    + rules_label + rules_block
-                    + skills_label + skills_block
-                    + canons_label + canons_block
-                    + workflows_label + workflows_block
-                    + scripts_label + scripts_block
-                    + templates_label + templates_block
-                    + memory_footer
-                )
-
-                if not dry_run:
-                    with open(dest_map, 'w', encoding='utf-8') as f:
-                        f.write(new_content)
-                print(f"  Created project-local workspace_map.md for '{project_name}'{' (SIMULATED)' if dry_run else ''}.")
-
-            except Exception as e:
-                print(f"⚠️  Warning: Could not create sanitized workspace_map.md: {e}")
-
-    # 4. Copy catalog.json
-    src_catalog = os.path.join(source_agents, "catalog.json")
-    dest_catalog = os.path.join(target_agents, "catalog.json")
-    if os.path.exists(src_catalog):
-        if not dry_run:
-            shutil.copy2(src_catalog, dest_catalog)
-        print(f"Synced catalog.json{' (SIMULATED)' if dry_run else ''}.")
+            if not dry_run:
+                with open(dest_gemini, 'w', encoding='utf-8') as f:
+                    f.write(final_content)
+            
+            print(f"  [{status}] GEMINI.md at project root{' (SIMULATED)' if dry_run else ''}.")
+        except Exception as e:
+            print(f"⚠️  Warning: Could not process GEMINI.md: {e}")
 
     # 5. Persist the source foundation path
     if not dry_run:

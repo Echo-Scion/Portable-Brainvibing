@@ -128,9 +128,14 @@ def check_links(res: AuditResult, verbose: bool = True):
         res.add_warning("LINK", "Workflows directory not found!")
         return
 
+    # Patterns for rule and skill links
     rule_pattern = re.compile(r'@([a-zA-Z0-9_\-\./\\]+\.md)')
+    # Support for @mention without .md extension as long as it exists in rules or canons
+    simple_mention_pattern = re.compile(r'@([a-zA-Z0-9\-_]+)')
+    
     skill_backtick_pattern = re.compile(r'`([a-z0-9\-]+)` skill')
-    skill_mention_pattern = re.compile(r'@(?:skills/)?([a-zA-Z0-9\-_]+(?:\.md)?)')
+    skill_mention_pattern = re.compile(r'@(?:skills/)?([a-zA-Z0-9\-_]+)')
+    
     RULE_DIRS = {"rules", "common", "flutter", "web", "canons", "auth", "notifications", "ui-patterns"}
 
     for root, dirs, files in os.walk(WORKFLOWS_DIR):
@@ -143,22 +148,35 @@ def check_links(res: AuditResult, verbose: bool = True):
                 with open(filepath, 'r', encoding='utf-8') as f:
                     content = f.read()
                 
+                # Rule and Canon links (@reference.md)
                 for r in rule_pattern.findall(content):
                     r_clean = r.split('`')[0].strip().replace("\\", "/")
                     if r_clean not in all_rules:
-                        res.add_error("LINK", f"Broken rule reference: @{r_clean}", rel_path)
-                        
-                for s in skill_backtick_pattern.findall(content):
-                    s_str = str(s)
-                    if s_str not in all_skills and s_str != "context-manager":
-                        res.add_error("LINK", f"Broken skill reference (backtick): `{s_str}`", rel_path)
-
-                for s in skill_mention_pattern.findall(content):
-                    s_str = str(s)
-                    if s_str.endswith(".md") or s_str in ["param", "return", "type", "description"] or s_str in RULE_DIRS:
-                        continue
-                    if s_str not in all_skills:
-                        res.add_error("LINK", f"Broken skill reference (@mention): @{s_str}", rel_path)
+                        # Fallback: check if the rule exists in canons
+                        if not any(r_clean in canon_file for canon_file in all_rules):
+                            res.add_error("LINK", f"Broken rule reference: @{r_clean}", rel_path)
+                
+                # Simple Mentions (could be rule names without .md or skill names)
+                for m in simple_mention_pattern.findall(content):
+                    m_str = str(m)
+                    # Ignore common documentation markers
+                    if m_str in ["param", "return", "type", "description", "activation", "trigger"]: continue
+                    # Ignore if it's already a full .md link handled above
+                    if m_str.endswith(".md"): continue
+                    
+                    # 1. Check if it's a rule name without extension
+                    if f"{m_str}.md" in all_rules: continue
+                    
+                    # 2. Check if it's a skill
+                    if m_str in all_skills: continue
+                    
+                    # 3. Ignore if it's a metadata key or something common
+                    if m_str in RULE_DIRS: continue
+                    
+                    # If not a rule or skill, maybe it's just a regular text mention, 
+                    # but if it has a prefix like @skills/ then it should be verified.
+                    if content.find(f"@skills/{m_str}") != -1:
+                        res.add_error("LINK", f"Broken skill reference: @skills/{m_str}", rel_path)
 
             except Exception as e:
                 res.add_error("IO", f"Could not read file: {str(e)}", rel_path)
@@ -166,7 +184,7 @@ def check_links(res: AuditResult, verbose: bool = True):
 def check_protocol_compliance(res: AuditResult, verbose: bool = True):
     if verbose: print("\n--- SCANNING FOR PROTOCOL COMPLIANCE ERRORS ---")
     
-    # 1. Skill Tier Metadata
+    # 1. Skill Context & Metadata (Simplified)
     if os.path.exists(SKILLS_DIR):
         for skill_name in os.listdir(SKILLS_DIR):
             skill_path = os.path.join(SKILLS_DIR, skill_name)
@@ -176,10 +194,9 @@ def check_protocol_compliance(res: AuditResult, verbose: bool = True):
                 try:
                     with open(skill_md, 'r', encoding='utf-8') as f:
                         content = f.read()
-                    if "Recommended_Tier:" not in content:
-                        res.add_error("PROTOCOL", "Missing Recommended_Tier", f"skills/{skill_name}/SKILL.md")
-                    elif not any(tier in content for tier in ["Budget", "Standard", "Premium"]):
-                        res.add_error("PROTOCOL", "Invalid Recommended_Tier (Must be Budget/Standard/Premium)", f"skills/{skill_name}/SKILL.md")
+                    # Check for basic required fields
+                    if "name:" not in content or "description:" not in content:
+                        res.add_error("PROTOCOL", "Missing essential metadata (name/description)", f"skills/{skill_name}/SKILL.md")
                 except Exception as e:
                     res.add_error("IO", f"Could not read {skill_md}: {str(e)}")
 

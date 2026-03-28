@@ -1,14 +1,8 @@
 ---
-name: "'backend-optimizer'"
+name: backend-optimizer
 description: "Use this skill to diagnose and fix Node.js backend bottlenecks, memory leaks, and event loop delays. It requires a performance baseline before any optimization begins. Proactively suggest this if the user reports slow API responses or high server resource usage."
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  scope_discriminator: "'ONLY for Node.js performance tuning, memory leaks, and V8 engine optimizations. NOT for adding new features.'"
-  triggers: ['backend performance', 'memory leak', 'event loop', 'garbage collector', 'v8 heap']
-  tags: ['performance', 'backend']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Standard'"
-  portable: "'true'"
+tags: ['v8 heap', 'performance', 'backend', 'backend performance', 'garbage collector', 'event loop', 'memory leak']
+portable: true
 ---
 
 # Backend Performance Tuner (Tier-S)

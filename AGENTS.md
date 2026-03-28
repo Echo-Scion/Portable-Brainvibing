@@ -1,6 +1,6 @@
 # AGENTS: The AI-Surgical Ecosystem Simulation (.agents)
 
-Welcome to the **Portable AI-Surgical Infrastructure**. This document explains how the 23 core components of the `.agents` ecosystem work together to transform a raw idea into a professional, production-ready SaaS product.
+Welcome to the **Portable AI-Surgical Infrastructure**. This document explains how the 24 core skills of the `.agents` ecosystem work together to transform a raw idea into a professional, production-ready SaaS product.
 
 > [!TIP]
 > This is a **Universal Guide**. It simulates the **Project Journey** for any developer using this plug-and-play infrastructure.
@@ -61,13 +61,9 @@ By utilizing this ecosystem, your project is not just a collection of files—it
 
 ## 🔄 Recent Changes
 
-### [1.2.5] - 2026-03-27
+### [1.2.0] - 2026-03-26
 ### Changed
-- Automated agent synchronization and sanitization.
-
-### [1.2.4] - 2026-03-27
-### Changed
-- Consolidate Security, QA, and Audit into integrity-sentinel.
+- Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders
 
 
 ### [1.1.0] - 2026-03-20

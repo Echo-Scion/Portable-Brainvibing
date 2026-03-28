@@ -1,8 +1,9 @@
 ---
+trigger: glob
 description: Web Development Standards for frontend excellence, API safety, and Node.js logic.
-activation: always_on
-glob: "**/*.{ts,tsx,js,jsx,html,css}"
+globs: *.ts, *.html, *.css.
 ---
+
 # Web Development Standards (Antigravity)
 
 ## 1. Backend & API (The "Defensive Shell" Principle)

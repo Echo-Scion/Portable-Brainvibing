@@ -4,12 +4,12 @@
 1. **Intake (Observation)**: Read `MEMORY.md` and session history for repetitive corrections.
 2. **Analysis (Reasoning)**: Compare local preferences against global rules. Identify 5+ step manual sequences.
 3. **Categorization (Decision Matrix)**:
-    - **Rules**: Constraints & Behavior. "How must I act?" (e.g., "Always use BLoC").
-    - **Skills**: Functional Capabilities & Tools. "What can I do?" (e.g., "Postgres Expert").
-    - **Workflows**: Sequential Procedures. "What are the steps?" (e.g., "/deploy").
+    - **Rules**: Constraints & Behavior. MUST comply with `antigravity.google` spec (in system-admin).
+    - **Skills**: Functional Capabilities & Tools. MUST comply with `agentskills.io` spec (in system-admin).
+    - **Workflows**: Sequential Procedures. MUST comply with `antigravity.google` spec (in system-admin).
     - **Canons**: Identity, Standards & Static Truth. "What is the standard?" (e.g., "Auth Pattern").
 4. **Proposal (Synthesis)**: Present draft updates.
-5. **Implementation**: Create files, update `workspace_map.md`, and increment `CHANGELOG.md`.
+5. **Implementation**: Create files following the **100% Compliance Standards**, update `workspace_map.md`, and increment `CHANGELOG.md`.
 
 ## 🛠️ Key Capabilities
 - **Pattern Recognition**: Finding shared constraints across projects.

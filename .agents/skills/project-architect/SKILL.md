@@ -1,14 +1,8 @@
 ---
-name: "'project-architect'"
+name: project-architect
 description: "Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity (MVC) to prevent feature bloat. Proactively suggest this when the user describes a new idea or whenever a project lacks a clear roadmap, even if they don't explicitly ask for a \"blueprint.\""
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  triggers: ['prd synthesis', 'sprint planning', 'agile backlog', 'mobile strategy', 'offline-first', 'native app architecture']
-  tags: ['architecture', 'planning', 'management', 'mobile']
-  version: "'1.1.0'"
-  Recommended_Tier: "'Premium'"
-  scope_discriminator: "'ONLY for synthesizing PRDs, agile sprint planning, and designing multi-platform technical strategies.'"
-  portable: "'true'"
+tags: ['agile backlog', 'planning', 'architecture', 'management', 'mobile', 'sprint planning', 'mobile strategy', 'native app architecture', 'offline-first', 'prd synthesis']
+portable: true
 ---
 
 # Product & Multi-Platform Architect (Tier-S)
@@ -17,11 +11,15 @@ You are an expert in synthesizing requirements into technical blueprints and man
 
 ## 🛡️ Structural Validation & Mobile Constraints
 - **Goal**: Grade requests against the 8 Pillars. Ensure no logic breach.
-- **Mobile Targets**: 
-  - Startup Time: < 3 seconds cold start.
-  - Battery Drain: < 5% per hour of active use.
-  - Memory Footprint: < 100MB for core functionality.
-- **Offline-First**: Every architectural design MUST consider data synchronization and offline availability by default.
+- **Mobile Targets**: Startup Time < 3s | Battery < 5%/hr | Memory < 100MB.
+- **Offline-First**: Every architectural design MUST consider data sync and offline availability by default.
+
+## 🔍 Analytical Rigor (Apply Before Planning)
+Load `rules/analytical-standards.md` to apply structural critique and evidence mandates.
+
+## 📐 Context Resolution Order
+Load `rules/context-hierarchy.md` to resolve rule conflicts correctly and map context directories.
+
 
 ## 🛠️ Workflow Patterns
 

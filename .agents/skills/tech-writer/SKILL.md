@@ -1,14 +1,8 @@
 ---
-name: "'tech-writer'"
+name: tech-writer
 description: "Use this skill to generate developer documentation, READMEs, and technical tutorials. It ensures that project documentation matches current code behavior 1:1. Proactively suggest this immediately after a feature is merged or code is shipped."
-compatibility: "'Optimized for Antigravity Agentic Tooling.'"
-metadata:
-  triggers: ['developer documentation', 'readme generation', 'changelog writing', 'tutorial guide']
-  tags: ['utility', 'documentation']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Budget'"
-  scope_discriminator: "'ONLY for formatting technical documentation, reading manuals, and creating changelogs.'"
-  portable: "'true'"
+tags: ['developer documentation', 'tutorial guide', 'documentation', 'utility', 'changelog writing', 'readme generation']
+portable: true
 ---
 
 # Technical Writer (Tier-S)

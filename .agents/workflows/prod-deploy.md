@@ -5,8 +5,10 @@ description: Environment readiness checklist before pushing/deploying to Product
 # Deploy Production Workflow
 
 ## 0. CONTEXT RETRIEVAL (JIT)
-- [ ] Verify protocol compliance and wait for binary confirmations. IF unsure, use `grep_search` on `@00_always_on_core.md`.
+- [ ] Verify protocol compliance and wait for binary confirmations. IF unsure, load `rules/core-guardrails.md`.
 - [ ] Activate the `@release-manager` skill for specific CD loops and production readiness checks.
+- [ ] **Pre-Deploy Guardrails**: Load `rules/security-guardrails.md` and `rules/git-workflow.md`. Do not deploy if any critical violations exist.
+
 
 ## Steps
 

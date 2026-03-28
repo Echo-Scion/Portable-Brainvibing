@@ -1,14 +1,8 @@
 ---
-name: "'saas-growth'"
+name: saas-growth
 description: "Employ this skill to design acquisition funnels, viral referral loops, and retention strategies. It prioritizes \"North Star\" metrics to drive startup growth. Proactively suggest this during product strategy sessions or whenever the user discusses scaling."
-compatibility: "'Optimized for Antigravity Tier-S standard (4-Pillar Hierarchy).'"
-metadata:
-  triggers: ['aso', 'investor pitch', 'devrel blog', 'viral marketing', 'trojan horse']
-  tags: ['business', 'marketing', 'content']
-  version: "'1.1.0'"
-  Recommended_Tier: "'Budget'"
-  scope_discriminator: "'ONLY for marketing strategies, ASO, pitches, and technical DevRel content.'"
-  portable: "'true'"
+tags: ['devrel blog', 'trojan horse', 'business', 'investor pitch', 'aso', 'marketing', 'viral marketing', 'content']
+portable: true
 ---
 
 # SaaS Growth Engine (Viral + DevRel + Pitch)

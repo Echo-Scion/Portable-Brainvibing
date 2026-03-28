@@ -4,6 +4,71 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.18] - 2026-03-28
+### Changed
+- Removed redundant GEMINI.md from portable root; relying on template-driven generation.
+
+
+## [1.2.17] - 2026-03-28
+### Changed
+- BIOS Optimization: Stripped GEMINI.md redundancies and moved operational protocols to core-guardrails.md.
+
+
+## [1.2.16] - 2026-03-28
+### Changed
+- Fixed YAML header for autoharness-protocol.md compliance.
+
+
+## [1.2.15] - 2026-03-28
+### Changed
+- Atomic Rule Decomposition, rich metadata extraction for Rules, and global Workflow audit.
+
+
+## [1.2.14] - 2026-03-28
+### Changed
+- Automated agent synchronization and sanitization.
+
+
+## [1.2.13] - 2026-03-28
+### Changed
+- feat: optimize metadata token usage, fix knowledge graph validation, and inject anti-amnesia protocol
+
+
+## [1.2.12] - 2026-03-28
+### Changed
+- Fix: Regenerate catalog post-sync correctly by disabling aggressive line pruning for Python files
+
+
+## [1.2.11] - 2026-03-28
+### Changed
+- Refactor publish_agents to regenerate catalog post-sync (with import fix)
+
+
+## [1.2.10] - 2026-03-28
+### Changed
+- Fix broken rule reference in app-builder.md
+
+
+## [1.2.9] - 2026-03-28
+### Changed
+- Integrate AutoHarness, English Anti-Affirmation Mandate, and fix harnesses whitelist
+
+
+## [1.2.8] - 2026-03-28
+### Changed
+- Integrate AutoHarness principles and English Anti-Affirmation Mandate
+
+
+## [1.2.7] - 2026-03-28
+### Changed
+- Fix: removed deprecated tier protocol check from verify_agents.py
+
+
+## [1.2.6] - 2026-03-28
+### Changed
+- Structural audit: flattened skill metadata, merged triggers into tags, and deprecated tiers
+
+
 ## [1.2.5] - 2026-03-27
 ### Changed
 - Automated agent synchronization and sanitization.

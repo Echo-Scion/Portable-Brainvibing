@@ -1,14 +1,8 @@
 ---
-name: "'release-manager'"
+name: release-manager
 description: "Activate this skill for deployment workflows, CI/CD pipeline strategies, and production readiness checks. It ensures no deployment proceeds without a verified health baseline. Proactively suggest this when a branch is ready to be merged into main or staging."
-compatibility: "'Optimized for Antigravity Agentic Tooling.'"
-metadata:
-  triggers: ['ci/cd pipeline', 'production readiness', 'canary release', 'blue-green']
-  tags: ['devops', 'release']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Standard'"
-  scope_discriminator: "'ONLY for CI/CD pipelines, canary releases, and production deployment checklists.'"
-  portable: "'true'"
+tags: ['ci/cd pipeline', 'release', 'devops', 'production readiness', 'canary release', 'blue-green']
+portable: true
 ---
 
 # Release Manager (Tier-S)

@@ -1,14 +1,8 @@
 ---
-name: "'agent-architect'"
+name: agent-architect
 description: "Employ this skill when designing autonomous AI agent loops, multi-agent collaboration strategies, or complex state machine transitions. It ensures every automated loop has a terminal safety exit. Proactively recommend this during the initial design of AI pipelines or orchestration layers."
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  triggers: ['agent architecture', 'multi-agent', 'state machine', 'react loop', 'guardrails', 'mlops', 'data pipeline', 'rag', 'ml engineering', 'training']
-  tags: ['ai', 'architecture', 'ml', 'integration']
-  version: "'1.1.0'"
-  Recommended_Tier: "'Premium'"
-  scope_discriminator: "'ONLY for designing autonomous AI agent loops, state machine transitions, and production ML pipelines.'"
-  portable: "'false'"
+tags: ['multi-agent', 'ml engineering', 'mlops', 'data pipeline', 'architecture', 'state machine', 'rag', 'integration', 'training', 'guardrails', 'ml', 'react loop', 'agent architecture', 'ai']
+portable: false
 ---
 
 # Agent & Intelligent Systems Architect (Tier-S)

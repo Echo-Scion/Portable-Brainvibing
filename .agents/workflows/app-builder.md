@@ -8,7 +8,7 @@ This workflow defines the precision implementation cycle for individual features
 
 ## 0. PRE-FLIGHT (JIT CONTEXT)
 - [ ] **Verify Environment**: Ensure `.agents/` is synced and active.
-- [ ] **Rule Alignment**: Read `rules/00_always_on_core.md` and `rules/01_always_on_context.md`.
+- [ ] **Rule Alignment**: Read `rules/core-guardrails.md` and `rules/context-hierarchy.md`.
 - [ ] **Surgical Entry**: Identify the target folder (00-03) and the relevant Prefix from `templates/SAAS_STARTUP_STRUCTURE.md`.
 
 ## 1. SPECIFICATION (LIVING DATA)
@@ -26,9 +26,18 @@ This workflow defines the precision implementation cycle for individual features
 - [ ] **State Management**: Implement Riverpod Notifiers and business logic services.
 - [ ] **API Contract**: Invoke `@skills/api-contract` if backend interaction is required.
 
-## 4. VERIFICATION & AUDIT (CERTIFICATION)
-- [ ] **Completeness Integrity (Zero-Shortcut Mandate)**: Ensure the implementation is 100% complete. If a full solution (including all error paths and edge cases) only adds minimal AI overhead, dilarang menggunakan "jalan pintas" atau menunda tes.
-- [ ] **TDD Loop**: Invoke `@skills/integrity-sentinel`. Write and run tests (`flutter test`).
+## 3.5 ADVERSARIAL TWIN PROTOCOL (PRE-VERIFICATION)
+- [ ] **Self-Attack**: Execute `@adversarial-twin.md`. Force a "Breaker Agent" perspective to find at least 1 critical edge case (null data, race condition, network drop) in the implemented logic.
+- [ ] **Defend**: Fix the vulnerability identified by the Twin before moving to final tests.
+
+## 4. VERIFICATION & AUDIT (CERTIFICATION & HARNESS LOOP)
+- [ ] **Completeness Integrity (Zero-Shortcut Mandate)**: Ensure the implementation is 100% complete. If a full solution (including all error paths and edge cases) only adds minimal AI overhead, using "shortcuts" or delaying tests is strictly prohibited.
+- [ ] **Iterative Refinement (Thompson Sampling Logic)**: 
+    - Treat unit tests as the "Action-Verifier" Harness.
+    - **Mutation**: If a test fails, the agent must treat the error log as environment feedback, mutate the code to fix the specific failure, and re-run the test.
+    - **Exploration vs Exploitation**: Try new logic structures if the current approach repeatedly fails, or refine the existing code if it's close to passing.
+    - Loop this process automatically until the "heuristic" (Legal Action Rate / Test Pass Rate) reaches exactly 1.0 (100%).
+- [ ] **TDD Loop**: Invoke `@skills/integrity-sentinel`. Write and run tests (`flutter test`). Do not proceed until the Refinement Loop reaches 1.0.
 - [ ] **Logical Audit**: Invoke `@skills/integrity-sentinel` to certify the feature's mechanical integrity.
 - [ ] **Regressive Evaluation**: Invoke `@skills/integrity-sentinel` to confirm no core logic was broken during the build.
 

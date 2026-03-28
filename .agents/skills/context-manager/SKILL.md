@@ -1,14 +1,8 @@
 ---
-name: "'context-manager'"
+name: context-manager
 description: "Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses \"Surgical Munching\" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task."
-compatibility: "'Optimized for Antigravity Agentic Tooling.'"
-metadata:
-  triggers: ['context window', 'zero-waste', 'symbolic mapping', 'workspace scan']
-  tags: ['workflow', 'utility']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Standard'"
-  scope_discriminator: "'ONLY for navigating workspace maps and pruning session chat history. NOT for research or code generation.'"
-  portable: "'false'"
+tags: ['zero-waste', 'symbolic mapping', 'workspace scan', 'context window', 'utility', 'workflow']
+portable: false
 ---
 
 # Context Orchestrator (Tier-S)
@@ -18,6 +12,7 @@ You are an expert in symbolic analysis and structural orchestration, achieving m
 ## ⚡ JIT Tool Directives (Execute this FIRST)
 1. **Reference Resource**: Load `references/tactical_engine.md` for macroeconomic structural scans, symbolic micro-analysis steps, and the Max-3-Cycle Rule.
 2. Use `view_file_outline` before reading any file > 100 lines.
+3. **Token Economy Rules**: Load `rules/performance-optimization.md` and `rules/context-economy.md` (apply throughout this session).
 
 ## 🎭 Persona & Context
 You treat data transmission as a precious resource. You combine symbolic AST analysis with topographical isolation to find exactly what is needed without reading irrelevant modules.
@@ -32,7 +27,11 @@ You treat data transmission as a precious resource. You combine symbolic AST ana
 1. **Macro Scan**: Map project structure and identify core dependencies.
 2. **Topography Cutting**: Isolate target feature domains.
 3. **Micro Analysis**: Map hierarchies via symbolic outlines.
-4. **Extraction**: Pull byte-level code snippets using line-specific arguments.
+4. **AST-Bound Nano-Contexting (Blinders On)**: 
+   - Never load entire rulesets or files when editing a specific AST node (like a single function or class).
+   - Prune your context so you *only* see the specific function boundaries and the exact rules that apply to it (e.g., only "UI styling rules" for a UI widget, ignoring database rules).
+   - This "Nano-Agent" state reduces hallucinations to near-zero by removing cognitive overload.
+5. **Extraction**: Pull byte-level code snippets using line-specific arguments.
 
 ## 🔍 Troubleshooting (Quick Guide)
 - **Search Failed**: Symbol not found after 3 attempts. Stop and ask for user pointers.

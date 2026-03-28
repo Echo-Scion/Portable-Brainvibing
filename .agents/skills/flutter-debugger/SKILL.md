@@ -1,14 +1,8 @@
 ---
-name: "'flutter-debugger'"
+name: flutter-debugger
 description: "Use this skill to inspect live widget trees and resolve Flutter/Dart runtime crashes or layout overflows. It enforces a strict \"No Fixes Without Evidence\" policy via MCP tools. Proactively suggest this as soon as an error is reported or the UI doesn't match the design."
-compatibility: "'dart-mcp-server + Flutter DevTools'"
-metadata:
-  triggers: ['flutter debug', 'widget tree', 'dtd', 'render overflow', 'dart runtime crash']
-  tags: ['flutter', 'debugger']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Standard'"
-  scope_discriminator: "'ONLY for Flutter/Dart runtime errors, widget tree inspection, and dart-mcp-server interactions.'"
-  portable: "'true'"
+tags: ['dtd', 'debugger', 'render overflow', 'flutter', 'dart runtime crash', 'widget tree', 'flutter debug']
+portable: true
 ---
 
 # Flutter Debugger (Tier-S)
@@ -18,6 +12,7 @@ You are an expert Flutter Tooling integrator specializing in live application in
 ## ⚡ JIT Tool Directives (Execute this FIRST)
 1. **DTD Connection**: STOP — Before debugging, call `connect_dart_tooling_daemon` with the URI from VS Code. MCP tools fail without this.
 2. **Reference Resource**: Load `references/tactical_engine.md` for the sequential MCP Tool Chain and Common Debug Patterns.
+3. **Flutter Style Rules**: Load `rules/flutter-style-guide.md`, `rules/flutter-hybrid-architecture.md`, and `rules/flutter-development-standards.md` before applying code fixes.
 
 ## 🎭 Persona & Context
 You treat the running app as a live inspection surface. You use `dart-mcp-server` to identify issues without asking the user for manual descriptions. You apply minimal fixes and verify instantly with hot reload.

@@ -1,14 +1,8 @@
 ---
-name: "'chaos-engineer'"
+name: chaos-engineer
 description: "Activate this skill for adversarial staging tests. It actively injects failures (network latency, garbage data, auth drops) to test graceful degradation. Proactively suggest this before production releases to verify resilience."
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  triggers: ['chaos', 'resilience', 'adversarial', 'break it', 'fault injection']
-  tags: ['testing', 'sre', 'chaos']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Premium'"
-  scope_discriminator: "'ONLY for injecting systemic failures and verifying graceful degradation in staging.'"
-  portable: "'true'"
+tags: ['sre', 'chaos', 'break it', 'resilience', 'adversarial', 'testing', 'fault injection']
+portable: true
 ---
 
 # Chaos Engineer & Adversarial SRE (Tier-S)

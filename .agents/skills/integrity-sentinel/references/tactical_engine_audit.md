@@ -2,7 +2,7 @@
 
 ## 🛡️ Multi-Layer Audit Steps
 1. **Security Scan**: `grep_search` for common secret patterns (sk-, gcp-, etc).
-2. **Path Scan**: Find absolute drive letters (e.g., `C:\`) and genericize them to relative paths or `<ROOT>`.
+2. **Path Scan**: Find absolute drive letters (e.g., `C:\`) and genericize them to relative paths or `C:\Users\USER\AndroidStudioProjects\_foundation`.
 3. **Mechanical Verification**: Run `python .agents/scripts/verify_agents.py` to check markdown formatting, headers, and links.
 
 ## 🧪 Vibe-Code Deconstruction

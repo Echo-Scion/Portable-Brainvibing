@@ -7,12 +7,14 @@ description: Checklist for reviewing source code quality and security before com
 Before accepting or approving code changes (`git diff --name-only HEAD`), perform a check on each modified file based on the following criteria:
 
 ## 0. CONTEXT RETRIEVAL (JIT)
-- [ ] Verify Binary Oratory compliance. IF unsure, use `grep_search` on `@00_always_on_core.md`.
+- [ ] Verify Binary Oratory compliance. IF unsure, load `rules/core-guardrails.md`.
 - [ ] Invoke `@context-manager` to properly map code relations.
+- [ ] **Git Standards**: Load `rules/git-workflow.md` and enforce rules on all reviewed commits.
+
 
 ## Steps
 
-- [ ] **Step 1:** Load `@01_always_on_context.md` for logical checking baseline.
+- [ ] **Step 1:** Load `rules/analytical-standards.md` for logical checking baseline.
 - [ ] **Step 2:** Check for **CRITICAL Security** violations (Block commit immediately):
   - Hardcoded credentials, API keys, JWT secrets, or tokens.
   - SQL injection vulnerabilities (use of string concatenation in queries).
@@ -21,7 +23,7 @@ Before accepting or approving code changes (`git diff --name-only HEAD`), perfor
   - Path traversal risks (reading files based on direct user input).
 - [ ] **Step 3:** Check for **HIGH Code Quality** violations (Block commit if too many):
   - Functions > 50 lines (request extraction into smaller functions).
-  - Files > 800 lines (request splitting into separate modules).
+  - Files > 500 lines (request splitting — matches Vibecode Hard Cap in `performance-optimization.md`).
   - Nesting depth logic > 4 levels (use early returns / guard clauses).
   - *Silent fail*: Missing error handling (empty catch blocks).
   - Leftover `console.log` from debugging or unclear `TODO/FIXME` items.

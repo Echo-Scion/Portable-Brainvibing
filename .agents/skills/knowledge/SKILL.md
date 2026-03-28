@@ -1,14 +1,8 @@
 ---
-name: "'knowledge'"
+name: knowledge
 description: "Employ this skill for rapid domain expertise acquisition and documentation ingestion (Context7). It ensures all technical claims are cited from reliable sources. Proactively recommend this when encountering an unknown library, API, or legacy codebase."
-compatibility: "'Universal Documentation Ingestion'"
-metadata:
-  triggers: ['pub.dev research', 'github ingestion', 'library documentation scan']
-  tags: ['utility', 'research']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Budget'"
-  scope_discriminator: "'ONLY for rapid ingestion of external documentation, pub.dev, and GitHub research.'"
-  portable: "'true'"
+tags: ['github ingestion', 'library documentation scan', 'research', 'pub.dev research', 'utility']
+portable: true
 ---
 
 # Knowledge Expert (Research & Documentation)

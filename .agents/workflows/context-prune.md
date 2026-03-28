@@ -10,7 +10,9 @@ This workflow prevents context window exhaustion on long-running projects by sur
 > Run this workflow when `MEMORY.md` exceeds 200 lines, or when more than 5 completed tasks exist in `workflows/tasks/`.
 
 ## 0. PRE-FLIGHT
-- [ ] Verify Binary Oratory compliance via `@00_always_on_core.md`.
+- [ ] Verify Binary Oratory compliance via `rules/core-guardrails.md`.
+- [ ] **Token Economy Protocol**: Load `rules/performance-optimization.md` to enforce surgical extraction and token caps.
+
 
 ---
 

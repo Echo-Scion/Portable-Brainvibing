@@ -1,14 +1,8 @@
 ---
-name: "'cache-optimizer'"
+name: cache-optimizer
 description: "Use this skill to design distributed caching strategies (Redis, CDN) and cache invalidation patterns. It ensures every cache layer has a clear invalidation strategy to prevent stale data. Proactively recommend this if database compute spikes or site speed decreases."
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  scope_discriminator: "'ONLY for cache invalidation, Redis TTL, CDNs, and eviction strategies. NOT for general DB tuning.'"
-  triggers: ['redis', 'cdn', 'etag', 'content hashing', 'cache invalidation', 'hit ratio', 'thundering herd']
-  tags: ['performance', 'infrastructure']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Standard'"
-  portable: "'true'"
+tags: ['cdn', 'thundering herd', 'performance', 'hit ratio', 'content hashing', 'cache invalidation', 'etag', 'infrastructure', 'redis']
+portable: true
 ---
 
 # Content Hash & Cache Architect (Tier-S)

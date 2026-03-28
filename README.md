@@ -77,12 +77,12 @@ Verify that your skills are indexed. Type `@` in your chat; you should see activ
 ## 💡 6. Pro Tips for Advanced Users
 
 *   **Automated System Stocktake**: Every 5 features, run: *"Review our session history and MEMORY.md. Identify repetitive patterns to promote into a permanent Skill."*
-*   **Language & Context**: Leave the core instructions in English (AI understands logic better in English), but feel free to add local language triggers in `catalog.json`.
+*   **Gemini CLI**: quota limit for Antigravity is seperate from Gemini CLI"*
 
 ---
 
 ## 🏷️ Version
-**1.2.5** — *"Unified Logic & Universal Export"*
+**1.2.14** — *"Unified Logic & Universal Export"*
 
 ## ⚖️ License
 Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
@@ -91,14 +91,6 @@ Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 *AI-crafted, modular, and ready for evolution.*
 
 ## 🔄 Recent Changes
-
-### [1.2.5] - 2026-03-27
-### Changed
-- Automated agent synchronization and sanitization.
-
-### [1.2.4] - 2026-03-27
-### Changed
-- Consolidate Security, QA, and Audit into integrity-sentinel.
 
 ### [1.2.0] - 2026-03-26
 ### Changed

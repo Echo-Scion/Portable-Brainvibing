@@ -1,14 +1,8 @@
 ---
-name: "'data-logic'"
+name: data-logic
 description: "Employ this skill to design immutable data models, DTOs, and complex transformation pipelines. It ensures data integrity by enforcing immutability by default. Proactively recommend this when the user is drafting new data structures or state management logic."
-compatibility: "'Flutter 3.x + Riverpod 2.x + Freezed 2.x + Codegen'"
-metadata:
-  triggers: ['freezed', 'riverpod', 'reactive state', 'immutable modeling']
-  tags: ['flutter', 'logic']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Standard'"
-  scope_discriminator: "'ONLY for Freezed data models and Riverpod state management in Flutter.'"
-  portable: "'true'"
+tags: ['freezed', 'immutable modeling', 'logic', 'flutter', 'reactive state', 'riverpod']
+portable: true
 ---
 
 # Data & Logic Architect (Riverpod + Freezed)

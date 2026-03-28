@@ -1,0 +1,34 @@
+---
+trigger: model_decision
+description: Guidelines for optimizing application performance and context token usage.
+---
+
+# Performance & LLM Model Tiers (The Lean Protocol)
+
+## 1. The Lean Protocol (Efficiency Standards)
+- **Zero-Theater Policy**: For routine tasks (boilerplate, styling, fixes), skip long narrative explanations. Perform `replace` or `write_file` as soon as the strategy is understood.
+- **Tiered Context Ingestion (L0-L2)**:
+    - **L0 (Index-First)**: ALWAYS check `catalog.json` or `workspace_map.md` first to map dependencies.
+    - **L1 (Header-Only)**: Use `read_file` with `end_line: 25` to see metadata/front matter before full ingestion.
+    - **L2 (Surgical Read)**: Use `grep_search` with `context: 5` to read ONLY the relevant code block. Avoid full file reads unless refactoring the entire file.
+- **Turn Minimization**: Prioritize parallel tool calls. Aim for **"One-Turn Execution"** for simple and clear directives.
+
+## 2. LLM Model Tiers (Experimental Routing)
+Optimizing cost and speed without sacrificing quality:
+- **Budget (Atomic/Stylistic)**: Single-file fixes, docs, formatting, basic boilerplate. Apply Micro-Harness Protocol. Max 1 file read. No Sequential Thinking.
+- **Standard (Integrative/Feature)**: Multi-file features, state management, registry maintenance. Adversarial Twin validation mandatory before marking done.
+- **Premium (Architectural/Risky)**: Refactors, security audits, RLS. Full Sequential Thinking (≥3 steps) mandatory.
+
+## 3. Application Performance
+- **Caching**: Use Redis or local caching for frequently accessed, slow-changing data.
+- **Lazy Loading**: In Flutter, use `ListView.builder` for long lists.
+- **Tree Shaking**: Ensure unused dependencies are removed from production builds.
+
+## 4. Modularization & Context Integrity (Vibecode)
+- **Modularity over Line Counts**: Prioritize Single Responsibility Principle (SRP), but respect the AI token window.
+- **Vibecode Hard Cap (500 Lines)**: No single file should exceed 500 lines. This is a STRICT architectural boundary to prevent token overflow and context loss.
+- **Mandatory Splitting**: If a feature naturally pushes a file past 500 lines, you MUST pause feature development and refactor immediately (extract widgets, helper classes, or state logic to separate files).
+- **Optimization**: Extract private widgets, helper classes, or providers into separate files when they represent distinct sub-responsibilities. Use barrel exports (`export 'file.dart';`) to maintain a clean public API.
+
+## 5. Tooling & MCP Awareness
+- **Pre-Flight Check**: Verify the status of active MCP servers (Dart, Supabase, GitHub, etc.). If a required server is missing, notify the USER before taking technical action.

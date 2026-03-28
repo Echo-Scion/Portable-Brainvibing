@@ -1,14 +1,8 @@
 ---
-name: "'agent-evolution'"
+name: agent-evolution
 description: "Use this skill to promote recurring successful patterns into permanent Rules, Skills, or Workflows. It ensures the system learns from its successes. Proactively suggest this after you have successfully completed several similar tasks using a consistent approach."
-compatibility: "'Optimized for Antigravity Tier-S standard (4-Pillar Hierarchy).'"
-metadata:
-  scope_discriminator: "'ONLY for promoting behaviors into permanent Rules or Skills within the .agents ecosystem.'"
-  triggers: ['agent evolution', 'pattern promotion', 'habit harvest']
-  tags: ['ai', 'workflow']
-  version: "'1.1.0'"
-  Recommended_Tier: "'Standard'"
-  portable: "'false'"
+tags: ['habit harvest', 'pattern promotion', 'agent evolution', 'ai', 'workflow']
+portable: false
 ---
 
 # Agent Evolution Engine (Tier-S)

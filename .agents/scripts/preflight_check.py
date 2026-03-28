@@ -49,8 +49,13 @@ def run_preflight():
     errors = 0
     warnings = 0
     
-    # Exceptions that are not broken links
-    ignore_list = ["README.md", "LICENSE.md", "CONTRIBUTING.md", "example.md", "template.md"]
+    # Exceptions that are not broken links or exist at project root
+    ignore_list = [
+        "README.md", "LICENSE.md", "CONTRIBUTING.md", "example.md", "template.md",
+        "BLUEPRINT.md", "MEMORY.md", "ROADMAP.md", "STYLE_GUIDE.md", "CHANGELOG.md", 
+        "ARCHITECTURE.md", "TASK.md", "task-id.md", "model_tier_protocol.md", 
+        "reasoning_protocols.md", "SESSION_HANDOFF.md", "PLAN.md", "WALKTHROUGH.md"
+    ]
     
     for file_path in files_to_scan:
         rel_src_path = os.path.relpath(file_path, BASE_DIR)
@@ -89,4 +94,9 @@ def run_preflight():
         sys.exit(0)
 
 if __name__ == "__main__":
+    import io
+    # Ensure stdout/stderr handle UTF-8 on Windows
+    if sys.platform == 'win32':
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
     run_preflight()

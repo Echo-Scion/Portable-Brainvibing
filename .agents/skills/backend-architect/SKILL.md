@@ -1,14 +1,8 @@
 ---
-name: "'backend-architect'"
+name: backend-architect
 description: "Use this skill to extract enterprise-grade architecture patterns (MVC, Repository, Service Layer) for resilient backend systems. It enforces strict decoupling between business logic and delivery layers. Proactively suggest this when the user starts adding new service modules or complex backend logic."
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  scope_discriminator: "'ONLY for structural design and pattern scaffolding (MVC, Repository) of backends. Do NOT use for performance tuning or bug fixing.'"
-  triggers: ['backend architecture', 'mvc', 'repository pattern', 'service layer', 'dto']
-  tags: ['backend', 'architecture']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Premium'"
-  portable: "'true'"
+tags: ['dto', 'architecture', 'service layer', 'backend architecture', 'backend', 'mvc', 'repository pattern']
+portable: true
 ---
 
 # Universal Backend Architecture Patterns (Tier-S)

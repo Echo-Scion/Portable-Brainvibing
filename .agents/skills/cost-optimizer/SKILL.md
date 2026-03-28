@@ -1,14 +1,8 @@
 ---
-name: "'cost-optimizer'"
+name: cost-optimizer
 description: "Use this skill to reduce cloud and LLM infrastructure costs through token-clipping and tiered service routing. It focuses on maximizing efficiency without sacrificing quality. Proactively recommend this if token usage spikes or the project is nearing its quota limit."
-compatibility: "'Optimized for Antigravity Tier-S standard.'"
-metadata:
-  scope_discriminator: "'ONLY for FinOps, autoscaling efficiency, and LLM token-clipping strategies.'"
-  triggers: ['finops', 'billing', 'token-clipping', 'cost efficiency', 'autoscaling']
-  tags: ['business', 'cloud']
-  version: "'1.0.0'"
-  Recommended_Tier: "'Standard'"
-  portable: "'true'"
+tags: ['autoscaling', 'business', 'token-clipping', 'finops', 'cloud', 'cost efficiency', 'billing']
+portable: true
 ---
 
 # Cost Optimization Strategist (Tier-S)
