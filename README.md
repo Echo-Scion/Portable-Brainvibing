@@ -184,7 +184,7 @@ A: ~2-5% per session (depends on skill count active). Token Shield and Vibecode 
 
 ## 9. Changelog
 
-**Current Version**: **1.2.27** — *"Modular Synchronization & Ecosystem Polish"*
+**Current Version**: **1.2.29** — *"Modular Synchronization & Ecosystem Polish"*
 
 | Version | Date | Notes |
 | :--- | :--- | :--- |

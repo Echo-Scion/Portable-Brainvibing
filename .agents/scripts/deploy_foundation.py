@@ -121,11 +121,13 @@ def smart_merge_config(template_path: str, target_path: str, project_name: str, 
             # No markers - prepend foundation block
             if ai_format == "markdown":
                 header = f"# Workspace Rules: {project_name}\n\n"
+                separator = "\n\n## PROJECT-SPECIFIC RULES\n<!-- Do not remove the foundation markers above. Put your custom rules below. -->\n\n"
             else:
                 header = f"# Rules for {project_name}\n\n"
+                separator = "\n\n# === PROJECT-SPECIFIC RULES ===\n"
             
-            final_content = header + foundation_block + "\n\n" + local_content
-            status = "MERGED (Prepended)"
+            final_content = header + foundation_block + separator + local_content
+            status = "MERGED (Prepended & Wrapped)"
     else:
         # Target doesn't exist - create new
         final_content = raw_template

@@ -106,7 +106,8 @@ For Tier-1+ execution, the pre-flight declaration MUST include:
 When operating as a **BUDGET Model**, the agent **MUST** adhere to the following architectural triad to prevent hallucinations:
 1. **Context Diet Protocol (`context-standards.md`)**: Mandatory *Skeleton-First* (Grep/AST), forbidden from *full-reads* on long files to avoid *context poisoning*.
 2. **Bento-Box Workflow (`tier-execution-protocol.md`)**: Mandatory single *State-Machine*. One target, one evaluation. Forbidden from manipulating multiple files simultaneously.
-3. **Micro-Canons (`canons/micro/README.md`)**: Mandatory reading of domain summaries (*framework rules*) before starting reasoning if handling specific technologies, to compensate for the weak *pre-trained data* of small models.
+3. **Micro-Canons (`canons/micro/README.md`)**: Mandatory reading of domain summaries before starting reasoning.
+4. **KPI Telemetry (`track_budget.py`)**: All BUDGET/Small model tasks MUST be tracked via `.agents/scripts/track_budget.py` to maintain the 70% resolution target.
 
 # 2. Bento-Box Workflow (Anti-Multitasking for Budget Models)
 # Bento-Box Workflow (Anti-Multitasking)

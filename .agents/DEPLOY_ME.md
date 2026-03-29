@@ -64,8 +64,8 @@ For each AI, follow this merge strategy:
 2. Extract the `<!-- START FOUNDATION MANDATES -->...<!-- END FOUNDATION MANDATES -->` block
 3. Replace `{project_name}` with actual project name
 4. Check if target file exists:
-   - **Has markers**: Replace ONLY the foundation block, preserve custom content
-   - **No markers**: Prepend foundation block, wrap existing content as "PROJECT-SPECIFIC"
+   - **Has markers**: Replace ONLY the foundation block between `<!-- START FOUNDATION MANDATES -->` and `<!-- END FOUNDATION MANDATES -->`, preserve custom content
+   - **No markers**: Prepend foundation block, wrap existing content as "PROJECT-SPECIFIC" below it
    - **Doesn't exist**: Create new from template
 
 **B. Rules Format** (Cursor, Windsurf, Cline):

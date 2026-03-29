@@ -1,6 +1,6 @@
 ---
 name: integrity-sentinel
-description: "The overarching Gatekeeper for security, quality assurance, system audits, and evaluation. Replaces individual QA, security, audit, and eval skills. Proactively suggest this before deployment or when enforcing zero-trust principles. Encompasses sub-domains: Audit, Eval, Flutter Testing Patterns, Load Testing Tactics, Qa, Security."
+description: "MANDATORY TRIGGER: Load this skill whenever the user explicitly types 'audit', 'evaluate', 'test', 'security check', 'qa', or 'verify'. This is a fail-closed gatekeeper. The overarching Gatekeeper for security, quality assurance, system audits, and evaluation. Replaces individual QA, security, audit, and eval skills. Proactively suggest this before deployment or when enforcing zero-trust principles. Encompasses sub-domains: Audit, Eval, Flutter Testing Patterns, Load Testing Tactics, Qa, Security."
 tags: ['security', 'eval', 'threat modeling', 'audit', 'validation', 'qa', 'load testing', 'regression', 'testing']
 portable: true
 ---

@@ -2,6 +2,7 @@ import os
 import json
 import re
 import sys
+import subprocess
 
 # Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -27,6 +28,17 @@ def get_all_valid_files():
 
 def run_preflight():
     print("🚀 Initiating Pre-Flight Diagnostic (Self-Healing Routing)...")
+
+    # 0. Context naming gate (82-file registry + master anchors)
+    context_lint_script = os.path.join(SCRIPT_DIR, "context_naming_lint.py")
+    if os.path.exists(context_lint_script):
+        lint_result = subprocess.run([sys.executable, context_lint_script], capture_output=True, text=True)
+        print(lint_result.stdout.strip())
+        if lint_result.returncode != 0:
+            if lint_result.stderr:
+                print(lint_result.stderr.strip())
+            print("\n❌ Pre-Flight Failed: context naming lint did not pass.")
+            sys.exit(1)
     
     valid_skills = load_valid_skills()
     valid_filenames = get_all_valid_files()
@@ -67,22 +79,39 @@ def run_preflight():
             potential_skills = re.findall(r'`([a-z0-9]+-[a-z0-9-]+)`', content)
             for ps in set(potential_skills):
                 # Ignore common hyphenated terms that aren't skills
-                ignore_terms = ["fail-fast", "anti-goals", "no-sweetwords", "high-fidelity", "pre-flight", "session-handoff", "zero-trust", "multi-agent", "front-end", "back-end"]
+                ignore_terms = ["fail-fast", "anti-goals", "no-sweetwords", "high-fidelity", "pre-flight", "session-handoff", "zero-trust", "multi-agent", "front-end", "back-end", "try-catch"]
                 if ps not in valid_skills and ps not in ignore_terms and len(ps) > 5:
                     print(f"⚠️  [WARNING] Possible broken skill reference '{ps}' in {rel_src_path}")
                     warnings += 1
 
-        # 2. Check explicitly formatted file references (.md)
-        file_refs = re.findall(r'([a-zA-Z0-9_-]+\.md)', content)
+        # 2. Check explicit markdown references only
+        # Avoid false positives from plain text tokens like "Problem_Discovery.md" in registries/examples.
         md_links = re.findall(r'\]\(([^)]+\.md)\)', content)
+        code_path_refs = re.findall(r'`([^`\n]*/[^`\n]*\.md)`', content)
+        raw_refs = set(md_links + code_path_refs)
         
-        all_refs = set(file_refs + [os.path.basename(p) for p in md_links])
-        
-        for ref in all_refs:
-            if ref in ignore_list or ref.startswith("http") or "{" in ref:
+        for ref in raw_refs:
+            ref_norm = ref.replace('\\', '/').strip()
+
+            # Skip URLs and placeholders/examples
+            if ref_norm.startswith(("http://", "https://", "file://")):
                 continue
-            if ref not in valid_filenames and os.path.basename(ref) not in valid_filenames:
-                print(f"❌ [ERROR] Broken file reference '{ref}' in {rel_src_path}")
+            if any(token in ref_norm for token in ["{", "}", "<", ">", "[", "]"]):
+                continue
+
+            # Enforce only local .agents references; examples to context/ are informative, not mandatory.
+            if ref_norm.startswith('.agents/'):
+                candidate = ref_norm.split('.agents/', 1)[1]
+            elif ref_norm.startswith(("rules/", "skills/", "workflows/", "canons/", "templates/", "scripts/")):
+                candidate = ref_norm
+            else:
+                continue
+
+            base_name = os.path.basename(candidate)
+            if base_name in ignore_list:
+                continue
+            if candidate not in valid_filenames and base_name not in valid_filenames:
+                print(f"❌ [ERROR] Broken file reference '{ref_norm}' in {rel_src_path}")
                 errors += 1
 
     if errors > 0:

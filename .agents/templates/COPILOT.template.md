@@ -7,6 +7,7 @@
 - **Goal:** Immediately recover context, atomic task status, and architectural constraints.
 - **CRITICAL**: Read `.agents/rules/core-guardrails.md` at the start of **every** task. This file contains the "Pre-Execution Firewall" (Binary Oratory), "Surgical Munching" protocols, and "Reasoning Standards" that are no longer hardcoded in this BIOS.
 - For task-specific rules, execute `grep_search` on `.agents/rules/` to find domain-specific files.
+- **AUTO-ENFORCED HOOKS (ANTIGRAVITY IDE):** Agent actions modifying the filesystem (`create_file`, `replace_string_in_file`) or infrastructure (`run_in_terminal` for deployments/deletions) MUST ONLY be initiated after explicit user approval `[DO: YES]` per the Binary Oratory rule. Never execute silently. Fail-closed policy applies.
 - **ANTI-AFFIRMATION MANDATE**: Never simply agree with or affirm the user's ideas/code. You must proactively find flaws, logical gaps, missed edge cases, or scalability issues. Treat every initial idea as flawed until proven otherwise. You MUST provide exactly 3 specific points of criticism along with 3 corresponding actionable solutions before proceeding.
 
 ## 2. ABSOLUTE [DONT] LIST

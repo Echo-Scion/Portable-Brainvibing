@@ -4,11 +4,14 @@ activation: always on
 ---
 # Agent Protocols
 
-## 1. Binary Oratory (The Pre-Execution Firewall)
+## 1. Binary Oratory (The Pre-Execution Firewall - Auto-Enforced)
 
 > **Universal Pre-Flight (Zero Exemptions)**: ALL tasks, including those classified as `BUDGET` (Tier 0), **MUST** undergo Binary Oratory. Attempting to execute any file manipulation before manual confirmation `[DO: YES]` is a strict protocol violation.
 
-> **IDE / Antigravity Mode (Manual Routing Alignment)**: Because the IDE lacks a model *auto-routing* feature, Binary Oratory acts as a **Manual Checkpoint**. The agent is **OBLIGATED** to write `[TIER]` (along with a model recommendation) in the `implementation_plan.md` or the first message, and then **STOP COMPLETELY**. This gives the user an opportunity to switch models in the IDE (e.g., from Haiku to Sonnet) before granting execution approval. `[CONFIRM]` remains mandatory, either via a native IDE button or chat reply.
+> **IDE / Antigravity Mode (Fail-Closed Check)**: Because the IDE lacks a built-in pre-tool-use blocker, you, the Agent, MUST act as a Fail-Closed Policy Engine. 
+> 1. You are **OBLIGATED** to write `[TIER]` (along with a model recommendation) in your first message.
+> 2. You **MUST STOP COMPLETELY** after presenting your plan. Do not invoke `replace_string_in_file`, `create_file`, or write-action `run_in_terminal` tools.
+> 3. Only proceed when the user replies with `[DO: YES]`. If the user does not, you must remind them to confirm.
 
 Before executing **ANY task (Tier 0, 1, or 2)** that modifies the filesystem (write, delete, refactor) or infrastructure (deploy, migrate) via CLI chat, the agent MUST declare:
 

@@ -18,6 +18,12 @@ FOUNDATION_AGENTS = os.path.join(FOUNDATION_ROOT, ".agents")
 # Folders that represent "The Brain" and should evolve
 EVOLVABLE_FOLDERS = ["skills", "rules", "workflows", "canons", "templates", "scripts", "evals", "docs"]
 
+# Root-level files in .agents that may evolve and should be propagated upstream.
+ROOT_SYNC_FILES = ["workspace_map.md", "DEPLOY_ME.md"]
+
+# Only these files are eligible for automatic version bump.
+VERSION_BUMP_FILES = {"SKILL.md"}
+
 # Files/Folders to NEVER sync back to foundation (project-specific)
 BLACKLIST = {
     "local",         # Project-specific experiments
@@ -27,6 +33,7 @@ BLACKLIST = {
     "pull_planning_context.py", # Local drive specific sync script
     ".git",
     "node_modules",
+    "__pycache__",
     "vitals",
     "MEMORY.md",
     "SAAS_MEMORY.md"
@@ -48,25 +55,78 @@ def increment_patch_version(content):
     new_content, count = re.subn(version_pattern, replace_version, content, flags=re.MULTILINE)
     return new_content, count > 0
 
+
+def resolve_foundation_agents(project_agents: str) -> str:
+    """
+    Resolve target foundation .agents path from marker file when available.
+    Supports marker values that point either to foundation root OR directly to .agents.
+    """
+    foundation_path_marker = os.path.join(project_agents, ".foundation_path")
+
+    if not os.path.exists(foundation_path_marker):
+        return FOUNDATION_AGENTS
+
+    with open(foundation_path_marker, "r", encoding="utf-8") as f:
+        marker_path = f.read().strip()
+
+    marker_path = os.path.abspath(marker_path)
+
+    # Case A: marker already points to .agents directory.
+    if os.path.basename(marker_path).lower() == ".agents":
+        return marker_path
+
+    # Case B: marker points to foundation root.
+    return os.path.join(marker_path, ".agents")
+
+
+def files_differ(src: str, dest: str) -> bool:
+    if not os.path.exists(dest):
+        return True
+    with open(src, "rb") as f:
+        src_bytes = f.read()
+    with open(dest, "rb") as f:
+        dest_bytes = f.read()
+    return src_bytes != dest_bytes
+
+
+def copy_with_optional_version_bump(local_file: str, foundation_file: str, file_name: str, dry_run: bool) -> bool:
+    """
+    Copy local file to foundation path. Returns True if a version bump happened.
+    """
+    if dry_run:
+        return False
+
+    os.makedirs(os.path.dirname(foundation_file), exist_ok=True)
+
+    if file_name in VERSION_BUMP_FILES:
+        try:
+            with open(local_file, "r", encoding="utf-8") as f:
+                content = f.read()
+
+            new_content, bumped = increment_patch_version(content)
+
+            with open(foundation_file, "w", encoding="utf-8") as f:
+                f.write(new_content)
+
+            return bumped
+        except Exception as e:
+            print(f"    [WARNING] Could not auto-bump {file_name}: {e}")
+            shutil.copy2(local_file, foundation_file)
+            return False
+
+    shutil.copy2(local_file, foundation_file)
+    return False
+
 def sync_upstream(project_root, dry_run=False):
     """
     Syncs changes from the local project's .agents back to the Foundation.
     Automatically increments version if SKILL.md or metadata files are changed.
     """
     if dry_run:
-        print("🧪 [DRY RUN] Mode enabled. No files will be physically modified.")
+        print("[DRY RUN] Mode enabled. No files will be physically modified.")
 
     project_agents = os.path.join(project_root, ".agents")
-    foundation_path_marker = os.path.join(project_agents, ".foundation_path")
-    
-    # Prioritize persisted foundation path from deployment
-    if os.path.exists(foundation_path_marker):
-        with open(foundation_path_marker, "r", encoding="utf-8") as f:
-            dynamic_foundation_root = f.read().strip()
-        target_foundation_agents = os.path.join(dynamic_foundation_root, ".agents")
-    else:
-        # Fallback to legacy relative detection
-        target_foundation_agents = FOUNDATION_AGENTS
+    target_foundation_agents = resolve_foundation_agents(project_agents)
 
     if not os.path.exists(project_agents):
         print(f"Error: Local .agents folder not found at {project_agents}")
@@ -77,7 +137,7 @@ def sync_upstream(project_root, dry_run=False):
         print("Please check the .agents/.foundation_path file or FOUNDATION_ROOT in this script.")
         return False
 
-    print(f"🚀 Starting Upstream Sync: [Project] -> [_foundation]")
+    print("Starting Upstream Sync: [Project] -> [_foundation]")
     print(f"Target: {target_foundation_agents}\n")
 
     class SyncStatus:
@@ -87,6 +147,31 @@ def sync_upstream(project_root, dry_run=False):
 
     status = SyncStatus()
 
+    # 1) Sync root-level .agents files explicitly (allowlisted)
+    print("Checking root .agents files...")
+    for file in ROOT_SYNC_FILES:
+        local_file = os.path.join(project_agents, file)
+        foundation_file = os.path.join(target_foundation_agents, file)
+
+        if not os.path.exists(local_file):
+            continue
+
+        if not files_differ(local_file, foundation_file):
+            continue
+
+        tag = "[NEW]" if not os.path.exists(foundation_file) else "[MODIFIED]"
+        print(f"  {tag} {file}")
+
+        bumped = copy_with_optional_version_bump(local_file, foundation_file, file, dry_run)
+        if bumped:
+            print(f"    [INFO] Auto-bumped version for {file}")
+            status.version_bumps += 1
+        elif dry_run:
+            print(f"  [SIMULATED] Copy {file} -> {target_foundation_agents}")
+
+        status.changes_count += 1
+
+    # 2) Sync evolvable folders
     for folder in EVOLVABLE_FOLDERS:
         src_path = os.path.join(project_agents, folder)
         dest_path = os.path.join(target_foundation_agents, folder)
@@ -104,7 +189,7 @@ def sync_upstream(project_root, dry_run=False):
             
             for file in files:
                 # Skip blacklisted items or local-specific evolution (prefixed with 'local-')
-                if file in BLACKLIST or file.startswith("local-") or file == ".gitkeep":
+                if file in BLACKLIST or file.startswith("local-") or file == ".gitkeep" or file.endswith(".pyc"):
                     continue
 
                 # Get relative path to maintain structure
@@ -119,78 +204,55 @@ def sync_upstream(project_root, dry_run=False):
                 foundation_file = os.path.join(dest_path, rel_path)
 
                 # Check if foundation file exists and if content is different
-                should_copy = False
                 if not os.path.exists(foundation_file):
                     print(f"  [NEW] {os.path.join(folder, rel_path)}")
                     should_copy = True
                 else:
-                    with open(local_file, 'rb') as f:
-                        local_content_bytes = f.read()
-                    with open(foundation_file, 'rb') as f:
-                        foundation_content_bytes = f.read()
-                    
-                    if local_content_bytes != foundation_content_bytes:
+                    if files_differ(local_file, foundation_file):
                         print(f"  [MODIFIED] {os.path.join(folder, rel_path)}")
                         should_copy = True
+                    else:
+                        should_copy = False
 
                 if should_copy:
-                    if not dry_run:
-                        # Ensure directory exists in foundation
-                        os.makedirs(os.path.dirname(foundation_file), exist_ok=True)
-                        
-                        # Logic: If it's a versioned file (like SKILL.md), increment version during copy
-                        if file.endswith((".md", ".json", ".yaml")):
-                            try:
-                                with open(local_file, 'r', encoding='utf-8') as f:
-                                    content = f.read()
-                                
-                                new_content, bumped = increment_patch_version(content)
-                                
-                                with open(foundation_file, 'w', encoding='utf-8') as f:
-                                    f.write(new_content)
-                                
-                                if bumped:
-                                    print(f"    ↳ ✨ Auto-bumped version for {file}")
-                                    status.version_bumps += 1
-                            except Exception as e:
-                                print(f"    ⚠️ Warning: Could not auto-bump {file}: {e}")
-                                shutil.copy2(local_file, foundation_file)
-                        else:
-                            shutil.copy2(local_file, foundation_file)
-                    else:
+                    bumped = copy_with_optional_version_bump(local_file, foundation_file, file, dry_run)
+                    if bumped:
+                        print(f"    [INFO] Auto-bumped version for {file}")
+                        status.version_bumps += 1
+                    elif dry_run:
                         print(f"  [SIMULATED] Copy {file} -> {os.path.dirname(foundation_file)}")
                     
                     status.changes_count += 1
 
     if int(status.changes_count) > 0:
-        print(f"\n✅ Successfully synced {status.changes_count} files to Foundation.")
+        print(f"\nSuccessfully synced {status.changes_count} files to Foundation.")
         if int(status.version_bumps) > 0:
-            print(f"✨ Total versions bumped: {status.version_bumps}")
+            print(f"Total versions bumped: {status.version_bumps}")
         
         if not dry_run:
             # Trigger Neural Graph Update
             graph_script = os.path.join(target_foundation_agents, "scripts", "build_graph.py")
             if os.path.exists(graph_script):
-                print("🧠 Regenerating Knowledge Graph...")
+                print("Regenerating Knowledge Graph...")
                 try:
                     subprocess.run([sys.executable, graph_script], cwd=os.path.dirname(target_foundation_agents), check=True)
                 except Exception as e:
-                    print(f"⚠️ Warning: Failed to update Knowledge Graph: {e}")
+                    print(f"[WARNING] Failed to update Knowledge Graph: {e}")
 
             # Trigger Catalog Update in Foundation
             catalog_script = os.path.join(target_foundation_agents, "scripts", "update_catalog.py")
             if os.path.exists(catalog_script):
-                print("🔄 Updating Foundation Catalog...")
+                print("Updating Foundation Catalog...")
                 try:
                     # We run it using the foundation's own script to ensure context
                     subprocess.run([sys.executable, catalog_script], cwd=os.path.dirname(target_foundation_agents), check=True)
-                    print("✅ Foundation Catalog & Workspace Map updated.")
+                    print("Foundation Catalog & Workspace Map updated.")
                 except Exception as e:
-                    print(f"⚠️ Warning: Failed to auto-update catalog: {e}")
+                    print(f"[WARNING] Failed to auto-update catalog: {e}")
         else:
-            print("\n🧪 [DRY RUN] Would trigger graph and catalog updates in foundation.")
+            print("\n[DRY RUN] Would trigger graph and catalog updates in foundation.")
     else:
-        print("\n✨ No changes detected. Foundation is already up-to-date.")
+        print("\nNo changes detected. Foundation is already up-to-date.")
 
     return True
 
