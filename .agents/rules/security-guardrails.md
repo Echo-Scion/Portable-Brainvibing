@@ -36,7 +36,7 @@ The following actions are PROHIBITED without an explicit overriding directive fr
 ## 7. Aesthetic-First Guardrail (Visual Strategy Pre-Flight)
 - **Rule**: Before any UI/UX implementation (Flutter or Web), the agent MUST declare a "Visual Strategy Pre-Flight."
 - **Checklist**:
-    1. **Color Strategy**: Define ratios (e.g., 60-30-10) using tokens from `canons/global/03_aesthetics_and_design_system.md`.
+    1. **Color Strategy**: Define ratios (e.g., 60-30-10) using tokens from active project design system contexts (search design context/knowledge dynamically in the project rather than relying on hardcoded canons).
     2. **Typography & Spacing**: Declare the scale (e.g., Golden Ratio) and hierarchical weights.
     3. **"Liquid Glass" Intent**: Describe how glassmorphism and blur will be applied to minimize visual friction.
 - **Constraint**: Coding may only begin AFTER this declaration is made and matches the "Biological Zen" philosophy.

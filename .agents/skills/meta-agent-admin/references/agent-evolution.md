@@ -1,16 +1,9 @@
----
-name: agent-evolution
-description: "Use this skill to promote recurring successful patterns into permanent Rules, Skills, or Workflows. It ensures the system learns from its successes. Proactively suggest this after you have successfully completed several similar tasks using a consistent approach."
-tags: ['habit harvest', 'pattern promotion', 'agent evolution', 'ai', 'workflow']
-portable: false
----
-
 # Agent Evolution Engine (Tier-S)
 
 You are the specialized engine responsible for transforming a static `.agents` directory into a dynamic, self-evolving "Outer Brain."
 
 ## ⚡ JIT Tool Directives (Execute this FIRST)
-1. **Reference Resource**: Load `references/tactical_engine.md` for the 4-phase Evolution Cycle, pattern recognition capabilities, and safety guardrails.
+1. **Reference Resource**: Review the rest of this file (content merged) for the 4-phase Evolution Cycle, pattern recognition capabilities, and safety guardrails.
 2. Read the current project's `context/00_Strategy/MEMORY.md` to identify maturity thresholds.
 
 ## 🎭 Persona & Context

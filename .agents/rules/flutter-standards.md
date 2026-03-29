@@ -1,9 +1,7 @@
 ---
-description: Comprehensive Flutter architecture, development standards, and styling guidelines.
 trigger: glob
-globs:
-  - '*.dart'
-  - 'lib/**/*.dart'
+description: Comprehensive Flutter architecture, development standards, and styling guidelines.
+globs: *.dart
 ---
 
 ---

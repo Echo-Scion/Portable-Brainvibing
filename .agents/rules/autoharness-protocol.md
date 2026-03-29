@@ -20,14 +20,14 @@ When tackling a complex, rigid, or highly-constrained task, synthesize one of th
 - **Harness-as-Policy**: For repetitive tasks or deterministic state transitions, synthesize a pure algorithmic script that executes the task without further LLM intervention.
 
 ## 4. The Synthesis Loop & Asymmetric Delegation (Antigravity IDE)
-Konsep *Small Model Superiority* menggunakan *manual routing* mengandalkan delegasi asimetris:
-1. **Budget Model as The Scout & Harness-Writer**: Jika dihadapkan pada tugas *Tier-1+ (Standard/Premium)*, Budget Model **DILARANG KERAS** menyentuh file *production* utama. Tugas eksklusifnya adalah: membaca konteks, menulis `implementation_plan.md`, dan membuat skrip *Harness* (verifier/test).
-2. **Handoff (Manual Model Switch)**: Setelah *Harness* ditulis, Budget Model memicu *Binary Oratory Auto-Abort* dengan pesan: `[ABORT: HARNESS READY. SILAKAN GANTI KE PREMIUM MODEL LALU BERIKAN PERINTAH EKSEKUSI]`.
-3. **Premium Model as The Heavy Lifter**: Model Premium mengambil alih. Tugasnya hanya satu: Menulis kode riil hingga skrip *Harness* buatan Budget Model bernilai `True / Pass`.  
-4. **Identify Failure Taxonomy**: Jika Harness menolak tindakan, kategorikan alasan penolakan sebelum mencoba lagi:
-   - *Syntax Error*: (Format JSON, YAML, Typo) ➔ Mudah diselesaikan model kecil.
-   - *Logic/State Error*: (Memanggil fungsi yang tidak ada, state tidak sesuai) ➔ Perlu pembacaan file/konteks ekstra.
-   - *System/Architecture Error*: (Melanggar RLS, Security Boundary) ➔ **Trigger Risiko Tinggi**.
+The concept of *Small Model Superiority* using *manual routing* relies on asymmetric delegation:
+1. **Budget Model as The Scout & Harness-Writer**: If faced with a *Tier-1+ (Standard/Premium)* task, the Budget Model is **STRICTLY PROHIBITED** from touching the main *production* file. Its exclusive task is to: read the context, write `implementation_plan.md`, and create the *Harness* script (verifier/test).
+2. **Handoff (Manual Model Switch)**: After the *Harness* is written, the Budget Model triggers a *Binary Oratory Auto-Abort* with the message: `[ABORT: HARNESS READY. PLEASE SWITCH TO PREMIUM MODEL THEN PROVIDE THE EXECUTION COMMAND]`.
+3. **Premium Model as The Heavy Lifter**: The Premium Model takes over. Its only task is: Write the real code until the *Harness* script created by the Budget Model evaluates to `True / Pass`.  
+4. **Identify Failure Taxonomy**: If the Harness rejects the action, categorize the rejection reason before trying again:
+   - *Syntax Error*: (JSON format, YAML, Typo) ➔ Easily resolved by a small model.
+   - *Logic/State Error*: (Calling a non-existent function, incorrect state) ➔ Requires reading extra files/context.
+   - *System/Architecture Error*: (Violating RLS, Security Boundary) ➔ **High Risk Trigger**.
 5. **Execute**: Once the harness validates the action, safely execute the actual task.
 
 ## 5. Storage

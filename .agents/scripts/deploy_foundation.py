@@ -245,7 +245,9 @@ def deploy(source_root: str, target_root: str, selected_ais: list = None, dry_ru
             os.makedirs(target_agents, exist_ok=True)
         print(f"Created local .agents/ at {target_agents}")
 
-    # Folders to sync physically for IDE compatibility
+    # ⚠️ CRITICAL COUPLING:
+    # If you modify FOLDERS_TO_SYNC or deployment logic below, 
+    # YOU MUST ALSO UPDATE the agentic fallback instructions in `.agents/DEPLOY_ME.md`!
     FOLDERS_TO_SYNC = ["skills", "rules", "canons", "templates", "evals", "docs", "scripts"]
 
     # Exclude list: items that must never be overwritten on target
@@ -314,6 +316,15 @@ def deploy(source_root: str, target_root: str, selected_ais: list = None, dry_ru
     # These are now generated fresh locally via update_catalog.py post-deploy.
     # Logic removed to prevent syncing outdated foundation maps.
     project_name = os.path.basename(os.path.abspath(target_root))
+
+    # 4. Seed LEARNINGS.md if it doesn't exist
+    learnings_path = os.path.join(target_agents, "LEARNINGS.md")
+    if not os.path.exists(learnings_path):
+        if not dry_run:
+            with open(learnings_path, "w", encoding="utf-8") as f:
+                f.write(f"# Persistent Learnings & Post-Mortems\n\nThis file serves as the collective memory for AI agents working in {project_name}. It documents systemic failures, complex bug fixes, and architectural \"gotchas\" to prevent repetition of errors.\n\n## 0. Log Template\n> **[DATE]** | **[TASK_ID]** | **[TIER]**\n> - **Issue**: Brief description of what went wrong or the complexity faced.\n> - **Root Cause**: The foundational reason for the failure.\n> - **Solution**: The specific pattern or fix that worked.\n> - **Debt/Warning**: Future considerations or brittle areas discovered.\n\n---\n")
+        print("  [CREATE] Seeded empty LEARNINGS.md")
+
 
     # 4.5 Deploy AI Configuration Files
     deploy_ai_configs(source_root, target_root, project_name, selected_ais, dry_run)

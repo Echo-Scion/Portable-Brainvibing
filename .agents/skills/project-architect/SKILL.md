@@ -1,6 +1,6 @@
 ---
 name: project-architect
-description: "Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity (MVC) to prevent feature bloat. Proactively suggest this when the user describes a new idea or whenever a project lacks a clear roadmap, even if they don't explicitly ask for a \"blueprint.\""
+description: "Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity (MVC) to prevent feature bloat. Proactively suggest this when the user describes a new idea or whenever a project lacks a clear roadmap, even if they don't explicitly ask for a blueprint. Encompasses sub-domains: Architectural Standards, Startup Growth, Strategic Rigor, Structural Pillars."
 tags: ['agile backlog', 'planning', 'architecture', 'management', 'mobile', 'sprint planning', 'mobile strategy', 'native app architecture', 'offline-first', 'prd synthesis']
 portable: true
 ---
@@ -48,9 +48,7 @@ Load `rules/context-standards.md` to resolve rule conflicts correctly and map co
 
 ### 4. Surgical Canon Synthesis (Auto-Population)
 - **Mandate**: When running `/project-init` or scaffolding a new project from a `BLUEPRINT.md`, you MUST automatically generate local canons (e.g., `canons/local/ui_patterns.md`, `auth.md`, `state_management.md`).
-- **Aesthetic Anchor**: Read and adhere strictly to global canons, specifically `.agents/canons/global/03_aesthetics_and_design_system.md` for UI/UX concepts.
-- **Conceptual Density**: Use "High-Density Conceptual Language" (e.g., "Biological Zen", "Resonant Navy"). Reject generic boilerplate in favor of premium, philosophical, and context-aware guidelines.
-
+- **Aesthetic Anchor**: Read and adhere strictly to global canons or available UX/UI skills (like `ui-finish`) for UI/UX concepts. 
 ## 📋 Technical Reference (Platforms)
 - **iOS**: SwiftUI, Combine, Core Data.
 - **Android**: Jetpack Compose, Kotlin, Room, WorkManager.

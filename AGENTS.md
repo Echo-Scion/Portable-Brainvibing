@@ -1,64 +1,64 @@
-# AGENTS: The AI-Surgical Ecosystem Simulation (.agents)
+﻿# AGENTS: The `.agents` Ecosystem Guide (Beginner-Friendly Edition)
 
-Welcome to the **Portable AI-Surgical Infrastructure**. This document catalogs the core components, skills, and workflows of the `.agents` ecosystem.
+Welcome to the **Portable Brainvibing AI-Surgical Infrastructure**. Think of the `.agents` folder and its contents as the "brain," "playbook," and "toolbox" for your AI assistant.
 
-> [!TIP]
-> This is a **Universal Guide** reflecting the actual structure of the `portable brainvibing/.agents` directory.
+While software development can often seem like magic, this ecosystem brings order, safety, and predictability to how the AI operates. This document is designed to help you, even as a non-technical reader, understand exactly how this system is structured, how it keeps your code safe, and how it organizes complex tasks.
 
 ---
 
 ## 🏛️ CANONS (`canons/`)
-Architectural constitutions that define the project's foundational laws. These are the non-negotiable architectural truths that agents must respect.
-- **Global Architecture** (`global/core-architecture.md`): The overarching system patterns, state management principles, and structural boundaries.
-- **Automated Harnesses** (`global/harnesses/README.md`): Definitions for automated Action-Verifier execution loops.
-- **Microservices** (`micro/README.md`): Rules governing edge-functions, lightweight service limits, and inter-service communication.
+**The Constitution of the Project**
+
+These are the absolute, unchangeable laws regarding the software's architecture. They define the structural foundation of your application. The AI is strictly forbidden from violating these foundational rules.
+- **Global Architecture** (`global/core-architecture.md`): The overarching rules for how different parts of your application talk to each other. It dictates state management principles and structural boundaries.
+- **Automated Harnesses** (`global/harnesses/README.md`): The definitions for automated Action-Verifier execution loops, allowing the AI to safely test its own work.
+- **Microservices** (`micro/README.md`): The rules for building small, independent pieces of logic (like edge functions) safely without tightly coupling them.
 
 ## 🛡️ RULES (`rules/`)
-Absolute behavioral constraints and security protocols. This folder acts as the "Pre-Execution Firewall" for the AI, ensuring safe and standardized operations.
-- **Cognitive & Constraint Rules**: 
-  - `core-guardrails.md` & `reasoning-standards.md`: Defines how the agent must think, plan, and execute (e.g., "Anti-Affirmation Mandate").
-  - `tier-execution-protocol.md` & `context-standards.md`: Dictates context limits and whether a task uses Budget (fast) or Premium (deep) reasoning.
-- **Engineering Standards**: 
-  - `flutter-standards.md` & `web.md`: Strict coding paradigms for mobile and web front-ends.
-  - `performance-optimization.md`: Mandatory performance and efficiency checks.
-- **Security & Workflow**: 
-  - `security-guardrails.md`: Zero-trust security enforcement.
-  - `git-workflow.md` & `interaction-protocols.md`: How the AI handles version control and communicates with the human user.
-  - `api-connector-protocols.md` & `autoharness-protocol.md`: Strict rules for API design and automated self-testing.
+**Traffic Lights & Security Guards**
+
+This folder acts as a "Pre-Execution Firewall." It contains strict restrictions and obligations to ensure the AI works safely, cleanly, and professionally.
+- **Cognitive & Constraint Rules**: Forces the AI to think critically rather than just being a yes-man. For example, the *Anti-Affirmation Mandate* prevents the AI from blindly agreeing with bad ideas; it must always look for flaws and edge cases first.
+- **Engineering Standards**: Strict coding paradigms (`flutter-standards.md`, `web.md`) that ensure clean, maintainable, and highly performant code tailored to specific platforms like mobile or web.
+- **Security & Workflow**: Ensures the AI never leaks passwords or API keys (`security-guardrails.md`), enforces "zero-trust" security, and defines how it should safely manage Git version control (`git-workflow.md`).
 
 ## 🎯 SKILLS (`skills/`)
-Specialized personas (roles) ready for activation. An agent channels these skills to gain deep, domain-specific expertise based on the task.
-- **`api-contract`**: Enforces strict Data Transfer Objects (DTOs), Zod schemas, and OpenAPI specs. Prevents malformed data from entering business logic.
-- **`backend-orchestrator`**: The master architect for database schemas, PostgreSQL RLS, caching layers, and enterprise backend patterns.
-- **`cost-optimizer`**: Monitors token usage, clips redundant context, and routes tasks to cheaper models without losing fidelity.
-- **`data-logic`**: Handles immutable data structures, pipeline transformations, and complex state management logic.
-- **`frontend-experience`**: Fixes layout bugs, optimizes component hierarchies, and ensures pixel-perfect UI/UX flow.
-- **`integrity-sentinel`**: The overarching gatekeeper for QA, system audits, STRIDE threat modeling, and zero-trust verification.
-- **`meta-agent-admin`**: Manages the `.agents` ecosystem itself—defining new rules, updating the catalog, and maintaining AI documentation.
-- **`project-architect`**: Synthesizes rough human ideas into concrete technical blueprints (PRDs), prioritizing Minimum Viable Complexity (MVC).
-- **`project-operator`**: Manages CI/CD pipelines, repository rebasing, tech debt cleanup, and handles "chaos" debugging loops.
-- **`saas-strategist`**: Analyzes business viability, monetization logic, and growth integration (e.g., Stripe, analytics).
-- **`ui-finish`**: Applies premium visual polish ("Liquid Glass" aesthetics), micro-animations, and perfect empty/loading states.
+**The AI's Professional Hats**
+
+Depending on the task you assign, the AI can switch "personas" or roles. Each skill folder equips the AI with deep, domain-specific expertise, ensuring it approaches problems like a seasoned specialist rather than a generic bot.
+- **`project-architect`**: The Planner. Turns your rough ideas into concrete, step-by-step technical blueprints (PRDs), prioritizing Minimum Viable Complexity.
+- **`backend-orchestrator`**: The Engine Builder. Handles databases, server infrastructure, data pipelines, caching layers, and system performance.
+- **`frontend-experience`**: The UI/UX Polisher. Ensures the application looks beautiful, is user-friendly, and has zero visual layout bugs.
+- **`integrity-sentinel`**: The Quality Assurance Inspector. Hunts for security vulnerabilities, performs system audits, and finds bugs before the app goes public.
+- **`saas-strategist`**: The Business Advisor. Helps integrate payment gateways (like Stripe), subscription models, and strategies to grow your user base.
+- **`data-logic`**: The Data Manager. Handles complex state management, data pipelines, and ensures data remains predictable and immutable.
+- **`project-operator`**: The DevOps Engineer. Manages code releases, cleans up technical debt, and handles complicated repository deployments.
+- **`api-contract`**: The Bouncer. Defines strict data contracts (like Zod schemas) so that no malformed or dangerous data ever reaches your business logic.
+- **`meta-agent-admin`**: The Librarian. Manages the `.agents` ecosystem itself, defining new rules and maintaining the AI's own documentation.
 
 ## 🔄 WORKFLOWS (`workflows/`)
-Automated, repeatable step-by-step sequences for specific development lifecycles. Agents execute these sequentially to yield predictable results.
-- **Project Setup**:
-  - `project-init.md`: Bootstraps documentation (BLUEPRINT, ROADMAP) and scaffolds the initial repository layer.
-- **Development Loops**:
-  - `strict-tdd.md`: Forces a Red-Green-Refactor test-driven development cycle.
-  - `app-builder.md`: Rapid feature scaffolding and integration sequence.
-  - `flutter-debug.md`: Specialized sequence for resolving deep Flutter/Dart environment or widget errors.
-- **Maintenance & Release**:
-  - `context-prune.md`: Compresses memory and clears old context to save LLM tokens.
-  - `code-review.md`: Deep architectural review of arbitrary Feature PRs or module changes.
-  - `prod-deploy.md` & `full-lifecycle.md`: CI/CD pipelines and end-to-end task completion checklists.
+**Standard Operating Procedures (SOPs)**
 
-## ⚙️ SCRIPTS, TEMPLATES & EVALS
-The mechanical tooling that supports the AI ecosystem's memory, file generation, and systemic operation.
-- **`scripts/`**: Python utilities for ecosystem maintenance. Includes tools to build knowledge graphs (`build_graph.py`), compress prompt memory (`compress_memory.py`), and synchronize the workspace (`verify_agents.py`, `update_catalog.py`).
-- **`templates/`**: Standardized Markdown scaffolds. Includes project-level files (`BLUEPRINT`, `ARCHITECTURE`, `ROADMAP`), AI prompt integrations (`CLAUDE`, `COPILOT`, `GEMINI`), and specialized SaaS start-up documents.
-- **`evals/` & `metrics/`**: System auditing tools (`audit_aesthetics.py`) and JSON-based benchmarks to deterministically test an agent's compliance and behavioral drift over time.
-- **`docs/`**: Human-readable deployment manuals (`MULTI_AI_DEPLOYMENT.md`) and comprehensive guides on how to combine these agents effectively (`workflows_guide.md`).
+These are step-by-step guidebooks that prevent the AI from doing things randomly. They provide a structured routine for common software development cycles:
+- **Project Setup** (`project-init.md`): Explains exactly how to start a brand new project from scratch, including scaffolding the initial directories and creating roadmaps.
+- **Development Loops** (`strict-tdd.md`, `app-builder.md`, `flutter-debug.md`): Logical sequences for test-driven development (forcing the AI to write tests before building features) or rapidly scaffolding components.
+- **Maintenance & Release** (`prod-deploy.md`, `context-prune.md`): Safe, checklist-driven procedures for releasing the application to live servers and cleaning up the AI's temporary memory to save on API token costs.
+
+## ⚙️ MECHANICAL TOOLING (SCRIPTS, TEMPLATES & EVALS)
+**The Essential Utilities**
+
+These are additional tools and templates used behind the scenes to make the AI's daily work easier, faster, and more consistent:
+- **`scripts/`**: Small automated Python utilities used to compress the AI's memory, synchronize the workspace, build knowledge graphs, and check overall system health.
+- **`templates/`**: Standardized molds (like project blueprints or architecture plans) ensuring that every document generated by the AI has a clean, identical, and professional format.
+- **`evals/` & `docs/`**: Measurement tools to benchmark how smart and compliant the AI is over time, alongside human-readable deployment manuals for developers.
 
 ---
-*Portable AI-Surgical Infrastructure - Standard Protocol 2026*
+
+## Changelog
+
+| Version | Date | Notes |
+| :--- | :--- | :--- |
+| **1.2.0** | 2026-03-26 | Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders |
+| **1.1.0** | 2026-03-20 | Unified Logic: Established a clear 4-pillar structure and the 82-file SaaS mapping protocol. |
+| **1.0.0** | 2026-03-19 | Clean Reset to V1.0.0 |
+| **0.9.0** | 2026-03-15 | Initial baseline |

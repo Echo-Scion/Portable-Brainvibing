@@ -56,7 +56,6 @@ Beyond rules and behaviors, this system uses **Canons** (`canons/`) to store the
 
 ## 5. Initialization
 - **Active Discovery**: At start, the agent checks for the `.agents/` folder in the project root.
-- **Sync Status**: The agent verifies if the foundation metadata (`catalog.json`) matches the local skill files.
 
 # 2. Context Economy (Surgical Munching)
 # Context7 Economical Usage
@@ -88,18 +87,18 @@ Beyond rules and behaviors, this system uses **Canons** (`canons/`) to store the
 Small/Budget Models hallucinate when fed too much raw code. If a model reads an 800-line file just to find one method, its context window gets "poisoned" by irrelevant noise, dropping reasoning accuracy drastically.
 
 ## 2. The Skeleton-First Law
-Jika agen beroperasi pada **[TIER: BUDGET]**, agen **DILARANG KERAS** menggunakan tool `read_file` pada file yang panjang (>200 baris) sebagai langkah pertama.
+If the agent is operating on **[TIER: BUDGET]**, the agent is **STRICTLY PROHIBITED** from using the `read_file` tool on long files (>200 lines) as a first step.
 
-**Urutan Wajib Navigasi File:**
-1. **Grep/Search Skeleton:** Gunakan `grep_search` untuk mencari nama fungsi, class, atau *header* file.
-   *Contoh:* `grep_search` dengan pola `class |function |interface ` untuk mendapatkan gambaran kerangka.
-2. **Targeted Read:** Setelah baris fungsi ditemukan, agen hanya boleh membaca blok spesifik tersebut (misal: baris 45-80) menggunakan rentang baris di `read_file`.
-3. **No Blind Full-Reads:** Jika tertangkap melakukan *blind full-read* pada file besar, itu adalah pelanggaran protokol.
+**Mandatory File Navigation Order:**
+1. **Grep/Search Skeleton:** Use `grep_search` to find the target function name, class, or file *header*.
+   *Example:* `grep_search` with pattern `class |function |interface ` to get a structural overview.
+2. **Targeted Read:** Once the target line is found, the agent may ONLY read that specific block (e.g., lines 45-80) using the line range parameters in `read_file`.
+3. **No Blind Full-Reads:** If caught performing a *blind full-read* on a large file, it is considered a strict protocol violation.
 
 ## 3. Surgical Munching
-Hanya ekstrak apa yang benar-benar esensial untuk tugas tersebut. Jika tugas hanya mengubah warna *button*, dilarang membaca modul *Auth*.
+Only extract what is absolutely essential for the task. If the task is merely changing a *button* color, reading the *Auth* module is forbidden.
 
-*Aturan ini menjamin Model Kecil tetap tajam, fokus, dan tidak terdistraksi oleh variabel yang tidak relevan.*
+*This rule guarantees that Small Models remain sharp, focused, and undistracted by irrelevant variables.*
 
 
 ---
@@ -150,7 +149,7 @@ To prevent architectural drift and naming inconsistency, all files created withi
 - Standardized naming is the core driver for this rule to prevent naming inconsistency. Consistency is prioritized over brevity.
 
 ## 7. Surgical Context Eviction (Token Efficiency)
-- **Rule**: Upon completion of an atomic task (Tier-1+) or a major architectural phase, the agent MUST perform "Context Offloading."
+- **Rule**: Upon completion of ANY task (Tier-0+) or a major architectural phase, the agent MUST perform "Context Offloading."
 - **Protocol**:
     1. **Declare Closure**: State explicitly which phase or atomic task is now FINAL in the session handoff or task log.
     2. **Evict**: Explicitly declare in the handoff: "Phase [X] is FINAL. Sub-sequent sessions MUST NOT read raw files from [directory/path] unless a bug is explicitly found."

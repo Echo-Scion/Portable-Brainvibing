@@ -1,9 +1,9 @@
 ---
 name: backend-orchestrator
-description: "The overarching Architect for Backend Systems, Database Schema, and Performance Optimization."
+description: "The overarching Architect for Backend Systems, Database Schema, and Performance Optimization. Encompasses sub-domains: Backend Architect, Backend Optimizer, Cache Optimizer, Db Expert, Enterprise Patterns, Node Performance Tuning, Postgres Patterns."
 tags: ['backend', 'database', 'caching', 'optimization', 'architecture', 'api']
-metadata:
-  portable: true
+
+portable: true
 ---
 
 # Backend Orchestrator (Tier-S)
@@ -23,15 +23,35 @@ Do not guess implementation details. Determine the exact nature of the problem b
 - **db-expert** (`references/db-expert.md`)
   - *Purpose*: Use this skill for database schema design, SQL migrations, and Supabase RLS policies. It forbids destructive schema changes without a verified rollback plan. Proactively suggest this whenever the user mentions database changes, migrations, or data security.
 - **enterprise_patterns** (`references/enterprise_patterns.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
+  - *Purpose*: Contains domain execution details for Enterprise Patterns. Context: 1. **Model Layer**: DB Schema & TS Interfaces.
 - **node_performance_tuning** (`references/node_performance_tuning.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
+  - *Purpose*: Contains domain execution details for Node Performance Tuning. Context: - **Event Loop**: Avoid sync blocking (`JSON.parse` large strings, heavy Crypto).
 - **postgres_patterns** (`references/postgres_patterns.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
-- **tactical_engine** (`references/tactical_engine.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
+  - *Purpose*: Contains domain execution details for Postgres Patterns. Context: - **Instant Sync**: Use `supabase.from('table').stream(primaryKey: ['id']).listen(...)` for dynamic ...
 
 ## 🛡️ Core Principles
 - **Context Awareness**: Only load the specific reference file needed for the immediate sub-task to preserve model tokens and avoid hallucinations.
 - **Surgical Execution**: Do not attempt to solve domains outside the loaded reference. Always combine high-level orchestrator strategy with the deep-dive reference tactics you just read.
 - **Evidence-Based**: Ensure any architectural changes suggested are proven through tests or logging, acting as a gatekeeper against lazy implementations.
+
+
+## Refactored from tactical_engine.md
+
+# Cache Architecture Tactical Engine
+
+## 🏛️ Implementation Steps
+1. **Identify Cacheable Data**: Segregate read-heavy data. Compute hit/miss ratios.
+2. **Key Taxonomy Design**: Design strict namespaces (e.g., `user:ID:preferences`). Use content-hashes for complex filters.
+3. **Cache-Aside Pattern**: 
+   - Check Cache -> (If Hit) Return.
+   - (If Miss) Lock key -> Fetch DB -> Write Cache -> Unlock -> Return.
+4. **Invalidation Strategy**: Bind DB mutations via Webhooks/Service Layer to trigger `DEL` operations.
+
+## ⚠️ Detailed Troubleshooting
+| Error Symptom | Root Cause | Recovery / Solution |
+| Stale profile updates | Missing invalidation on `UPDATE` | Hook backend controller to `redis.del` after DB commit. |
+| DB CPU spikes (Stampede) | Thundering Herd scenario | Implement Mutex/Lock so only 1 request queries the DB. |
+| High Redis Memory (OOM) | Missing TTLs or LRU policy | Apply `allkeys-lru` and strictly enforce TTLs. |
+
+---
+*Preserved from Portable Brainvibing Infrastructure*

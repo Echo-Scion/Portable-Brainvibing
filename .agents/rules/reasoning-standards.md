@@ -46,7 +46,7 @@ activation: model decision
 # Reasoning Protocols
 
 ## 1. Tier-Matched Depth
-- **BUDGET**: Atomic tasks. **No Sequential Thinking.** Apply the Micro-Harness Protocol from `tier-execution-protocol.md` — Scope Confirmation → Constraint Declaration → Execute → Self-Verify. Fail fast on scope creep.
+- **BUDGET**: Atomic tasks. **No Sequential Thinking.** Apply the Micro-Harness Protocol from `tier-execution-protocol.md` — Scope Confirmation → Constraint Declaration → **Wait for [DO: YES]** → Execute → Self-Verify. Fail fast on scope creep.
 - **STANDARD**: Standard coding. One lightweight planning pass (approach in ≤3 sentences + file list + 1-2 risks) before execution. Parallel tool calls are mandatory.
 - **PREMIUM**: Architecture, deep debugging, audits. MUST use Sequential Thinking (minimum 3 steps). Find root causes, not symptoms.
 
@@ -101,7 +101,7 @@ When a task is implemented but not yet verified:
    - Does this violate any architectural boundaries (e.g., UI directly calling DB)?
 4. **Dynamic Harness Generation**: For the chosen attack vector, the Breaker must formulate a failing condition (or pseudo-unit test) using principles from `autoharness-protocol.md`.
 5. **Synthesis & Loop**: The Builder must then modify the original code until the Breaker's attack is neutralized.
-6. **Auto-Abort (Post-Execution Circuit Breaker)**: Jika pada fase Sintesis ini perbaikan terus gagal memuaskan *Breaker* setelah **3 kali percobaan berturut-turut** (karena kemampuan *Small Model* yang terbatas), agen **WAJIB AUTO-ABORT**. Keluarkan pesan `[CIRCUIT BREAKER: 3X FAIL - TUGAS TERLALU BERAT. HARAP GANTI KE MODEL PREMIUM DAN LANJUTKAN DARI TITIK INI]`. Jangan mencoba menebak-nebak (halusinasi) lebih lanjut.
+6. **Auto-Abort (Post-Execution Circuit Breaker)**: If during this Synthesis phase the fix continues to fail to satisfy the *Breaker* after **3 consecutive attempts** (due to the limitations of a *Small Model*), the agent **MUST AUTO-ABORT**. Output the message `[CIRCUIT BREAKER: 3X FAIL - TASK TOO HEAVY. PLEASE SWITCH TO A PREMIUM MODEL AND CONTINUE FROM THIS POINT]`. Do not attempt to guess (hallucinate) further.
 
 *Never blindly trust the first draft of the code. Always let the Twin attack it first.*
 

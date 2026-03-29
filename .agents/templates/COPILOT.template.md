@@ -15,25 +15,34 @@
 - `[DONT]` Execute `rm -rf` or `Remove-Item -Recurse` without explicit confirmation.
 - `[DONT]` Modify `GEMINI.md` or `rules/` without a Binary Oratory pre-flight.
 
-## 3. SKILL ROUTING TABLE
-> Full routing in `.agents/workspace_map.md` or `catalog.json`.
+## 3. MASTER ROUTING INDEX
 
+### 3.1 CORE RULES (Constraints)
+| Focus Area | Rule File to Load |
+| :--- | :--- |
+| **Behavior & Logic** | `rules/core-guardrails.md`, `rules/reasoning-standards.md` |
+| **Tier & Context** | `rules/tier-execution-protocol.md`, `rules/context-standards.md` |
+| **Coding Limits** | `rules/autoharness-protocol.md`, `rules/flutter-standards.md` |
+| **Security & Git** | `rules/security-guardrails.md`, `rules/git-workflow.md` |
+
+### 3.2 DOMAIN CANONS (Architecture)
+| Domain | Canon Path | Purpose |
+| :--- | :--- | :--- |
+| **System-wide** | `canons/global/core-architecture.md` | Non-negotiable global software patterns |
+| **AI Harness** | `canons/global/harnesses/README.md` | Automated Action-Verifier execution loops |
+| **Microservices**| `canons/micro/README.md` | Edge-functions & lightweight service limits |
+
+### 3.3 SKILL ORCHESTRATORS (Actions)
 | Task involves... | Invoke skill |
 | :--- | :--- |
-| Architecture, blueprints, PRD | `project-architect` |
-| AI agent loops, multi-agent | `agent-architect` |
-| Flutter widget bug, layout | `flutter-debugger` |
-| Database schema, RLS, migration | `db-expert` |
-| API endpoint, data contracts | `api-contract` |
-| Flutter UI polish, Liquid Glass | `ui-finish` |
-| Security, QA, audits, eval | `integrity-sentinel` |
-| Node.js bottlenecks, backend | `backend-optimizer` |
-| CI/CD, deploy, prod readiness | `release-manager` |
-| New skills, `.agents/` system | `system-admin` |
-| README, docs, tutorials | `tech-writer` |
-| Context pruning, token economy | `context-manager` |
-| SaaS idea validation, viability | `saas-viability` |
-| SaaS growth, acquisition, retention | `saas-growth` |
+| SaaS validation, business logic, growth, monetization | `saas-strategist` |
+| System architecture, blueprints, technical APIs, database, backend | `backend-orchestrator` |
+| Mobile/Web UI, UX flow, layout debugging, Liquid Glass | `frontend-experience` |
+| Modifying `.agents/` rules, doc writing, knowledge ingestion | `meta-agent-admin` |
+| Release pipeline, CI/CD, relocations, tech debt, bug chaos | `project-operator` |
+| Strict API type-safety, zod schemas, swagger | `api-contract` |
+| State immutability, pipeline schemas, strict data objects | `data-logic` |
+| Core security bounding, QA, evaluations, STRIDE limits | `integrity-sentinel` |
 
 ## 4. THREE-TIER REASONING MODEL
 - **BUDGET**: Atomic, single-file, deterministic (use Haiku/fast model)
@@ -56,33 +65,25 @@ context/
 Core files: `BLUEPRINT.md`, `ROADMAP.md`, `STYLE_GUIDE.md`, `ARCHITECTURE.md`
 
 ## 6. SURGICAL MUNCHING (Context Economy)
-- Read only what's needed (lazy-load from `workspace_map.md`)
 - Use `grep` on `.agents/rules/` for domain-specific guidance
-- Check `.agents/LEARNINGS.md` before PREMIUM tasks
-- Read `session_handoff.md` Section 4 before script execution
 
 ## 7. CRITICAL FILES
 
 ### Always Read First
 - `.agents/rules/core-guardrails.md` - Core protocols, reasoning standards
-- `.agents/workspace_map.md` - Orchestration entry point
 - `GEMINI.md` - Workspace mandates (if exists)
 
 ### Never Modify Without Binary Oratory
 - `GEMINI.md`
 - Anything in `.agents/rules/`
-- `workspace_map.md`
 
 ## 8. SYNCHRONIZATION SCRIPTS
 
 Located in `.agents/scripts/`:
 
 | Script | Purpose | When to Use |
-|--------|---------|-------------|
 | `verify_agents.py` | Structural integrity check | Before publishing changes |
-| `update_catalog.py` | Rebuild catalog.json index | After adding/removing skills |
 | `build_graph.py` | Update knowledge graph | After structural changes |
-| `publish_agents.py` | Sync to portable brainvibing | Before git push |
 | `deploy_foundation.py` | Deploy foundation to project | Setting up new project |
 
 Run verification before any .agents/ changes:

@@ -1,6 +1,6 @@
 ---
 name: data-logic
-description: "Employ this skill to design immutable data models, DTOs, and complex transformation pipelines. It ensures data integrity by enforcing immutability by default. Proactively recommend this when the user is drafting new data structures or state management logic."
+description: "Employ this skill to design immutable data models, DTOs, and complex transformation pipelines. It ensures data integrity by enforcing immutability by default. Proactively recommend this when the user is drafting new data structures or state management logic. Encompasses sub-domains: Flutter Logic Patterns."
 tags: ['freezed', 'immutable modeling', 'logic', 'flutter', 'reactive state', 'riverpod']
 portable: true
 ---

@@ -1,9 +1,9 @@
 ---
 name: meta-agent-admin
-description: "Governs the AI agent ecosystem, system evolution, context routing, and documentation standards."
+description: "Governs the AI agent ecosystem, system evolution, context routing, and documentation standards. Encompasses sub-domains: Agent Architect, Agent Evolution, Context Manager, Knowledge, Loop Design Patterns, System Admin, Tech Writer."
 tags: ['agents', 'system', 'documentation', 'context', 'prompt-engineering', 'infrastructure']
-metadata:
-  portable: true
+
+portable: true
 ---
 
 # Meta Agent Admin (Tier-S)
@@ -19,27 +19,45 @@ Do not guess implementation details. Determine the exact nature of the problem b
 - **agent-evolution** (`references/agent-evolution.md`)
   - *Purpose*: Use this skill to promote recurring successful patterns into permanent Rules, Skills, or Workflows. It ensures the system learns from its successes. Proactively suggest this after you have successfully completed several similar tasks using a consistent approach.
 - **context-manager** (`references/context-manager.md`)
-  - *Purpose*: Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses \"Surgical Munching\" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task.
-- **context-manager_tactical_engine** (`references/context-manager_tactical_engine.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
+  - *Purpose*: Activate this skill for zero-waste codebase navigation and deep symbolic mapping. It uses \"Surgical Munching\" to minimize token overhead by reading only what is necessary. Proactively suggest this at the start of any complex research or refactoring task. AT THE SAME TIME, you MUST also load `rules/context-standards.md`, `rules/performance-optimization.md` contextually.
 - **knowledge** (`references/knowledge.md`)
   - *Purpose*: Employ this skill for rapid domain expertise acquisition and documentation ingestion (Context7). It ensures all technical claims are cited from reliable sources. Proactively recommend this when encountering an unknown library, API, or legacy codebase.
-- **knowledge_tactical_engine** (`references/knowledge_tactical_engine.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
 - **loop_design_patterns** (`references/loop_design_patterns.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
+  - *Purpose*: Contains domain execution details for Loop Design Patterns. Context: - **Planning**: Breaking down the objective.
 - **system-admin** (`references/system-admin.md`)
-  - *Purpose*: Use this skill to manage, evolve, and maintain the .agents/ infrastructure itself. This includes creating new skills, updating rules, modifying workflows, managing the catalog, and running system scripts (update_catalog.py, build_graph.py, deploy_foundation.py). Proactively suggest this when the user wants to modify the agent system, add a new skill, or resolve structural drift in the foundation.
-- **system-admin_tactical_engine** (`references/system-admin_tactical_engine.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
-- **tactical_engine** (`references/tactical_engine.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
+  - *Purpose*: Use this skill to manage, evolve, and maintain the .agents/ infrastructure itself. This includes creating new skills, updating rules, modifying workflows, managing the catalog, and running system scripts (update_catalog.py, build_graph.py, deploy_foundation.py). Proactively suggest this when the user wants to modify the agent system, add a new skill, or resolve structural drift in the foundation. AT THE SAME TIME, you MUST also load `rules/context-standards.md` contextually.
 - **tech-writer** (`references/tech-writer.md`)
   - *Purpose*: Use this skill to generate developer documentation, READMEs, and technical tutorials. It ensures that project documentation matches current code behavior 1:1. Proactively suggest this immediately after a feature is merged or code is shipped.
-- **tech-writer_tactical_engine** (`references/tech-writer_tactical_engine.md`)
-  - *Purpose*: Refer to this file for specialized domain execution.
 
 ## 🛡️ Core Principles
 - **Context Awareness**: Only load the specific reference file needed for the immediate sub-task to preserve model tokens and avoid hallucinations.
 - **Surgical Execution**: Do not attempt to solve domains outside the loaded reference. Always combine high-level orchestrator strategy with the deep-dive reference tactics you just read.
 - **Evidence-Based**: Ensure any architectural changes suggested are proven through tests or logging, acting as a gatekeeper against lazy implementations.
+
+
+## Refactored from tactical_engine.md
+
+# Agent Evolution Tactical Engine
+
+## 🔄 The Evolution Cycle
+1. **Intake (Observation)**: Read `MEMORY.md` and session history for repetitive corrections.
+2. **Analysis (Reasoning)**: Compare local preferences against global rules. Identify 5+ step manual sequences.
+3. **Categorization (Decision Matrix)**:
+    - **Rules**: Constraints & Behavior. MUST comply with `antigravity.google` spec (in system-admin).
+    - **Skills**: Functional Capabilities & Tools. MUST comply with `agentskills.io` spec (in system-admin).
+    - **Workflows**: Sequential Procedures. MUST comply with `antigravity.google` spec (in system-admin).
+    - **Canons**: Identity, Standards & Static Truth. "What is the standard?" (e.g., "Auth Pattern").
+4. **Proposal (Synthesis)**: Present draft updates.
+
+## 🛠️ Key Capabilities
+- **Pattern Recognition**: Finding shared constraints across projects.
+- **Protocol Promotion**: Moving Maturity Level 2 (Local) to Level 0 (Global).
+- **Entropy Guard**: Identifying and consolidating overlapping rules or skills.
+
+## 🛡️ Evolution Safety Guardrails
+- **Binary Oratory**: NEVER modify foundation without explicit "YES".
+- **Rollback Registry**: ALWAYS log state before changes.
+- **Sanitization**: Prune secrets before promoting to Global Brain.
+
+---
+*Preserved from Portable Brainvibing Infrastructure*

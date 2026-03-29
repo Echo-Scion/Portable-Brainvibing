@@ -8,7 +8,6 @@ description: Guidelines for optimizing application performance and context token
 ## 1. The Lean Protocol (Efficiency Standards)
 - **Zero-Theater Policy**: For routine tasks (boilerplate, styling, fixes), skip long narrative explanations. Perform `replace` or `write_file` as soon as the strategy is understood.
 - **Tiered Context Ingestion (L0-L2)**:
-    - **L0 (Index-First)**: ALWAYS check `catalog.json` or `workspace_map.md` first to map dependencies.
     - **L1 (Header-Only)**: Use `read_file` with `end_line: 25` to see metadata/front matter before full ingestion.
     - **L2 (Surgical Read)**: Use `grep_search` with `context: 5` to read ONLY the relevant code block. Avoid full file reads unless refactoring the entire file.
 - **Turn Minimization**: Prioritize parallel tool calls. Aim for **"One-Turn Execution"** for simple and clear directives.

@@ -25,11 +25,10 @@ trigger: model_decision
 
 ## 1. The Three Tiers (Calibrated)
 
-| Tier | Label | Practical Scope | When to Use |
-| :--- | :--- | :--- | :--- |
-| **Tier 0** | `BUDGET` | **Atomic / Stylistic** | Documentation, log updates, formatting, minor CSS/styling, single-file bug fixes (localized logic), basic boilerplate generation, basic unit test additions. |
-| **Tier 1** | `STANDARD` | **Integrative / Feature** | Multi-file feature implementation, domain-specific state management, complex bug fixes spanning multiple modules, registry maintenance (`catalog.json`, `workspace_map.md`). |
-| **Tier 2** | `PREMIUM` | **Architectural / Risky** | Global system refactors, security/Auth/RLS logic changes, high-risk infrastructure updates, deep performance bottleneck resolution. |
+| Tier | Label | Required Model Allocation | Practical Scope | When to Use |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tier 0** | `BUDGET` | Claude Haiku / Gemini Flash | **Atomic / Stylistic** | Documentation, log updates, formatting, minor CSS/styling, single-file bug fixes (localized logic), basic boilerplate generation, basic unit test additions. |
+| **Tier 2** | `PREMIUM` | Claude Opus / Gemini Pro High | **Architectural / Risky** | Global system refactors, security/Auth/RLS logic changes, high-risk infrastructure updates, deep performance bottleneck resolution. |
 
 ## 2. Infrastructure Special Note
 - **Don't Over-Classify**: Modifying files inside `.agents/` is NOT automatically `PREMIUM`.
@@ -37,12 +36,12 @@ trigger: model_decision
 - If the change modifies the *logic* of how agents operate (e.g., changing `core-guardrails.md`), use `PREMIUM`.
 
 ## 3. Mandatory Declaration & Manual Routing (Anigravity IDE)
-- Karena **Anigravity IDE** tidak memiliki fitur *auto-routing* model, pergantian model harus dilakukan secara **MANUAL** oleh pengguna.
-- Sebelum memulai *Tier-1+ task* atau mengeksekusi *tools* manipulasi file, agen **WAJIB** membuat Rencana Implementasi singkat dan mendeklarasikan: `[TIER: STANDARD]` atau `[TIER: PREMIUM]` beserta model yang direkomendasikan.
-- **Auto-Abort Pre-Execution (Safety Gate)**: Jika agen saat ini berjalan di model *BUDGET/Small* tapi hasil kalkulasi deterministik menuntut *PREMIUM*, agen harusk mengeluarkan sinyal `[ABORT: TIER MISMATCH - HARAP GANTI MODEL LALU ULANGI PROMPT]`.
-- **In IDE/Anigravity mode**: Tuliskan ini di bagian atas `implementation_plan.md` atau pesan *Binary Oratory*. Setelah menuliskannya, **BERHENTILAH**. Jangan jalankan perbaikan file/tools apapun. Tunggu konfirmasi `[DO: YES]` (jika model sudah memadai) atau *Retry* (setelah ganti model).
-- Ini memberi kesempatan kepada pengguna untuk **mengganti Chat Agent (Model) di dropdown IDE** (misalnya pindah dari Gemini Flash ke Gemini Pro/Claude Sonnet) khusus untuk eksekusi tersebut.
-- **BUDGET tasks** DO NOT require Binary Oratory pre-flight. Dapat dieksekusi langsung jika model yang aktif saat ini sudah memadai.
+- Because **Anigravity IDE** does not have an *auto-routing* feature, switching models must be done **MANUALLY** by the user.
+- Sebelum mengeksekusi **TUGAS APAPUN** (Tier 0, 1, 2) yang memanipulasi file/sistem, agent **WAJIB** membuat Implementation Plan / pesan Binary Oratory dan mendeklarasikan: `[TIER: <NAMA TIER>]` beserta **Required Model Allocation**.
+- **Auto-Abort Pre-Execution (Safety Gate)**: If the agent is currently running on a *BUDGET/Small* model but the deterministic calculation demands *PREMIUM*, the agent must emit the signal `[ABORT: TIER MISMATCH - PLEASE SWITCH MODEL AND REPEAT PROMPT]`.
+- **In IDE/Anigravity mode**: Write this at the top of `implementation_plan.md` atau pesan *Binary Oratory*. Setelah menulisnya, **BERHENTI SEPENUHNYA (STOP COMPLETELY)**. Jangan jalankan tool perbaikan file apa pun. Tunggu konfirmasi `[DO: YES]` (jika model yang aktif saat ini dirasa cukup) atau *Retry* (setelah mengganti model).
+- This gives the user the opportunity to **change the Chat Agent (Model) in the IDE dropdown** (misalnya pindah dari Claude Haiku ke Claude Sonnet / Gemini Pro) spesifik untuk eksekusi tersebut.
+- **Zero Exemptions**: Tugas `BUDGET` sekalipun TIDAK BOLEH dieksekusi secara langsung. Mereka wajib melewati gerbang *pre-flight* ini agar *user* selalu memegang kendali absolut atas *routing* model.
 
 ## 4. Forced Intelligence Per Tier (Capability Harness)
 
@@ -52,8 +51,9 @@ The following constraints are **mandatory per tier**, not optional. They prevent
 Even simple tasks MUST satisfy the following Lightweight Validation Gate before output is accepted:
 1. **Scope Confirmation** (1 sentence): State what the task is in plain English. No more, no less.
 2. **Constraint Declaration** (1-3 bullets): What CANNOT be changed or broken. Serves as a self-injected guardrail.
-3. **Zero-Theater Execution**: Perform the action immediately. No preamble, no narrative justification.
-4. **Self-Verification Micro-Check**: After execution, confirm the output satisfies the original scope (e.g., "File updated. Key: X changed to Y. No other lines modified.").
+3. **Mandatory Pre-Flight**: Output the Binary Oratory/Implementation Plan and **WAIT** for `[DO: YES]`. "Act first" is strictly prohibited.
+4. **Zero-Theater Execution**: After confirmation, perform the action immediately without narrative justification.
+5. **Self-Verification Micro-Check**: After execution, confirm the output satisfies the original scope (e.g., "File updated. Key: X changed to Y. No other lines modified.").
 - **Token Ceiling**: BUDGET tasks MUST NOT read more than 1 file in full. Use `grep_search` for targeted extraction.
 - **Prohibited Actions in BUDGET**: No Sequential Thinking calls, no multi-file reads, no architectural scope expansion.
 
@@ -103,28 +103,28 @@ For Tier-1+ execution, the pre-flight declaration MUST include:
 - `Escalation Check`: `PASS` or `FAIL`.
 
 ## 9. Small Model Superiority Suite
-Jika bertindak menggunakan **BUDGET Model**, agen **WAJIB** mematuhi triad arsitektur berikut untuk mencegah halusinasi:
-1. **Context Diet Protocol (`context-standards.md`)**: Wajib *Skeleton-First* (Grep/AST), dilarang *full-read* pada file yang panjang untuk menghindari *context poisoning*.
-2. **Bento-Box Workflow (`tier-execution-protocol.md`)**: Wajib *State-Machine* tunggal. Satu target, satu evaluasi. Dilarang melakukan manipulasi multi-file secara simultan.
-3. **Micro-Canons (`canons/micro/README.md`)**: Wajib membaca ringkasan domain (*framework rules*) sebelum mulai berpikir jika menangani teknologi spesifik, sebagai pengganti kelemahan *pre-trained data* dari model kecil.
+When operating as a **BUDGET Model**, the agent **MUST** adhere to the following architectural triad to prevent hallucinations:
+1. **Context Diet Protocol (`context-standards.md`)**: Mandatory *Skeleton-First* (Grep/AST), forbidden from *full-reads* on long files to avoid *context poisoning*.
+2. **Bento-Box Workflow (`tier-execution-protocol.md`)**: Mandatory single *State-Machine*. One target, one evaluation. Forbidden from manipulating multiple files simultaneously.
+3. **Micro-Canons (`canons/micro/README.md`)**: Mandatory reading of domain summaries (*framework rules*) before starting reasoning if handling specific technologies, to compensate for the weak *pre-trained data* of small models.
 
 # 2. Bento-Box Workflow (Anti-Multitasking for Budget Models)
 # Bento-Box Workflow (Anti-Multitasking)
 
 ## 1. The Core Problem
-Small models fail acutely when attempting *Zero-Shot Planning* for multiple tasks at once. Jika disuruh "Buat UI, sambungkan ke DB, dan buat tes", model akan mencampuradukkan logika, membuat sintaks yang terpotong, atau berhalusinasi parah.
+Small models fail acutely when attempting *Zero-Shot Planning* for multiple tasks at once. If told to "Create UI, connect to DB, and write tests", the model will mix up logic, create truncated syntax, or severely hallucinate.
 
-## 2. The Bento-Box Law (Satu Sekat, Satu Rasa)
-Ketika sebuah eksekusi dilakukan oleh **[TIER: BUDGET]**, *multitasking* secara statis adalah ILEGAL. Agen **WAJIB** menerapkan *State-Machine Berhenti Paksa*:
+## 2. The Bento-Box Law (One Compartment, One Flavor)
+When an execution is performed by **[TIER: BUDGET]**, static *multitasking* is ILLEGAL. The agent **MUST** apply a *Hard Pause State-Machine*: 
 
-1. **Aturan Satu Berkas:** Agen hanya boleh memanipulasi *satu* target per iterasi (Satu file dibuat/diedit).
-2. **Hard Pause (Berhenti Paksa):** Setelah satu aksi selesai, agen harus memicu evaluasi/lint/uji coba terhadap *satu* perubahan itu saja. 
-3. **No Batching:** Dilarang melempar 3 *tool calls* `create_file` atau `replace_string` secara paralel jika tugas tersebut memengaruhi arsitektur logika. (Kecuali sekadar refactor nama yang deterministik).
+1. **One-File Rule:** The agent may only manipulate *one* target per iteration (One file created/edited).
+2. **Hard Pause:** After one action is completed, the agent must trigger an evaluation/lint/test for that *single* change.
+3. **No Batching:** Do not fire 3 `create_file` or `replace_string` *tool calls* in parallel if the task affects architectural logic. (Except for deterministic renaming refactors).
 
-## 3. Eksekusi Sekuensial
-Bagi tugas menjadi sekat-sekat isolasi (Bento-Box):
-- Kotak 1: Buat *Skeleton Interface*. Selesai. Lapor.
-- Kotak 2: Isi *Business Logic*. Selesai. Lapor.
-- Kotak 3: Hubungkan ke *UI*. Selesai. Lapor.
+## 3. Sequential Execution
+Divide the task into isolated compartments (Bento-Box):
+- Box 1: Create *Skeleton Interface*. Done. Report.
+- Box 2: Fill *Business Logic*. Done. Report.
+- Box 3: Connect to *UI*. Done. Report.
 
-Setiap penyelesaian "Kotak" harus dipastikan bisa berjalan murni tanpa bergantung pada kotak yang belum dikerjakan. Jika model budget merasa tugasnya terlalu berlapis, wajib langsung memanggil mekanisme *Auto-Abort* dan meminta *Premium Model*.
+Each "Box" completion must be verified to run purely without depending on uncompleted boxes. If a budget model feels the task is too layered, it must immediately trigger the *Auto-Abort* mechanism and request a *Premium Model*.

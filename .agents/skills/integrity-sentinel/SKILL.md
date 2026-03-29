@@ -1,6 +1,6 @@
 ---
 name: integrity-sentinel
-description: "The overarching Gatekeeper for security, quality assurance, system audits, and evaluation. Replaces individual QA, security, audit, and eval skills. Proactively suggest this before deployment or when enforcing zero-trust principles."
+description: "The overarching Gatekeeper for security, quality assurance, system audits, and evaluation. Replaces individual QA, security, audit, and eval skills. Proactively suggest this before deployment or when enforcing zero-trust principles. Encompasses sub-domains: Audit, Eval, Flutter Testing Patterns, Load Testing Tactics, Qa, Security."
 tags: ['security', 'eval', 'threat modeling', 'audit', 'validation', 'qa', 'load testing', 'regression', 'testing']
 portable: true
 ---
@@ -17,7 +17,7 @@ Determine the nature of the validation required and load the corresponding refer
 2. **Quality & Reality Engineering (QA/TDD):**
    - Read `references/qa.md` and related `references/flutter_testing_patterns.md` / `references/load_testing_tactics.md`.
 3. **System Auditing & Architecture Integrity:**
-   - Read `references/audit.md` and related `references/tactical_engine_audit.md` (if conflicts exist, parse context).
+   - Read `references/audit.md` and related `references/audit.md` (if conflicts exist, parse context).
 4. **LLM Evaluation & Prompts:**
    - Read `references/eval.md`.
 

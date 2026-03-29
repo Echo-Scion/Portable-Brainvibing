@@ -28,9 +28,9 @@ This workflow consolidates the initialization logic for both "Root Projects" and
   
   I've analyzed the environment. To finalize our setup:
   1. Confirm project name & tagline?
-  2. [If Legacy]: Should I perform a Deep Audit to reverse-engineer specs from existing code?
-  3. [If Blueprint found]: Use '[filename]' as the Master Blueprint?
-  4. Core monetization & target persona?
+  2. What is the one absolute Vision Invariant (the problem you are solving that cannot change)?
+  3. Who is the exact target persona and who is the dominant Goliath/Competitor in this space?
+  4. What specific technology stack are we forcing (must include framework, database, and state management)?
   5. Density: Start with a Simple (Lean) or Professional SaaS (Startup) structure?
   ```
 - [ ] AI **WAITS** for user response.
@@ -39,15 +39,16 @@ This workflow consolidates the initialization logic for both "Root Projects" and
 
 ---
 
-## ⚡ STEP 0.3: THE DEEPENING (Logical Inference)
+## ⚡ STEP 0.3: THE DEEPENING (Architectural Synthesis)
 > [!IMPORTANT]
-> To ensure 100% success in Step 5 (Scaffolding), the AI MUST now expand the 5 user answers into the full 30+ data points required by the Blueprint.
+> To ensure survival in Phase 1 (Viability Gate), the AI MUST now expand the user answers into hard constraints. No generic filler allowed.
 
-- [ ] **Infer Identity**: Derive `etymology`, `node_identifier`, and `trinity_keywords` based on the project name and tagline.
-- [ ] **Experience Design**: Define the `first_30_seconds` (Wow moment) and `dual_lens_concept` based on the target persona.
-- [ ] **Risk Assessment**: Analyze the chosen tech stack against the features to identify `fragmentation_risk` and `scale_limitations`.
-- [ ] **Protocol Check**: Ensure all inferences align with `canons/global/core-architecture.md`.
-- [ ] **Presentation**: AI presents a "Conceptual Summary" to the user: *"I've expanded your brief into a full architectural concept. I've identified [Risk X] and designed the [Wow Moment Y]. Proceed to scaffolding?"*
+- [ ] **Lock the Vision**: Isolate the Vision Invariant from Q2. This will carry over to the Viability Gate.
+- [ ] **Synthesize Local Canons (The Physics)**: 
+    - Deduce specific rules based on the tech stack from Q4 (e.g., if Next.js App Router, enforce server components; if Flutter, enforce chosen state management).
+    - AI **MUST** write these specific technical rules into `.agents/canons/local/architecture.md` and `.agents/canons/local/ui_state.md`.
+- [ ] **The "Anti-Feature" Mandate**: AI must deduce and list 3 "Anti-Features" (things this app will explicitly NOT do to survive against the Goliath mentioned in Q3).
+- [ ] **Presentation**: AI presents a "Harsh Conceptual Summary" to the user: *"I've locked your Vision Invariant. To beat [Competitor], we will strictly NOT build [Anti-Feature]. Proceed to scaffolding?"*
 - [ ] AI **WAITS** for user confirmation.
 
 ---
@@ -70,7 +71,6 @@ This workflow consolidates the initialization logic for both "Root Projects" and
 ## 3. INITIALIZE LOCAL PROJECT BRAIN
 - [ ] **Local Evolution (MANDATORY)**: For project-specific rules or skills, **AI MUST** create folders and files with the `local-` prefix within the existing `rules/` and `skills/` directories.
     - *Rationale*: This prevents project-specific logic from being synced back to the global Foundation via `sync_to_foundation.py`.
-- [ ] **Sync Index**: Run `python .agents/scripts/update_catalog.py` to ensure the local `catalog.json` reflects all items.
 
 ---
 
@@ -149,9 +149,9 @@ This workflow consolidates the initialization logic for both "Root Projects" and
   - Fill the `Objective` with: "Blueprint & PRD Completion for [Project Name]".
 
 ---
-
-## 9. REGISTRATION & VERIFICATION
-- [ ] **Workspace Map**: Update `.agents/workspace_map.md`.
+HANDOFF
+- [ ] **Crucial Handoff to Lifecycle**: AI strictly states: *"Initial scaffolding complete. The project is raw. You MUST now command me to run `/full-lifecycle` to enter PHASE 1: Viability & Strategic Blueprint."*
+- [ ] DO NOT proceed to feature building until the Viability Gate in `/full-lifecycle` is passed
 
 ---
 

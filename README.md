@@ -7,113 +7,198 @@
 ![Context](https://img.shields.io/badge/Context-L0--L2%20Optimized-blue?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-This infrastructure is a specialized, plug-and-play intelligence layer designed to reside within your project as the `.agents` directory. It provides surgical architectural precision for **Flutter** and **Node.js** projects through strict context management, automated governance, and specialized agent personas. Built to the [AgentSkills.io](https://agentskills.io/) standard.
+> ⚡ **PRIMARY TARGET**: **Flutter** projects with **Antigravity IDE** (AI-native environment).  
+> **Secondary**: Node.js backends, cross-platform hybrid apps.  
+> **Not Recommended**: CLI-only projects, non-Dart ecosystems without MCP integration.
+
+---
+
+## 1. What This Is
+
+This infrastructure is a specialized, plug-and-play intelligence layer designed to reside within your project as the `.agents` directory. It provides surgical architectural precision for **Flutter** and **Node.js** projects through:
+
+* **Strict context management** — AI logic, rules, and skills are isolated from your source code for portability.
+* **Automated governance** — Identifies risks, expands documentation, and proposes industry-standard features during initialization.
+* **Specialized agent personas** — 11 dedicated AI skills (e.g., `backend-orchestrator`, `ui-finish`) ready for activation.
+
+Built to the [AgentSkills.io](https://agentskills.io/) standard. **Native for Antigravity IDE** (AI-native development environments).
 
 > [!WARNING]
 > **State-of-the-Art / Experimental**: This infrastructure is 100% AI-engineered. While it represents the frontier of agentic workflows, its mechanics are currently being stress-tested in diverse production environments.
 
 ---
 
-## 🎨 1. Philosophy: Surgical Precision Meets Human Intent
-We believe that AI agents shouldn't just "write code"—they should act as **Proactive Technical Consultants**.
+## 2. Who This Is For
 
-*   **Cognitive Decoupling**: AI logic, rules, and skills are isolated from your source code. Your "Intelligence" is now portable.
-*   **Proactive Architecture**: Instead of waiting for prompts, the system identifies risks, expands on documentation, and proposes industry-standard features during initialization.
-*   **Surgical Evolution**: Every project expansion is precise. A "Lean" prototype evolves into a full "Enterprise" structure surgically, file-by-file, maintaining perfect architectural integrity.
-
-## 📦 2. The Ecosystem at a Glance
-The `.agents` folder is organized into foundational pillars:
-
-*   **🏛️ Canons (L1)**: The "Constitution" — defines architecture and harnesses.
-*   **🛡️ Rules (L0)**: The "How" — absolute behavioral constraints and security protocols.
-*   **🎯 Skills (L2)**: The "Who" — 11 specialized personas (e.g., `backend-orchestrator`, `ui-finish`) ready for activation.
-*   **🔄 Workflows**: The "Muscles" — automated, repeatable sequences for development and deployment.
-*   **⚙️ Scripts & Templates**: The "Tools" — deterministic memory scaffolding, system auditing (`evals`), and sync automations.
-
-## 🛠️ 3. Integrated Infrastructure (MCP)
-Powered by the **Model Context Protocol (MCP)**, giving your AI agents direct "hands" to manipulate the environment:
-
-*   **Dart & Flutter**: Deep widget tree inspection via the Dart Tooling Daemon (DTD).
-*   **Supabase/Postgres**: Direct schema management, RLS auditing, and migrations.
-*   **Context7**: Just-in-time documentation ingestion for frontier libraries.
-
-## ✨ 4. Agentic Mechanics (Tech Tags)
-High-precision anchors that ensure efficiency and prevent "Logic Drift":
-
-| Tag | Mechanism | Innovation |
-| :--- | :--- | :--- |
-| **🛡️ Token Shield** | Block-Level Ingestion | Minimizes token overhead by avoiding full-file reads. |
-| **📐 Vibecode Limit** | 500-Line Atomic Cap | Prevents context loss by enforcing modular file structures. |
-| **🕸️ Neural Linkage** | Knowledge Graph (`.json`) | Maps symbolic relationships between files, enabling AI to predict impact before refactoring. |
-| **✨ Binary Oratory** | Execution Firewall | Mandatory [DO]/[DONT] declarations before any filesystem mutation. |
-| **📈 Agentic Evolution** | Habit Promotion | Automatically converts repetitive corrections into permanent rules. |
-| **🧠 Session Handoff** | State Recovery | Forces the AI to resume from the last known milestone on every boot. |
-| **🔍 Harmony Sentinel** | Integrity Auditing | Automated mechanical validation of architectural links. |
+This system is built for teams that need:
+* **Proactive Technical Consultants**: AI agents that don't just "write code" but identify risks and propose architecture *before* you ask.
+* **Portable Intelligence**: Your AI logic moves with your project, independent of framework changes.
+* **Surgical Evolution**: Project expansions that scale from "Lean" prototypes to full "Enterprise" structures while maintaining perfect architectural integrity.
 
 ---
 
-## 🚀 5. Quick Start: Deploying Your "Outer Brain"
+## 3. Scope and Non-Goals
 
-Follow these steps to activate the infrastructure in any project:
+### ✅ What This Does
+* Provides 11 core skill routers (backend, frontend, API, security, SaaS strategy, etc.).
+* Enforces binary execution gates (Binary Oratory) for safe filesystem mutations.
+* Integrates with MCP for Flutter widget inspection, Postgres schema management, and documentation ingestion.
+* Automatically promotes repetitive patterns into permanent rules.
 
-### Step 1: Ingestion
-Open your AI Agent (Gemini CLI or compatible) and run:
-```markdown
-Read .agents/DEPLOY_ME.md from [SourcePath] and deploy the foundation here.
-```
+### ❌ What This Does NOT Do
+* Replace your source code or project structure.
+* Generate code without explicit user confirmation.
+* Override domain-specific project decisions.
+* Work outside AI-agent environments (CLI-only projects are not supported).
 
-### Step 2: Initialization
-Once the folder is present, trigger the smart initialization:
+---
+
+## 4. Prerequisites
+
+**Required:**
+* **Antigravity IDE** or compatible AI-native environment (VS Code Copilot, Gemini CLI, or similar).
+* **Flutter SDK ≥ 3.0** (primary target).
+* **Dart ≥ 3.0** (ships with Flutter).
+* **Python ≥ 3.9** (for `.agents/scripts/` utilities).
+* **Node.js ≥ 18** (optional, for advanced scripting).
+* **Git** (recommended for rollbacks).
+
+**Optional but recommended:**
+* **Supabase/Postgres** (if using RLS rules from `integrity-sentinel`).
+
+**Not supported:**
+* CLI-only projects (no UI/widget context).
+* Non-Dart mobile frameworks (React Native, Kotlin).
+* Projects without an AI assistant integrated.
+
+---
+
+## 5. Quick Start
+
+**The automation handles 95% of setup. You do 3 things:**
+
+#### Step 1: Copy & Deploy (30 seconds)
+Copy the `.agents` folder into your project's root directory. This folder contains all AI rules, skills, and workflows—no installation needed.
 ```bash
+cp -r .agents /path/to/your/project/
+```
+You can also download from GitHub releases or extract online if preferred.
+
+#### Step 2: Trigger Auto-Init (2-5 minutes)
+In Antigravity IDE (or your AI chat), run:
+```
 run /project-init
 ```
-*The AI will scan your codebase. For legacy projects, it will propose a **Deep Audit**. For new ones, it will offer **Blueprint Ingestion**.*
+The system scans your codebase and auto-configures.
 
-### Step 3: Neural Verification
-Verify that your skills are indexed. Type `@` in your chat; you should see active skills like:
-`@ui-finish`, `@backend-orchestrator`, `@api-contract`
+#### Step 3: Verify Skills Active (10 seconds)
+Type `@` in chat. You should see skills like `@backend-orchestrator`, `@ui-finish`, `@api-contract`.
+
+**Done.** Your `.agents` infrastructure is live.
+
+### Cognitive Decoupling
+AI logic, rules, and skills are isolated from your source code. Your "Intelligence" is now portable.
+
+### The Ecosystem at a Glance
+The `.agents` folder is organized into foundational pillars:
+
+* **🏛️ Canons (L1)**: The "Constitution" — defines architecture and harnesses.
+* **🛡️ Rules (L0)**: The "How" — absolute behavioral constraints and security protocols.
+* **🎯 Skills (L2)**: The "Who" — 11 specialized personas ready for activation.
+* **🔄 Workflows**: The "Muscles" — automated, repeatable sequences for development and deployment.
+* **⚙️ Scripts & Templates**: The "Tools" — deterministic memory scaffolding, system auditing, and sync automations.
+
+### Integrated Infrastructure (MCP)
+Powered by the **Model Context Protocol (MCP)**, giving your AI agents direct "hands" to manipulate the environment:
+
+* **Dart & Flutter**: Deep widget tree inspection via the Dart Tooling Daemon (DTD).
+* **Supabase/Postgres**: Direct schema management, RLS auditing, and migrations.
+* **Context7**: Just-in-time documentation ingestion for frontier libraries.
 
 ---
 
-## 💡 6. Pro Tips for Advanced Users
-
-*   **Automated System Stocktake**: Every 5 features, run: *"Review our session history and MEMORY.md. Identify repetitive patterns to promote into a permanent Skill."*
-*   **Gemini CLI**: quota limit for Antigravity is seperate from Gemini CLI"*
+> [!NOTE]
+> For detailed documentation of skills, directory structure, workflows, and advanced configurations, see [AGENTS.md](AGENTS.md).
 
 ---
 
-## 🏷️ Version
-**1.2.22** — *"Modular Synchronization & Ecosystem Polish"*
+## 6. Rules and Safety Model
 
-## ⚖️ License
+### High-Precision Anchors (Agentic Mechanics)
+These high-precision mechanisms ensure efficiency and prevent "Logic Drift":
+
+| Mechanism | Purpose | Benefit |
+| :--- | :--- | :--- |
+| **🛡️ Token Shield** | Block-level ingestion | Minimizes token overhead by avoiding full-file reads. |
+| **📐 Vibecode Limit** | 500-line atomic cap | Prevents context loss by enforcing modular file structures. |
+| **🕸️ Neural Linkage** | Knowledge graph mapping | Predicts impact before refactoring. |
+| **✨ Binary Oratory** | Execution firewall | Mandatory [DO]/[DONT] before filesystem mutations. |
+| **📈 Agentic Evolution** | Habit promotion | Converts repetitive corrections into permanent rules. |
+| **🧠 Session Handoff** | State recovery | Resumes from last known milestone on every boot. |
+| **🔍 Harmony Sentinel** | Integrity auditing | Validates architectural links automatically. |
+
+---
+
+## 7. The "Zero to Hero" Seamless Guide
+
+This infrastructure is designed for a continuous, unbroken loop from idea to launched product, eliminating manual prompt-chaining.
+
+### Phase 1: Deep Interrogation (`/project-init`)
+Start by invoking the initialization workflow. The AI won't just ask generic questions; it will extract your **Vision Invariant** (the core goal that cannot change) and **Anti-Features** (what the product must *not* be).
+```text
+run /project-init
+```
+
+### Phase 2: Recursive Viability
+Before writing code, the system runs a SaaS viability check. If the idea scores low, the AI automatically proposes pivots to the tech stack, monetization, or audience while keeping the Vision Invariant locked until a 15/15 score is achieved.
+
+### Phase 3: The GPS Handoff (`/full-lifecycle`)
+Development enters the full lifecycle module. Because of the **GPS Handoff** protocol, the AI will *never* leave you guessing. At the end of every response, you will receive a `🚦 LIFECYCLE CHECKPOINT` detailing:
+1. Current phase state.
+2. Next action required from the user (e.g., `[DO: YES]`).
+3. The exact next workflow step to be executed.
+
+### Phase 4: Continuous Auditing & Scaling
+As your app grows, invoke `@integrity-sentinel` to verify security/RLS, or `@project-architect` to safely scale from "Lean" to "Enterprise" architecture. All stages remain seamlessly connected through checkpoints.
+
+---
+
+## 8. FAQ
+
+**Q: Can I use this with non-Flutter/Node.js projects?**
+A: The skill system is architecture-agnostic. You can custom-create skills for other stacks; see `meta-agent-admin` skill for guidance.
+
+**Q: How do I add a new skill?**
+A: Run `@meta-agent-admin` and navigate to the `system-admin` reference file. It contains the full workflow for adding skills.
+
+**Q: Is my source code scanned by the `.agents` system?**
+A: No. The system only reads what you explicitly provide to the AI agent. Source code scanning is opt-in via the `grep_search` or `semantic_search` tools.
+
+**Q: Can I remove skills I don't use?**
+A: Yes. Delete the skill folder and run `python .agents/scripts/update_catalog.py`. The system will update the index.
+
+**Q: What's the token overhead of using this infrastructure?**
+A: ~2-5% per session (depends on skill count active). Token Shield and Vibecode Limit mechanisms keep this minimal.
+
+---
+
+## 9. Changelog
+
+**Current Version**: **1.2.27** — *"Modular Synchronization & Ecosystem Polish"*
+
+| Version | Date | Notes |
+| :--- | :--- | :--- |
+| **1.2.0** | 2026-03-26 | Integrate 10 Prompt Patterns, Root GEMINI.md, and evals/docs folders |
+| **1.1.0** | 2026-03-20 | Unified Logic: Established a clear 4-pillar structure and the 82-file SaaS mapping protocol. |
+| **1.0.0** | 2026-03-19 | Clean Reset to V1.0.0 |
+| **0.9.0** | 2026-03-15 | Initial baseline |
+
+---
+
+## 10. License
+
 Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ---
+
 *AI-crafted, modular, and ready for evolution.*
-
-## 🔄 Recent Changes
-
-### [1.2.22] - 2026-03-28
-### Changed
-- **Ecosystem Refactor**: Re-indexed structure to exactly 11 core skills (merged redundancies like `db-expert` into `backend-orchestrator`).
-- Added full `scripts/`, `templates/`, and `evals/` support as formal pillars.
-- Synchronized `AGENTS.md` and repository layouts.
-
-
-### [1.1.0] - 2026-03-20
-### Changed
-- **Unified Logic**: Established a clear 4-pillar structure and the 82-file SaaS mapping protocol.
-
-
-### [1.0.0] - 2026-03-19
-### Changed
-- Clean Reset to V1.0.0
-- Update .agents foundation to portable brainvibing (Dual-Canon Patch)
-- Added Session Handoff and Atomic Tasking workflows
-- Enhanced Protocol for surgical context management
-
-### [0.9.0] - 2026-03-15
-### Added
-- Initial baseline
-- Standardized .agents structure for portability
-- Initial suite of 20+ specialized agent skills

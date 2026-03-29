@@ -8,18 +8,18 @@ This workflow is the **Master Orchestrator**. It leverages the entire `.agents` 
 
 ## PHASE 0: INGESTION (THE SOUL)
 > **Tier**: BUDGET — read-only context loading.
-- [ ] **Global Alignment**: Read `workspace_map.md`, `canons/global/`, and `rules/core-guardrails.md`.
 - [ ] **Context Loading**: Read the current `BLUEPRINT.md` (if exists) or the project's intake brief.
 - [ ] **Skill Activation**: Identify and activate the necessary specialized skills for the project domain.
 - [ ] **Gate 0**: Confirm task tier and active constraints before any file write.
 
 ## PHASE 1: STRATEGIC BLUEPRINT (THE BRAIN)
 > **Tier**: PREMIUM — architecture and cross-system reasoning. Sequential Thinking mandatory.
-- [ ] **Architectural Design**: Invoke `@skills/project-architect` to synthesize requirements into Chapter 1-7 of the Master Blueprint.
+- [ ] **Viability Gate & Loop**: Invoke `@skills/saas-strategist` (`saas-viability`). Baseline the idea. If score < 13/15, run the Recursive Viability Engine (Pivot mutable features while locking Vision Invariant) until the score is optimized.
+- [ ] **Architectural Design**: Invoke `@skills/project-architect` to synthesize requirements into Chapter 1-7 of the Master Blueprint based on the finalized viability pivot.
 - [ ] **Cost Guard**: Invoke `@skills/cost-optimizer` to validate the chosen tech stack and infrastructure for token and cloud efficiency.
 - [ ] **Security Blueprint**: Invoke `@skills/integrity-sentinel` to identify potential threat vectors (Auth, Data Leakage, RLS) before code is written.
 - [ ] **Socratic Challenge**: AI must present at least TWO architectural risks or trade-offs for user confirmation.
-- [ ] **Gate 1**: Do not proceed to scaffolding until risks and trade-offs are acknowledged.
+- [ ] **Gate 1**: Do not proceed to scaffolding until the Viability Gate is passed and risks are acknowledged.
 
 ## PHASE 2: SCAFFOLDING (THE SKELETON)
 > **Tier**: STANDARD — multi-file creation, template population.
@@ -45,9 +45,15 @@ For each feature defined in the Roadmap:
 
 ## PHASE 5: MAINTENANCE & SYNC (THE HEALTH)
 > **Tier**: BUDGET — deterministic script execution, no reasoning required.
-- [ ] **Graph Update**: Run `python .agents/scripts/build_graph.py` to update symbolic relationships.
-- [ ] **Catalog Sync**: Run `python .agents/scripts/update_catalog.py` to reflect new files in `catalog.json`.
-- [ ] **Gate 5**: Re-run `python .agents/scripts/verify_agents.py` and require PASS before closing lifecycle.
+> **Turbo Mode (Exclusive Exemption)**: Scripts in this phase are pre-authorized. They do NOT require `[DO: YES]` confirmation — they touch no source code, only registry/graph metadata. This is the ONLY exemption from the Universal Pre-Flight rule.
+- [ ] **Graph Update**: 
+// turbo
+Run `python .agents/scripts/build_graph.py` to update symbolic relationships.
+- [ ] **Catalog Sync**: 
+// turbo
+- [ ] **Gate 5**: 
+// turbo
+Re-run `python .agents/scripts/verify_agents.py` and require PASS before closing lifecycle.
 
 ---
 *Portable Brainvibing Infrastructure - Orchestrated Lifecycle Protocol*

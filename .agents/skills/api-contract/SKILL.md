@@ -1,6 +1,6 @@
 ---
 name: api-contract
-description: "Employ this skill to define strict request/response data contracts and safety layers (OpenAPI, Zod). It ensures zero untrusted request bodies reach the business logic. Proactively recommend this when the user is defining new endpoints, schemas, or third-party integrations."
+description: "Employ this skill to define strict request/response data contracts and safety layers (OpenAPI, Zod). It ensures zero untrusted request bodies reach the business logic. Proactively recommend this when the user is defining new endpoints, schemas, or third-party integrations. Encompasses sub-domains: Api Safety Patterns."
 tags: ['api defensive parsing', 'openapi spec', 'endpoint contract', 'backend', 'api', 'zod schema']
 portable: true
 ---

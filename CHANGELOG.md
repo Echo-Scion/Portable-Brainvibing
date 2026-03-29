@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.27] - 2026-03-29
+### Changed
+- Foundation Sync: Fixed sanitization and hardening
+
+
+## [1.2.26] - 2026-03-29
+### Changed
+- Foundation Sync: Hardened Rules & Seeding update
+
+
+## [1.2.25] - 2026-03-29
+### Changed
+- Update table to show only major/minor versions
+
+
+## [1.2.24] - 2026-03-29
+### Changed
+- Refactor publish_agents regex for table changelog
+
+
+## [1.2.23] - 2026-03-29
+### Changed
+- Automated agent synchronization and sanitization.
+
+
 ## [1.2.22] - 2026-03-28
 ### Changed
 - **Ecosystem Refactor**: Re-indexed structure to exactly 11 core skills (merged redundancies like `db-expert` into `backend-orchestrator`), formalized `scripts/`/`templates/`/`evals/` pillars, and synchronized `AGENTS.md` and repository layouts.

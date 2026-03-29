@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-03-29T19:18:48.579458Z",
+  "total": 23,
+  "skills": [
+    {
+      "id": "api-contract",
+      "description": "\"Employ this skill to define strict request/response data contracts and safety layers (OpenAPI, Zod). It ensures zero untrusted request bodies reach the business logic. Proactively recommend this when the user is defining new endpoints, schemas, or third-party integrations. Encompasses sub-domains: Api Safety Patterns.\"",
+      "tags": [
+        "api defensive parsing",
+        "openapi spec",
+        "endpoint contract",
+        "backend",
+        "api",
+        "zod schema"
+      ]
+    },
+    {
+      "id": "backend-orchestrator",
+      "description": "\"The overarching Architect for Backend Systems, Database Schema, and Performance Optimization. Encompasses sub-domains: Backend Architect, Backend Optimizer, Cache Optimizer, Db Expert, Enterprise Patterns, Node Performance Tuning, Postgres Patterns.\"",
+      "tags": [
+        "backend",
+        "database",
+        "caching",
+        "optimization",
+        "architecture",
+        "api"
+      ]
+    },
+    {
+      "id": "cost-optimizer",
+      "description": "\"Use this skill to reduce cloud and LLM infrastructure costs through token-clipping and tiered service routing. It focuses on maximizing efficiency without sacrificing quality. Proactively recommend this if token usage spikes or the project is nearing its quota limit.\"",
+      "tags": [
+        "autoscaling",
+        "business",
+        "token-clipping",
+        "finops",
+        "cloud",
+        "cost efficiency",
+        "billing"
+      ]
+    },
+    {
+      "id": "data-logic",
+      "description": "\"Employ this skill to design immutable data models, DTOs, and complex transformation pipelines. It ensures data integrity by enforcing immutability by default. Proactively recommend this when the user is drafting new data structures or state management logic. Encompasses sub-domains: Flutter Logic Patterns.\"",
+      "tags": [
+        "freezed",
+        "immutable modeling",
+        "logic",
+        "flutter",
+        "reactive state",
+        "riverpod"
+      ]
+    },
+    {
+      "id": "frontend-experience",
+      "description": "\"Master orchestrator for UI/UX audits and Frontend debugging. Encompasses sub-domains: Flutter Debugger, Ux Designer.\"",
+      "tags": [
+        "ui",
+        "ux",
+        "flutter",
+        "frontend",
+        "debugging",
+        "layout",
+        "design"
+      ]
+    },
+    {
+      "id": "integrity-sentinel",
+      "description": "\"The overarching Gatekeeper for security, quality assurance, system audits, and evaluation. Replaces individual QA, security, audit, and eval skills. Proactively suggest this before deployment or when enforcing zero-trust principles. Encompasses sub-domains: Audit, Eval, Flutter Testing Patterns, Load Testing Tactics, Qa, Security.\"",
+      "tags": [
+        "security",
+        "eval",
+        "threat modeling",
+        "audit",
+        "validation",
+        "qa",
+        "load testing",
+        "regression",
+        "testing"
+      ]
+    },
+    {
+      "id": "meta-agent-admin",
+      "description": "\"Governs the AI agent ecosystem, system evolution, context routing, and documentation standards. Encompasses sub-domains: Agent Architect, Agent Evolution, Context Manager, Knowledge, Loop Design Patterns, System Admin, Tech Writer.\"",
+      "tags": [
+        "agents",
+        "system",
+        "documentation",
+        "context",
+        "prompt-engineering",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "project-architect",
+      "description": "\"Use this skill to synthesize complex requirements into technical PRDs and architectural blueprints. It prioritizes Minimum Viable Complexity (MVC) to prevent feature bloat. Proactively suggest this when the user describes a new idea or whenever a project lacks a clear roadmap, even if they don't explicitly ask for a blueprint. Encompasses sub-domains: Architectural Standards, Startup Growth, Strategic Rigor, Structural Pillars.\"",
+      "tags": [
+        "agile backlog",
+        "planning",
+        "architecture",
+        "management",
+        "mobile",
+        "sprint planning",
+        "mobile strategy",
+        "native app architecture",
+        "offline-first",
+        "prd synthesis"
+      ]
+    },
+    {
+      "id": "project-operator",
+      "description": "\"Maintains project deployments, release cycles, and chaos resilience. Encompasses sub-domains: Chaos Engineer, Release Manager.\"",
+      "tags": [
+        "ci-cd",
+        "release",
+        "chaos",
+        "infrastructure",
+        "maintenance",
+        "deployment"
+      ]
+    },
+    {
+      "id": "saas-strategist",
+      "description": "\"Orchestrates SaaS business strategy, viability analysis, and product growth models. Encompasses sub-domains: Saas Growth, Saas Viability, Technical Content, Viral Growth.\"",
+      "tags": [
+        "saas",
+        "strategy",
+        "growth",
+        "business",
+        "monetization",
+        "product"
+      ]
+    },
+    {
+      "id": "ui-finish",
+      "description": "\"Use this skill to apply premium Liquid Glass aesthetics, micro-interactions, and animations to Flutter UIs. It ensures every component handles Loading, Empty, and Error states gracefully. Proactively suggest this when a feature's core logic is done and needs visual polish. Encompasses sub-domains: Flutter Ui Patterns, Visual Engineering.\"",
+      "tags": [
+        "liquid glass",
+        "glassmorphism",
+        "flutter",
+        "design",
+        "ui",
+        "flutter micro-interactions",
+        "inclusive design visual"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "api-connector-protocols.md",
+      "description": "Protocols for API communication, data integrity, and inter-service interaction.",
+      "trigger": "model_decision"
+    },
+    {
+      "id": "autoharness-protocol.md",
+      "description": "Protocol for synthesizing and using verification harnesses before high-risk actions.",
+      "trigger": "always_on"
+    },
+    {
+      "id": "context-standards.md",
+      "description": "Comprehensive rules for Context Management, Context Hierarchy, Token Economy, and Skeleton-first loading.",
+      "trigger": "model_decision"
+    },
+    {
+      "id": "core-guardrails.md",
+      "description": "Core agent behavioral protocols, interaction standards, and operational constraints.",
+      "trigger": ""
+    },
+    {
+      "id": "flutter-standards.md",
+      "description": "Comprehensive Flutter architecture, development standards, and styling guidelines.",
+      "trigger": "glob"
+    },
+    {
+      "id": "git-workflow.md",
+      "description": "Standardized Git workflow, commit messages, and branching strategy.",
+      "trigger": "model_decision"
+    },
+    {
+      "id": "interaction-protocols.md",
+      "description": "Standards for how the agent communicates with the user.",
+      "trigger": ""
+    },
+    {
+      "id": "performance-optimization.md",
+      "description": "Guidelines for optimizing application performance and context token usage.",
+      "trigger": "model_decision"
+    },
+    {
+      "id": "reasoning-standards.md",
+      "description": "Unified standards for analytical rigor, reasoning depth per tier, and internal validation (Adversarial Twin).",
+      "trigger": "model_decision"
+    },
+    {
+      "id": "security-guardrails.md",
+      "description": "Security guardrails, negative boundaries, and prompt injection defenses.",
+      "trigger": ""
+    },
+    {
+      "id": "tier-execution-protocol.md",
+      "description": "Protocol for selecting the correct model tier and the enforced workflows per tier (Bento Box, Auto-router).",
+      "trigger": "model_decision"
+    },
+    {
+      "id": "web.md",
+      "description": "Web Development Standards for frontend excellence, API safety, and Node.js logic.",
+      "trigger": "glob"
+    }
+  ]
+}

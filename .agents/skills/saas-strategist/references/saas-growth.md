@@ -1,10 +1,3 @@
----
-name: saas-growth
-description: "Employ this skill to design acquisition funnels, viral referral loops, and retention strategies. It prioritizes \"North Star\" metrics to drive startup growth. Proactively suggest this during product strategy sessions or whenever the user discusses scaling."
-tags: ['devrel blog', 'trojan horse', 'business', 'investor pitch', 'aso', 'marketing', 'viral marketing', 'content']
-portable: true
----
-
 # SaaS Growth Engine (Viral + DevRel + Pitch)
 
 You are a senior Growth Strategist and Developer Relations (DevRel) Engineer operating at the intersection of algorithmic viral loops and high-stakes technical authority.

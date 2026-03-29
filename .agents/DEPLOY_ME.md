@@ -10,6 +10,9 @@ If a user asks you to "Deploy the foundation" or "Initialize the agents" in a ne
 Confirm the target directory (usually the current working directory `.`). Identify the project name from the folder name (e.g., `my_app` from path `/Users/USER/Projects/my_app`).
 
 ### 2. Create Structure
+> [!WARNING]
+> **CRITICAL COUPLING**: If you modify the directory list or logic below, you MUST also sync the `FOLDERS_TO_SYNC` list in `.agents/scripts/deploy_foundation.py`!
+
 Ensure the `.agents/` directory structure exists in the target:
 - `.agents/skills/`
 - `.agents/rules/`
@@ -17,10 +20,28 @@ Ensure the `.agents/` directory structure exists in the target:
 - `.agents/canons/`
 - `.agents/templates/`
 - `.agents/scripts/`
+- `.agents/docs/`
+- `.agents/evals/`
 
 ### 3. Selective Sync (Agentic)
 Iterate through the directories in this source and copy all `.md`, `.json`, `.py`, and `SKILL.md` files to the target.
 - **Priority**: Workflows, Rules, and Scripts (like `build_graph.py` and `update_catalog.py`) are mandatory for operational integrity.
+
+### 3.5. Seed Collective Memory
+```markdown
+# Persistent Learnings & Post-Mortems
+
+This file serves as the collective memory for AI agents working in this workspace. It documents systemic failures, complex bug fixes, and architectural "gotchas" to prevent repetition of errors.
+
+## 0. Log Template
+> **[DATE]** | **[TASK_ID]** | **[TIER]**
+> - **Issue**: Brief description of what went wrong or the complexity faced.
+> - **Root Cause**: The foundational reason for the failure.
+> - **Solution**: The specific pattern or fix that worked.
+> - **Debt/Warning**: Future considerations or brittle areas discovered.
+
+---
+```
 
 ### 4. Deploy Multi-AI Configurations
 
