@@ -213,6 +213,102 @@ def deploy_ai_configs(source_root: str, target_root: str, project_name: str, sel
     
     return results
 
+def verify_github_native_deployment(target_root: str, dry_run: bool = False) -> bool:
+    """
+    Verify that GitHub native stack was deployed correctly.
+    
+    Checks for:
+    - Required .github/rules/ files
+    - Required .github/agents/ files
+    - Required .github/workflows/ files
+    - Required .github/ root documentation
+    
+    Returns:
+        bool: True if all checks passed, False otherwise
+    """
+    target_github = os.path.join(target_root, ".github")
+    issues = []
+    
+    if not os.path.exists(target_github):
+        print(f"  ⚠️  .github/ directory not found")
+        return False
+    
+    # Check required rule files
+    required_rules = [
+        ("_index.md", "Navigation index"),
+        ("agent-core.md", "Core behavioral rules"),
+        ("tier-execution.md", "Tier execution protocols"),
+        ("security-gates.md", "Security gates"),
+        ("context-standards.md", "Context standards")
+    ]
+    
+    rules_dir = os.path.join(target_github, "rules")
+    if os.path.exists(rules_dir):
+        for rule_file, desc in required_rules:
+            path = os.path.join(rules_dir, rule_file)
+            if not os.path.exists(path):
+                issues.append(f"  ❌ Missing rule: .github/rules/{rule_file} ({desc})")
+            else:
+                print(f"  ✅ .github/rules/{rule_file}")
+    else:
+        issues.append(f"  ❌ Missing directory: .github/rules/")
+    
+    # Check required agent files
+    required_agents = [
+        ("copilot.agent.md", "Primary Copilot agent"),
+        ("foundation-deployer.agent.md", "Deployer agent"),
+        ("integrity-auditor.agent.md", "QA/Security agent"),
+        ("README.md", "Agents documentation")
+    ]
+    
+    agents_dir = os.path.join(target_github, "agents")
+    if os.path.exists(agents_dir):
+        for agent_file, desc in required_agents:
+            path = os.path.join(agents_dir, agent_file)
+            if not os.path.exists(path):
+                issues.append(f"  ❌ Missing agent: .github/agents/{agent_file} ({desc})")
+            else:
+                print(f"  ✅ .github/agents/{agent_file}")
+    else:
+        issues.append(f"  ❌ Missing directory: .github/agents/")
+    
+    # Check required workflow files
+    required_workflows = [
+        ("verify-agents.yml", "Verification workflow"),
+        ("deploy-foundation.yml", "Deployment workflow"),
+        ("check-staleness.yml", "Staleness detection"),
+        ("publish-foundation.yml", "Publishing workflow")
+    ]
+    
+    workflows_dir = os.path.join(target_github, "workflows")
+    if os.path.exists(workflows_dir):
+        for workflow_file, desc in required_workflows:
+            path = os.path.join(workflows_dir, workflow_file)
+            if not os.path.exists(path):
+                issues.append(f"  ❌ Missing workflow: .github/workflows/{workflow_file} ({desc})")
+            else:
+                print(f"  ✅ .github/workflows/{workflow_file}")
+    else:
+        issues.append(f"  ❌ Missing directory: .github/workflows/")
+    
+    # Check root documentation
+    for doc_file in ["ARCHITECTURE.md", "README.md"]:
+        path = os.path.join(target_github, doc_file)
+        if not os.path.exists(path):
+            issues.append(f"  ❌ Missing documentation: .github/{doc_file}")
+        else:
+            print(f"  ✅ .github/{doc_file}")
+    
+    # Report issues
+    if issues:
+        print("\n  Issues found during verification:")
+        for issue in issues:
+            print(issue)
+        return False
+    
+    print("  ✅ All GitHub native components verified")
+    return True
+
 def deploy(source_root: str, target_root: str, selected_ais: list = None, dry_run: bool = False):
     """
     Copies foundation skills and rules to the target project.
@@ -251,38 +347,74 @@ def deploy(source_root: str, target_root: str, selected_ais: list = None, dry_ru
     # If you modify FOLDERS_TO_SYNC or deployment logic below, 
     # YOU MUST ALSO UPDATE the agentic fallback instructions in `.agents/DEPLOY_ME.md`!
     FOLDERS_TO_SYNC = ["skills", "rules", "canons", "templates", "evals", "docs", "scripts"]
+    
+    # GitHub native structure folders (new in v2.0)
+    GITHUB_FOLDERS_TO_SYNC = ["rules", "agents", "workflows"]
 
-    # Exclude list: items that must never be overwritten on target
+    # Exclude list: relative paths or filenames that must never be overwritten on target
     BLACKLIST = {
-        "deploy_foundation.py",
+        "scripts/deploy_foundation.py",
         ".git",
         "node_modules"
     }
+    
+    # GitHub-specific exclusions (preserve project customizations)
+    GITHUB_BLACKLIST = {
+        "custom",  # Project-specific rules/agents/workflows
+        ".copilot-memory.md"  # Session-scoped memory
+    }
 
-    def sync_recursive(src: str, dest: str, blacklist: set[str] | None = None):
-        """Surgical sync: create directories, copy/overwrite files from src, but KEEP local-only files."""
+    def sync_recursive(src: str, dest: str, blacklist: set[str] | None = None, base_rel_path: str = ""):
+        """Surgical sync: syncs files and removes stale items not present in src."""
         if blacklist is None:
             blacklist = set()
+            
+        def is_blacklisted(rel_item_path: str) -> bool:
+            basename = os.path.basename(rel_item_path)
+            rel_unix = rel_item_path.replace('\\', '/')
+            return basename in blacklist or rel_unix in blacklist
+
         if not os.path.exists(dest):
             if not dry_run:
                 os.makedirs(dest, exist_ok=True)
             print(f"  [CREATE] {dest}")
 
+        # Phase 1: Remove stale files from dest
+        if os.path.exists(dest):
+            for item in os.listdir(dest):
+                item_rel = os.path.join(base_rel_path, item).replace("\\", "/")
+                if is_blacklisted(item_rel):
+                    continue
+                
+                s_item = os.path.join(src, item)
+                d_item = os.path.join(dest, item)
+                
+                if not os.path.exists(s_item):
+                    if not dry_run:
+                        if os.path.isdir(d_item):
+                            shutil.rmtree(d_item)
+                        else:
+                            os.remove(d_item)
+                    print(f"  [DELETE STALE] {item_rel}")
+
+        # Phase 2: Copy from src to dest
         for item in os.listdir(src):
-            if item in blacklist:
+            item_rel = os.path.join(base_rel_path, item).replace("\\", "/")
+            if is_blacklisted(item_rel):
                 continue
 
             s = os.path.join(src, item)
             d = os.path.join(dest, item)
 
             if os.path.isdir(s):
-                sync_recursive(s, d, blacklist)
+                sync_recursive(s, d, blacklist, item_rel)
             else:
                 if not dry_run:
                     shutil.copy2(s, d)
-                print(f"  [COPY] {item} -> {dest}")
+                # Removing extremely verbose per-file logging to keep console clean,
+                # you will still see [DELETE STALE] or higher level operations.
 
-    # 1. Sync standard folders
+    # 1. Sync standard .agents folders
     for folder in FOLDERS_TO_SYNC:
         src_path = os.path.join(source_agents, folder)
         dest_path = os.path.join(target_agents, folder)
@@ -293,7 +425,35 @@ def deploy(source_root: str, target_root: str, selected_ais: list = None, dry_ru
         print(f"Syncing {folder}...")
         sync_recursive(src_path, dest_path, BLACKLIST)
 
-    # 2. Sync workflows/ root files ONLY
+    # 2. Sync GitHub native structure (.github/)
+    print("\n📊 GitHub Native Stack Deployment")
+    source_github = os.path.join(source_root, ".github")
+    target_github = os.path.join(target_root, ".github")
+    
+    if os.path.exists(source_github):
+        for folder in GITHUB_FOLDERS_TO_SYNC:
+            src_path = os.path.join(source_github, folder)
+            dest_path = os.path.join(target_github, folder)
+            
+            if not os.path.exists(src_path):
+                continue
+            
+            print(f"  Syncing .github/{folder}...")
+            sync_recursive(src_path, dest_path, GITHUB_BLACKLIST)
+        
+        # 2.1 Sync GitHub root documentation files
+        github_root_files = ["ARCHITECTURE.md", "README.md"]
+        for fname in github_root_files:
+            src_file = os.path.join(source_github, fname)
+            dest_file = os.path.join(target_github, fname)
+            
+            if os.path.exists(src_file):
+                if not dry_run:
+                    os.makedirs(target_github, exist_ok=True)
+                    shutil.copy2(src_file, dest_file)
+                print(f"  [COPY] .github/{fname}")
+
+    # 3. Sync workflows/ root files ONLY
     src_workflows = os.path.join(source_agents, "workflows")
     dest_workflows = os.path.join(target_agents, "workflows")
     if os.path.exists(src_workflows):
@@ -340,6 +500,14 @@ def deploy(source_root: str, target_root: str, selected_ais: list = None, dry_ru
         except Exception as e:
             print(f"⚠️  Warning: Could not persist foundation path: {e}")
 
+    # 5.5 Verify GitHub native deployment (NEW in v2.0)
+    print("\n🔍 Verifying GitHub native stack deployment...")
+    github_verification = verify_github_native_deployment(target_root, dry_run)
+    if not github_verification:
+        print("⚠️  Warning: GitHub native stack verification found issues. Review above.")
+    else:
+        print("✅ GitHub native stack verified successfully")
+
     # 6. Run build_graph and update_catalog automatically post-deploy
     if not dry_run:
         scripts_dir = os.path.join(target_agents, "scripts")
@@ -353,6 +521,12 @@ def deploy(source_root: str, target_root: str, selected_ais: list = None, dry_ru
         if os.path.exists(update_catalog_script):
             print("\n📋 Running update_catalog.py to refresh catalog...")
             subprocess.run([sys.executable, update_catalog_script], cwd=target_root)
+        
+        # Run sync_skill_discovery to auto-generate Copilot discovery mappings
+        sync_discovery_script = os.path.join(scripts_dir, "sync_skill_discovery.py")
+        if os.path.exists(sync_discovery_script):
+            print("\n🎯 Running sync_skill_discovery.py to generate Copilot chat mentions...")
+            subprocess.run([sys.executable, sync_discovery_script, "--update-rules", "--update-workflows", "--verify"], cwd=target_root)
 
     print(f"\n✅ Deployment finished{' (SIMULATED)' if dry_run else ''}.")
     return True

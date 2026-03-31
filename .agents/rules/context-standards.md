@@ -89,11 +89,14 @@ Small/Budget Models hallucinate when fed too much raw code. If a model reads an 
 ## 2. The Skeleton-First Law
 If the agent is operating on **[TIER: BUDGET]**, the agent is **STRICTLY PROHIBITED** from using the `read_file` tool on long files (>200 lines) as a first step.
 
+**Circuit Breaker (Strict Parameters):**
+The agent MUST automatically reject (Abort) any attempt to use `read_file` on target files (>200 lines) if the `startLine` and `endLine` parameters are missing or cover the entire file.
+
 **Mandatory File Navigation Order:**
 1. **Grep/Search Skeleton:** Use `grep_search` to find the target function name, class, or file *header*.
    *Example:* `grep_search` with pattern `class |function |interface ` to get a structural overview.
 2. **Targeted Read:** Once the target line is found, the agent may ONLY read that specific block (e.g., lines 45-80) using the line range parameters in `read_file`.
-3. **No Blind Full-Reads:** If caught performing a *blind full-read* on a large file, it is considered a strict protocol violation.
+3. **No Blind Full-Reads:** A *blind full-read* without line constraints triggers an immediate block to prevent context poisoning.
 
 ## 3. Surgical Munching
 Only extract what is absolutely essential for the task. If the task is merely changing a *button* color, reading the *Auth* module is forbidden.
@@ -120,7 +123,7 @@ To prevent architectural drift and naming inconsistency, all files created withi
 ## 2. Selection Logic
 1. **Direct Match**: If the knowledge fits a specific category (e.g., SEO strategy), use the designated file (e.g., `01_Product/Acq_SEO_Wins.md`).
 2. **Expansion Match**: If the knowledge is an expansion of an idea, append it to the relevant existing file rather than creating a "shadow" file.
-3. **New Creation**: If the knowledge is truly unique but falls within a category, propose a name that follows the existing pattern and seek confirmation.
+3. **Zero Creation Tolerance**: The AI **MUST NOT** propose or create new file names. If the knowledge cannot be mapped exactly to one of the 82 files in the baseline, the system MUST return an error and reject the operation. No exceptions.
 
 ## 3. Unstructured-to-Surgical (U2S) Mapping
 - When a user provides an **Info-Dump** or a **Monolithic Master Blueprint** (single-file specs), the AI **MUST NOT** simply store it as a single file.
@@ -140,9 +143,12 @@ To prevent architectural drift and naming inconsistency, all files created withi
 
 ## 5. Monorepo Distribution (Double Lean)
 - In a monorepo, context is **split** between the root and the apps.
-- **Root Context**: Reserved for shared infra (e.g., `03_Tech/Infra_Melos_Config.md`).
-- **App Context**: Reserved for feature logic (e.g., `apps/[app]/context/01_Product/Plan_Product_Roadmap.md`).
-- AI MUST ensure that app-specific details do NOT leak into the root context to maintain strict isolation.
+- **Dynamic Anchor Mapping**: Paths like `apps/[app]/context/` and `packages/[pkg]/context/` are declared as **Valid Base Anchors**. The 82-file *Exact Match* rule applies *relative to these anchors*, not just the workspace root.
+- **Discrimination Matrix (Strict Isolation)**:
+    - **Root `/context/` ONLY for**: `03_Tech/Infra_*` (Melos, Docker, CI/CD), `02_Creative/Design_Design_System.md` (Global Theme), and `00_Strategy/BLUEPRINT.md` (Main Vision).
+    - **App `apps/[app]/context/` ONLY for**: Anything with `01_Product` prefix, app-specific UI/UX, and `03_Tech/Dev_*`.
+    - Any attempt to violate this isolation MUST immediately trigger a **Circuit Breaker Error**.
+- **The "Bridge Context" Protocol (Cross-Boundary Sync)**: For cross-app features (e.g., frontend + backend), the AI MUST use **Index Linking**. Write the Core Contract in the root or a shared package, and place a reference pointer in the app context (e.g., `--> See: packages/shared_api/context/03_Tech/Dev_APIs.md`). DO NOT duplicate context data across silos.
 
 ## 6. Enforcement
 - All initialization (`/project-init`) and migration tasks MUST verify that the `context/` topography matches the selected baseline (Lean, Startup, or Double Lean).
@@ -155,3 +161,16 @@ To prevent architectural drift and naming inconsistency, all files created withi
     2. **Evict**: Explicitly declare in the handoff: "Phase [X] is FINAL. Sub-sequent sessions MUST NOT read raw files from [directory/path] unless a bug is explicitly found."
     3. **Cleanup**: Close all tabs related to the finished phase before ending the session.
 - **Goal**: Maintain 100% focus and prevent the "Context Bloat" that leads to AI hallucinations.
+
+## 8. Safe Context Refactoring (Archivist & Quarantine Protocol)
+To prevent accidental data loss ("Lossy Compression Hazard") when cleaning up or migrating malformed context files, the system enforces the following anti-destructive laws:
+
+### 1. The "Quarantine" Rule (Proactive Rejection)
+- Any file found in the `/context` (or `apps/*/context`) folder that does NOT match the official names in `SAAS_STARTUP_STRUCTURE.md` is strictly designated as **Quarantine**.
+- **Rule**: The AI MUST NOT touch, overwrite, or proactively delete Quarantine files. 
+- AI must halt context operations targeting those files and instead notify the user about the anomaly to prevent destructive data loss.
+
+### 2. Mandatory "Append-Only" Merging (No Summarization)
+- If the AI is specifically tasked to merge a non-standard file into an official 82-file context file, the AI is **FORBIDDEN from paraphrasing or summarizing** the legacy content.
+- Legacy text MUST be moved losslessly and appended directly to the bottom of the destination file inside a dedicated comment block, e.g., `<!-- LEGACY MERGE START --> [Original content here] <!-- LEGACY MERGE END -->`.
+- *Why?* To ensure specific edge-cases written by the developers are not abstracted away by the LLM.

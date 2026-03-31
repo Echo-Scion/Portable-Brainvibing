@@ -23,9 +23,14 @@ Ensure the `.agents/` directory structure exists in the target:
 - `.agents/docs/`
 - `.agents/evals/`
 
-### 3. Selective Sync (Agentic)
-Iterate through the directories in this source and copy all `.md`, `.json`, `.py`, and `SKILL.md` files to the target.
-- **Priority**: Workflows, Rules, and Scripts (like `build_graph.py` and `update_catalog.py`) are mandatory for operational integrity.
+### 3. Execution Execution (Terminal First Mode)
+[DONT] Do not read and create files one by one (this causes context limit exhaustion).
+[DO] Use your terminal tools. 
+First Choice: Run `.agents/scripts/deploy_foundation.py` via python.
+Fallback Choice: Use native OS shell copy commands:
+- Windows (PowerShell): `Copy-Item -Path source\* -Destination target\ -Recurse -Force`
+- Mac/Linux: `cp -a source/* target/`
+Use agentic one-by-one file writing ONLY as an absolute last resort if terminal execution is completely unavailable.
 
 ### 3.5. Seed Collective Memory
 ```markdown
